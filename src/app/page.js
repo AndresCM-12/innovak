@@ -15,7 +15,10 @@ export default function Home() {
           <Image className={styles.imageBanner} src={imgMainBanner} />
         </section>
 
-        <section id="raices" style={{height: 300, background: '#000'}}></section>
+        <section
+          id="raices"
+          style={{ height: 300, background: "#000" }}
+        ></section>
       </main>
       <footer className={styles.footer}></footer>
     </div>
