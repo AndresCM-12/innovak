@@ -19,6 +19,10 @@ export default function Home() {
           id="raices"
           style={{ height: 300, background: "#000" }}
         ></section>
+
+        <section className={styles.presenceContainer} id="presencia">
+          <PresentsBody />
+        </section>
       </main>
       <footer className={styles.footer}></footer>
     </div>
@@ -66,6 +70,26 @@ export default function Home() {
           </li>
         </ul>
       </nav>
+    );
+  }
+
+  function PresentsBody() {
+    return(
+      <>
+        <div>
+          <h1>¿Como funciona?</h1>
+          <p>
+            La formulación de ácidos ECCA Carboxy® de este producto es capaz de
+            aglutinar partículas del suelo, lo que disminuye la compactación y
+            genera espacios para el agua y aire, permitiendo una buena
+            estructura física del suelo. Estos cambios benefician el crecimiento
+            de la raíz al generar condiciones de humedad y aireación, gracias al
+            balance de macro y microporos producido por los agregados estables
+            del suelo.
+          </p>
+        </div>
+        <div className={styles.presenceVideo}></div>
+      </>
     );
   }
 }

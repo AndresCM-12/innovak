@@ -1,4 +1,4 @@
-.MainWrapper{
+.MainWrapper {
   position: relative;
   width: 100%;
   height: 100%;
@@ -26,7 +26,7 @@
   background-color: #000;
 }
 
-.logoImage{
+.logoImage {
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -66,20 +66,63 @@
   height: 100%;
 }
 
-
 /* Image banner */
-.imageBannerContainer{
+.imageBannerContainer {
   height: auto;
   width: 100%;
   background-color: papayawhip;
 }
-.imageBanner{
+.imageBanner {
   height: 100%;
   width: 100%;
   object-fit: cover;
   background-color: papayawhip;
 }
 /* Image banner */
+
+/* presence  */
+.presenceContainer {
+  height: auto;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-inline: 10vw;
+  padding-block: 100px;
+}
+
+.presenceContainer div {
+  text-align: justify;
+  color: #000;
+}
+
+.presenceContainer h1 {
+  color: #005dab;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 48px; /* 100% */
+}
+
+.presenceContainer p {
+  color: #000;
+  text-align: justify;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: normal;
+  width: 450px;
+  margin-top: 16px;
+}
+
+.presenceVideo {
+  background-color: chocolate;
+  border: none;
+  border-radius: 14px;
+  width: 889px;
+  height: 574px;
+}
+/* presence  */
+
 /* Main */
 
 /* Footer */
