@@ -1,4 +1,9 @@
+"use client";
 import styles from "./page.module.css";
+import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import { Navigation } from "swiper/modules";
 
 import imgMainBanner from "../../public/images/main_banner.png";
 import whiteLogo from "../../public/images/logo_white.png";
@@ -9,7 +14,7 @@ import imgLaboreos from "../../public/images/beneficios/laboreo.png";
 import imgGoteo from "../../public/images/specs/goteo.png";
 import imgDrench from "../../public/images/specs/drench.png";
 import imgRodado from "../../public/images/specs/rodado.png";
-import Image from "next/image";
+import imgReviewManuel from "../../public/images/reviews/manuelGaribay.png";
 
 export default function Home() {
   return (
@@ -45,8 +50,10 @@ export default function Home() {
             <SpecsBody />
           </section>
           <section id="news" className={styles.reviewsWrapper}>
-            <p>hola</p>
+            <NewsCarrousel />
           </section>
+          <section id="iandd" className={styles.technicWorks}></section>
+          <section id="network" className={styles.form}></section>
         </div>
       </main>
       <footer className={styles.footer}></footer>
@@ -224,6 +231,97 @@ export default function Home() {
               desarrollo de tus cultivos
             </p>
           </div>
+        </div>
+      </div>
+    );
+  }
+
+  function NewsCarrousel() {
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <div
+          id="arrowLeft"
+          style={{
+            padding: 20,
+          }}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="36"
+            viewBox="0 0 16 36"
+            fill="none"
+          >
+            <path d="M15 1L1 18L15 35" stroke="#00318D" />
+          </svg>
+        </div>
+        <Swiper
+          modules={[Navigation]}
+          spaceBetween={50}
+          slidesPerView={1}
+          navigation={{ nextEl: "#arrowRight", prevEl: "#arrowLeft" }}
+        >
+          <SwiperSlide className={styles.reviewContainer}>
+            <Image src={imgReviewManuel} alt="review" />
+            <p>Tangancícuaro, Michoacán</p>
+            <p>
+              Conoce el caso de éxito del Ing. Manuel Garibay, que, con más de
+              25 años de experiencia en campo, sigue recomendando Promesol 5X.
+              El Ing. Garibay nos comparte un poco sobre su experiencia usando
+              Promesol 5X®, en diferentes cultivos a través del tiempo y como lo
+              ayudó a mejorar la estructura en un suelo arcilloso.
+            </p>
+            <h6>Ing. Manuel Garibay Carreón</h6>
+            <a href="#">Conoce su testimonio</a>
+          </SwiperSlide>
+          <SwiperSlide className={styles.reviewContainer}>
+            <Image src={imgReviewManuel} alt="review" />
+            <p>Tangancícuaro, Michoacán</p>
+            <p>
+              Conoce el caso de éxito del Ing. Manuel Garibay, que, con más de
+              25 años de experiencia en campo, sigue recomendando Promesol 5X.
+              El Ing. Garibay nos comparte un poco sobre su experiencia usando
+              Promesol 5X®, en diferentes cultivos a través del tiempo y como lo
+              ayudó a mejorar la estructura en un suelo arcilloso.
+            </p>
+            <h6>Ing. Manuel Garibay Carreón</h6>
+            <a href="#">Conoce su testimonio</a>
+          </SwiperSlide>
+          <SwiperSlide className={styles.reviewContainer}>
+            <Image src={imgReviewManuel} alt="review" />
+            <p>Tangancícuaro, Michoacán</p>
+            <p>
+              Conoce el caso de éxito del Ing. Manuel Garibay, que, con más de
+              25 años de experiencia en campo, sigue recomendando Promesol 5X.
+              El Ing. Garibay nos comparte un poco sobre su experiencia usando
+              Promesol 5X®, en diferentes cultivos a través del tiempo y como lo
+              ayudó a mejorar la estructura en un suelo arcilloso.
+            </p>
+            <h6>Ing. Manuel Garibay Carreón</h6>
+            <a href="#">Conoce su testimonio</a>
+          </SwiperSlide>
+        </Swiper>
+        <div
+          id="arrowRight"
+          style={{
+            padding: 20,
+          }}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="36"
+            viewBox="0 0 16 36"
+            fill="none"
+          >
+            <path d="M1 35L15 18L1 1" stroke="#00318D" />
+          </svg>
         </div>
       </div>
     );
