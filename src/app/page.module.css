@@ -2,6 +2,7 @@
   position: relative;
   width: 100%;
   height: 100%;
+  background-color: white;
 }
 
 /* Header */
@@ -61,16 +62,37 @@
 
 /* Main */
 .main {
-  background: #f7bfbf;
+  background: white;
   width: 100%;
   height: 100%;
+}
+
+.whiteGradient {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #e0e0e0 100%);
+}
+
+.blueGradient {
+  margin-top: -50px;
+  border-radius: 80px 80px 0px 0px;
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 40.66%,
+      rgba(255, 255, 255, 0.64) 100%
+    ),
+    linear-gradient(
+      180deg,
+      #005dab 0%,
+      rgba(0, 93, 171, 0.41) 59.9%,
+      rgba(175, 175, 175, 0.2) 80.21%,
+      rgba(255, 255, 255, 0) 100%
+    );
 }
 
 /* Image banner */
 .imageBannerContainer {
   height: auto;
   width: 100%;
-  background-color: papayawhip;
+  background-color: transparent;
 }
 .imageBanner {
   height: 100%;
@@ -84,12 +106,13 @@
 .presenceContainer {
   height: auto;
   width: 100%;
-  background-color: white;
+  background-color: transparent;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   padding-inline: 10vw;
   padding-block: 100px;
+  padding-bottom: 150px;
 }
 
 .presenceContainer div {
@@ -122,6 +145,189 @@
   height: 574px;
 }
 /* presence  */
+
+/* Benefits  */
+.beneficiosContainer {
+  padding-block-start: 100px;
+  padding-block-end: 250px;
+}
+.beneficiosContainer .textContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.beneficiosContainer .textContainer h1 {
+  color: #fff;
+  text-align: center;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 48px; /* 100% */
+}
+.beneficiosContainer .textContainer p {
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  margin-top: 40px;
+  max-width: 816px;
+  margin-bottom: 40px;
+}
+.beneficiosContainer .imagesContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 10vw;
+  padding-block: 100px;
+  padding-bottom: 150px;
+}
+.divider {
+  width: 50px;
+  height: 1px;
+  background-color: #fff;
+  margin-bottom: 90px;
+}
+.imageWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+  row-gap: 16px;
+}
+.imageWrapper .background {
+  border-radius: 100%;
+  background-color: white;
+  display: grid;
+  place-items: center;
+  width: 126px;
+  height: 126px;
+}
+.imageWrapper img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+.imagesContainer p {
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 20px;
+  max-width: 150px;
+}
+/* Benefits  */
+
+/* specs  */
+.specsWrapper {
+  display: grid;
+  grid-template-columns: 1fr 10vw;
+}
+.specsWrapper .mainContainer {
+  background-color: white;
+  border-top-right-radius: 300px;
+  width: 100%;
+  padding-inline: 250px;
+  padding-block: 130px;
+}
+.specsWrapper h1 {
+  color: #005dab;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 48px; /* 100% */
+}
+.specsImagesRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  max-width: 704px;
+}
+.specsImagesRow .imageRow {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 16px;
+}
+.specsImagesRow h6 {
+  color: #005dab;
+  text-align: center;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.specsWrapper h2 {
+  color: #005dab;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 48px;
+  margin-top: 100px;
+  margin-bottom: 8px;
+}
+.specsWrapper p {
+  color: #898989;
+  text-align: justify;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  max-width: 700px;
+}
+.specsWrapper h5 {
+  color: #005dab;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 48px;
+  margin-top: 60px;
+  margin-bottom: 16px;
+}
+.infografiasRowWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 704px;
+}
+.infografiasRow p {
+  color: #898989;
+  text-align: justify;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  max-width: 200px;
+}
+.infografiasRow p:nth-child(1) {
+  color: #005dab;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+  text-decoration-line: underline;
+  max-width: 200px;
+  margin-bottom: 8px;
+}
+/* specs  */
+
+/* reviews  */
+.reviewsWrapper {
+  margin-top: 350px;
+  margin-bottom: 212px;
+}
+/* reviews  */
 
 /* Main */
 
