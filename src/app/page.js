@@ -15,6 +15,7 @@ import imgGoteo from "../../public/images/specs/goteo.png";
 import imgDrench from "../../public/images/specs/drench.png";
 import imgRodado from "../../public/images/specs/rodado.png";
 import imgReviewManuel from "../../public/images/reviews/manuelGaribay.png";
+import imgWorksFrambuesa from "../../public/images/works/worksFrambruesa.png";
 
 export default function Home() {
   return (
@@ -52,9 +53,14 @@ export default function Home() {
           <section id="news" className={styles.reviewsWrapper}>
             <NewsCarrousel />
           </section>
-          <section id="iandd" className={styles.technicWorks}></section>
-          <section id="network" className={styles.form}></section>
         </div>
+        <section id="iandd" className={styles.technicWorks}>
+          <h1>Trabajos técnicos</h1>
+          <WorksCarrousel />
+        </section>
+        <section id="network" className={styles.formWrapper}>
+          <FormBody />
+        </section>
       </main>
       <footer className={styles.footer}></footer>
     </div>
@@ -324,6 +330,172 @@ export default function Home() {
           </svg>
         </div>
       </div>
+    );
+  }
+
+  function WorksCarrousel() {
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <div
+          id="arrowLeftWorks"
+          style={{
+            padding: 20,
+          }}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="36"
+            viewBox="0 0 16 36"
+            fill="none"
+          >
+            <path d="M15 1L1 18L15 35" stroke="#00318D" />
+          </svg>
+        </div>
+        <Swiper
+          modules={[Navigation]}
+          spaceBetween={50}
+          slidesPerView={1}
+          navigation={{ nextEl: "#arrowRightWorks", prevEl: "#arrowLeftWorks" }}
+        >
+          <SwiperSlide className={styles.workContainer}>
+            <div>
+              <h1>
+                Acondicionamiento de suelo Cultivo de Frambuesa 2023/Jalisco,
+                México.
+              </h1>
+              <span></span>
+              <p>
+                Conoce mas sobre un manejo de acondicionamiento de suelo en el
+                cultivo de frambuesa con problemáticas de compactación, que
+                limitaba el desarrollo adecuado del cultivo. Dentro del trabajo
+                realizado podemos observar la importancia de tener un suelo
+                acondicionado que permita el desarrollo adecuado del cultivo.
+                Además de observar el comportamiento de la compactación durante
+                el ciclo del cultivo y como se ven afectadas las diferentes
+                variables agronómicas.
+              </p>
+            </div>
+            <Image src={imgWorksFrambuesa} alt="review" />
+          </SwiperSlide>
+          <SwiperSlide className={styles.workContainer}>
+            <div>
+              <h1>
+                Acondicionamiento de suelo Cultivo de Frambuesa 2023/Jalisco,
+                México.
+              </h1>
+              <span></span>
+              <p>
+                Conoce mas sobre un manejo de acondicionamiento de suelo en el
+                cultivo de frambuesa con problemáticas de compactación, que
+                limitaba el desarrollo adecuado del cultivo. Dentro del trabajo
+                realizado podemos observar la importancia de tener un suelo
+                acondicionado que permita el desarrollo adecuado del cultivo.
+                Además de observar el comportamiento de la compactación durante
+                el ciclo del cultivo y como se ven afectadas las diferentes
+                variables agronómicas.
+              </p>
+            </div>
+            <Image src={imgWorksFrambuesa} alt="review" />
+          </SwiperSlide>
+        </Swiper>
+        <div
+          id="arrowRightWorks"
+          style={{
+            padding: 20,
+          }}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="36"
+            viewBox="0 0 16 36"
+            fill="none"
+          >
+            <path d="M1 35L15 18L1 1" stroke="#00318D" />
+          </svg>
+        </div>
+      </div>
+    );
+  }
+
+  function FormBody() {
+    return (
+      <>
+        <div className={styles.ficha}>
+          <h1>Obtén la ficha técnica</h1>
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="33"
+              height="33"
+              viewBox="0 0 33 33"
+              fill="none"
+            >
+              <path d="M16.0695 5.35645V24.997" stroke="black" />
+              <path
+                d="M7.14197 16.0693L16.0695 24.9968L24.997 16.0693"
+                stroke="black"
+              />
+              <circle cx="16.0695" cy="16.0695" r="15.5695" stroke="black" />
+            </svg>
+            <button>Descargar ficha técnica</button>
+          </div>
+        </div>
+        <div className={styles.form}>
+          <p>Los campos marcados con * son obligatorios</p>
+          <form>
+            <input type="text" placeholder="Nombre*" />
+            <input type="text" placeholder="Teléfono de contacto*" />
+            <input type="text" placeholder="Correo electrónico*" />
+            <input
+              type="text"
+              placeholder="Nombre de la agrícola o institución"
+            />
+            <input type="text" placeholder="Cultivo" />
+            <input type="text" placeholder="País*" />
+            <input type="text" placeholder="Estado*" />
+            <input type="text" placeholder="Localidad*" />
+            <h5>¿Cómo podemos ayudarte?</h5>
+            <div className={styles.checkboxWrapper}>
+              <input
+                type="radio"
+                id="uno"
+                name="service"
+                value="Información de distribuidores"
+              />
+              <label htmlFor="uno">Información de distribuidores</label>
+            </div>
+            <div className={styles.checkboxWrapper}>
+              <input
+                type="radio"
+                id="dos"
+                name="service"
+                value="Asesoría técnica"
+              />
+              <label htmlFor="dos">Asesoría técnica</label>
+            </div>
+            <div className={styles.checkboxWrapper}>
+              <input
+                type="radio"
+                id="tres"
+                name="service"
+                value="Información de producto"
+              />
+              <label htmlFor="tres">Información de producto</label>
+            </div>
+            <input type="text" placeholder="Producto/Problemática*" />
+            <textarea placeholder="Tu mensaje"></textarea>
+            <button type="submit">Enviar</button>
+          </form>
+        </div>
+      </>
     );
   }
 }
