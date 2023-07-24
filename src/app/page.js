@@ -16,6 +16,7 @@ import imgDrench from "../../public/images/specs/drench.png";
 import imgRodado from "../../public/images/specs/rodado.png";
 import imgReviewManuel from "../../public/images/reviews/manuelGaribay.png";
 import imgWorksFrambuesa from "../../public/images/works/worksFrambruesa.png";
+import darkLogo from "../../public/images/logo_dark.png";
 
 export default function Home() {
   return (
@@ -62,7 +63,9 @@ export default function Home() {
           <FormBody />
         </section>
       </main>
-      <footer className={styles.footer}></footer>
+      <footer className={styles.footer}>
+        <FooterBody />
+      </footer>
     </div>
   );
 
@@ -494,6 +497,40 @@ export default function Home() {
             <textarea placeholder="Tu mensaje"></textarea>
             <button type="submit">Enviar</button>
           </form>
+        </div>
+      </>
+    );
+  }
+
+  function FooterBody() {
+    return (
+      <>
+        <div className={styles.footerUpperContainer}>
+          <div className={styles.footerLogo}>
+            <Image src={darkLogo} alt="logo" />
+            <div className={styles.separator}></div>
+            <div className={styles.directions}>
+              <p>+52 (614) 436 01 38</p>
+              <p> info@innovakglobal.com</p>
+              <p className={styles.direction}>
+                Blvd. Vicente Lombardo Toledano #6615Col. La <br />
+                Concordia C.P. 31375Chihuahua, Chihuahua, México.
+              </p>
+            </div>
+          </div>
+          <div className={styles.footerLang}>
+            <h6>Idiomas:</h6>
+            <p>Español</p>
+            <p>English</p>
+            <p>Portugués</p>
+            <p>Türkçe</p>
+          </div>
+        </div>
+        <div className={styles.footerBottomContainer}>
+          <p>
+            © Copyright 2020 - 2023 Diseño hecho por Deadline | Todos los
+            derechos Reservados Aviso de Privacidad
+          </p>
         </div>
       </>
     );

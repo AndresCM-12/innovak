@@ -460,6 +460,7 @@
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  margin-bottom: 50px;
 }
 .ficha div {
   display: flex;
@@ -584,7 +585,65 @@
 
 /* Footer */
 .footer {
-  height: 360px;
   background: #005dab;
+  padding-inline: 250px;
+  padding-block-start: 90px;
+  padding-block-end: 60px;
+}
+.footerUpperContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 40px;
+  flex-wrap: wrap;
+}
+.footerUpperContainer .footerLogo {
+  display: flex;
+  column-gap: 40px;
+  flex-wrap: wrap;
+}
+.footer img {
+  width: 186px;
+  height: 59px;
+}
+.footer .separator {
+  width: 1px;
+  height: 60px;
+  background-color: #fff;
+}
+.footer .directions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  row-gap: 8px;
+}
+
+.footerLang h6 {
+  color: #fff;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 15px;
+  margin-bottom: 20px;
+}
+.footerLang p {
+  color: #fff;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 20px;
+}
+.footerBottomContainer {
+  margin-top: 100px;
+}
+.footerBottomContainer p {
+  margin-top: 100px;
+  color: #fff;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 15px; /* 125% */
 }
 /* Footer */
