@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Navigation } from "swiper/modules";
+import { Hind_Vadodara } from "next/font/google";
 
 import imgMainBanner from "../../public/images/main_banner.png";
 import whiteLogo from "../../public/images/logo_white.png";
@@ -21,10 +22,19 @@ import imgEcca from "../../public/images/rootSection/tecnologiaEcca.png";
 import imgRoot from "../../public/images/rootSection/tecnologiaRaiz.png";
 
 import darkLogo from "../../public/images/logo_dark.png";
+const Hind_Vadodaraf = Hind_Vadodara({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 
 export default function Home() {
   return (
     <div className={styles.MainWrapper}>
+      <style jsx global>{`
+        html {
+          font-family: ${Hind_Vadodaraf.style.fontFamily};
+        }
+      `}</style>
       <header className={styles.header}>
         <HeaderBody />
       </header>
@@ -139,8 +149,9 @@ export default function Home() {
           </div>
 
           <div className={styles.rootLogo}>
-          <Image
+            <Image
               src={imgRoot}
+              alt="Logo root"
               style={{
                 width: "52%",
                 height: "100%",
@@ -150,20 +161,20 @@ export default function Home() {
 
             <Image
               src={imgEcca}
+              alt="Logo ecca"
               style={{
                 width: "40%",
                 height: "100%",
                 objectFit: "cover",
               }}
             />
-            
           </div>
-          
         </div>
 
         <div className={styles.rootImage}>
           <Image
             src={imgProductGalon}
+            alt="Imagen de presentacion de producto"
             style={{
               width: "100%",
               height: "100%",
@@ -190,7 +201,11 @@ export default function Home() {
             del suelo.
           </p>
         </div>
-        <div className={styles.presenceVideo}></div>
+        <div className={styles.presenceVideo}>
+          <video controls>
+            <source src="/videos/PromesolAniversario.mp4" />
+          </video>
+        </div>
       </>
     );
   }
