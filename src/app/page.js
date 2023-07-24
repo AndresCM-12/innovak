@@ -16,6 +16,10 @@ import imgDrench from "../../public/images/specs/drench.png";
 import imgRodado from "../../public/images/specs/rodado.png";
 import imgReviewManuel from "../../public/images/reviews/manuelGaribay.png";
 import imgWorksFrambuesa from "../../public/images/works/worksFrambruesa.png";
+import imgProductGalon from "../../public/images/rootSection/galon.png";
+import imgEcca from "../../public/images/rootSection/tecnologiaEcca.png";
+import imgRoot from "../../public/images/rootSection/tecnologiaRaiz.png";
+
 
 export default function Home() {
   return (
@@ -33,10 +37,9 @@ export default function Home() {
         </section>
 
         <div className={styles.whiteGradient}>
-          <section
-            id="raices"
-            style={{ height: 300, background: "transparent" }}
-          ></section>
+          <section id="raices" className={styles.rootContainer}>
+            <RootBody />
+          </section>
 
           <section className={styles.presenceContainer} id="presencia">
             <PresentsBody />
@@ -108,6 +111,64 @@ export default function Home() {
           </li>
         </ul>
       </nav>
+    );
+  }
+
+  function RootBody() {
+    return (
+      <>
+        <div className={styles.rootInfo}>
+          <div className={styles.rootText}>
+            <h1>Promesol 5x</h1>
+            <hr></hr>
+            <p>
+              Promesol ® 5X disminuye la compactación del suelo gracias a los
+              ácidos ECCA Carboxy® de su formulación, aglutinando partículas del
+              suelo, formando agregados estables, lo que produce un equilibrio
+              de macro y microporos. Como resultado, se obtiene una mejor
+              estructura física del suelo que favorece el crecimiento de la
+              raíz, y genera las condiciones adecuadas aireación y humedad.
+            </p>
+          </div>
+          <div className={styles.rootTechnology}>
+            <h4>Tecnologías</h4>
+            <a href="#form">solicita mas informacion</a>
+          </div>
+
+          <div className={styles.rootLogo}>
+          <Image
+              src={imgRoot}
+              style={{
+                width: "52%",
+                height: "100%",
+                objectFit: "cover",
+              }}
+            />
+
+            <Image
+              src={imgEcca}
+              style={{
+                width: "40%",
+                height: "100%",
+                objectFit: "cover",
+              }}
+            />
+            
+          </div>
+          
+        </div>
+
+        <div className={styles.rootImage}>
+          <Image
+            src={imgProductGalon}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
+          />
+        </div>
+      </>
     );
   }
 
