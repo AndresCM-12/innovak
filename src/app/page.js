@@ -3,7 +3,9 @@ import styles from "./page.module.css";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { Navigation } from "swiper/modules";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Navigation, Pagination } from "swiper/modules";
 import { Hind_Vadodara } from "next/font/google";
 
 import imgMainBanner from "../../public/images/main_banner.png";
@@ -22,6 +24,7 @@ import imgEcca from "../../public/images/rootSection/tecnologiaEcca.png";
 import imgRoot from "../../public/images/rootSection/tecnologiaRaiz.png";
 
 import darkLogo from "../../public/images/logo_dark.png";
+import { useState } from "react";
 const Hind_Vadodaraf = Hind_Vadodara({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -29,7 +32,7 @@ const Hind_Vadodaraf = Hind_Vadodara({
 
 export default function Home() {
   return (
-    <div className={styles.MainWrapper}>
+    <div className={styles.mainWrapper}>
       <style jsx global>{`
         html {
           font-family: ${Hind_Vadodaraf.style.fontFamily};
@@ -83,24 +86,33 @@ export default function Home() {
   );
 
   function HeaderBody() {
+    const [mobileMenu, setMobileMenu] = useState(false);
+
     return (
       <>
+        <MobileMenu mobileMenu={mobileMenu} setMobileMenu={setMobileMenu} />
+
         <div className={styles.logoImageContainer}>
           <Image className={styles.logoImage} alt="logo" src={whiteLogo} />
         </div>
         <NavsLink />
-        <div className={styles.mobileNav}>
+        <div
+          className={styles.mobileNav}
+          onClick={() => {
+            setMobileMenu(!mobileMenu);
+          }}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="ionicon"
+            className="ionicon"
             viewBox="0 0 512 512"
           >
             <path
               fill="black"
               stroke="currentColor"
-              stroke-linecap="round"
-              stroke-miterlimit="10"
-              stroke-width="32"
+              strokeLinecap="round"
+              strokeMiterlimit="10"
+              strokeWidth="32"
               d="M80 160h352M80 256h352M80 352h352"
             />
           </svg>
@@ -109,7 +121,55 @@ export default function Home() {
       </>
     );
   }
-
+  function MobileMenu({ mobileMenu, setMobileMenu }) {
+    return (
+      <div
+        className={styles.menuMobile}
+        onClick={() => {
+          setMobileMenu(!mobileMenu);
+        }}
+        style={{
+          opacity: mobileMenu ? "100%" : "0%",
+          display: mobileMenu ? "grid" : "none",
+        }}
+      >
+        <div
+          className={styles.nav}
+          style={{ right: mobileMenu ? 0 : "-100%" }}
+          onClick={() => {}}
+        >
+          <nav style={{ display: "flex" }}>
+            <ul className={styles.navUl}>
+              <li>
+                <a href="#inicio">Inicio</a>
+              </li>
+              <li>
+                <a href="#raices">Nuestras Raíces</a>
+              </li>
+              <li>
+                <a href="#presencia">Presencia</a>
+              </li>
+              <li>
+                <a href="#oferta">Oferta de valor</a>
+              </li>
+              <li>
+                <a href="#productos">Productos</a>
+              </li>
+              <li>
+                <a href="#news">Innovak news</a>
+              </li>
+              <li>
+                <a href="#iandd">I&D</a>
+              </li>
+              <li>
+                <a href="#network">Network</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    );
+  }
   function NavsLink() {
     return (
       <nav>
@@ -365,7 +425,8 @@ export default function Home() {
         </div>
         <Swiper
           autoplay={true}
-          modules={[Navigation]}
+          modules={[Navigation, Pagination]}
+          pagination={{ clickable: true }}
           loop={true}
           spaceBetween={50}
           slidesPerView={1}
