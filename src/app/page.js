@@ -89,6 +89,22 @@ export default function Home() {
           <Image className={styles.logoImage} alt="logo" src={whiteLogo} />
         </div>
         <NavsLink />
+        <div className={styles.mobileNav}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="ionicon"
+            viewBox="0 0 512 512"
+          >
+            <path
+              fill="black"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-miterlimit="10"
+              stroke-width="32"
+              d="M80 160h352M80 256h352M80 352h352"
+            />
+          </svg>
+        </div>
         <div className={styles.emptyContainer}></div>
       </>
     );
@@ -331,6 +347,7 @@ export default function Home() {
         }}
       >
         <div
+          className={styles.arrows}
           id="arrowLeft"
           style={{
             padding: 20,
@@ -347,7 +364,9 @@ export default function Home() {
           </svg>
         </div>
         <Swiper
+          autoplay={true}
           modules={[Navigation]}
+          loop={true}
           spaceBetween={50}
           slidesPerView={1}
           navigation={{ nextEl: "#arrowRight", prevEl: "#arrowLeft" }}
@@ -393,6 +412,7 @@ export default function Home() {
           </SwiperSlide>
         </Swiper>
         <div
+          className={styles.arrows}
           id="arrowRight"
           style={{
             padding: 20,
@@ -422,6 +442,7 @@ export default function Home() {
         }}
       >
         <div
+          className={styles.arrows}
           id="arrowLeftWorks"
           style={{
             padding: 20,
@@ -438,6 +459,8 @@ export default function Home() {
           </svg>
         </div>
         <Swiper
+          autoplay={true}
+          loop={true}
           modules={[Navigation]}
           spaceBetween={50}
           slidesPerView={1}
@@ -485,6 +508,7 @@ export default function Home() {
           </SwiperSlide>
         </Swiper>
         <div
+          className={styles.arrows}
           id="arrowRightWorks"
           style={{
             padding: 20,
