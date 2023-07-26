@@ -9,36 +9,32 @@
 .header {
   background: #fff;
   width: 100%;
-  height: 87px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding-inline: 40px;
-  padding-block: 22px;
   position: fixed;
   top: 0;
   z-index: 10;
   /* create a soft shadow in the border */
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
 }
 
 .logoImageContainer {
   width: 130px;
   height: 41px;
-  background-color: #fff;
 }
 
 .logoImage {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  background-color: #fff;
 }
 
 .navUl {
   display: flex;
   flex-direction: row;
+  column-gap: 20px;
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
@@ -51,7 +47,17 @@
   font-size: 14px;
   font-weight: 500;
   line-height: 17px;
-  padding: 0 10px;
+  padding: 10 10px;
+  padding-bottom: 2px;
+}
+.navUl li a {
+  border-bottom: 2px solid transparent;
+}
+.navUl li {
+  list-style: none;
+}
+.navUl li a:hover {
+  border-bottom: 2px solid black;
 }
 
 .emptyContainer {
@@ -63,7 +69,7 @@
 .mobileNav {
   display: none;
 }
-.menuMobile{
+.menuMobile {
   background-color: #00000038;
   width: 100%;
   height: 100%;
@@ -84,23 +90,22 @@
   place-items: center;
   transition: all 0.5s ease-in-out;
 }
-.visible{
+.visible {
   right: 0;
 }
-.hidden{
+.hidden {
   right: -100%;
 }
 .menuMobile nav ul {
   flex-direction: column;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
   row-gap: 20px;
 }
 /* Header */
 
 /* Main */
 .main {
-  margin-top: 87px;
   background: white;
   width: 100%;
   height: 100%;
@@ -157,7 +162,6 @@
 }
 
 .rootInfo {
-  width: 752px;
   margin-bottom: 64px;
   padding-top: 160px;
 }
@@ -188,14 +192,9 @@
   border: 1px solid #8dc63f;
 }
 
-.rootTechnology {
-  width: 100%;
-  align-items: center;
-  padding-inline-end: 20px;
-}
-
 .rootTechnology a {
-  width: 336px;
+  max-width: 336px;
+  width: 100%;
   height: 44px;
   display: flex;
   align-items: center;
@@ -448,6 +447,7 @@
   text-decoration-line: underline;
   max-width: 200px;
   margin-bottom: 8px;
+  cursor: pointer;
 }
 /* specs  */
 
@@ -594,7 +594,7 @@
 .ficha div {
   display: flex;
   flex-direction: row;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   column-gap: 20px;
   margin-top: 20px;
@@ -625,7 +625,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
   row-gap: 20px;
   width: 100%;
 }
@@ -680,7 +680,7 @@
 .form .checkboxWrapper {
   display: flex;
   flex-direction: row;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   column-gap: 10px;
 }
@@ -745,7 +745,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
   row-gap: 8px;
 }
 
@@ -933,7 +933,7 @@
     flex-wrap: wrap;
     column-gap: 100px;
     flex-direction: column-reverse;
-    align-items: start;
+    align-items: flex-start;
     row-gap: 20px;
     margin-bottom: 20px;
   }
@@ -970,14 +970,14 @@
   .footerUpperContainer {
     flex-direction: column;
     row-gap: 40px;
-    align-items: start;
+    align-items: flex-start;
   }
   .footer .separator {
     display: none;
   }
   .footerUpperContainer .footerLogo {
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
     row-gap: 40px;
   }
   .footerBottomContainer {
@@ -1032,6 +1032,7 @@
     max-width: 300px;
     text-align: center;
     margin-inline: auto;
+    margin-top: 40px;
   }
   .specsWrapper h5 {
     max-width: 300px;
@@ -1063,8 +1064,11 @@
   .rootInfo {
     padding-top: 40px;
   }
+  .reviewContainer h6 {
+    margin-bottom: 20px;
+  }
   .reviewContainer a {
-    padding-inline: 20px;
+    padding-inline: 28px;
     font-size: 14px;
     width: auto;
   }
@@ -1092,5 +1096,21 @@
 @media screen and (max-width: 450px) {
   .arrows {
     display: none !important;
+  }
+  .imageBannerContainer {
+    padding-top: 128px;
+  }
+  .rootContainer {
+    justify-content: center;
+  }
+  .rootTechnology {
+    text-align: center;
+    align-items: center;
+  }
+  .rootLogo {
+    margin-inline: auto;
+  }
+  .technicWorks {
+    padding-block-start: 60px;
   }
 }

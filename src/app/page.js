@@ -4,8 +4,7 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/pagination";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 import { Hind_Vadodara } from "next/font/google";
 
 import imgMainBanner from "../../public/images/main_banner.png";
@@ -25,6 +24,7 @@ import imgRoot from "../../public/images/rootSection/tecnologiaRaiz.png";
 
 import darkLogo from "../../public/images/logo_dark.png";
 import { useState } from "react";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 const Hind_Vadodaraf = Hind_Vadodara({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -38,9 +38,7 @@ export default function Home() {
           font-family: ${Hind_Vadodaraf.style.fontFamily};
         }
       `}</style>
-      <header className={styles.header}>
-        <HeaderBody />
-      </header>
+      <HeaderBody />
       <main className={styles.main}>
         <section id="inicio" className={styles.imageBannerContainer}>
           <Image
@@ -50,27 +48,50 @@ export default function Home() {
           />
         </section>
 
-        <div className={styles.whiteGradient}>
-          <section id="raices" className={styles.rootContainer}>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          className={styles.whiteGradient}
+        >
+          <motion.section
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            id="raices"
+            className={styles.rootContainer}
+          >
             <RootBody />
-          </section>
+          </motion.section>
 
-          <section className={styles.presenceContainer} id="presencia">
+          <motion.section
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className={styles.presenceContainer}
+            id="presencia"
+          >
             <PresentsBody />
-          </section>
-        </div>
+          </motion.section>
+        </motion.div>
 
-        <div className={styles.blueGradient}>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          className={styles.blueGradient}
+        >
           <section className={styles.beneficiosContainer} id="oferta">
             <BenefitsBody />
           </section>
-          <section className={styles.specsWrapper} id="productos">
+          <motion.section
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className={styles.specsWrapper}
+            id="productos"
+          >
             <SpecsBody />
-          </section>
+          </motion.section>
           <section id="news" className={styles.reviewsWrapper}>
             <NewsCarrousel />
           </section>
-        </div>
+        </motion.div>
         <section id="iandd" className={styles.technicWorks}>
           <h1>Trabajos técnicos</h1>
           <WorksCarrousel />
@@ -87,9 +108,26 @@ export default function Home() {
 
   function HeaderBody() {
     const [mobileMenu, setMobileMenu] = useState(false);
-
+    const [menuScrolling, setMenuScrolling] = useState(false);
+    const { scrollY } = useScroll();
+    useMotionValueEvent(scrollY, "change", (latest) => {
+      if (latest > 10) {
+        setMenuScrolling(true);
+      } else {
+        setMenuScrolling(false);
+      }
+    });
     return (
-      <>
+      <motion.header
+        initial={{ top: -50, opacity: 0 }}
+        whileInView={{ top: 0, opacity: 1 }}
+        className={styles.header}
+        style={{
+          paddingBlock: menuScrolling ? "20px" : "40px",
+          backgroundColor: menuScrolling ? "white" : "transparent",
+          boxShadow: menuScrolling ? "0px 0px 10px 0px rgba(0,0,0,0.25)" : "",
+        }}
+      >
         <MobileMenu mobileMenu={mobileMenu} setMobileMenu={setMobileMenu} />
 
         <div className={styles.logoImageContainer}>
@@ -118,7 +156,7 @@ export default function Home() {
           </svg>
         </div>
         <div className={styles.emptyContainer}></div>
-      </>
+      </motion.header>
     );
   }
   function MobileMenu({ mobileMenu, setMobileMenu }) {
@@ -221,7 +259,7 @@ export default function Home() {
           </div>
           <div className={styles.rootTechnology}>
             <h4>Tecnologías</h4>
-            <a href="#form">solicita mas informacion</a>
+            <a href="#network">solicita mas informacion</a>
           </div>
 
           <div className={styles.rootLogo}>
@@ -249,6 +287,7 @@ export default function Home() {
 
         <div className={styles.rootImage}>
           <Image
+            priority={false}
             src={imgProductGalon}
             alt="Imagen de presentacion de producto"
             style={{
@@ -339,7 +378,11 @@ export default function Home() {
 
   function SpecsBody() {
     return (
-      <div className={styles.mainContainer}>
+      <motion.div
+        whileInView={{ opacity: 1 }}
+        initial={{ opacity: 0 }}
+        className={styles.mainContainer}
+      >
         <h1>Especificaciones de producto</h1>
         <div className={styles.specsImagesRow}>
           <div className={styles.imageRow}>
@@ -393,13 +436,15 @@ export default function Home() {
             </p>
           </div>
         </div>
-      </div>
+      </motion.div>
     );
   }
 
   function NewsCarrousel() {
     return (
-      <div
+      <motion.div
+        whileInView={{ opacity: 1 }}
+        initial={{ opacity: 0 }}
         style={{
           display: "flex",
           justifyContent: "center",
@@ -424,10 +469,12 @@ export default function Home() {
           </svg>
         </div>
         <Swiper
-          autoplay={true}
-          modules={[Navigation, Pagination]}
-          pagination={{ clickable: true }}
           loop={true}
+          autoplay={{
+            delay: 5,
+            disableOnInteraction: false,
+          }}
+          modules={[Navigation]}
           spaceBetween={50}
           slidesPerView={1}
           navigation={{ nextEl: "#arrowRight", prevEl: "#arrowLeft" }}
@@ -489,13 +536,15 @@ export default function Home() {
             <path d="M1 35L15 18L1 1" stroke="#00318D" />
           </svg>
         </div>
-      </div>
+      </motion.div>
     );
   }
 
   function WorksCarrousel() {
     return (
-      <div
+      <motion.div
+        whileInView={{ opacity: 1 }}
+        initial={{ opacity: 0 }}
         style={{
           display: "flex",
           justifyContent: "center",
@@ -585,14 +634,18 @@ export default function Home() {
             <path d="M1 35L15 18L1 1" stroke="#00318D" />
           </svg>
         </div>
-      </div>
+      </motion.div>
     );
   }
 
   function FormBody() {
     return (
       <>
-        <div className={styles.ficha}>
+        <motion.div
+          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0 }}
+          className={styles.ficha}
+        >
           <h1>Obtén la ficha técnica</h1>
           <div>
             <svg
@@ -611,27 +664,28 @@ export default function Home() {
             </svg>
             <button>Descargar ficha técnica</button>
           </div>
-        </div>
+        </motion.div>
         <div className={styles.form}>
           <p>Los campos marcados con * son obligatorios</p>
-          <form>
-            <input type="text" placeholder="Nombre*" />
-            <input type="text" placeholder="Teléfono de contacto*" />
-            <input type="text" placeholder="Correo electrónico*" />
+          <form action="https://formsubmit.co/q.chavezandres@gmail.com" method="POST">
+            <input type="text" name="Nombre" placeholder="Nombre*" required/>
+            <input type="text" name="Teléfono de contacto" placeholder="Teléfono de contacto*" required />
+            <input type="text" name="Correo electrónico" placeholder="Correo electrónico*" required/>
             <input
               type="text"
+              name="Nombre de la agrícola o institución"
               placeholder="Nombre de la agrícola o institución"
             />
-            <input type="text" placeholder="Cultivo" />
-            <input type="text" placeholder="País*" />
-            <input type="text" placeholder="Estado*" />
-            <input type="text" placeholder="Localidad*" />
+            <input type="text" name="Cultivo" placeholder="Cultivo" />
+            <input type="text" name="País" placeholder="País*" required/>
+            <input type="text" name="Estado" placeholder="Estado*" required/>
+            <input type="text" name="Localidad" placeholder="Localidad*" required/>
             <h5>¿Cómo podemos ayudarte?</h5>
             <div className={styles.checkboxWrapper}>
               <input
                 type="radio"
                 id="uno"
-                name="service"
+                name="Servicio"
                 value="Información de distribuidores"
               />
               <label htmlFor="uno">Información de distribuidores</label>
@@ -640,7 +694,7 @@ export default function Home() {
               <input
                 type="radio"
                 id="dos"
-                name="service"
+                name="Servicio"
                 value="Asesoría técnica"
               />
               <label htmlFor="dos">Asesoría técnica</label>
@@ -649,13 +703,13 @@ export default function Home() {
               <input
                 type="radio"
                 id="tres"
-                name="service"
+                name="Servicio"
                 value="Información de producto"
               />
               <label htmlFor="tres">Información de producto</label>
             </div>
-            <input type="text" placeholder="Producto/Problemática*" />
-            <textarea placeholder="Tu mensaje"></textarea>
+            <input type="text" name="Producto/Problemática" placeholder="Producto/Problemática*" required/>
+            <textarea name="Mensaje" placeholder="Tu mensaje"></textarea>
             <button type="submit">Enviar</button>
           </form>
         </div>
@@ -665,7 +719,7 @@ export default function Home() {
 
   function FooterBody() {
     return (
-      <>
+      <motion.div whileInView={{ opacity: 1 }} initial={{ opacity: 0 }}>
         <div className={styles.footerUpperContainer}>
           <div className={styles.footerLogo}>
             <Image src={darkLogo} alt="logo" />
@@ -693,7 +747,7 @@ export default function Home() {
             derechos Reservados Aviso de Privacidad
           </p>
         </div>
-      </>
+      </motion.div>
     );
   }
 }
