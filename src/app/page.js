@@ -23,6 +23,11 @@ import imgEcca from "../../public/images/rootSection/tecnologiaEcca.png";
 import imgRoot from "../../public/images/rootSection/tecnologiaRaiz.png";
 
 import darkLogo from "../../public/images/logo_dark.png";
+
+import infoImportanciaSuelo from "../../public/images/infografias/importanciaSuelos.jpg";
+import infoSalinidadSuelos from "../../public/images/infografias/salinidadSuelos.jpg";
+import infoSueloCompacto from "../../public/images/infografias/sueloCompacto.jpg";
+
 import { useState } from "react";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 const Hind_Vadodaraf = Hind_Vadodara({
@@ -347,7 +352,7 @@ export default function Home() {
           <div className={styles.divider}> </div>
           <Benefit
             image={imgInfiltracion}
-            text={"Mejor la infiltración del agua"}
+            text={"Mejora la infiltración del agua"}
           />
           <div className={styles.divider}> </div>
           <Benefit
@@ -377,6 +382,24 @@ export default function Home() {
   }
 
   function SpecsBody() {
+    const [showInfographics, setShowInfographics] = useState(false);
+    const [infoIndex, setInfoIndex] = useState(0);
+    const images = [
+      { obj: infoSueloCompacto, name: "sueloCompacto.jpg" },
+      { obj: infoSalinidadSuelos, name: "salinidadSuelos.jpg" },
+      { obj: infoImportanciaSuelo, name: "importanciaSuelos.jpg" },
+    ];
+    const handleDownloadClick = (index) => {
+      const imageUrl = `/images/infografias/${images[index].name}`;
+      const link = document.createElement("a");
+      link.href = imageUrl;
+      link.download = images[index].name;
+      link.click();
+    };
+    const handleLinkClick = (index) => {
+      setInfoIndex(index);
+      setShowInfographics(true);
+    };
     return (
       <motion.div
         whileInView={{ opacity: 1 }}
@@ -415,25 +438,55 @@ export default function Home() {
         <h5>Infografias</h5>
         <div className={styles.infografiasRowWrapper}>
           <div className={styles.infografiasRow}>
-            <p>¿Qué es un suelo compactado?</p>
+            <p
+              onClick={() => {
+                handleLinkClick(0);
+              }}
+            >
+              ¿Qué es un suelo compactado?
+            </p>
             <p>
               Puede ser que la problemática en tu cultivo, sea la compactación
               de los suelos. ¡Conoce mas!
             </p>
           </div>
           <div className={styles.infografiasRow}>
-            <p>¿Salinidad en tu suelo?</p>
+            <p
+              onClick={() => {
+                handleLinkClick(1);
+              }}
+            >
+              ¿Salinidad en tu suelo?
+            </p>
             <p>
               Sabias que puedes corregir problemáticas acondicionando tu suelo,
               aprende como.
             </p>
           </div>
           <div className={styles.infografiasRow}>
-            <p>¿Cuál es la importancia del suelo en los cultivos?</p>
+            <p
+              onClick={() => {
+                handleLinkClick(2);
+              }}
+            >
+              ¿Cuál es la importancia del suelo en los cultivos?
+            </p>
             <p>
               Aprende sobre la importancia del suelo en el establecimiento y
               desarrollo de tus cultivos
             </p>
+          </div>
+        </div>
+        <div
+          onClick={() => {
+            setShowInfographics(false);
+          }}
+          className={styles.infographicsContainer}
+          style={{ display: showInfographics ? "grid" : "none" }}
+        >
+          <div className={styles.infoWrapper}>
+            <Image alt="infografia" src={images[infoIndex].obj} />
+            <p onClick={() => handleDownloadClick(infoIndex)}>Descargar</p>
           </div>
         </div>
       </motion.div>
@@ -667,19 +720,37 @@ export default function Home() {
         </motion.div>
         <div className={styles.form}>
           <p>Los campos marcados con * son obligatorios</p>
-          <form action="https://formsubmit.co/q.chavezandres@gmail.com" method="POST">
-            <input type="text" name="Nombre" placeholder="Nombre*" required/>
-            <input type="text" name="Teléfono de contacto" placeholder="Teléfono de contacto*" required />
-            <input type="text" name="Correo electrónico" placeholder="Correo electrónico*" required/>
+          <form
+            action="https://formsubmit.co/q.chavezandres@gmail.com"
+            method="POST"
+          >
+            <input type="text" name="Nombre" placeholder="Nombre*" required />
+            <input
+              type="text"
+              name="Teléfono de contacto"
+              placeholder="Teléfono de contacto*"
+              required
+            />
+            <input
+              type="text"
+              name="Correo electrónico"
+              placeholder="Correo electrónico*"
+              required
+            />
             <input
               type="text"
               name="Nombre de la agrícola o institución"
               placeholder="Nombre de la agrícola o institución"
             />
             <input type="text" name="Cultivo" placeholder="Cultivo" />
-            <input type="text" name="País" placeholder="País*" required/>
-            <input type="text" name="Estado" placeholder="Estado*" required/>
-            <input type="text" name="Localidad" placeholder="Localidad*" required/>
+            <input type="text" name="País" placeholder="País*" required />
+            <input type="text" name="Estado" placeholder="Estado*" required />
+            <input
+              type="text"
+              name="Localidad"
+              placeholder="Localidad*"
+              required
+            />
             <h5>¿Cómo podemos ayudarte?</h5>
             <div className={styles.checkboxWrapper}>
               <input
@@ -708,7 +779,12 @@ export default function Home() {
               />
               <label htmlFor="tres">Información de producto</label>
             </div>
-            <input type="text" name="Producto/Problemática" placeholder="Producto/Problemática*" required/>
+            <input
+              type="text"
+              name="Producto/Problemática"
+              placeholder="Producto/Problemática*"
+              required
+            />
             <textarea name="Mensaje" placeholder="Tu mensaje"></textarea>
             <button type="submit">Enviar</button>
           </form>

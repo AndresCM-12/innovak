@@ -150,7 +150,7 @@
 .rootContainer {
   height: auto;
   width: 100%;
-  padding-inline: 250px;
+  padding-inline: 10vw;
 }
 
 .rootContainer,
@@ -448,6 +448,52 @@
   max-width: 200px;
   margin-bottom: 8px;
   cursor: pointer;
+}
+.infographicsContainer {
+  display: grid;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  background-color: #00000041;
+  z-index: 15;
+  place-items: center;
+}
+.infographicsContainer .infoWrapper {
+  height: 95%;
+  width: 80%;
+  background-color: white;
+  padding: 40px;
+  border-radius: 20px;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.infographicsContainer .infoWrapper::-webkit-scrollbar {
+  display: none;
+}
+.infographicsContainer .infoWrapper p {
+  display: grid;
+  place-items: center;
+  border-radius: 30px;
+  background: #005dab;
+  height: 45px;
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  padding-inline: 60px;
+}
+.infographicsContainer img {
+  height: 90%;
+  width: 100%;
+  object-fit: contain;
 }
 /* specs  */
 
