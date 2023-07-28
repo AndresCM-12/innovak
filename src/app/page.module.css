@@ -516,6 +516,7 @@
   border-radius: 100%;
   margin-bottom: 18px;
   user-select: none;
+  object-fit: cover;
 }
 .reviewContainer p {
   color: #898989;

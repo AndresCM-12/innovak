@@ -17,6 +17,9 @@ import imgGoteo from "../../public/images/specs/goteo.png";
 import imgDrench from "../../public/images/specs/drench.png";
 import imgRodado from "../../public/images/specs/rodado.png";
 import imgReviewManuel from "../../public/images/reviews/manuelGaribay.png";
+import imgReviewIvanQuiñonez from "../../public/images/reviews/ivanQuiñonez.png";
+import imgReviewJorgeAdrian from "../../public/images/reviews/jorgeAdrian.png";
+import imgReviewReynaldoCabrera from "../../public/images/reviews/reynaldoCabrera.png";
 import imgWorksFrambuesa from "../../public/images/works/worksFrambruesa.png";
 import imgProductGalon from "../../public/images/rootSection/galon.png";
 import imgEcca from "../../public/images/rootSection/tecnologiaEcca.png";
@@ -543,32 +546,45 @@ export default function Home() {
               ayudó a mejorar la estructura en un suelo arcilloso.
             </p>
             <h6>Ing. Manuel Garibay Carreón</h6>
+            <a href="https://www.youtube.com/watch?v=DHsCqyxqwZM&ab_channel=InnovakGlobal">
+              Conoce su testimonio
+            </a>
+          </SwiperSlide>
+          <SwiperSlide className={styles.reviewContainer}>
+            <Image src={imgReviewIvanQuiñonez} alt="review" />
+            <p>Navolato, Sinaloa</p>
+            <p>
+              El Ing. Iván Quiñonez, nos habla de las dificultades de trabajar
+              con suelos compactados y comparte su experiencia utilizando el
+              Promesol 5X. Comenta como lo ha ayudado a mantener su cultivo en
+              óptimo desarrollo y la importancia de tener un suelo manejable.
+            </p>
+            <h6>Ing. Iván Quiñónez Medrano</h6>
+            <a href="https://youtu.be/ni78a3IFzwY">Conoce su testimonio</a>
+          </SwiperSlide>
+          <SwiperSlide className={styles.reviewContainer}>
+            <Image src={imgReviewJorgeAdrian} alt="review" />
+            <p>Culiacán, Sinaloa</p>
+            <p>
+              El Ing. Jorge Adrian, nos platica cómo ha afrontado diferentes
+              problemáticas y cómo es que ha conocido a innovak global y la
+              aplicación promesol que le ayuda en el mejoramiento de la
+              estructura del suelo además de las condiciones de aireación
+              beneficiando en su cultivo y productividad.
+            </p>
+            <h6>Ing. Jorge Adrian Ibarra Avila</h6>
             <a href="#">Conoce su testimonio</a>
           </SwiperSlide>
           <SwiperSlide className={styles.reviewContainer}>
-            <Image src={imgReviewManuel} alt="review" />
-            <p>Tangancícuaro, Michoacán</p>
+            <Image src={imgReviewReynaldoCabrera} alt="review" />
+            <p>Michoacán México</p>
             <p>
-              Conoce el caso de éxito del Ing. Manuel Garibay, que, con más de
-              25 años de experiencia en campo, sigue recomendando Promesol 5X.
-              El Ing. Garibay nos comparte un poco sobre su experiencia usando
-              Promesol 5X®, en diferentes cultivos a través del tiempo y como lo
-              ayudó a mejorar la estructura en un suelo arcilloso.
+              Conoce la historia de éxito de promesol en el campo al cual de
+              llamaban “las piedras” en michoacán México. El Agricultor Reynaldo
+              Cabrera nos platica cómo fue que utilizó Promesol, observó su
+              efecto y continuar utilizándolo hasta la fecha.
             </p>
-            <h6>Ing. Manuel Garibay Carreón</h6>
-            <a href="#">Conoce su testimonio</a>
-          </SwiperSlide>
-          <SwiperSlide className={styles.reviewContainer}>
-            <Image src={imgReviewManuel} alt="review" />
-            <p>Tangancícuaro, Michoacán</p>
-            <p>
-              Conoce el caso de éxito del Ing. Manuel Garibay, que, con más de
-              25 años de experiencia en campo, sigue recomendando Promesol 5X.
-              El Ing. Garibay nos comparte un poco sobre su experiencia usando
-              Promesol 5X®, en diferentes cultivos a través del tiempo y como lo
-              ayudó a mejorar la estructura en un suelo arcilloso.
-            </p>
-            <h6>Ing. Manuel Garibay Carreón</h6>
+            <h6>Agricultor. Reynaldo Cabrera Oropreza </h6>
             <a href="#">Conoce su testimonio</a>
           </SwiperSlide>
         </Swiper>
