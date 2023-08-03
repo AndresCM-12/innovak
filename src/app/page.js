@@ -54,44 +54,21 @@ export default function Home() {
           </video>
         </section>
 
-        <div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          className={styles.whiteGradient}
-        >
-          <section
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            id="raices"
-            className={styles.rootContainer}
-          >
+        <div className={styles.whiteGradient}>
+          <section id="raices" className={styles.rootContainer}>
             <RootBody />
           </section>
 
-          <section
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            className={styles.presenceContainer}
-            id="presencia"
-          >
+          <section className={styles.presenceContainer} id="presencia">
             <PresentsBody />
           </section>
         </div>
 
-        <div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          className={styles.blueGradient}
-        >
+        <div className={styles.blueGradient}>
           <section className={styles.beneficiosContainer} id="oferta">
             <BenefitsBody />
           </section>
-          <section
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            className={styles.specsWrapper}
-            id="productos"
-          >
+          <section className={styles.specsWrapper} id="productos">
             <SpecsBody />
           </section>
           <section id="news" className={styles.reviewsWrapper}>

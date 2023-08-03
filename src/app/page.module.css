@@ -204,6 +204,7 @@
   border-radius: 30px;
   background: #005dab;
   text-align: center;
+  color: #fff;
 }
 
 .rootTechnology h4 {
@@ -223,6 +224,7 @@
   height: 516px;
   margin-top: 68px;
 }
+
 /* Root Section*/
 
 /* presence  */
@@ -778,6 +780,7 @@
   display: flex;
   column-gap: 40px;
   flex-wrap: wrap;
+  color: white;
 }
 .footer img {
   width: 186px;
