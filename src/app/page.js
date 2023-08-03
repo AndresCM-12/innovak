@@ -49,38 +49,36 @@ export default function Home() {
       <HeaderBody />
       <main className={styles.main}>
         <section id="inicio" className={styles.imageBannerContainer}>
-          <Image
-            className={styles.imageBanner}
-            src={imgMainBanner}
-            alt="Imagen de presentacion de producto"
-          />
+          <video autoPlay muted loop className={styles.imageBanner}>
+            <source src="/videos/portada.mp4" />
+          </video>
         </section>
 
-        <motion.div
+        <div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           className={styles.whiteGradient}
         >
-          <motion.section
+          <section
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             id="raices"
             className={styles.rootContainer}
           >
             <RootBody />
-          </motion.section>
+          </section>
 
-          <motion.section
+          <section
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             className={styles.presenceContainer}
             id="presencia"
           >
             <PresentsBody />
-          </motion.section>
-        </motion.div>
+          </section>
+        </div>
 
-        <motion.div
+        <div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           className={styles.blueGradient}
@@ -88,18 +86,18 @@ export default function Home() {
           <section className={styles.beneficiosContainer} id="oferta">
             <BenefitsBody />
           </section>
-          <motion.section
+          <section
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             className={styles.specsWrapper}
             id="productos"
           >
             <SpecsBody />
-          </motion.section>
+          </section>
           <section id="news" className={styles.reviewsWrapper}>
             <NewsCarrousel />
           </section>
-        </motion.div>
+        </div>
         <section id="iandd" className={styles.technicWorks}>
           <h1>Trabajos técnicos</h1>
           <WorksCarrousel />
@@ -325,7 +323,7 @@ export default function Home() {
           </p>
         </div>
         <div className={styles.presenceVideo}>
-          <video controls>
+          <video autoPlay loop muted>
             <source src="/videos/PromesolAniversario.mp4" />
           </video>
         </div>
