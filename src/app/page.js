@@ -49,7 +49,7 @@ export default function Home() {
       <HeaderBody />
       <main className={styles.main}>
         <section id="inicio" className={styles.imageBannerContainer}>
-          <video autoPlay muted loop className={styles.imageBanner}>
+          <video autoPlay muted loop controls className={styles.imageBanner}>
             <source src="/videos/portada.mp4" />
           </video>
         </section>
@@ -142,6 +142,7 @@ export default function Home() {
       </motion.header>
     );
   }
+
   function MobileMenu({ mobileMenu, setMobileMenu }) {
     return (
       <div
@@ -191,6 +192,7 @@ export default function Home() {
       </div>
     );
   }
+
   function NavsLink() {
     return (
       <nav>
@@ -300,7 +302,7 @@ export default function Home() {
           </p>
         </div>
         <div className={styles.presenceVideo}>
-          <video autoPlay loop muted>
+          <video autoPlay loop controls muted>
             <source src="/videos/PromesolAniversario.mp4" />
           </video>
         </div>
@@ -455,6 +457,9 @@ export default function Home() {
             </p>
           </div>
         </div>
+        <p style={{ textAlign: "center", marginTop: 30 }}>
+          Da click en los links para descargar
+        </p>
         <div
           onClick={() => {
             setShowInfographics(false);
@@ -472,6 +477,18 @@ export default function Home() {
   }
 
   function NewsCarrousel() {
+    const [showVideos, setShowVideos] = useState(false);
+    const [videoIndex, setVideoIndex] = useState(0);
+    const videos = [
+      `<iframe style={{height: '100%', width: '100%'}} src="https://www.youtube.com/embed/DHsCqyxqwZM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`,
+      `<iframe style={{height: '100%', width: '100%'}} src="https://www.youtube.com/embed/ni78a3IFzwY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`,
+      `<iframe style={{height: '100%', width: '100%'}} src="https://www.youtube.com/embed/ZkRGuKr0acM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`,
+      `<iframe style={{height: '100%', width: '100%'}} src="https://www.youtube.com/embed/M3vX4dqk_L4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`,
+    ];
+    const handleLinkClick = (index) => {
+      setVideoIndex(index);
+      setShowVideos(true);
+    };
     return (
       <motion.div
         whileInView={{ opacity: 1 }}
@@ -482,6 +499,18 @@ export default function Home() {
           alignItems: "center",
         }}
       >
+        <div
+          onClick={() => {
+            setShowVideos(false);
+          }}
+          className={styles.videosContainer}
+          style={{ display: showVideos ? "grid" : "none" }}
+        >
+          <div className={styles.videoWrapper}>
+            <div dangerouslySetInnerHTML={{ __html: videos[videoIndex] }}></div>
+          </div>
+        </div>
+
         <div
           className={styles.arrows}
           id="arrowLeft"
@@ -521,7 +550,11 @@ export default function Home() {
               ayudó a mejorar la estructura en un suelo arcilloso.
             </p>
             <h6>Ing. Manuel Garibay Carreón</h6>
-            <a href="https://www.youtube.com/watch?v=DHsCqyxqwZM&ab_channel=InnovakGlobal">
+            <a
+              onClick={() => {
+                handleLinkClick(0);
+              }}
+            >
               Conoce su testimonio
             </a>
           </SwiperSlide>
@@ -535,7 +568,13 @@ export default function Home() {
               óptimo desarrollo y la importancia de tener un suelo manejable.
             </p>
             <h6>Ing. Iván Quiñónez Medrano</h6>
-            <a href="https://youtu.be/ni78a3IFzwY">Conoce su testimonio</a>
+            <a
+              onClick={() => {
+                handleLinkClick(1);
+              }}
+            >
+              Conoce su testimonio
+            </a>
           </SwiperSlide>
           <SwiperSlide className={styles.reviewContainer}>
             <Image src={imgReviewJorgeAdrian} alt="review" />
@@ -548,7 +587,13 @@ export default function Home() {
               beneficiando en su cultivo y productividad.
             </p>
             <h6>Ing. Jorge Adrian Ibarra Avila</h6>
-            <a href="#">Conoce su testimonio</a>
+            <a
+              onClick={() => {
+                handleLinkClick(2);
+              }}
+            >
+              Conoce su testimonio
+            </a>
           </SwiperSlide>
           <SwiperSlide className={styles.reviewContainer}>
             <Image src={imgReviewReynaldoCabrera} alt="review" />
@@ -560,7 +605,13 @@ export default function Home() {
               efecto y continuar utilizándolo hasta la fecha.
             </p>
             <h6>Agricultor. Reynaldo Cabrera Oropreza </h6>
-            <a href="#">Conoce su testimonio</a>
+            <a
+              onClick={() => {
+                handleLinkClick(3);
+              }}
+            >
+              Conoce su testimonio
+            </a>
           </SwiperSlide>
         </Swiper>
         <div
@@ -683,6 +734,13 @@ export default function Home() {
   }
 
   function FormBody() {
+    const handleDownloadClick = () => {
+      const doc = `/fichaTecnica.pdf`;
+      const link = document.createElement("a");
+      link.href = doc;
+      link.download = "promesol5x_FichaTecnica.pdf";
+      link.click();
+    };
     return (
       <>
         <motion.div
@@ -706,7 +764,13 @@ export default function Home() {
               />
               <circle cx="16.0695" cy="16.0695" r="15.5695" stroke="black" />
             </svg>
-            <button>Descargar ficha técnica</button>
+            <button
+              onClick={() => {
+                handleDownloadClick();
+              }}
+            >
+              Descargar ficha técnica
+            </button>
           </div>
         </motion.div>
         <div className={styles.form}>
