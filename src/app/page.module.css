@@ -4,6 +4,14 @@
   height: 100%;
   background-color: white;
 }
+.mainLoadingWrapper {
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #00318d;
+  transition: all 0.5s ease-in-out;
+}
 
 /* Header */
 .header {
@@ -519,8 +527,8 @@
   z-index: 13;
 }
 .videoWrapper iframe {
-  width: 80vw;
-  height: 66vh;
+  width: 80vw !important;
+  height: 66vh !important;
 }
 /* specs  */
 
@@ -611,10 +619,23 @@
   height: 100%;
   border-radius: 20px;
 }
+.technicWorks .workContainer h6 {
+  background-color: #005dab;
+  color: white;
+  padding: 12px 28px;
+  text-decoration: underline;
+  display: block;
+  width: fit-content;
+  border-radius: 20px;
+  margin-top: 20px;
+  font-weight: 400;
+  cursor: pointer;
+}
 .technicWorks .workContainer div {
   padding-inline: 90px;
   padding-block: 180px;
   border-radius: 20px;
+  min-height: 540px;
 }
 .technicWorks .workContainer img {
   width: 100%;

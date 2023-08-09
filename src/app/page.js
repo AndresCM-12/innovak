@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import { Hind_Vadodara } from "next/font/google";
+import ClipLoader from "react-spinners/ClipLoader";
 
 import imgMainBanner from "../../public/images/main_banner.png";
 import whiteLogo from "../../public/images/logo_white.png";
@@ -31,7 +32,7 @@ import infoImportanciaSuelo from "../../public/images/infografias/importanciaSue
 import infoSalinidadSuelos from "../../public/images/infografias/salinidadSuelos.jpg";
 import infoSueloCompacto from "../../public/images/infografias/sueloCompacto.jpg";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 const Hind_Vadodaraf = Hind_Vadodara({
   subsets: ["latin"],
@@ -39,55 +40,378 @@ const Hind_Vadodaraf = Hind_Vadodara({
 });
 
 export default function Home() {
-  return (
-    <div className={styles.mainWrapper}>
-      <style jsx global>{`
-        html {
-          font-family: ${Hind_Vadodaraf.style.fontFamily};
-        }
-      `}</style>
-      <HeaderBody />
-      <main className={styles.main}>
-        <section id="inicio" className={styles.imageBannerContainer}>
-          <video autoPlay muted loop controls className={styles.imageBanner}>
-            <source src="/videos/portada.mp4" />
-          </video>
-        </section>
+  const [dataTestimonials, setDataTestimonials] = useState(null);
+  const [dataWorks, setDataWorks] = useState(null);
+  const [isLoading, setLoading] = useState(true);
+  const [videos, setVideos] = useState([]);
 
-        <div className={styles.whiteGradient}>
-          <section id="raices" className={styles.rootContainer}>
-            <RootBody />
+  //Sections
+  const [firstSection, setFirstSection] = useState(null);
+  const [secondSection, setSecondSection] = useState(null);
+  const [thirdSection, setThirdSection] = useState(null);
+  const [fourthSection, setFourthSection] = useState(null);
+
+  useEffect(() => {
+    Promise.all([
+      getFirstSection(),
+      getSecondSection(),
+      getThirdSection(),
+      getFourthSection(),
+      getTestimonials(),
+      getWorks(),
+    ]).finally(() => {
+      setLoading(false);
+    });
+  }, []);
+
+  const getFirstSection = async () => {
+    const data = await fetch("https://www.innovakglobal.com/graphql", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        query: `query NewQuery {
+          categories(where: {name: "promesol5x_page"}) {
+            nodes {
+              posts(where: {title: "First_section"}) {
+                edges {
+                  node {
+                    id
+                    title
+                    content
+                  }
+                }
+              }
+            }
+          }
+        }`,
+      }),
+    });
+
+    const post = await data.json();
+    const rawSection =
+      post.data.categories.nodes[0].posts.edges[0].node.content.replace(
+        /\n+/g,
+        ""
+      );
+    var titulo = rawSection.split("<titulo>")[1].split("<titulo>")[0];
+    var texto = rawSection.split("<texto>")[1].split("<texto>")[0];
+    var cta = rawSection.split("<cta>")[1].split("<cta>")[0];
+
+    var firstSection = {
+      titulo: titulo,
+      texto: texto,
+      cta: cta,
+    };
+    setFirstSection(firstSection);
+  };
+
+  const getSecondSection = async () => {
+    const data = await fetch("https://www.innovakglobal.com/graphql", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        query: `query NewQuery {
+          categories(where: {name: "promesol5x_page"}) {
+            nodes {
+              posts(where: {title: "Second_section"}) {
+                edges {
+                  node {
+                    id
+                    title
+                    content
+                  }
+                }
+              }
+            }
+          }
+        }`,
+      }),
+    });
+
+    const post = await data.json();
+    const rawSection =
+      post.data.categories.nodes[0].posts.edges[0].node.content.replace(
+        /\n+/g,
+        ""
+      );
+    var titulo = rawSection.split("<titulo>")[1].split("<titulo>")[0];
+    var texto = rawSection.split("<texto>")[1].split("<texto>")[0];
+    var video = rawSection.split("<video>")[1].split("<video>")[0];
+
+    var SecondSection = {
+      titulo: titulo,
+      texto: texto,
+      video: video,
+    };
+    setSecondSection(SecondSection);
+  };
+
+  const getThirdSection = async () => {
+    const data = await fetch("https://www.innovakglobal.com/graphql", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        query: `query NewQuery {
+          categories(where: {name: "promesol5x_page"}) {
+            nodes {
+              posts(where: {title: "Third_section"}) {
+                edges {
+                  node {
+                    id
+                    title
+                    content
+                  }
+                }
+              }
+            }
+          }
+        }`,
+      }),
+    });
+
+    const post = await data.json();
+    const rawSection =
+      post.data.categories.nodes[0].posts.edges[0].node.content.replace(
+        /\n+/g,
+        ""
+      );
+    var titulo = rawSection.split("<titulo>")[1].split("<titulo>")[0];
+    var texto = rawSection.split("<texto>")[1].split("<texto>")[0];
+    var beneficio1 = rawSection
+      .split("<beneficio1>")[1]
+      .split("<beneficio1>")[0];
+    var beneficio2 = rawSection
+      .split("<beneficio2>")[1]
+      .split("<beneficio2>")[0];
+    var beneficio3 = rawSection
+      .split("<beneficio3>")[1]
+      .split("<beneficio3>")[0];
+    var beneficio4 = rawSection
+      .split("<beneficio4>")[1]
+      .split("<beneficio4>")[0];
+
+    var ThirdSection = {
+      titulo: titulo,
+      texto: texto,
+      beneficio1: beneficio1,
+      beneficio2: beneficio2,
+      beneficio3: beneficio3,
+      beneficio4: beneficio4,
+    };
+    setThirdSection(ThirdSection);
+  };
+
+  const getFourthSection = async () => {
+    const data = await fetch("https://www.innovakglobal.com/graphql", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        query: `query NewQuery {
+          categories(where: {name: "promesol5x_page"}) {
+            nodes {
+              posts(where: {title: "Fourth_section"}) {
+                edges {
+                  node {
+                    id
+                    title
+                    content
+                  }
+                }
+              }
+            }
+          }
+        }`,
+      }),
+    });
+
+    const post = await data.json();
+    const rawSection =
+      post.data.categories.nodes[0].posts.edges[0].node.content.replace(
+        /\n+/g,
+        ""
+      );
+    var titulo = rawSection.split("<titulo>")[1].split("<titulo>")[0];
+    var beneficio = rawSection.split("<beneficio>")[1].split("<beneficio>")[0];
+    var beneficio2 = rawSection
+      .split("<beneficio2>")[1]
+      .split("<beneficio2>")[0];
+    var beneficio3 = rawSection
+      .split("<beneficio3>")[1]
+      .split("<beneficio3>")[0];
+    var texto = rawSection.split("<texto>")[1].split("<texto>")[0];
+    var titulo2 = rawSection.split("<titulo2>")[1].split("<titulo2>")[0];
+    var texto2 = rawSection.split("<texto2>")[1].split("<texto2>")[0];
+
+    var FourthSection = {
+      titulo: titulo,
+      texto: texto,
+      beneficio: beneficio,
+      beneficio2: beneficio2,
+      beneficio3: beneficio3,
+      texto: texto,
+      titulo2: titulo2,
+      texto2: texto2,
+    };
+    setFourthSection(FourthSection);
+  };
+
+  const getTestimonials = async () => {
+    const data = await fetch("https://www.innovakglobal.com/graphql", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        query: `query NewQuery {
+          categories(where: {name: "promesol5x_page"}) {
+            nodes {
+              posts(where: {title: "Testimonios_carrousel"}) {
+                edges {
+                  node {
+                    id
+                    title
+                    content
+                  }
+                }
+              }
+            }
+          }
+        }`,
+      }),
+    });
+    const post = await data.json();
+    const rawTestimonials =
+      post.data.categories.nodes[0].posts.edges[0].node.content.replace(
+        /\n+/g,
+        ""
+      );
+    const testimonials = rawTestimonials.split("<p>separator</p>");
+    const carrouselItems = [];
+    testimonials.forEach((testimonial) => {
+      var img = testimonial.split("<img>")[1].split("<img>")[0];
+      var lugar = testimonial.split("<lugar>")[1].split("<lugar>")[0];
+      var texto = testimonial.split("<texto>")[1].split("<texto>")[0];
+      var nombre = testimonial.split("<nombre>")[1].split("<nombre>")[0];
+      var link = testimonial.split("<link>")[1].split("<link>")[0];
+      videos.push(link);
+      carrouselItems.push({
+        img: img,
+        lugar: lugar,
+        texto: texto,
+        nombre: nombre,
+        link: link,
+      });
+    });
+    setDataTestimonials(carrouselItems);
+    setVideos(videos);
+  };
+
+  const getWorks = async () => {
+    const data = await fetch("https://www.innovakglobal.com/graphql", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        query: `query NewQuery {
+          categories(where: {name: "promesol5x_page"}) {
+            nodes {
+              posts(where: {title: "Works_carrousel"}) {
+                edges {
+                  node {
+                    id
+                    title
+                    content
+                  }
+                }
+              }
+            }
+          }
+        }`,
+      }),
+    });
+
+    const post = await data.json();
+    const rawWorks =
+      post.data.categories.nodes[0].posts.edges[0].node.content.replace(
+        /\n+/g,
+        ""
+      );
+    const testimonials = rawWorks.split("<p>separator</p>");
+    const carrouselItems = [];
+    testimonials.forEach((testimonial) => {
+      var img = testimonial.split("<img>")[1].split("<img>")[0];
+      var titulo = testimonial.split("<titulo>")[1].split("<titulo>")[0];
+      var texto = testimonial.split("<texto>")[1].split("<texto>")[0];
+      carrouselItems.push({
+        img: img,
+        titulo: titulo,
+        texto: texto,
+      });
+    });
+    setDataWorks(carrouselItems);
+  };
+
+  return <>{isLoading ? <MainLoading /> : <MainBody />}</>;
+
+  function MainBody() {
+    return (
+      <div className={styles.mainWrapper}>
+        <style jsx global>{`
+          html {
+            font-family: ${Hind_Vadodaraf.style.fontFamily};
+          }
+        `}</style>
+        <HeaderBody />
+        <main className={styles.main}>
+          <section id="inicio" className={styles.imageBannerContainer}>
+            <video autoPlay muted loop controls className={styles.imageBanner}>
+              <source src="/videos/portada.mp4" />
+            </video>
           </section>
 
-          <section className={styles.presenceContainer} id="presencia">
-            <PresentsBody />
+          <div className={styles.whiteGradient}>
+            <section id="raices" className={styles.rootContainer}>
+              <RootBody firstSection={firstSection} />
+            </section>
+
+            <section className={styles.presenceContainer} id="presencia">
+              <PresentsBody secondSection={secondSection} />
+            </section>
+          </div>
+
+          <div className={styles.blueGradient}>
+            <section className={styles.beneficiosContainer} id="oferta">
+              <BenefitsBody thirdSection={thirdSection} />
+            </section>
+            <section className={styles.specsWrapper} id="productos">
+              <SpecsBody fourthSection={fourthSection} />
+            </section>
+            <section id="news" className={styles.reviewsWrapper}>
+              <NewsCarrousel videos={videos} />
+            </section>
+          </div>
+          <section id="iandd" className={styles.technicWorks}>
+            <h1>Trabajos técnicos</h1>
+            <WorksCarrousel />
           </section>
+          <section id="network" className={styles.formWrapper}>
+            <FormBody />
+          </section>
+        </main>
+        <footer className={styles.footer}>
+          <FooterBody />
+        </footer>
+      </div>
+    );
+  }
+
+  function MainLoading() {
+    return (
+      <div className={styles.mainLoadingWrapper}>
+        <div>
+          <Image src={darkLogo} alt="logo" />
+          <ClipLoader color="#FFFFFF" size={12} />
         </div>
-
-        <div className={styles.blueGradient}>
-          <section className={styles.beneficiosContainer} id="oferta">
-            <BenefitsBody />
-          </section>
-          <section className={styles.specsWrapper} id="productos">
-            <SpecsBody />
-          </section>
-          <section id="news" className={styles.reviewsWrapper}>
-            <NewsCarrousel />
-          </section>
-        </div>
-        <section id="iandd" className={styles.technicWorks}>
-          <h1>Trabajos técnicos</h1>
-          <WorksCarrousel />
-        </section>
-        <section id="network" className={styles.formWrapper}>
-          <FormBody />
-        </section>
-      </main>
-      <footer className={styles.footer}>
-        <FooterBody />
-      </footer>
-    </div>
-  );
+      </div>
+    );
+  }
 
   function HeaderBody() {
     const [mobileMenu, setMobileMenu] = useState(false);
@@ -226,25 +550,18 @@ export default function Home() {
     );
   }
 
-  function RootBody() {
+  function RootBody({ firstSection }) {
     return (
       <>
         <div className={styles.rootInfo}>
           <div className={styles.rootText}>
-            <h1>Promesol 5x</h1>
+            <h1>{firstSection.titulo}</h1>
             <hr></hr>
-            <p>
-              Promesol ® 5X disminuye la compactación del suelo gracias a los
-              ácidos ECCA Carboxy® de su formulación, aglutinando partículas del
-              suelo, formando agregados estables, lo que produce un equilibrio
-              de macro y microporos. Como resultado, se obtiene una mejor
-              estructura física del suelo que favorece el crecimiento de la
-              raíz, y genera las condiciones adecuadas aireación y humedad.
-            </p>
+            <p>{firstSection.texto}</p>
           </div>
           <div className={styles.rootTechnology}>
             <h4>Tecnologías</h4>
-            <a href="#network">solicita mas informacion</a>
+            <a href="#network">{firstSection.cta}</a>
           </div>
 
           <div className={styles.rootLogo}>
@@ -286,20 +603,12 @@ export default function Home() {
     );
   }
 
-  function PresentsBody() {
+  function PresentsBody({ secondSection }) {
     return (
       <>
         <div>
-          <h1>¿Como funciona?</h1>
-          <p>
-            La formulación de ácidos ECCA Carboxy® de este producto es capaz de
-            aglutinar partículas del suelo, lo que disminuye la compactación y
-            genera espacios para el agua y aire, permitiendo una buena
-            estructura física del suelo. Estos cambios benefician el crecimiento
-            de la raíz al generar condiciones de humedad y aireación, gracias al
-            balance de macro y microporos producido por los agregados estables
-            del suelo.
-          </p>
+          <h1>{secondSection.titulo}</h1>
+          <p>{secondSection.texto}</p>
         </div>
         <div className={styles.presenceVideo}>
           <video autoPlay loop controls muted>
@@ -310,40 +619,25 @@ export default function Home() {
     );
   }
 
-  function BenefitsBody() {
+  function BenefitsBody({ thirdSection }) {
     return (
       <>
         <div className={styles.textContainer}>
-          <h1>Beneficios</h1>
-          <p>
-            Promesol 5x® mejora el suelo al disminuir su compactación, lo que
-            permite un mejor desarrollo radicular, un aprovechamiento eficiente
-            del agua de riego o lluvia, y facilita su laboreo. Además de
-            favorecer el desarrollo adecuado de bulbos y tubérculos para una
-            mejor calidad en la cosecha.
-          </p>
+          <h1>{thirdSection.titulo}</h1>
+          <p>{thirdSection.texto}</p>
         </div>
         <div className={styles.imagesContainer}>
           <div className={styles.divider}> </div>
           <Benefit
             image={imgDesarrolloRadicular}
-            text={"Facilita el desarrollo redicular"}
+            text={thirdSection.beneficio1}
           />
           <div className={styles.divider}> </div>
-          <Benefit
-            image={imgInfiltracion}
-            text={"Mejora la infiltración del agua"}
-          />
+          <Benefit image={imgInfiltracion} text={thirdSection.beneficio2} />
           <div className={styles.divider}> </div>
-          <Benefit
-            image={imgMalformacion}
-            text={"Evita la malformación de bulbos/tuberculos"}
-          />
+          <Benefit image={imgMalformacion} text={thirdSection.beneficio3} />
           <div className={styles.divider}> </div>
-          <Benefit
-            image={imgLaboreos}
-            text={"Facilita las labores de cosecha"}
-          />
+          <Benefit image={imgLaboreos} text={thirdSection.beneficio4} />
           <div className={styles.divider}> </div>
         </div>
       </>
@@ -361,7 +655,7 @@ export default function Home() {
     );
   }
 
-  function SpecsBody() {
+  function SpecsBody({ fourthSection }) {
     const [showInfographics, setShowInfographics] = useState(false);
     const [infoIndex, setInfoIndex] = useState(0);
     const images = [
@@ -386,19 +680,19 @@ export default function Home() {
         initial={{ opacity: 0 }}
         className={styles.mainContainer}
       >
-        <h1>Especificaciones de producto</h1>
+        <h1>{fourthSection.titulo}</h1>
         <div className={styles.specsImagesRow}>
           <div className={styles.imageRow}>
             <Image src={imgGoteo} alt="especificaciones del producto" />
-            <h6>Riego por goteo</h6>
+            <h6>{fourthSection.beneficio}</h6>
           </div>
           <div className={styles.imageRow}>
             <Image src={imgDrench} alt="especificaciones del producto" />
-            <h6>Drench</h6>
+            <h6>{fourthSection.beneficio2}</h6>
           </div>
           <div className={styles.imageRow}>
             <Image src={imgRodado} alt="especificaciones del producto" />
-            <h6>Riego Rodado</h6>
+            <h6>{fourthSection.beneficio3}</h6>
           </div>
         </div>
         <p>
@@ -410,11 +704,8 @@ export default function Home() {
           puede aplicar por gravedad, directamente en la toma de agua o diluido
           para una distribución uniforme en el terreno.
         </p>
-        <h2>Conoce más</h2>
-        <p>
-          Descubre mas sobre los beneficios de promesol a través de testimonios
-          de nuestros diferentes clientes, infografía y trabajos técnicos
-        </p>
+        <h2>{fourthSection.titulo2}</h2>
+        <p>{fourthSection.texto2}</p>
         <h5>Infografias</h5>
         <div className={styles.infografiasRowWrapper}>
           <div className={styles.infografiasRow}>
@@ -476,15 +767,15 @@ export default function Home() {
     );
   }
 
-  function NewsCarrousel() {
+  function NewsCarrousel({ videos }) {
     const [showVideos, setShowVideos] = useState(false);
     const [videoIndex, setVideoIndex] = useState(0);
-    const videos = [
-      `<iframe style={{height: '100%', width: '100%'}} src="https://www.youtube.com/embed/DHsCqyxqwZM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`,
-      `<iframe style={{height: '100%', width: '100%'}} src="https://www.youtube.com/embed/ni78a3IFzwY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`,
-      `<iframe style={{height: '100%', width: '100%'}} src="https://www.youtube.com/embed/ZkRGuKr0acM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`,
-      `<iframe style={{height: '100%', width: '100%'}} src="https://www.youtube.com/embed/M3vX4dqk_L4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`,
-    ];
+    // const videos = [
+    //   `<iframe style={{height: '100%', width: '100%'}} src="https://www.youtube.com/embed/DHsCqyxqwZM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`,
+    //   `<iframe style={{height: '100%', width: '100%'}} src="https://www.youtube.com/embed/ni78a3IFzwY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`,
+    //   `<iframe style={{height: '100%', width: '100%'}} src="https://www.youtube.com/embed/ZkRGuKr0acM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`,
+    //   `<iframe style={{height: '100%', width: '100%'}} src="https://www.youtube.com/embed/M3vX4dqk_L4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`,
+    // ];
     const handleLinkClick = (index) => {
       setVideoIndex(index);
       setShowVideos(true);
@@ -507,7 +798,16 @@ export default function Home() {
           style={{ display: showVideos ? "grid" : "none" }}
         >
           <div className={styles.videoWrapper}>
-            <div dangerouslySetInnerHTML={{ __html: videos[videoIndex] }}></div>
+            <div>
+              <iframe
+                style={{ height: "100%", width: "100%" }}
+                src={videos[videoIndex]}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
+            </div>
           </div>
         </div>
 
@@ -539,25 +839,30 @@ export default function Home() {
           slidesPerView={1}
           navigation={{ nextEl: "#arrowRight", prevEl: "#arrowLeft" }}
         >
-          <SwiperSlide className={styles.reviewContainer}>
-            <Image src={imgReviewManuel} alt="review" />
-            <p>Tangancícuaro, Michoacán</p>
-            <p>
-              Conoce el caso de éxito del Ing. Manuel Garibay, que, con más de
-              25 años de experiencia en campo, sigue recomendando Promesol 5X.
-              El Ing. Garibay nos comparte un poco sobre su experiencia usando
-              Promesol 5X®, en diferentes cultivos a través del tiempo y como lo
-              ayudó a mejorar la estructura en un suelo arcilloso.
-            </p>
-            <h6>Ing. Manuel Garibay Carreón</h6>
-            <a
-              onClick={() => {
-                handleLinkClick(0);
-              }}
+          {dataTestimonials.map((testimonial, index) => (
+            <SwiperSlide
+              key={index + testimonial.img}
+              className={styles.reviewContainer}
             >
-              Conoce su testimonio
-            </a>
-          </SwiperSlide>
+              <Image
+                width={150}
+                height={150}
+                src={testimonial.img}
+                alt="review"
+              />
+              <p>{testimonial.lugar}</p>
+              <p>{testimonial.texto}</p>
+              <h6>{testimonial.nombre}</h6>
+              <a
+                onClick={() => {
+                  handleLinkClick(index);
+                }}
+              >
+                Conoce su testimonio
+              </a>
+            </SwiperSlide>
+          ))}
+          {/* 
           <SwiperSlide className={styles.reviewContainer}>
             <Image src={imgReviewIvanQuiñonez} alt="review" />
             <p>Navolato, Sinaloa</p>
@@ -612,7 +917,7 @@ export default function Home() {
             >
               Conoce su testimonio
             </a>
-          </SwiperSlide>
+          </SwiperSlide> */}
         </Swiper>
         <div
           className={styles.arrows}
@@ -636,6 +941,15 @@ export default function Home() {
   }
 
   function WorksCarrousel() {
+    // TODO: finish this part resolve the files type
+    // const handleDownloadClick = (index) => {
+    //   const imageUrl = `/images/infografias/${images[index].name}`;
+    //   const link = document.createElement("a");
+    //   link.href = imageUrl;
+    //   link.download = images[index].name;
+    //   link.click();
+    // };
+
     return (
       <motion.div
         whileInView={{ opacity: 1 }}
@@ -671,46 +985,20 @@ export default function Home() {
           slidesPerView={1}
           navigation={{ nextEl: "#arrowRightWorks", prevEl: "#arrowLeftWorks" }}
         >
-          <SwiperSlide className={styles.workContainer}>
-            <div>
-              <h1>
-                Acondicionamiento de suelo Cultivo de Frambuesa 2023/Jalisco,
-                México.
-              </h1>
-              <span></span>
-              <p>
-                Conoce mas sobre un manejo de acondicionamiento de suelo en el
-                cultivo de frambuesa con problemáticas de compactación, que
-                limitaba el desarrollo adecuado del cultivo. Dentro del trabajo
-                realizado podemos observar la importancia de tener un suelo
-                acondicionado que permita el desarrollo adecuado del cultivo.
-                Además de observar el comportamiento de la compactación durante
-                el ciclo del cultivo y como se ven afectadas las diferentes
-                variables agronómicas.
-              </p>
-            </div>
-            <Image src={imgWorksFrambuesa} alt="review" />
-          </SwiperSlide>
-          <SwiperSlide className={styles.workContainer}>
-            <div>
-              <h1>
-                Acondicionamiento de suelo Cultivo de Frambuesa 2023/Jalisco,
-                México.
-              </h1>
-              <span></span>
-              <p>
-                Conoce mas sobre un manejo de acondicionamiento de suelo en el
-                cultivo de frambuesa con problemáticas de compactación, que
-                limitaba el desarrollo adecuado del cultivo. Dentro del trabajo
-                realizado podemos observar la importancia de tener un suelo
-                acondicionado que permita el desarrollo adecuado del cultivo.
-                Además de observar el comportamiento de la compactación durante
-                el ciclo del cultivo y como se ven afectadas las diferentes
-                variables agronómicas.
-              </p>
-            </div>
-            <Image src={imgWorksFrambuesa} alt="review" />
-          </SwiperSlide>
+          {dataWorks.map((work, index) => (
+            <SwiperSlide
+              key={index + work.titulo}
+              className={styles.workContainer}
+            >
+              <div>
+                <h1>{work.titulo}</h1>
+                <span></span>
+                <p>{work.texto}</p>
+                <h6>Conocer más</h6>
+              </div>
+              <Image width={10} height={10} src={work.img} alt="review" />
+            </SwiperSlide>
+          ))}
         </Swiper>
         <div
           className={styles.arrows}
@@ -776,7 +1064,7 @@ export default function Home() {
         <div className={styles.form}>
           <p>Los campos marcados con * son obligatorios</p>
           <form
-            action="https://formsubmit.co/q.chavezandres@gmail.com"
+            action="https://formsubmit.co/redes@innovakglobal.com"
             method="POST"
           >
             <input type="text" name="Nombre" placeholder="Nombre*" required />
