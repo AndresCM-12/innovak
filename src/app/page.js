@@ -8,7 +8,6 @@ import { Navigation } from "swiper/modules";
 import { Hind_Vadodara } from "next/font/google";
 import ClipLoader from "react-spinners/ClipLoader";
 
-import imgMainBanner from "../../public/images/main_banner.png";
 import whiteLogo from "../../public/images/logo_white.png";
 import imgDesarrolloRadicular from "../../public/images/beneficios/desarrollo_radicular.png";
 import imgInfiltracion from "../../public/images/beneficios/infiltración.png";
@@ -17,11 +16,6 @@ import imgLaboreos from "../../public/images/beneficios/laboreo.png";
 import imgGoteo from "../../public/images/specs/goteo.png";
 import imgDrench from "../../public/images/specs/drench.png";
 import imgRodado from "../../public/images/specs/rodado.png";
-import imgReviewManuel from "../../public/images/reviews/manuelGaribay.png";
-import imgReviewIvanQuiñonez from "../../public/images/reviews/ivanQuiñonez.png";
-import imgReviewJorgeAdrian from "../../public/images/reviews/jorgeAdrian.png";
-import imgReviewReynaldoCabrera from "../../public/images/reviews/reynaldoCabrera.png";
-import imgWorksFrambuesa from "../../public/images/works/worksFrambruesa.png";
 import imgProductGalon from "../../public/images/rootSection/galon.png";
 import imgEcca from "../../public/images/rootSection/tecnologiaEcca.png";
 import imgRoot from "../../public/images/rootSection/tecnologiaRaiz.png";
@@ -339,10 +333,12 @@ export default function Home() {
       var img = testimonial.split("<img>")[1].split("<img>")[0];
       var titulo = testimonial.split("<titulo>")[1].split("<titulo>")[0];
       var texto = testimonial.split("<texto>")[1].split("<texto>")[0];
+      var link = testimonial.split("<link>")[1].split("<link>")[0];
       carrouselItems.push({
         img: img,
         titulo: titulo,
         texto: texto,
+        link: link,
       });
     });
     setDataWorks(carrouselItems);
@@ -941,14 +937,13 @@ export default function Home() {
   }
 
   function WorksCarrousel() {
-    // TODO: finish this part resolve the files type
-    // const handleDownloadClick = (index) => {
-    //   const imageUrl = `/images/infografias/${images[index].name}`;
-    //   const link = document.createElement("a");
-    //   link.href = imageUrl;
-    //   link.download = images[index].name;
-    //   link.click();
-    // };
+    const handleDownloadClick = (source) => {
+      const imageUrl = source;
+      const link = document.createElement("a");
+      link.href = imageUrl;
+      link.download = "document.pdf";
+      link.click();
+    };
 
     return (
       <motion.div
@@ -994,7 +989,13 @@ export default function Home() {
                 <h1>{work.titulo}</h1>
                 <span></span>
                 <p>{work.texto}</p>
-                <h6>Conocer más</h6>
+                <h6
+                  onClick={() => {
+                    handleDownloadClick(work.link);
+                  }}
+                >
+                  Conocer más
+                </h6>
               </div>
               <Image width={10} height={10} src={work.img} alt="review" />
             </SwiperSlide>
