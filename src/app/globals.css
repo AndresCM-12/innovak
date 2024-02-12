@@ -26,3 +26,10 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+#alianzasSwiper .swiper-button-next{
+  color: white;
+}
+#alianzasSwiper .swiper-button-prev{
+  color: white;
+}
