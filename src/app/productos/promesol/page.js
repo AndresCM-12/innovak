@@ -842,6 +842,13 @@ export default function Promesol() {
         >
           {dataWorks.map((work, index) => (
             <SwiperSlide
+              style={{
+                alignContent: "center",
+                justifyContent: "center",
+                alignItems: "center",
+                display: "flex",
+                flexDirection: "column",
+              }}
               key={index + work.titulo}
               className={styles.workContainer}
             >

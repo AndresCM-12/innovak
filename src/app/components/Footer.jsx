@@ -37,11 +37,15 @@ export default function FooterBody() {
             </div>
           </div>
           <div className={styles.footerLang}>
-            <h6>Idiomas:</h6>
-            <p>Español</p>
-            <p>English</p>
-            <p>Portugués</p>
-            <p>Türkçe</p>
+            <h6>PAÍS</h6>
+            <p>México</p>
+            <p>Brasil</p>
+            <p>Colombia</p>
+            <p>Chile</p>
+            <p>Perú</p>
+            <p>Estados Unidos</p>
+            <p>Turquía</p>
+            <p>Internacional</p>
           </div>
         </div>
         <div className={styles.footerBottomContainer}>

@@ -25,8 +25,13 @@ import imgReviewIvanQuiñonez from "../../public/images/reviews/ivanQuiñonez.
 import imgReviewJorgeAdrian from "../../public/images/reviews/jorgeAdrian.png";
 import imgReviewReynaldoCabrera from "../../public/images/reviews/reynaldoCabrera.png";
 import imgInnovakNews from "../../public/inicio/innovakNews.png";
+import imgInnovakNews1 from "../../public/inicio/innovakNews1.png";
+import imgInnovakNews2 from "../../public/inicio/innovakNews2.png";
+import imgInnovakNews3 from "../../public/inicio/innovakNews3.png";
+import map from "../../public/inicio/map.png";
 
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -37,6 +42,7 @@ export default function Home() {
         <Tecnologias />
         <Testimonials />
         <News />
+        <FormBody />
       </main>
     </div>
   );
@@ -283,7 +289,16 @@ function Testimonials() {
         slidesPerView={1}
         navigation={{ nextEl: "#arrowRight", prevEl: "#arrowLeft" }}
       >
-        <SwiperSlide className={allStyles.reviewContainer}>
+        <SwiperSlide
+          className={allStyles.reviewContainer}
+          style={{
+            alignContent: "center",
+            justifyContent: "center",
+            alignItems: "center",
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
           <Image
             src={imgReviewIvanQuiñonez}
             width={150}
@@ -306,7 +321,16 @@ function Testimonials() {
             Conoce su testimonio
           </a>
         </SwiperSlide>
-        <SwiperSlide className={allStyles.reviewContainer}>
+        <SwiperSlide
+          className={allStyles.reviewContainer}
+          style={{
+            alignContent: "center",
+            justifyContent: "center",
+            alignItems: "center",
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
           <Image src={imgReviewJorgeAdrian} alt="review" />
           <p>Culiacán, Sinaloa</p>
           <p>
@@ -325,7 +349,16 @@ function Testimonials() {
             Conoce su testimonio
           </a>
         </SwiperSlide>
-        <SwiperSlide className={allStyles.reviewContainer}>
+        <SwiperSlide
+          className={allStyles.reviewContainer}
+          style={{
+            alignContent: "center",
+            justifyContent: "center",
+            alignItems: "center",
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
           <Image src={imgReviewReynaldoCabrera} alt="review" />
           <p>Michoacán México</p>
           <p>
@@ -366,9 +399,163 @@ function Testimonials() {
 }
 
 function News() {
+  const news = [
+    {
+      title: "antiguedad. Richard McClintock, un profesor de Latin de la",
+      text: "eratura del Latin, que data del año 45 antes de Cristo, haciendo que este adquiera mas de 2000 años de antiguedad. Richard McClintock, un profesor de Latin de la Universidad de Hampden-Sydney en Virginia,",
+      link: "/innovak-news",
+      image: imgInnovakNews1,
+    },
+    {
+      title: "antiguedad. Richard McClintock, un profesor de Latin de la",
+      text: "eratura del Latin, que data del año 45 antes de Cristo, haciendo que este adquiera mas de 2000 años de antiguedad. Richard McClintock, un profesor de Latin de la Universidad de Hampden-Sydney en Virginia,",
+      link: "/innovak-news",
+      image: imgInnovakNews2,
+    },
+    {
+      title: "antiguedad. Richard McClintock, un profesor de Latin de la",
+      text: "eratura del Latin, que data del año 45 antes de Cristo, haciendo que este adquiera mas de 2000 años de antiguedad. Richard McClintock, un profesor de Latin de la Universidad de Hampden-Sydney en Virginia,",
+      link: "/innovak-news",
+      image: imgInnovakNews3,
+    },
+  ];
   return (
     <section>
-      <article></article>
+      {/* Image */}
+      <article className={styles.newsImageWrapper}>
+        <Image
+          src={imgInnovakNews}
+          alt="Innovak News"
+          width={300}
+          height={90}
+          style={{
+            objectFit: "contain",
+          }}
+        />
+        <div className={styles.newsSeparator}></div>
+        <Link href="/innovak-news">
+          <div className={styles.newsButton}>Ver todo</div>
+        </Link>
+      </article>
+      {/* Image */}
+
+      {/* News */}
+      <article className={styles.newsWrapper}>
+        {news.map((item, index) => (
+          <div key={index} className={styles.newsItem}>
+            <Image
+              src={item.image}
+              alt="Innovak News"
+              width={150}
+              height={150}
+            />
+            <div
+              style={{
+                height: "380px",
+              }}
+            ></div>
+            <div className={styles.newsItemFloating}>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+              <Link href={item.link}>
+                <div className={styles.newsButtonOutlined}>Ver más</div>
+              </Link>
+            </div>
+          </div>
+        ))}
+      </article>
+      {/* News */}
+    </section>
+  );
+}
+
+function FormBody() {
+  return (
+    <section className={allStyles.formWrapper}>
+      <motion.div
+        whileInView={{ opacity: 1 }}
+        initial={{ opacity: 0 }}
+        className={allStyles.ficha}
+      >
+        <h1
+          style={{
+            marginBottom: "20px",
+          }}
+        >
+          ¡Contáctanos!
+        </h1>
+        <p className={allStyles.text}>+52 (614) 436 01 38</p>
+        <p className={allStyles.text}>info@innovakglobal.com</p>
+        <p className={allStyles.text}>
+          Blvd. Vicente Lombardo Toledano #6615Col. La Concordia C.P.
+          31375Chihuahua, Chihuahua, México.
+        </p>
+        <div>
+          <Image
+            src={map}
+            alt="Innovak News"
+            width={300}
+            height={400}
+            style={{
+              width: "100%",
+              objectFit: "cover",
+            }}
+          />
+        </div>
+      </motion.div>
+
+      <div className={allStyles.form}>
+        <p>Los campos marcados con * son obligatorios</p>
+        <form
+          action="https://formsubmit.co/redes@innovakglobal.com"
+          method="POST"
+        >
+          <input type="text" name="Nombre" placeholder="Nombre*" required />
+          <input
+            type="text"
+            name="Teléfono de contacto"
+            placeholder="Teléfono de contacto*"
+            required
+          />
+          <input
+            type="text"
+            name="Correo electrónico"
+            placeholder="Correo electrónico*"
+            required
+          />
+          <input
+            type="text"
+            name="Nombre de la agrícola o institución"
+            placeholder="Nombre de la agrícola o institución"
+          />
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              gap: "10px",
+            }}
+          >
+            <input type="text" name="País" placeholder="País*" required />
+            <input type="text" name="Estado" placeholder="Estado*" required />
+          </div>
+          <input
+            type="text"
+            name="Tipo_consulta"
+            placeholder="Tipo de consulta*"
+            required
+          />
+          <div className={allStyles.checkboxWrapper}>
+            <input
+              type="radio"
+              id="uno"
+              name="privacidad"
+              value="Información de distribuidores"
+            />
+            <label htmlFor="uno">Acepto datos de privacidad</label>
+          </div>
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
     </section>
   );
 }

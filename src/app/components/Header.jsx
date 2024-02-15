@@ -7,6 +7,7 @@ import whiteLogo from "../../../public/images/logo_white.png";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useState } from "react";
 import { Hind_Vadodara } from "next/font/google";
+import Link from "next/link";
 
 const Hind_Vadodaraf = Hind_Vadodara({
   subsets: ["latin"],
@@ -41,16 +42,18 @@ export default function HeaderBody() {
       <MobileMenu mobileMenu={mobileMenu} setMobileMenu={setMobileMenu} />
 
       <div className={styles.logoImageContainer}>
-        <Image
-          className={styles.logoImage}
-          alt="logo"
-          src={whiteLogo}
-          style={{
-            filter: menuScrolling
-              ? "brightness(0) invert(0)"
-              : "brightness(0) invert(1)",
-          }}
-        />
+        <Link href="/">
+          <Image
+            className={styles.logoImage}
+            alt="logo"
+            src={whiteLogo}
+            style={{
+              filter: menuScrolling
+                ? "brightness(0) invert(0)"
+                : "brightness(0) invert(1)",
+            }}
+          />
+        </Link>
       </div>
       <NavsLink menuScrolling={menuScrolling} />
       <div
@@ -99,7 +102,7 @@ function MobileMenu({ mobileMenu, setMobileMenu }) {
         <nav style={{ display: "flex" }}>
           <ul className={styles.navUl}>
             <li>
-              <a href="/quienes-somos">NUESTRAS RAÍCES</a>
+              <a href="/nuestras-raices/revolucion">NUESTRAS RAÍCES</a>
             </li>
             <li>
               <a href="/productos">PRODUCTOS</a>
@@ -132,7 +135,7 @@ function NavsLink({ menuScrolling }) {
             style={{
               color: !menuScrolling ? "#FFFFFF" : "#000000",
             }}
-            href="/quienes-somos"
+            href="/nuestras-raices/revolucion"
           >
             NUESTRAS RAÍCES
           </a>

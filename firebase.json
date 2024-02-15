@@ -1,15 +1,19 @@
 {
   "hosting": {
     "public": "out",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
-        "source": "**",
+        "source": "/",
         "destination": "/index.html"
+      },
+      {
+        "source": "/nuestras-raices/revolucion",
+        "destination": "/nuestras-raices/revolucion.html"
+      },
+      {
+        "source": "/productos/promesol",
+        "destination": "/productos/promesol.html"
       }
     ]
   }
