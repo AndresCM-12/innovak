@@ -12,20 +12,20 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import ClipLoader from "react-spinners/ClipLoader";
 
-import imgDesarrolloRadicular from "../../../../public/images/beneficios/desarrollo_radicular.png";
-import imgInfiltracion from "../../../../public/images/beneficios/infiltración.png";
-import imgMalformacion from "../../../../public/images/beneficios/malformaciones.png";
-import imgLaboreos from "../../../../public/images/beneficios/laboreo.png";
-import imgGoteo from "../../../../public/images/specs/goteo.png";
-import imgDrench from "../../../../public/images/specs/drench.png";
-import imgRodado from "../../../../public/images/specs/rodado.png";
-import imgProductGalon from "../../../../public/images/rootSection/galon.png";
-import imgEcca from "../../../../public/images/rootSection/tecnologiaEcca.png";
-import imgRoot from "../../../../public/images/rootSection/tecnologiaRaiz.png";
-import darkLogo from "../../../../public/images/logo_dark.png";
-import infoImportanciaSuelo from "../../../../public/images/infografias/importanciaSuelos.jpg";
-import infoSalinidadSuelos from "../../../../public/images/infografias/salinidadSuelos.jpg";
-import infoSueloCompacto from "../../../../public/images/infografias/sueloCompacto.jpg";
+import imgDesarrolloRadicular from "../../../../../public/images/beneficios/desarrollo_radicular.png";
+import imgInfiltracion from "../../../../../public/images/beneficios/infiltración.png";
+import imgMalformacion from "../../../../../public/images/beneficios/malformaciones.png";
+import imgLaboreos from "../../../../../public/images/beneficios/laboreo.png";
+import imgGoteo from "../../../../../public/images/specs/goteo.png";
+import imgDrench from "../../../../../public/images/specs/drench.png";
+import imgRodado from "../../../../../public/images/specs/rodado.png";
+import imgProductGalon from "../../../../../public/images/rootSection/galon.png";
+import imgEcca from "../../../../../public/images/rootSection/tecnologiaEcca.png";
+import imgRoot from "../../../../../public/images/rootSection/tecnologiaRaiz.png";
+import darkLogo from "../../../../../public/images/logo_dark.png";
+import infoImportanciaSuelo from "../../../../../public/images/infografias/importanciaSuelos.jpg";
+import infoSalinidadSuelos from "../../../../../public/images/infografias/salinidadSuelos.jpg";
+import infoSueloCompacto from "../../../../../public/images/infografias/sueloCompacto.jpg";
 
 const Hind_Vadodaraf = Hind_Vadodara({
   subsets: ["latin"],

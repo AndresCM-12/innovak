@@ -1,5 +1,5 @@
 import styles from "./revolucion.module.css";
-import bgImage from "../../../../public/nuestrasraices/revolucionBackground.svg";
+import bgImage from "../../../../../public/nuestrasraices/revolucionBackground.svg";
 
 export default function Page() {
   return (

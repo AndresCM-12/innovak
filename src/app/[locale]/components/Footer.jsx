@@ -3,7 +3,7 @@ import styles from "../page.module.css";
 import Image from "next/image";
 import "swiper/css";
 import "swiper/css/navigation";
-import darkLogo from "../../../public/images/logo_dark.png";
+import darkLogo from "../../../../public/images/logo_dark.png";
 
 import { motion } from "framer-motion";
 import { Hind_Vadodara } from "next/font/google";

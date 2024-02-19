@@ -2,12 +2,13 @@
 import styles from "../page.module.css";
 import Image from "next/image";
 
-import whiteLogo from "../../../public/images/logo_white.png";
+import whiteLogo from "../../../../public/images/logo_white.png";
 
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useState } from "react";
 import { Hind_Vadodara } from "next/font/google";
 import Link from "next/link";
+import LocaleSwitch from "./LocaleSwitch";
 
 const Hind_Vadodaraf = Hind_Vadodara({
   subsets: ["latin"],
@@ -77,7 +78,7 @@ export default function HeaderBody() {
           />
         </svg>
       </div>
-      <div className={styles.emptyContainer}></div>
+      <LocaleSwitch />
     </motion.header>
   );
 }
