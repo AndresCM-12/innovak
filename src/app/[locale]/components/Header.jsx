@@ -5,7 +5,7 @@ import Image from "next/image";
 import whiteLogo from "../../../../public/images/logo_white.png";
 
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Hind_Vadodara } from "next/font/google";
 import Link from "next/link";
 import LocaleSwitch from "./LocaleSwitch";
@@ -19,6 +19,7 @@ export default function HeaderBody() {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [menuScrolling, setMenuScrolling] = useState(false);
   const { scrollY } = useScroll();
+  const [lang, setLang] = useState("mxn");
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest > 10) {
@@ -27,6 +28,14 @@ export default function HeaderBody() {
       setMenuScrolling(false);
     }
   });
+
+  useEffect(() => {
+    const locale = document.cookie
+      .split(";")
+      .find((c) => c.trim().startsWith("NEXT_LOCALE="))
+      .split("=")[1];
+    setLang(locale);
+  }, []);
 
   return (
     <motion.header
@@ -40,7 +49,11 @@ export default function HeaderBody() {
         fontFamily: Hind_Vadodaraf,
       }}
     >
-      <MobileMenu mobileMenu={mobileMenu} setMobileMenu={setMobileMenu} />
+      <MobileMenu
+        mobileMenu={mobileMenu}
+        setMobileMenu={setMobileMenu}
+        currentLang={lang}
+      />
 
       <div className={styles.logoImageContainer}>
         <Link href="/">
@@ -56,7 +69,7 @@ export default function HeaderBody() {
           />
         </Link>
       </div>
-      <NavsLink menuScrolling={menuScrolling} />
+      <NavsLink menuScrolling={menuScrolling} currentLang={lang} />
       <div
         className={styles.mobileNav}
         onClick={() => {
@@ -83,7 +96,7 @@ export default function HeaderBody() {
   );
 }
 
-function MobileMenu({ mobileMenu, setMobileMenu }) {
+function MobileMenu({ mobileMenu, setMobileMenu, currentLang }) {
   return (
     <div
       className={styles.menuMobile}
@@ -103,22 +116,26 @@ function MobileMenu({ mobileMenu, setMobileMenu }) {
         <nav style={{ display: "flex" }}>
           <ul className={styles.navUl}>
             <li>
-              <a href="/nuestras-raices/revolucion">NUESTRAS RAÍCES</a>
+              <a href={`/${currentLang}/nuestras-raices/revolucion`}>
+                NUESTRAS RAÍCES
+              </a>
             </li>
             <li>
-              <a href="/productos">PRODUCTOS</a>
+              <a href={`/${currentLang}/productos`}>PRODUCTOS</a>
             </li>
             <li>
-              <a href="/soluciones-por-cultivo">SOLUCIONES POR CULTIVOS</a>
+              <a href={`/${currentLang}/soluciones-por-cultivo`}>
+                SOLUCIONES POR CULTIVOS
+              </a>
             </li>
             <li>
-              <a href="/innovak-news">INNOVAK NEWS</a>
+              <a href={`/${currentLang}/innovak-news`}>INNOVAK NEWS</a>
             </li>
             <li>
-              <a href="/presencia">PRESENCIA</a>
+              <a href={`/${currentLang}/presencia`}>PRESENCIA</a>
             </li>
             <li>
-              <a href="/contacto">CONTACTO</a>
+              <a href={`/${currentLang}/contacto`}>CONTACTO</a>
             </li>
           </ul>
         </nav>
@@ -127,7 +144,7 @@ function MobileMenu({ mobileMenu, setMobileMenu }) {
   );
 }
 
-function NavsLink({ menuScrolling }) {
+function NavsLink({ menuScrolling, currentLang }) {
   return (
     <nav>
       <ul className={styles.navUl}>
@@ -136,7 +153,7 @@ function NavsLink({ menuScrolling }) {
             style={{
               color: !menuScrolling ? "#FFFFFF" : "#000000",
             }}
-            href="/nuestras-raices/revolucion"
+            href={`/${currentLang}/nuestras-raices/revolucion`}
           >
             NUESTRAS RAÍCES
           </a>
@@ -146,7 +163,7 @@ function NavsLink({ menuScrolling }) {
             style={{
               color: !menuScrolling ? "#FFFFFF" : "#000000",
             }}
-            href="/productos"
+            href={`/${currentLang}/productos`}
           >
             PRODUCTOS
           </a>
@@ -156,7 +173,7 @@ function NavsLink({ menuScrolling }) {
             style={{
               color: !menuScrolling ? "#FFFFFF" : "#000000",
             }}
-            href="/soluciones-por-cultivo"
+            href={`/${currentLang}/soluciones-por-cultivo`}
           >
             SOLUCIONES POR CULTIVOS
           </a>
@@ -166,7 +183,7 @@ function NavsLink({ menuScrolling }) {
             style={{
               color: !menuScrolling ? "#FFFFFF" : "#000000",
             }}
-            href="/innovak-news"
+            href={`/${currentLang}/innovak-news`}
           >
             INNOVAK NEWS
           </a>
@@ -176,7 +193,7 @@ function NavsLink({ menuScrolling }) {
             style={{
               color: !menuScrolling ? "#FFFFFF" : "#000000",
             }}
-            href="/presencia"
+            href={`/${currentLang}/presencia`}
           >
             PRESENCIA
           </a>
@@ -186,7 +203,7 @@ function NavsLink({ menuScrolling }) {
             style={{
               color: !menuScrolling ? "#FFFFFF" : "#000000",
             }}
-            href="/contacto"
+            href={`/${currentLang}/contacto`}
           >
             CONTACTO
           </a>

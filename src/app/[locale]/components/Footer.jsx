@@ -7,6 +7,8 @@ import darkLogo from "../../../../public/images/logo_dark.png";
 
 import { motion } from "framer-motion";
 import { Hind_Vadodara } from "next/font/google";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const Hind_Vadodaraf = Hind_Vadodara({
   subsets: ["latin"],
@@ -14,6 +16,16 @@ const Hind_Vadodaraf = Hind_Vadodara({
 });
 
 export default function FooterBody() {
+  const [lang, setLang] = useState("mxn");
+
+  useEffect(() => {
+    const locale = document.cookie
+      .split(";")
+      .find((c) => c.trim().startsWith("NEXT_LOCALE="))
+      .split("=")[1];
+    setLang(locale);
+  }, []);
+
   return (
     <footer className={styles.footer}>
       <motion.div
@@ -51,7 +63,16 @@ export default function FooterBody() {
         <div className={styles.footerBottomContainer}>
           <p>
             © Copyright 2020 - 2023 Diseño hecho por Deadline | Todos los
-            derechos Reservados Aviso de Privacidad
+            derechos Reservados{" "}
+            <Link
+              style={{
+                color: "white",
+                textDecoration: "underline",
+              }}
+              href={`/${lang}/aviso-de-privacidad`}
+            >
+              Aviso de Privacidad
+            </Link>
           </p>
         </div>
       </motion.div>
