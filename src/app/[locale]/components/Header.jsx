@@ -116,7 +116,7 @@ function MobileMenu({ mobileMenu, setMobileMenu, currentLang }) {
         <nav style={{ display: "flex" }}>
           <ul className={styles.navUl}>
             <li>
-              <a href={`/${currentLang}/nuestras-raices/revolucion`}>
+              <a href={`/${currentLang}/nuestras-raices`}>
                 NUESTRAS RAÍCES
               </a>
             </li>
@@ -153,7 +153,7 @@ function NavsLink({ menuScrolling, currentLang }) {
             style={{
               color: !menuScrolling ? "#FFFFFF" : "#000000",
             }}
-            href={`/${currentLang}/nuestras-raices/revolucion`}
+            href={`/${currentLang}/nuestras-raices`}
           >
             NUESTRAS RAÍCES
           </a>

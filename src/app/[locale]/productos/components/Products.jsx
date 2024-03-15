@@ -26,28 +26,30 @@ export default function ProductsClient({ texts }) {
       title: "PROTECCIÓN A CULTIVOS",
       subtitle: "Ver más",
       image: proteccionDeCultivosImg.src,
-      link: `${lang}/productos/proteccion-de-cultivos`,
+      link: `/${lang}/productos/proteccion-de-cultivos`,
     },
     {
       title: "BIOESTIMULANTES",
       subtitle: "Ver más",
       image: bioestimulantesImg.src,
+      link: `/${lang}/productos/bioestimulantes`,
     },
     {
       title: "NUTRIENTES",
       subtitle: "ver más",
       image: nutrientesImg.src,
+      link: `/${lang}/productos/nutrientes`,
     },
     {
       title: "ACONDICIONAMIENTO DE SUELOS",
       subtitle: "ver más",
       image: acondicionadoresDeSueloImg.src,
+      link: `/${lang}/productos/acondicionadores-de-suelos`,
     },
   ];
 
   const handleNavigateTo = (i) => {
-    window.scrollTo(0, 0);
-    setIndex(i);
+    console.log("navigating to", pagesInfo[i].link);
   };
 
   return (
@@ -73,19 +75,20 @@ export default function ProductsClient({ texts }) {
       {/* Select Option */}
       <div className={styles.selectOptionWrapper}>
         {pagesInfo.map((page, i) => (
-          <div
-            className={styles.productOption}
-            key={i + "div"}
-            style={{
-              backgroundImage: `url(${page.image})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-            onClick={() => handleNavigateTo(i)}
-          >
-            <h6>{page.title}</h6>
-            <p>{page.subtitle}</p>
-          </div>
+          <a href={page.link} key={i + "div"}>
+            <div
+              className={styles.productOption}
+              style={{
+                backgroundImage: `url(${page.image})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+              onClick={() => handleNavigateTo(i)}
+            >
+              <h6>{page.title}</h6>
+              <p>{page.subtitle}</p>
+            </div>
+          </a>
         ))}
       </div>
       {/* Select Option */}
