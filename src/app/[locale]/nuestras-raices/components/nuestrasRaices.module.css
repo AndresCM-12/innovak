@@ -64,7 +64,240 @@
   margin-inline: -1px;
 }
 
-@media screen and (max-width: 768px) {
+.wrapper {
+  padding-inline: 12px;
+}
+
+.certificacionesWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  max-width: 1220px;
+  margin-inline: auto;
+  background-color: #005dab;
+  border-radius: 24px;
+}
+.certificacionesWrapper h1 {
+  font-size: 30px;
+  color: #fff;
+  text-align: center;
+  font-weight: 400;
+  margin-top: 80px;
+  margin-bottom: 40px;
+}
+
+.subWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: #f5f5f5;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  padding-top: 70px;
+  position: relative;
+  padding-inline: 5%;
+  padding-bottom: 40px;
+}
+
+.subWrapper .divider {
+  width: 100%;
+  height: 2px;
+  background-color: #8dc63f;
+  margin-top: 16px;
+  margin-bottom: 44px;
+}
+
+.subWrapper img.certificationIcon {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.subWrapper h2 {
+  font-size: 26px;
+  color: #005dab;
+  text-align: left;
+  font-weight: 500;
+  margin-top: 20px;
+}
+
+.cert {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
+}
+.cert p {
+  max-width: 400px;
+  font-size: 16px;
+}
+.cert h4 {
+  max-width: 400px;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+.certWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-start;
+  width: 100%;
+}
+.quienesSomosWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-block: 120px;
+  max-width: 1500px;
+  margin-inline: auto;
+  padding-inline: 12px;
+}
+.titleWrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.titleWrapper .title {
+  background-color: #f5f5f5;
+  padding: 34px;
+  width: 40%;
+  height: fit-content;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.titleWrapper .title h1 {
+  font-size: 32px;
+  text-align: left;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.titleWrapper .title p {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 20px;
+  margin-bottom: 12px;
+}
+
+.titleWrapper video {
+  width: 60%;
+  height: 516px;
+  border-radius: 20px;
+}
+
+.misionWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding-inline: 12px;
+  margin-top: 113px;
+  gap: 50px;
+}
+.misionWrapper div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  max-width: 400px;
+}
+.misionWrapper h2 {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 48px;
+  text-align: center;
+  color: #005dab;
+  margin-bottom: 20px;
+}
+.misionWrapper p {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 20px;
+}
+.valoresMainWrapper {
+  max-width: 1355px;
+  margin-inline: auto;
+  padding-inline: 12px;
+}
+.valoresMainWrapper h3 {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 48px;
+  text-align: center;
+  color: #005dab;
+  margin-top: 90px;
+  margin-bottom: 30px;
+}
+.valoresWrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+.valorWrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-width: 410px;
+  gap: 20px;
+}
+.valorWrapper h4 {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+  margin-bottom: 8px;
+}
+.valoresWrapper .divider {
+  width: 74px;
+  border: 2px solid #8dc63f;
+  margin-bottom: 8px;
+}
+.valorWrapper p {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 20px;
+  text-align: left;
+}
+.lineaDelTiempoWrapper{
+  padding-inline: 12px;
+}
+
+@media screen and (max-width: 1380px) {
+  .valoresWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+}
+@media screen and (max-width: 968px) {
+  .titleWrapper .title {
+    background-color: #f5f5f5;
+    padding: 34px;
+    width: 100%;
+    height: fit-content;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 0px;
+    margin-bottom: 0px;
+  }
+  .titleWrapper video {
+    width: 100%;
+    height: 516px;
+    border-radius: 20px;
+  }
 }
 @media screen and (max-width: 604px) {
   .selectOptionWrapper {
