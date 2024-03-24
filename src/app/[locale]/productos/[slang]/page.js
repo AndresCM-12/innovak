@@ -21,11 +21,31 @@ export default function ContactoPage({ params }) {
       image: proteccionDeCultivosImg.src,
       link: `/productos/proteccion-de-cultivos`,
       products: [
-        demoProduct,
-        demoProduct2,
-        demoProduct3,
-        demoProduct4,
-        demoProduct5,
+        {
+          image: demoProduct,
+          title: "Producto 1",
+          text: "Los productos de Innovak trabajan para el campo de una forma natural en que la planta los asimila, se enfoca a varios segmentos para resolver problemas puntuales de la agricultura tecnifica.",
+        },
+        {
+          image: demoProduct,
+          title: "Producto 1",
+          text: "Los productos de Innovak trabajan para el campo de una forma natural en que la planta los asimila, se enfoca a varios segmentos para resolver problemas puntuales de la agricultura tecnifica.",
+        },
+        {
+          image: demoProduct,
+          title: "Producto 1",
+          text: "Los productos de Innovak trabajan para el campo de una forma natural en que la planta los asimila, se enfoca a varios segmentos para resolver problemas puntuales de la agricultura tecnifica.",
+        },
+        {
+          image: demoProduct,
+          title: "Producto 1",
+          text: "Los productos de Innovak trabajan para el campo de una forma natural en que la planta los asimila, se enfoca a varios segmentos para resolver problemas puntuales de la agricultura tecnifica.",
+        },
+        {
+          image: demoProduct,
+          title: "Producto 1",
+          text: "Los productos de Innovak trabajan para el campo de una forma natural en que la planta los asimila, se enfoca a varios segmentos para resolver problemas puntuales de la agricultura tecnifica.",
+        },
       ],
     },
     {

@@ -269,8 +269,65 @@
   line-height: 20px;
   text-align: left;
 }
-.lineaDelTiempoWrapper{
+.lineaDelTiempoWrapper .titleWrapper {
   padding-inline: 12px;
+  margin-top: 186px;
+  margin-bottom: 32px;
+}
+.lineaDelTiempoWrapper .titleWrapper h3 {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+  color: #005dab;
+}
+.lineaDelTiempo {
+  width: 100%;
+  height: 620px;
+}
+
+.lineaDelTiempoItemWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #005dab;
+  width: 100%;
+  padding-top: 200px;
+  padding-left: 40px;
+}
+.lineaDelTiempo .filter{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 93, 171, 0.5);
+  z-index: 1;
+}
+.lineaDelTiempo .item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 400px;
+  z-index: 2;
+}
+
+.lineaDelTiempo .item h4 {
+  color: white;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 48px;
+  text-align: left;
+  margin-bottom: 10px;
+}
+.lineaDelTiempo .item p {
+  color: white;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 20px;
+  text-align: left;
+  max-width: 300px;
 }
 
 @media screen and (max-width: 1380px) {

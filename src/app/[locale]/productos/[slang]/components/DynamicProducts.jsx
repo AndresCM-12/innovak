@@ -3,6 +3,12 @@ import React from "react";
 import styles from "./dynamicProducts.module.css";
 import Image from "next/image";
 
+import localFont from "next/font/local";
+const futura = localFont({
+  src: "../../../../../../public/fonts/futura.ttf",
+  variable: "--font-futura",
+});
+
 export default function DynamicProductsClient({
   texts,
   params,
@@ -13,6 +19,16 @@ export default function DynamicProductsClient({
 
   return (
     <section>
+      <style jsx global>{`
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          font-family: ${futura.style.fontFamily};
+        }
+      `}</style>
       {/* Dynamic Header */}
       <article
         className={styles.header}
@@ -67,7 +83,13 @@ function ProductsList({ productImages }) {
     <section className={styles.products}>
       {productImages.map((product, i) => (
         <div className={styles.productsImages} key={i + "div"}>
-          <Image src={product} alt="product" width={200} height={200} />
+          <Image src={product.image} alt="product" width={200} height={200} />
+          <div className={styles.separator}></div>
+          <div>
+            <h6>{product.title}</h6>
+            <p>{product.text}</p>
+            <span>Ver más</span>
+          </div>
         </div>
       ))}
     </section>

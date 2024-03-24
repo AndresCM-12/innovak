@@ -10,9 +10,12 @@ import { Hind_Vadodara } from "next/font/google";
 import Link from "next/link";
 import LocaleSwitch from "./LocaleSwitch";
 
-const Hind_Vadodaraf = Hind_Vadodara({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+
+import localFont from "next/font/local";
+
+const futura = localFont({
+  src: "../../../../public/fonts/futura.ttf",
+  variable: "--font-futura",
 });
 
 export default function HeaderBody() {
@@ -46,7 +49,7 @@ export default function HeaderBody() {
         paddingBlock: menuScrolling ? "20px" : "40px",
         backgroundColor: menuScrolling ? "white" : "transparent",
         boxShadow: menuScrolling ? "0px 0px 10px 0px rgba(0,0,0,0.25)" : "",
-        fontFamily: Hind_Vadodaraf,
+        fontFamily: futura.style.fontFamily,
       }}
     >
       <MobileMenu

@@ -5,6 +5,10 @@ import allStyles from "../../inicio.module.css";
 import revolucionStyles from "./revolucion.module.css";
 import bgImage from "../../../../../public/nuestrasraices/revolucionBackground.svg";
 
+import "swiper/css";
+import "swiper/css/navigation";
+import { Swiper, SwiperSlide } from "swiper/react";
+
 import Image from "next/image";
 
 import certificationIcon from "../../../../../public/nuestrasraices/certificationIcon.svg";
@@ -26,6 +30,14 @@ import integridad from "../../../../../public/nuestrasraices/valores/integridad.
 import pasion from "../../../../../public/nuestrasraices/valores/pasion.svg";
 import servicio from "../../../../../public/nuestrasraices/valores/servicio.svg";
 import trascendencia from "../../../../../public/nuestrasraices/valores/trascendencia.svg";
+
+import lineaDelTiempoBg1 from "../../../../../public/nuestrasraices/1954.png";
+
+import localFont from "next/font/local";
+const futura = localFont({
+  src: "../../../../../public/fonts/futura.ttf",
+  variable: "--font-futura",
+});
 
 export default function NuestrasRaicesClient({ texts }) {
   const [index, setIndex] = React.useState(0);
@@ -119,12 +131,46 @@ export default function NuestrasRaicesClient({ texts }) {
     },
   ];
 
+  var lineaDelTiempo = [
+    {
+      date: "1950",
+      description: `Nace Representaciones Industriales S.A. de C.V.  dedicada a comercializar maquinaria, equipo industrial, tratamiento industriales para madera, celulosa y suavizadores de agua.`,
+      background: lineaDelTiempoBg1.src,
+    },
+    {
+      date: "1955",
+      description: `Se crea el Laboratorio de Análisis Agrícolas e Industriales, S.A. de C.V.  en asociación con el Señor Joseph L. Hearn para ofrecer servicios de análisis de suelo y agua.`,
+      background: lineaDelTiempoBg1.src1,
+    },
+    {
+      date: "1957",
+      description: `Funda Productos Químicos de Chihuahua, S.A de C.V. empresa formuladora y comercializadora de productos de limpieza industrial .`,
+      background: lineaDelTiempoBg1.src,
+    },
+    {
+      date: "1962",
+      description: `Tras el estudio de estas referencias, se diseñaron algunos procesos obteniendo diferentes extractos y con esto se realizaron experimentaciones para probar su capacidad desincrustante en el proceso de lavado de botellas y máquinas lavadoras.
+        Como resultado de éstas investigaciones se definió un extracto denominado TOG, que aunque mostrara cierta capacidad desincrustante no fue lo suficiente efectivo para poder posicionarlo como una solución.
+        `,
+      background: lineaDelTiempoBg1.src,
+    },
+    {
+      date: "1962",
+      description: `Tras el estudio de estas referencias, se diseñaron algunos procesos obteniendo diferentes extractos y con esto se realizaron experimentaciones para probar su capacidad desincrustante en el proceso de lavado de botellas y máquinas lavadoras.
+        Como resultado de éstas investigaciones se definió un extracto denominado TOG, que aunque mostrara cierta capacidad desincrustante no fue lo suficiente efectivo para poder posicionarlo como una solución.
+        `,
+      background: lineaDelTiempoBg1.src,
+    },
+  ];
+
   var pagesInfo = [
     {
       title: "QUIENES SOMOS",
       subtitle: "",
       image: background.src,
-      content: <QuienesSomos valores={valores} />,
+      content: (
+        <QuienesSomos valores={valores} lineaDelTiempo={lineaDelTiempo} />
+      ),
     },
     {
       title: "TECNOLOGÍAS",
@@ -159,6 +205,16 @@ export default function NuestrasRaicesClient({ texts }) {
 
   return (
     <section>
+      <style jsx global>{`
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          font-family: ${futura.style.fontFamily};
+        }
+      `}</style>
       {/* Dynamic Header */}
       <article
         className={styles.header}
@@ -195,80 +251,111 @@ export default function NuestrasRaicesClient({ texts }) {
   );
 }
 
-function Map() {
+function QuienesSomos({ valores, lineaDelTiempo }) {
   return (
-    <section className={styles.revistaInnovak} style={{ height: "800px" }}>
-      <div className={styles.revistasWrapper}></div>
-    </section>
-  );
-}
+    <>
+      <section className={styles.quienesSomosWrapper}>
+        <article className={styles.titleWrapper}>
+          <div className={styles.title}>
+            <h1>¿QUIENES SOMOS?</h1>
+            <p>
+              Nos sentimos orgullosos de ser la empresa con la más amplia
+              experiencia en BIOESTIMULACIÓN DESDE LA RAÍZ, contribuyendo a la
+              producción de cultivos sanos en alianza con la naturaleza; somos
+              reconocidos internacionalmente como LÍDER EN EL DESARROLLO DE
+              SOLUCIONES BIORRACIONALES con enfoque a mejorar la calidad de los
+              alimentos y la productividad de las cosechas
+            </p>
+            <p>
+              Con una presencia de casi 70 años en la agricultura tecnificada,
+              en Innovak concebimos, DESARROLLAMOS Y COMERCIALIZAMOS
+              BIOESTIMULANTES que resuelven problemas críticos de los cultivos.
+              Es EN LA RAÍZ en donde enfocamos objetivos, tecnología y la
+              filosofía compartida con el agricultor, de producir con excelencia
+              cultivos saludables, cuidando la salud de la tierra y respetando
+              el medio ambiente.Por todo esto somos una empresa de raíces
+              sólidas, de raíces productivas, de raíces mexicanas.
+            </p>
+          </div>
+          <video autoPlay muted loop controls>
+            <source src="/videos/quienesSomos.mp4" type="video/mp4" />
+          </video>
+        </article>
 
-function QuienesSomos({ valores }) {
-  return (
-    <section className={styles.quienesSomosWrapper}>
-      <article className={styles.titleWrapper}>
-        <div className={styles.title}>
-          <h1>¿QUIENES SOMOS?</h1>
-          <p>
-            Nos sentimos orgullosos de ser la empresa con la más amplia
-            experiencia en BIOESTIMULACIÓN DESDE LA RAÍZ, contribuyendo a la
-            producción de cultivos sanos en alianza con la naturaleza; somos
-            reconocidos internacionalmente como LÍDER EN EL DESARROLLO DE
-            SOLUCIONES BIORRACIONALES con enfoque a mejorar la calidad de los
-            alimentos y la productividad de las cosechas
-          </p>
-          <p>
-            Con una presencia de casi 70 años en la agricultura tecnificada, en
-            Innovak concebimos, DESARROLLAMOS Y COMERCIALIZAMOS BIOESTIMULANTES
-            que resuelven problemas críticos de los cultivos. Es EN LA RAÍZ en
-            donde enfocamos objetivos, tecnología y la filosofía compartida con
-            el agricultor, de producir con excelencia cultivos saludables,
-            cuidando la salud de la tierra y respetando el medio ambiente.Por
-            todo esto somos una empresa de raíces sólidas, de raíces
-            productivas, de raíces mexicanas.
-          </p>
-        </div>
-        <video autoPlay muted loop controls>
-          <source src="/videos/quienesSomos.mp4" type="video/mp4" />
-        </video>
-      </article>
-      <article className={styles.misionWrapper}>
-        <div>
-          <h2>MISIÓN</h2>
-          <p>
-            En Innovak Global desarrollamos y comercializamos productos
-            bioestimulantes, biorracionales y tecnologías diferenciadas para
-            contribuir a una agricultura sustentable.
-          </p>
-        </div>
-        <div>
-          <h2>VISIÓN</h2>
-          <p>
-            Ser la empresa con mayor participación de mercado en el segmento de
-            productos bioestimulantes en Latinoamérica.
-          </p>
-        </div>
-      </article>
-      <article className={styles.valoresMainWrapper}>
-        <h3>VALORES</h3>
-        <div className={styles.valoresWrapper}>
-          {valores.map((valor, i) => (
-            <div key={i} className={styles.valorWrapper}>
-              <Image src={valor.img} height={70} width={60} style={{objectFit: "contain", objectPosition: "top"}} alt="background" />
-              <div>
-                <h4>{valor.title}</h4>
-                <div className={styles.divider}></div>
-                <p>{valor.description}</p>
+        <article className={styles.misionWrapper}>
+          <div>
+            <h2>MISIÓN</h2>
+            <p>
+              En Innovak Global desarrollamos y comercializamos productos
+              bioestimulantes, biorracionales y tecnologías diferenciadas para
+              contribuir a una agricultura sustentable.
+            </p>
+          </div>
+          <div>
+            <h2>VISIÓN</h2>
+            <p>
+              Ser la empresa con mayor participación de mercado en el segmento
+              de productos bioestimulantes en Latinoamérica.
+            </p>
+          </div>
+        </article>
+
+        <article className={styles.valoresMainWrapper}>
+          <h3>VALORES</h3>
+          <div className={styles.valoresWrapper}>
+            {valores.map((valor, i) => (
+              <div key={i} className={styles.valorWrapper}>
+                <Image
+                  src={valor.img}
+                  height={70}
+                  width={60}
+                  style={{ objectFit: "contain", objectPosition: "top" }}
+                  alt="background"
+                />
+                <div>
+                  <h4>{valor.title}</h4>
+                  <div className={styles.divider}></div>
+                  <p>{valor.description}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+        </article>
+      </section>
+
+      <section className={styles.lineaDelTiempoWrapper}>
+        <div className={styles.titleWrapper}>
+          <h3>NUESTRAS RAÍCES EN EL TIEMPO</h3>
         </div>
-      </article>
-
-      <article className={styles.lineaDelTiempoWrapper}>
-
-      </article>
-    </section>
+        <Swiper
+          id="lineaDelTiempoSwiper"
+          navigation={true}
+          slidesPerView={"auto"}
+          spaceBetween={0}
+          freeMode={true}
+          className={styles.lineaDelTiempo}
+        >
+          {lineaDelTiempo.map((item, i) => (
+            <SwiperSlide
+              key={i}
+              style={{
+                backgroundImage: `url(${item.background})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                position: "relative",
+              }}
+              className={styles.lineaDelTiempoItemWrapper}
+            >
+              <div className={styles.item}>
+                <h4>{item.date}</h4>
+                <p>{item.description}</p>
+              </div>
+              <div className={styles.filter}></div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </section>
+    </>
   );
 }
 
@@ -440,3 +527,5 @@ function Revolucion() {
     </section>
   );
 }
+
+// 1920x800 || 600x800

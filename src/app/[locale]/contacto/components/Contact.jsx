@@ -11,6 +11,12 @@ import map from "../../../../../public/inicio/map.png";
 import icon from "../../../../../public/contacto/search.png";
 import eyeIcon from "../../../../../public/contacto/eye.svg";
 
+import localFont from "next/font/local";
+const futura = localFont({
+  src: "../../../../../public/fonts/futura.ttf",
+  variable: "--font-futura",
+});
+
 export default function ContactPageClient({ texts }) {
   const [index, setIndex] = React.useState(0);
   var jobs = [
@@ -68,6 +74,16 @@ export default function ContactPageClient({ texts }) {
 
   return (
     <>
+      <style jsx global>{`
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          font-family: ${futura.style.fontFamily};
+        }
+      `}</style>
       {/* Dynamic Header */}
       <article
         className={styles.header}
@@ -249,7 +265,8 @@ function FormBodyBolsaDeTrabajo({ jobs }) {
               </div>
               <span>
                 <Image src={eyeIcon} alt="icon" width={20} height={20} />
-                Ver empleo</span>
+                Ver empleo
+              </span>
             </div>
           ))}
         </div>

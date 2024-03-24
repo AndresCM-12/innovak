@@ -5,7 +5,12 @@ import Image from "next/image";
 import background from "../../../../../public/soluciones-fruto/background.png";
 
 import itemBg from "../../../../../public/soluciones-fruto/itembg.png";
-import acondicionadorDeSuelosIcon from "../../../../../public/soluciones-fruto/icons/acondicionadorDeSuelosIcon.png";
+
+import localFont from "next/font/local";
+const futura = localFont({
+  src: "../../../../../public/fonts/futura.ttf",
+  variable: "--font-futura",
+});
 
 export default function SolucionesPorFruto({ texts }) {
   var items = [
@@ -33,6 +38,16 @@ export default function SolucionesPorFruto({ texts }) {
 
   return (
     <section>
+      <style jsx global>{`
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          font-family: ${futura.style.fontFamily};
+        }
+      `}</style>
       {/* Header */}
       <article
         className={styles.header}

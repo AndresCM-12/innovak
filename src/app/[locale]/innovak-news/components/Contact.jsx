@@ -1,10 +1,7 @@
 "use client";
 import React from "react";
 import styles from "./inovakNews.module.css";
-import allStyles from "../../page.module.css";
-import { motion } from "framer-motion";
 import Image from "next/image";
-import map from "../../../../../public/inicio/map.png";
 import background from "../../../../../public/innovak-news/background.png";
 
 import comunik1 from "../../../../../public/innovak-news/comunik1.png";
@@ -17,6 +14,12 @@ import imgInnovakNews1 from "../../../../../public/inicio/innovakNews1.png";
 import imgInnovakNews2 from "../../../../../public/inicio/innovakNews2.png";
 import imgInnovakNews3 from "../../../../../public/inicio/innovakNews3.png";
 import Link from "next/link";
+
+import localFont from "next/font/local";
+const futura = localFont({
+  src: "../../../../../public/fonts/futura.ttf",
+  variable: "--font-futura",
+});
 
 export default function ContactPageClient({ texts }) {
   const [index, setIndex] = React.useState(0);
@@ -105,6 +108,16 @@ export default function ContactPageClient({ texts }) {
 
   return (
     <section>
+      <style jsx global>{`
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          font-family: ${futura.style.fontFamily};
+        }
+      `}</style>
       {/* Dynamic Header */}
       <article
         className={styles.header}

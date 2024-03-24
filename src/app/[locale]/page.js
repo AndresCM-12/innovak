@@ -30,12 +30,34 @@ import imgInnovakNews2 from "../../../public/inicio/innovakNews2.png";
 import imgInnovakNews3 from "../../../public/inicio/innovakNews3.png";
 import map from "../../../public/inicio/map.png";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import localFont from "next/font/local";
+
+const avenir = localFont({
+  src: "../../../public/fonts/Avenir-normal.otf",
+  variable: "--font-avenir",
+});
+const futura = localFont({
+  src: "../../../public/fonts/futura.ttf",
+  variable: "--font-futura",
+});
 
 export default function Home() {
   return (
     <div className={allStyles.mainWrapper}>
+      <style jsx global>
+        {`
+          h1,
+          h2,
+          h3,
+          h4,
+          h5,
+          h6 {
+            font-family: ${futura.style.fontFamily};
+          }
+        `}
+      </style>
       <main className={allStyles.main}>
         <HeroSection />
         <Alianzas />
@@ -92,14 +114,7 @@ function Alianzas() {
   const images = [image1, image2, image3, image4, image5, image6];
 
   return (
-    <section
-      style={{
-        backgroundImage: `url(${alianzasBackground.src})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
+    <section style={{ position: "relative" }}>
       {/* Counter */}
       <article className={styles.counterWrapper}>
         {alianzas.map((item, index) => (
@@ -136,11 +151,42 @@ function Alianzas() {
         </Swiper>
       </article>
       {/* Alianzas */}
+
+      <video
+        autoPlay
+        muted
+        loop
+        style={{
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          position: "absolute",
+          top: 0,
+          left: 0,
+          zIndex: 0,
+        }}
+      >
+        <source src="/videos/alianzas1.mp4" />
+        <source
+          src="/videos/alianzas2.mp4"
+          media="screen and (max-width: 770px) "
+        />
+      </video>
     </section>
   );
 }
 
 function Tecnologias() {
+  const [lang, setLang] = useState("mxn");
+
+  useEffect(() => {
+    const locale = document.cookie
+      .split(";")
+      .find((c) => c.trim().startsWith("NEXT_LOCALE="))
+      .split("=")[1];
+    setLang(locale);
+  }, []);
+
   const tecnologias = [
     {
       image: tecnologia1,
@@ -207,7 +253,9 @@ function Tecnologias() {
           marginTop: "-4px",
         }}
       >
-        <div className={styles.seeMoreButton}>ver más</div>
+        <a href={`${lang}/productos`}>
+          <div className={styles.seeMoreButton}>ver más</div>
+        </a>
       </div>
     </section>
   );
@@ -399,6 +447,16 @@ function Testimonials() {
 }
 
 function News() {
+  const [lang, setLang] = useState("mxn");
+
+  useEffect(() => {
+    const locale = document.cookie
+      .split(";")
+      .find((c) => c.trim().startsWith("NEXT_LOCALE="))
+      .split("=")[1];
+    setLang(locale);
+  }, []);
+
   const news = [
     {
       title: "antiguedad. Richard McClintock, un profesor de Latin de la",
@@ -433,7 +491,7 @@ function News() {
           }}
         />
         <div className={styles.newsSeparator}></div>
-        <Link href="/innovak-news">
+        <Link href={`${lang}/innovak-news`}>
           <div className={styles.newsButton}>Ver todo</div>
         </Link>
       </article>

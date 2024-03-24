@@ -2,7 +2,12 @@
 import React from "react";
 import styles from "./presencia.module.css";
 import background from "../../../../../public/innovak-news/background.png";
-import Link from "next/link";
+
+import localFont from "next/font/local";
+const futura = localFont({
+  src: "../../../../../public/fonts/futura.ttf",
+  variable: "--font-futura",
+});
 
 export default function PresenciaClient({ texts }) {
   const [index, setIndex] = React.useState(0);
@@ -41,6 +46,16 @@ export default function PresenciaClient({ texts }) {
 
   return (
     <section>
+      <style jsx global>{`
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          font-family: ${futura.style.fontFamily};
+        }
+      `}</style>
       {/* Dynamic Header */}
       <article
         className={styles.header}
@@ -79,7 +94,7 @@ export default function PresenciaClient({ texts }) {
 
 function Map() {
   return (
-    <section className={styles.revistaInnovak} style={{height: "800px"}}>
+    <section className={styles.revistaInnovak} style={{ height: "800px" }}>
       <div className={styles.revistasWrapper}></div>
     </section>
   );

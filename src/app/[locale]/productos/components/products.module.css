@@ -13,7 +13,7 @@
   z-index: 1;
 }
 .header h1 {
-  font-size: 3rem;
+  font-size: 48px;
   color: #fff;
   text-align: center;
   font-weight: 400;
@@ -54,9 +54,9 @@
   padding-bottom: 32px;
 }
 .productOption h6 {
-  font-size: 22px;
+  font-size: 20px;
   color: #fff;
-  font-weight: 600;
+  font-weight: 500;
   margin-bottom: 10px;
 }
 .productOption p {

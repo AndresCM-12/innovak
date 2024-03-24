@@ -1,13 +1,17 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import styles from "./products.module.css";
-import background from "../../../../../public/innovak-news/background.png";
-import Link from "next/link";
 
 import acondicionadoresDeSueloImg from "../../../../../public/products/acondicionadoresDeSuelo.png";
 import bioestimulantesImg from "../../../../../public/products/bioestimulantes.png";
 import nutrientesImg from "../../../../../public/products/nutrientes.png";
 import proteccionDeCultivosImg from "../../../../../public/products/proteccionDeCultivos.png";
+
+import localFont from "next/font/local";
+const futura = localFont({
+  src: "../../../../../public/fonts/futura.ttf",
+  variable: "--font-futura",
+});
 
 export default function ProductsClient({ texts }) {
   const [index, setIndex] = React.useState(0);
@@ -54,6 +58,16 @@ export default function ProductsClient({ texts }) {
 
   return (
     <section>
+      <style jsx global>{`
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          font-family: ${futura.style.fontFamily};
+        }
+      `}</style>
       {/* Dynamic Header */}
       <article
         className={styles.header}

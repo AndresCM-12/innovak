@@ -41,6 +41,8 @@
   padding-block-start: 180px;
   padding-block-end: 120px;
   gap: 12px;
+  z-index: 1;
+  position: relative;
 }
 .counterWrapper div {
   display: flex;
@@ -52,7 +54,7 @@
 .counterWrapper h3 {
   font-size: 64px;
   font-weight: 500;
-  -webkit-text-fill-color: #0d0e49;
+  -webkit-text-fill-color: transparent;
   -webkit-text-stroke-color: white;
   -webkit-text-stroke-width: 1.00px; 
 }
