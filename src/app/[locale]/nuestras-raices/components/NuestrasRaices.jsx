@@ -1,18 +1,20 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./nuestrasRaices.module.css";
 import allStyles from "../../inicio.module.css";
 import revolucionStyles from "./revolucion.module.css";
-import bgImage from "../../../../../public/nuestrasraices/revolucionBackground.svg";
 
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
 
 import Image from "next/image";
 
 import certificationIcon from "../../../../../public/nuestrasraices/certificationIcon.svg";
-import background from "../../../../../public/innovak-news/background.png";
+import background from "../../../../../public/nuestrasraices/background.png";
+import bgImage from "../../../../../public/nuestrasraices/revolucionBackground.svg";
 
 import logoBio from "../../../../../public/nuestrasraices/logo_bio.png";
 import logoEsr from "../../../../../public/nuestrasraices/logo_ESR.png";
@@ -32,8 +34,17 @@ import servicio from "../../../../../public/nuestrasraices/valores/servicio.svg"
 import trascendencia from "../../../../../public/nuestrasraices/valores/trascendencia.svg";
 
 import lineaDelTiempoBg1 from "../../../../../public/nuestrasraices/1954.png";
+import lineaDelTiempoBg2 from "../../../../../public/nuestrasraices/1955.png";
+import lineaDelTiempoBg3 from "../../../../../public/nuestrasraices/1957.png";
+import lineaDelTiempoBg4 from "../../../../../public/nuestrasraices/1962.png";
+
+import next_arrow from "../../../../../public/nuestrasraices/next_arrow.svg";
+import prev_arrow from "../../../../../public/nuestrasraices/prev_arrow.svg";
+
+import raices from "../../../../../public/nuestrasraices/raices.svg";
 
 import localFont from "next/font/local";
+import next from "next";
 const futura = localFont({
   src: "../../../../../public/fonts/futura.ttf",
   variable: "--font-futura",
@@ -140,26 +151,26 @@ export default function NuestrasRaicesClient({ texts }) {
     {
       date: "1955",
       description: `Se crea el Laboratorio de Análisis Agrícolas e Industriales, S.A. de C.V.  en asociación con el Señor Joseph L. Hearn para ofrecer servicios de análisis de suelo y agua.`,
-      background: lineaDelTiempoBg1.src1,
+      background: lineaDelTiempoBg2.src,
     },
     {
       date: "1957",
       description: `Funda Productos Químicos de Chihuahua, S.A de C.V. empresa formuladora y comercializadora de productos de limpieza industrial .`,
-      background: lineaDelTiempoBg1.src,
+      background: lineaDelTiempoBg3.src,
     },
     {
       date: "1962",
       description: `Tras el estudio de estas referencias, se diseñaron algunos procesos obteniendo diferentes extractos y con esto se realizaron experimentaciones para probar su capacidad desincrustante en el proceso de lavado de botellas y máquinas lavadoras.
         Como resultado de éstas investigaciones se definió un extracto denominado TOG, que aunque mostrara cierta capacidad desincrustante no fue lo suficiente efectivo para poder posicionarlo como una solución.
         `,
-      background: lineaDelTiempoBg1.src,
+      background: lineaDelTiempoBg4.src,
     },
     {
       date: "1962",
       description: `Tras el estudio de estas referencias, se diseñaron algunos procesos obteniendo diferentes extractos y con esto se realizaron experimentaciones para probar su capacidad desincrustante en el proceso de lavado de botellas y máquinas lavadoras.
         Como resultado de éstas investigaciones se definió un extracto denominado TOG, que aunque mostrara cierta capacidad desincrustante no fue lo suficiente efectivo para poder posicionarlo como una solución.
         `,
-      background: lineaDelTiempoBg1.src,
+      background: lineaDelTiempoBg4.src,
     },
   ];
 
@@ -223,7 +234,15 @@ export default function NuestrasRaicesClient({ texts }) {
           zIndex: 0,
         }}
       >
-        <h1>LOCALIZADOR DE COMERCIALES</h1>
+        <h1>NUESTRAS RAÍCES</h1>
+        <p>
+          Desarrollamos y comercializamos BIOESTIMULANTES que resuelven
+          problemas críticos de los cultivos, somos líderes en el desarrollo de
+          SOLUCIONES BIORRACIONALES para la agricultura. En la RAÍZ enfocamos
+          objetivos, tecnología y la filosofía compartida con el agricultor, de
+          producir con excelencia cultivos saludables, cuidando la salud de la
+          tierra y respetando el medio ambiente.
+        </p>
       </article>
       {/* Dynamic Header */}
 
@@ -298,6 +317,7 @@ function QuienesSomos({ valores, lineaDelTiempo }) {
               de productos bioestimulantes en Latinoamérica.
             </p>
           </div>
+          <Image src={raices} alt="background" />
         </article>
 
         <article className={styles.valoresMainWrapper}>
@@ -326,14 +346,35 @@ function QuienesSomos({ valores, lineaDelTiempo }) {
       <section className={styles.lineaDelTiempoWrapper}>
         <div className={styles.titleWrapper}>
           <h3>NUESTRAS RAÍCES EN EL TIEMPO</h3>
+          <div className={styles.controls}>
+            <Image
+              id="swiper_button_prev"
+              src={prev_arrow}
+              width={10}
+              height={28}
+              alt="flecha de navegacion"
+            />
+            <Image
+              id="swiper_button_next"
+              src={next_arrow}
+              width={10}
+              height={28}
+              alt="flecha de navegacion"
+            />
+          </div>
         </div>
         <Swiper
           id="lineaDelTiempoSwiper"
-          navigation={true}
+          navigation={{
+            nextEl: "#swiper_button_next",
+            prevEl: "#swiper_button_prev",
+          }}
           slidesPerView={"auto"}
+          modules={[Navigation]}
           spaceBetween={0}
           freeMode={true}
           className={styles.lineaDelTiempo}
+          pagination={true}
         >
           {lineaDelTiempo.map((item, i) => (
             <SwiperSlide
@@ -431,19 +472,32 @@ function Certificaciones({ certifications, distintivos, reconocimientos }) {
 }
 
 function Tecnologias() {
+  const [lang, setLang] = useState("mxn");
+
+  useEffect(() => {
+    const locale = document.cookie
+      .split(";")
+      .find((c) => c.trim().startsWith("NEXT_LOCALE="))
+      .split("=")[1];
+    setLang(locale);
+  }, []);
+
   const tecnologias = [
     {
       image: tecnologia1,
       text: `ECCA Carboxy es la Ecotecnología de la obtención de Compuestos Carboxy Aromáticos con efecto bioestimulante.`,
+      link: `/${lang}/nuestras-raices/tecnologia-1`,
     },
     {
       image: tecnologia2,
       text: `RDR (Regulación de la Dinámica Radicular) es una tecnología enfocada en la raíz y su medio ambiente para maximizar la productividad de los cultivos de manera sustentable.`,
+      link: `/${lang}/nuestras-raices/tecnologia-2`,
     },
     {
       image: tecnologia3,
       text: `PFENERGY
       Es una tecnología creada a partir de polifenoles, generando opciones sustentables para mitigar el estrés, incrementar la actividad rizosférica, mejorar la absorción de nutrientes y generar una mayor productividad y calidad.`,
+      link: `/${lang}/nuestras-raices/tecnologia-3`,
     },
   ];
   return (
@@ -473,7 +527,16 @@ function Tecnologias() {
         }}
       >
         {tecnologias.map((tecnologia, index) => (
-          <div key={index} className={allStyles.brandItem}>
+          <div
+            style={{
+              cursor: "pointer",
+            }}
+            key={index}
+            className={allStyles.brandItem}
+            onClick={() => {
+              window.location.href = tecnologia.link;
+            }}
+          >
             <div
               className={allStyles.brandItemImage}
               style={{

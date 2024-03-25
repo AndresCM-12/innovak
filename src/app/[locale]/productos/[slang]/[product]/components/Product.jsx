@@ -1,30 +1,21 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import styles from "./dynamicProducts.module.css";
+import React from "react";
+import styles from "./product.module.css";
 import Image from "next/image";
 
 import localFont from "next/font/local";
 const futura = localFont({
-  src: "../../../../../../public/fonts/futura.ttf",
+  src: "../../../../../../../public/fonts/futura.ttf",
   variable: "--font-futura",
 });
 
-export default function DynamicProductsClient({
+export default function ProductClient({
   texts,
   params,
   pagesInfo,
   selectedInfo,
 }) {
-  const [index, setIndex] = useState(selectedInfo);
-  const [lang, setLang] = useState("mxn");
-
-  useEffect(() => {
-    const locale = document.cookie
-      .split(";")
-      .find((c) => c.trim().startsWith("NEXT_LOCALE="))
-      .split("=")[1];
-    setLang(locale);
-  }, []);
+  const [index, setIndex] = React.useState(selectedInfo);
 
   return (
     <section>
@@ -81,23 +72,17 @@ export default function DynamicProductsClient({
       {/* Dynamic Header */}
 
       {/* content */}
-      <ProductsList productImages={pagesInfo[index].products} lang={lang} />
+      <ProductsList productImages={pagesInfo[index].products} />
       {/* content */}
     </section>
   );
 }
 
-function ProductsList({ productImages, lang }) {
+function ProductsList({ productImages }) {
   return (
     <section className={styles.products}>
       {productImages.map((product, i) => (
-        <div
-          className={styles.productsImages}
-          key={i + "div"}
-          onClick={() => {
-            window.location.href = `/${lang}${product.link}`;
-          }}
-        >
+        <div className={styles.productsImages} key={i + "div"}>
           <Image src={product.image} alt="product" width={200} height={200} />
           <div className={styles.separator}></div>
           <div>

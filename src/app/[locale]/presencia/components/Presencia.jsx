@@ -1,13 +1,16 @@
 "use client";
 import React from "react";
 import styles from "./presencia.module.css";
-import background from "../../../../../public/innovak-news/background.png";
 
 import localFont from "next/font/local";
 const futura = localFont({
   src: "../../../../../public/fonts/futura.ttf",
   variable: "--font-futura",
 });
+
+import mexicoMap from "../../../../../public/presencia/mexico.svg";
+import background from "../../../../../public/presencia/background.png";
+import Image from "next/image";
 
 export default function PresenciaClient({ texts }) {
   const [index, setIndex] = React.useState(0);
@@ -17,7 +20,7 @@ export default function PresenciaClient({ texts }) {
       title: "MÉXICO",
       subtitle: "",
       image: background.src,
-      content: <Map />,
+      content: <MapMexico map={mexicoMap}/>,
     },
     {
       title: "ESTADOS UNIDOS",
@@ -74,7 +77,6 @@ export default function PresenciaClient({ texts }) {
           <>
             <div
               className={index === i ? `${styles.active}` : ""}
-              key={i + "div"}
               onClick={() => handleNextStep(i)}
             >
               <p>{page.title}</p>
@@ -94,8 +96,18 @@ export default function PresenciaClient({ texts }) {
 
 function Map() {
   return (
-    <section className={styles.revistaInnovak} style={{ height: "800px" }}>
-      <div className={styles.revistasWrapper}></div>
+    <section className={styles.presenciaWrapper} style={{ height: "800px" }}>
+      <div className={styles.mapWrapper}></div>
+    </section>
+  );
+}
+
+function MapMexico({map}) {
+  return (
+    <section className={styles.presenciaWrapper}>
+      <div className={styles.mapWrapper}>
+        <Image width={10} height={10} src={map} alt="Mexico" />
+      </div>
     </section>
   );
 }

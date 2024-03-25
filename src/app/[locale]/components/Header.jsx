@@ -6,7 +6,6 @@ import whiteLogo from "../../../../public/images/logo_white.png";
 
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useEffect, useState } from "react";
-import { Hind_Vadodara } from "next/font/google";
 import Link from "next/link";
 import LocaleSwitch from "./LocaleSwitch";
 

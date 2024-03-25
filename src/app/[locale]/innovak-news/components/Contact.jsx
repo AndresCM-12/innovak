@@ -13,6 +13,8 @@ import comunik5 from "../../../../../public/innovak-news/comunik5.png";
 import imgInnovakNews1 from "../../../../../public/inicio/innovakNews1.png";
 import imgInnovakNews2 from "../../../../../public/inicio/innovakNews2.png";
 import imgInnovakNews3 from "../../../../../public/inicio/innovakNews3.png";
+
+import headerImg from "../../../../../public/innovak-news/header.svg";
 import Link from "next/link";
 
 import localFont from "next/font/local";
@@ -76,7 +78,7 @@ export default function ContactPageClient({ texts }) {
       title: "POSTERS E INFOGRAFÍAS",
       subtitle: "",
       image: background.src,
-      content: <Ensayos content={content} />,
+      content: <RevistaInnovak images={comunikImages} />,
     },
     {
       header: "ARTÍCULOS",
@@ -126,8 +128,13 @@ export default function ContactPageClient({ texts }) {
           zIndex: 0,
         }}
       >
-        <h1>{pagesInfo[index].header}</h1>
-        <p>{pagesInfo[index].subtitle}</p>
+        <Image src={headerImg} style={{
+          maxWidth: "600px",
+          width: "100%",
+          maxHeight: "125px",
+          height: "auto",
+          paddingInline: "20px",
+        }} width={600} height={125} alt="Innovak news título" />
       </article>
       {/* Dynamic Header */}
 
