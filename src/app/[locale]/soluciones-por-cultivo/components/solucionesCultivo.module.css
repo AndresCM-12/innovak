@@ -54,7 +54,7 @@
   text-align: center;
 }
 
-.revistasWrapper{
+.revistasWrapper {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -64,8 +64,9 @@
   max-width: 1284px;
   margin-inline: auto;
   margin-bottom: 88px;
+  cursor: pointer;
 }
-.itemsWrapper{
+.itemsWrapper {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -73,7 +74,12 @@
   justify-content: center;
   position: relative;
 }
-.itemsWrapper .floating{
+.itemsWrapper .itemBg {
+  filter: brightness(0.4);
+  z-index: -1;
+  border-radius: 20px;
+}
+.itemsWrapper .floating {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -83,13 +89,15 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  row-gap: 20px;
+  row-gap: 10px;
+  padding: 12px;
 }
-.itemsWrapper .floating h6{
+.itemsWrapper .floating h6 {
   font-size: 16px;
   font-weight: 700;
   letter-spacing: 0em;
   text-align: center;
   color: white;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
+  text-transform: uppercase;
 }

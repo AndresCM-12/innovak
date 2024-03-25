@@ -2,13 +2,13 @@
 import React from "react";
 import styles from "./solucionesFruto.module.css";
 import Image from "next/image";
-import background from "../../../../../public/soluciones-fruto/background.png";
+import background from "../../../../../../public/soluciones-fruto/background.png";
 
-import itemBg from "../../../../../public/soluciones-fruto/itembg.png";
+import itemBg from "../../../../../../public/soluciones-fruto/itembg.png";
 
 import localFont from "next/font/local";
 const futura = localFont({
-  src: "../../../../../public/fonts/futura.ttf",
+  src: "../../../../../../public/fonts/futura.ttf",
   variable: "--font-futura",
 });
 
