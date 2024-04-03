@@ -75,12 +75,7 @@ function HeroSection() {
     <section className={styles.heroSection}>
       <h1>50 AÑOS AGREGANDO VALOR AL SUELO</h1>
       <p>
-        Es una línea de formulaciones dirigida a resolver problemas de
-        compactación o salinidad de suelos, de uso en la mayoría de los
-        cultivos. Son productos de fácil aplicación por cualquier sistema de
-        riego (gravedad, goteo, aspersión o micro aspersión) o en mezcla con
-        fertilizantes granulados. Su efecto es rápido y contundente avalado por
-        su uso en la agricultura por más de 50 años.
+      En Innovak Global desarrollamos y comercializamos productos biorracionales y tecnologías diferenciadas en la agricultura para contribuir a una naturaleza sustentable.
       </p>
       <span>Desde 1973/2023</span>
       <video
@@ -105,10 +100,10 @@ function HeroSection() {
 
 function Alianzas() {
   const alianzas = [
-    { number: "70", title: "PAÍSES" },
-    { number: "166", title: "PRODUCTOS" },
+    { number: "+30", title: "PAÍSES" },
+    { number: "+48", title: "PRODUCTOS" },
     { number: "67", title: "AÑOS" },
-    { number: "9,000", title: "CLIENTES" },
+    { number: "6", title: "FILIALES" },
   ];
 
   const images = [image1, image2, image3, image4, image5, image6];
@@ -138,7 +133,7 @@ function Alianzas() {
           spaceBetween={50}
         >
           {images.map((image, index) => (
-            <SwiperSlide key={index} style={{ width: "300px" }}>
+            <SwiperSlide key={index} style={{ width: "200px" }}>
               <Image
                 className={styles.image}
                 src={image}
@@ -459,22 +454,29 @@ function News() {
 
   const news = [
     {
-      title: "antiguedad. Richard McClintock, un profesor de Latin de la",
-      text: "eratura del Latin, que data del año 45 antes de Cristo, haciendo que este adquiera mas de 2000 años de antiguedad. Richard McClintock, un profesor de Latin de la Universidad de Hampden-Sydney en Virginia,",
-      link: "/innovak-news",
-      image: imgInnovakNews1,
+      title: "Sistema radicular de la vid",
+      text: `El optimo de desarrollo del sistema radicular de la vid es primordial para el logro del potencial de producción, tanto en rendimiento como en calidad. Desde la formación de la parra, después de ser plantada en el suelo, la actividad radicular determina, en gran medida, la capacidad para su formación.
+
+      Una vez que el viñedo entra en producción la raíz influye en la calidad y rendimiento por tres razones (Ruiz, 2005): La primera es que la raíces son el principal factor en el balance de carbohidratos en la vid. La segunda que proveen de agua y nutrientes para el crecimiento aéreo y producción de frutos. Y la tercera que recogen señales positivas o negativas provenientes de suelo que se trasmiten bioquímicamente a la parte aérea, con repercusión en la fruta.`,
+      link: "https://www.innovakglobal.com/sistema-radicular-de-la-vid/#tab-9cfd2d5e3b53d325c13",
+      image:
+        "https://www.innovakglobal.com/wp-content/uploads/2020/02/WhatsApp-Image-2018-10-01-at-2.22.21-PM-1.jpg",
     },
     {
-      title: "antiguedad. Richard McClintock, un profesor de Latin de la",
-      text: "eratura del Latin, que data del año 45 antes de Cristo, haciendo que este adquiera mas de 2000 años de antiguedad. Richard McClintock, un profesor de Latin de la Universidad de Hampden-Sydney en Virginia,",
-      link: "/innovak-news",
-      image: imgInnovakNews2,
+      title: "Resistencia Sistémica",
+      text: "El ataque de insectos y patógenos en plantas ha sido causante de preocupación en las últimas décadas. Es por esto, que se han realizado diversos estudios con el fin de conocer el mecanismo de las plantas que le permiten defenderse de éstos mediante un complejo sistema que incluye múltiples niveles de protección. Los mecanismos de protección que han desarrollado para defenderse de factores bióticos y abióticos son físicos o químicos y constitutiva o inducida. Las barreras físicas consisten en la composición y estructura de la cutícula, tricomas, estomas, pared celular entre otras.  Las barreras químicas constan en producción de taninos, terpenos, resinas alcaloides (antes del ataque de un patógeno). La desventaja de esta forma de defenderse radica en el tiempo de respuesta, es decir, requiere de años de modificaciones evolutivas, generación de genes estructurales para que se dé el cambio en una barrera física o química (5).",
+      link: "https://www.innovakglobal.com/resistencia-sistemica/",
+      image:
+        "https://www.innovakglobal.com/wp-content/uploads/2020/02/2DO-LUGAR-PLAGAS-Y-ENFERMEDADES.jpg",
     },
     {
-      title: "antiguedad. Richard McClintock, un profesor de Latin de la",
-      text: "eratura del Latin, que data del año 45 antes de Cristo, haciendo que este adquiera mas de 2000 años de antiguedad. Richard McClintock, un profesor de Latin de la Universidad de Hampden-Sydney en Virginia,",
-      link: "/innovak-news",
-      image: imgInnovakNews3,
+      title: "Costo de un amarre deficiente y tamaños pequeños de fruto.",
+      text: `Dentro de los principales problemas que se presentan en los cultivares de manzana se encuentran la caída de los frutos y el calibre reducido de los mismos al inicio de su desarrollo. Estos problemas son en parte asociados a las variaciones en las condiciones climáticas de las regiones de producción y en parte a problemas que derivan de los diferentes sistemas de manejo de la producción.
+
+      El estado de Chihuahua aporta el 55% de la producción de manzana mexicana, as pérdidas en rendimiento por caída de frutos, ocasionadas por condiciones ambientales adversas, en dicha entidad van de 14% a un 32%. Tomando en cuenta que en 2014 el estado tenía en producción 26,666 hectáreas (SAGARPA).`,
+      link: "https://www.innovakglobal.com/costo-de-un-amarre-deficiente-y-tamanos-pequenos-de-fruto/",
+      image:
+        "https://www.innovakglobal.com/wp-content/uploads/2020/03/Arte-Incas1.jpg",
     },
   ];
   return (
