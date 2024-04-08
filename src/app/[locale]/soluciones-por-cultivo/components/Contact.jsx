@@ -49,7 +49,7 @@ export default function ContactPageClient({ texts }) {
       title: "TAMAÑO DE FRUTO",
       icon: amarreTamañoDeFrutoIcon,
       bg: tamañoBg,
-      link: "/soluciones-por-cultivo/tamaño-de-fruto",
+      link: "/soluciones-por-cultivo/tamano-de-fruto",
     },
     {
       title: "Actividad radicular",
