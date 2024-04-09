@@ -95,7 +95,8 @@ function ProductsList({ productImages, lang }) {
           className={styles.productsImages}
           key={i + "div"}
           onClick={() => {
-            window.location.href = `/${lang}${product.link}`;
+            //Open link in new tab
+            window.open(`/${lang}${product.link}`, "_blank");
           }}
         >
           <Image src={product.image} alt="product" width={200} height={200} />
