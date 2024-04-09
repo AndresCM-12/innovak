@@ -15,7 +15,6 @@ import image3 from "../../../public/inicio/ciatej.png";
 import image4 from "../../../public/inicio/geneve.png";
 import image5 from "../../../public/inicio/organic.png";
 import image6 from "../../../public/inicio/ciad.png";
-import alianzasBackground from "../../../public/inicio/alianzasBackground.png";
 import tecnologiasBackground from "../../../public/inicio/tecnologiaBackground.svg";
 import tecnologia1 from "../../../public/inicio/tecnologia1.png";
 import tecnologia2 from "../../../public/inicio/tecnologia2.png";
@@ -25,9 +24,6 @@ import imgReviewIvanQuiñonez from "../../../public/images/reviews/ivanQuiñon
 import imgReviewJorgeAdrian from "../../../public/images/reviews/jorgeAdrian.png";
 import imgReviewReynaldoCabrera from "../../../public/images/reviews/reynaldoCabrera.png";
 import imgInnovakNews from "../../../public/inicio/innovakNews.png";
-import imgInnovakNews1 from "../../../public/inicio/innovakNews1.png";
-import imgInnovakNews2 from "../../../public/inicio/innovakNews2.png";
-import imgInnovakNews3 from "../../../public/inicio/innovakNews3.png";
 import map from "../../../public/inicio/map.png";
 
 import { useEffect, useState } from "react";
@@ -44,6 +40,8 @@ const futura = localFont({
 });
 
 export default function Home() {
+  const images = [image1, image2, image3, image4, image5, image6];
+
   return (
     <div className={allStyles.mainWrapper}>
       <style jsx global>
@@ -60,7 +58,7 @@ export default function Home() {
       </style>
       <main className={allStyles.main}>
         <HeroSection />
-        <Alianzas />
+        <Alianzas images={images} />
         <Tecnologias />
         <Testimonials />
         <News />
@@ -75,7 +73,9 @@ function HeroSection() {
     <section className={styles.heroSection}>
       <h1>50 AÑOS AGREGANDO VALOR AL SUELO</h1>
       <p>
-      En Innovak Global desarrollamos y comercializamos productos biorracionales y tecnologías diferenciadas en la agricultura para contribuir a una naturaleza sustentable.
+        En Innovak Global desarrollamos y comercializamos productos
+        biorracionales y tecnologías diferenciadas en la agricultura para
+        contribuir a una naturaleza sustentable.
       </p>
       <span>Desde 1973/2023</span>
       <video
@@ -98,15 +98,13 @@ function HeroSection() {
   );
 }
 
-function Alianzas() {
+function Alianzas({ images }) {
   const alianzas = [
     { number: "+30", title: "PAÍSES" },
     { number: "+48", title: "PRODUCTOS" },
     { number: "67", title: "AÑOS" },
     { number: "6", title: "FILIALES" },
   ];
-
-  const images = [image1, image2, image3, image4, image5, image6];
 
   return (
     <section style={{ position: "relative" }}>
@@ -248,7 +246,7 @@ function Tecnologias() {
           marginTop: "-4px",
         }}
       >
-        <a href={`${lang}/productos`}>
+        <a href={`${lang}/nuestras-raices`}>
           <div className={styles.seeMoreButton}>ver más</div>
         </a>
       </div>

@@ -33,10 +33,32 @@ import pasion from "../../../../../public/nuestrasraices/valores/pasion.svg";
 import servicio from "../../../../../public/nuestrasraices/valores/servicio.svg";
 import trascendencia from "../../../../../public/nuestrasraices/valores/trascendencia.svg";
 
-import lineaDelTiempoBg1 from "../../../../../public/nuestrasraices/1954.png";
-import lineaDelTiempoBg2 from "../../../../../public/nuestrasraices/1955.png";
-import lineaDelTiempoBg3 from "../../../../../public/nuestrasraices/1957.png";
-import lineaDelTiempoBg4 from "../../../../../public/nuestrasraices/1962.png";
+import img1950 from "../../../../../public/nuestrasraices/line/1954.jpg";
+import img1955 from "../../../../../public/nuestrasraices/line/1955.jpg";
+import img1957 from "../../../../../public/nuestrasraices/line/1957.jpg";
+import img1961 from "../../../../../public/nuestrasraices/line/1961.jpg";
+import img1962 from "../../../../../public/nuestrasraices/line/1962.jpg";
+import img1967 from "../../../../../public/nuestrasraices/line/1967.jpg";
+import img1970 from "../../../../../public/nuestrasraices/line/1970.jpg";
+import img1973 from "../../../../../public/nuestrasraices/line/1973.jpg";
+import img1974 from "../../../../../public/nuestrasraices/line/1974.jpg";
+import img1984 from "../../../../../public/nuestrasraices/line/1984.jpg";
+import img1985 from "../../../../../public/nuestrasraices/line/1985.jpg";
+import img1987 from "../../../../../public/nuestrasraices/line/1987.jpg";
+import img1990 from "../../../../../public/nuestrasraices/line/1990.jpg";
+import img1992 from "../../../../../public/nuestrasraices/line/1992.jpg";
+import img1993 from "../../../../../public/nuestrasraices/line/1993.jpg";
+import img1994 from "../../../../../public/nuestrasraices/line/1994.jpg";
+import img2002 from "../../../../../public/nuestrasraices/line/2002.jpg";
+import img2005 from "../../../../../public/nuestrasraices/line/2005.jpg";
+import img2007 from "../../../../../public/nuestrasraices/line/2007.jpg";
+import img2008 from "../../../../../public/nuestrasraices/line/2008.jpg";
+import img2013 from "../../../../../public/nuestrasraices/line/2013.jpg";
+import img2014 from "../../../../../public/nuestrasraices/line/2014.jpg";
+import img2016 from "../../../../../public/nuestrasraices/line/2016.jpg";
+import img2017 from "../../../../../public/nuestrasraices/line/2017.jpg";
+import img2019 from "../../../../../public/nuestrasraices/line/2019.jpg";
+import img2021 from "../../../../../public/nuestrasraices/line/2021.jpg";
 
 import next_arrow from "../../../../../public/nuestrasraices/next_arrow.svg";
 import prev_arrow from "../../../../../public/nuestrasraices/prev_arrow.svg";
@@ -144,33 +166,316 @@ export default function NuestrasRaicesClient({ texts }) {
 
   var lineaDelTiempo = [
     {
-      date: "1950",
-      description: `Nace Representaciones Industriales S.A. de C.V.  dedicada a comercializar maquinaria, equipo industrial, tratamiento industriales para madera, celulosa y suavizadores de agua.`,
-      background: lineaDelTiempoBg1.src,
+      date: "1954",
+      description: `Nace Representaciones 
+      Industriales S.A. de C.V. 
+      dedicada a comercializar 
+      maquinaria, equipo 
+      industrial, tratamiento 
+      industriales para madera, 
+      celulosa y suavizadores de 
+      agua`,
+      background: img1950.src,
     },
     {
       date: "1955",
-      description: `Se crea el Laboratorio de Análisis Agrícolas e Industriales, S.A. de C.V.  en asociación con el Señor Joseph L. Hearn para ofrecer servicios de análisis de suelo y agua.`,
-      background: lineaDelTiempoBg2.src,
+      description: `Se crea el Laboratorio de Análisis 
+      Agrícolas e Industriales, S.A. de 
+      C.V. en asociación con el Señor 
+      Joseph L. Hearn para ofrecer 
+      servicios de análisis de suelo y 
+      agua.`,
+      background: img1955.src,
     },
     {
       date: "1957",
-      description: `Funda Productos Químicos de Chihuahua, S.A de C.V. empresa formuladora y comercializadora de productos de limpieza industrial .`,
-      background: lineaDelTiempoBg3.src,
+      description: `Don Vicente Medina Holguín
+      funda Productos Químicos de 
+      Chihuahua, S.A de C.V. empresa 
+      formuladora y comercializadora 
+      de productos de limpieza 
+      industrial .
+      `,
+      background: img1957.src,
+    },
+    {
+      date: "1961",
+      description: `Don Vicente en la búsqueda de 
+      alternativas de materiales con 
+      propiedades desincrustantes, 
+      encuentra referencias bibliográficas de experimentos que se 
+      realizaban en Rusia sobre el uso 
+      de ácidos orgánicos con 
+      propiedades quelatantes 
+      provenientes de cascarillas 
+      agrícolas
+        `,
+      background: img1961.src,
     },
     {
       date: "1962",
-      description: `Tras el estudio de estas referencias, se diseñaron algunos procesos obteniendo diferentes extractos y con esto se realizaron experimentaciones para probar su capacidad desincrustante en el proceso de lavado de botellas y máquinas lavadoras.
-        Como resultado de éstas investigaciones se definió un extracto denominado TOG, que aunque mostrara cierta capacidad desincrustante no fue lo suficiente efectivo para poder posicionarlo como una solución.
+      description: `Tras el estudio de estas 
+      referencias, se diseñaron algunos 
+      procesos obteniendo diferentes 
+      extractos y con esto se realizaron 
+      experimentaciones para probar 
+      su capacidad desincrustante en el 
+      proceso de lavado de botellas y 
+      máquinas lavadoras.
+      Como resultado de éstas 
+      investigaciones se definió un 
+      extracto denominado TOG, que 
+      aunque mostrara cierta capacidad 
+      desincrustante no fue lo 
+      suficiente efectivo para poder 
+      posicionarlo como una solución.
         `,
-      background: lineaDelTiempoBg4.src,
+      background: img1962.src,
     },
     {
-      date: "1962",
-      description: `Tras el estudio de estas referencias, se diseñaron algunos procesos obteniendo diferentes extractos y con esto se realizaron experimentaciones para probar su capacidad desincrustante en el proceso de lavado de botellas y máquinas lavadoras.
-        Como resultado de éstas investigaciones se definió un extracto denominado TOG, que aunque mostrara cierta capacidad desincrustante no fue lo suficiente efectivo para poder posicionarlo como una solución.
+      date: "1967",
+      description: `El joven estudiante Luis Roberto 
+      Medina que cursaba sus estudios 
+      de ingeniería química dirige la 
+      reorientación del ramo de los 
+      productos
         `,
-      background: lineaDelTiempoBg4.src,
+      background: img1967.src,
+    },
+    {
+      date: "1970",
+      description: `Lanzamiento de una nueva línea 
+      de productos llamados Proquelates, que son micronutrientes 
+      quelatados para aplicación foliar. 
+      Esta nueva línea de productos 
+      impulsa el ingreso al sector 
+      agrícola 
+        `,
+      background: img1970.src,
+    },
+    {
+      date: "1973",
+      description: `Creación del primer acondicionador de suelos llamado Promesol, 
+      para atender la problemática de 
+      la salinización y compactación. 
+      Consolidación de la oferta de 
+      productos agrícolas y lanzamiento de PROQUISA como marca en 
+      el sector agrícola 
+        `,
+      background: img1973.src,
+    },
+    {
+      date: "1974",
+      description: `PROQUISA ingresa al mercado 
+      de Estados Unidos exportando 
+      Promesol a CSI Chemical, 
+      convirtiéndose en una de las 
+      primeras empresas maquiladoras 
+      químicas de México con permiso 
+      de exportación
+        `,
+      background: img1974.src,
+    },
+    {
+      date: "1984",
+      description: `Inicia la presencia 
+      en España e Italia
+        `,
+      background: img1984.src,
+    },
+    {
+      date: "1985",
+      description: `En conjunto con CSI Chemical, se 
+      diseña el primer calcio orgánico, 
+      llamado Nutrical
+        `,
+      background: img1985.src,
+    },
+    {
+      date: "1987",
+      description: `Productos Químicos de 
+      Chihuahua se vincula con la 
+      Universidad de Arkansas para 
+      probar la hipótesis que 
+      fundamenta la tecnología con 
+      base en ácidos carboxy, sus 
+      modos de acción y los efectos 
+      fisiológicos de las diferentes 
+      fracciones del TOG.
+        `,
+      background: img1987.src,
+    },
+    {
+      date: "1990",
+      description: `Nace la tecnología ECCA 
+      Carboxy detonando un nuevo 
+      portafolio de productos debido a 
+      la validación de hipótesis de las 
+      fracciones del TOG así como el 
+      surgimiento de nuevos descubrimientos sobre su uso y aplicaciones específicas que resuelven 
+      problemas en la agricultura. 
+      Lanzamiento de la línea Carboxy.
+        `,
+      background: img1990.src,
+    },
+    {
+      date: "1992",
+      description: `Formulación del primer bioestimulante foliar Packhard.
+        `,
+      background: img1992.src,
+    },
+    {
+      date: "1993",
+      description: `Posicionamiento en el mercado 
+      de la tecnología ECCA Carboxy 
+      mediante una red de asesores 
+      técnicos y comerciales que 
+      consolidan un proceso diferenciado de transferencia de tecnologías; bajo un esquema de 
+      demostración en campo.
+        `,
+      background: img1993.src,
+    },
+    {
+      date: "1994",
+      description: `Inicia la exportación de Nutrical a 
+      Japón, comercializada bajo el 
+      nombre de Cal Plus. 
+      ECCA Carboxy se aplica en 
+      fertirrigación directo a la raíz. 
+      Debido a la incursión del riego por 
+      goteo en el mercado agrícola, se 
+      experimentan los efectos fisiológicos de ECCA Carboxy en las plantas 
+      al ser aplicados directamente en la
+        `,
+      background: img1994.src,
+    },
+    {
+      date: "2002",
+      description: `Lanzamiento de Nutrisorb como 
+      un bioestimulante activando la 
+      raíz para la asimilación de 
+      nutrientes.
+        `,
+      background: img2002.src,
+    },
+    {
+      date: "2003",
+      description: `Nace ExuRoot como un inductor 
+      de exudados radiculares.
+        `,
+      background: img2002.src,
+    },
+    {
+      date: "2005",
+      description: `Lanzamiento de la nueva marca INNOVAK 
+      GLOBAL.
+      Nueva tecnología: Introducción de la 
+Tecnología de la Regulación de la Dinámica 
+Radicular (RDR), donde la empresa se 
+constituye como especialista en la raíz y nace 
+una línea especializada de productos 
+biológicos para acondicionamiento de la raíz 
+y su medio ambiente
+        `,
+      background: img2005.src,
+    },
+    {
+      date: "2007",
+      description: `Asume la dirección de la empresa 
+      Luis Román Medina, tercer 
+      generación de la familia Medina. 
+      Desarrollo de nuevas soluciones 
+      en base a fracciones de ecca en 
+      combinación con hormonas 
+      sintéticas (Radigrow y Selecto 
+      XL).
+        `,
+      background: img2007.src,
+    },
+    {
+      date: "2008",
+      description: `Obtención de la certificación internacional "Biogricert" de productos diversos 
+      para su aplicación en la agricultura 
+      orgánica.
+        `,
+      background: img2008.src,
+    },
+    {
+      date: "2009",
+      description: `Obtención de la certificación internacional "Biogricert" de productos diversos 
+      para su aplicación en la agricultura 
+      orgánica.
+        `,
+      background: img2008.src,
+    },
+    {
+      date: "2013",
+      description: `Innovak Global evoluciona sus 
+      programas Biofit a una nueva 
+      versión "Ready-to-Use" 
+      nombrada Biofit RTU, como un 
+      polvo soluble que concentra 
+      todos los componentes en una 
+      formulación, con un método de 
+      aplicación simplificada.
+        `,
+      background: img2013.src,
+    },
+    {
+      date: "2014",
+      description: `Innovak Global continúa 
+      con el proceso de 
+      institucionalización 
+      reconfigurando su 
+      esquema organizacional y 
+      nombra al Dr. Alberto 
+      Araujo como nuevo 
+      Director General y aunado 
+      a éste se fortalece el 
+      equipo directivo, así como 
+      posiciones estratégicas 
+      preparándose para el 
+      futuro.
+        `,
+      background: img2014.src,
+    },
+    {
+      date: "2016",
+      description: `Se obtiene la certificación OMRI 
+      en varios de los productos 
+      microbiológicos.
+        `,
+      background: img2016.src,
+    },
+    {
+      date: "2017",
+      description: `Consolidación de los esfuerzos 
+      de internacionalización con la 
+      entrada a Brasil, Francia y 
+      Ecuador (entre otros).
+      Relanzamiento de RDR como 
+      Tecnología de la Raíz
+        `,
+      background: img2017.src,
+    },
+    {
+      date: "2019",
+      description: `Lanzamiento de la línea de 
+      protección de cultivos.
+      Nace Balox como bioestimulante 
+      contra el estrés salino.
+        `,
+      background: img2019.src,
+    },
+    {
+      date: "2021",
+      description: `Rhizoxfera Ts recibe el 
+      premio al proyecto más 
+      innovador del 
+      Biostimulants World 
+      Congress
+        `,
+      background: img2021.src,
     },
   ];
 
@@ -381,8 +686,9 @@ function QuienesSomos({ valores, lineaDelTiempo }) {
               key={i}
               style={{
                 backgroundImage: `url(${item.background})`,
-                backgroundSize: "cover",
+                backgroundSize: "contain",
                 backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
                 position: "relative",
               }}
               className={styles.lineaDelTiempoItemWrapper}
