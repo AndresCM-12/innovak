@@ -79,7 +79,7 @@ export default function DynamicProductsClient({
         </div>
       </article>
       {/* Dynamic Header */}
-
+ 
       {/* content */}
       <ProductsList productImages={pagesInfo[index].products} lang={lang} />
       {/* content */}
