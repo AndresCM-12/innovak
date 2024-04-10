@@ -93,13 +93,13 @@ export default function ContactPageClient({ texts }) {
   ];
 
   var pagesInfo = [
-    {
-      header: "INNOVAK NEWS",
-      title: "POSTERS E INFOGRAFÍAS",
-      subtitle: "",
-      image: background.src,
-      content: <RevistaInnovak images={comunikImages} />,
-    },
+    // {
+    //   header: "INNOVAK NEWS",
+    //   title: "POSTERS E INFOGRAFÍAS",
+    //   subtitle: "",
+    //   image: background.src,
+    //   content: <RevistaInnovak images={comunikImages} />,
+    // },
     {
       header: "ARTÍCULOS",
       title: "ARTÍCULOS",
@@ -107,20 +107,20 @@ export default function ContactPageClient({ texts }) {
       image: background.src,
       content: <Ensayos content={content} />,
     },
-    {
-      header: "ENSAYOS",
-      title: "ENSAYOS",
-      subtitle: "",
-      image: background.src,
-      content: <RevistaInnovak images={comunikImages} />,
-    },
-    {
-      header: "REVISTA COMUNIK",
-      title: "REVISTA COMUNIK",
-      subtitle: "",
-      image: background.src,
-      content: <RevistaInnovak images={comunikImages} />,
-    },
+    // {
+    //   header: "ENSAYOS",
+    //   title: "ENSAYOS",
+    //   subtitle: "",
+    //   image: background.src,
+    //   content: <RevistaInnovak images={comunikImages} />,
+    // },
+    // {
+    //   header: "REVISTA COMUNIK",
+    //   title: "REVISTA COMUNIK",
+    //   subtitle: "",
+    //   image: background.src,
+    //   content: <RevistaInnovak images={comunikImages} />,
+    // },
   ];
 
   const handleNextStep = (i) => {
@@ -165,7 +165,7 @@ export default function ContactPageClient({ texts }) {
       {/* Dynamic Header */}
 
       {/* Select Option */}
-      <div className={styles.selectOptionWrapper}>
+      {/* <div className={styles.selectOptionWrapper}>
         {pagesInfo.map((page, i) => (
           <>
             <div
@@ -178,7 +178,7 @@ export default function ContactPageClient({ texts }) {
             <span key={i + "span"} className={styles.separator}></span>
           </>
         ))}
-      </div>
+      </div> */}
       {/* Select Option */}
 
       {/* Form */}

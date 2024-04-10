@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import headerBgQuejas from "../../../../../public/contacto/bgQuejas.png";
 import headerBgContacto from "../../../../../public/contacto/bgContacto.png";
 import headerBgBolsaTrabajo from "../../../../../public/contacto/bgBolsaTrabajo.png";
@@ -21,16 +21,24 @@ export default function ContactPageClient({ texts }) {
   const [index, setIndex] = React.useState(0);
   var jobs = [
     {
-      title: "Operadores de producción",
-      place: "Chihuahua, Chihuahua",
-    },
-    {
       title: "Ingeniero Desarrollo Sistemas Internos",
       place: "Chihuahua, Chihuahua",
+      link: "https://factork.buk.mx/seleccions/b79bbc7fe3f6b0856f9afcd078d409d5a5c990633be16df780ec108c2e0e2a76a8664c1ad29db78e9eab04c054598d1f5eb4997d94ba0655e65dfd9f1abbfd17/postular?referrer=portal",
+    },
+    {
+      title: "Almacenista Tool Crib",
+      place: "Chihuahua, Chihuahua",
+      link: "https://factork.buk.mx/seleccions/cb66092f1334316295072e3db82ad31949608c3b26a6e01d1772b98772f925e973f534c0efe019ff34895eb75bcf80b81133487a2830cae661937de06391a7b0/postular?referrer=portal",
     },
     {
       title: "Almacenista",
       place: "Chihuahua, Chihuahua",
+      link: "https://factork.buk.mx/seleccions/5b41ecee187ec43efa2d2ba5cd60a3d27b45f7fccf05f2a2c7705be8f5ba70a5a8a26960f41936012505d22fc47f0b419483d868e3a22900acfd3b76472c554d/postular?referrer=portal",
+    },
+    {
+      title: "Operadores de Producción",
+      place: "Chihuahua, Chihuahua",
+      link: "https://factork.buk.mx/seleccions/bdde41fdab8a674044a9652b9cc35a6adb1521e74a245ca3e01611c782fa72cf4cb4a64441f2a9ff488d600f53c1a69fbd05bd77007518826fd5657edc739cc7/postular?referrer=portal",
     },
   ];
 
@@ -248,16 +256,33 @@ function FormBodyQuejas() {
 }
 
 function FormBodyBolsaDeTrabajo({ jobs }) {
+  const [filtredJobs, setFiltredJobs] = useState(jobs);
   return (
-    <section className={styles.formQuejas}>
+    <section
+      className={styles.formQuejas}
+      style={{
+        minHeight: "830px",
+      }}
+    >
       <div className={styles.form}>
         <h1>PROCESOS DE SELECCIÓN</h1>
         <div className={styles.searchMenu}>
-          <input placeholder="Buscar empleo" />
+          <input
+            placeholder="Buscar empleo"
+            onChange={() => {
+              setFiltredJobs(
+                jobs.filter((job) =>
+                  job.title
+                    .toLowerCase()
+                    .includes(event.target.value.toLowerCase())
+                )
+              );
+            }}
+          />
           <Image src={icon} alt="icon" width={20} height={20} />
         </div>
         <div className={styles.jobList}>
-          {jobs.map((job, i) => (
+          {filtredJobs.map((job, i) => (
             <div key={i} className={styles.job}>
               <div>
                 <h6>{job.title}</h6>
@@ -265,7 +290,9 @@ function FormBodyBolsaDeTrabajo({ jobs }) {
               </div>
               <span>
                 <Image src={eyeIcon} alt="icon" width={20} height={20} />
-                Ver empleo
+                <a href={job.link} target="_blank">
+                  Ver empleo
+                </a>
               </span>
             </div>
           ))}

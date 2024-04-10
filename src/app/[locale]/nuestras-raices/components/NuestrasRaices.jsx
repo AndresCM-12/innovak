@@ -60,6 +60,11 @@ import img2017 from "../../../../../public/nuestrasraices/line/2017.jpg";
 import img2019 from "../../../../../public/nuestrasraices/line/2019.jpg";
 import img2021 from "../../../../../public/nuestrasraices/line/2021.jpg";
 
+import rev1 from "../../../../../public/nuestrasraices/revolución/1.png";
+import rev2 from "../../../../../public/nuestrasraices/revolución/2.png";
+import rev3 from "../../../../../public/nuestrasraices/revolución/3.png";
+import rev4 from "../../../../../public/nuestrasraices/revolución/4.png";
+
 import next_arrow from "../../../../../public/nuestrasraices/next_arrow.svg";
 import prev_arrow from "../../../../../public/nuestrasraices/prev_arrow.svg";
 
@@ -161,6 +166,21 @@ export default function NuestrasRaicesClient({ texts }) {
       title: "TRASCENDENCIA",
       description:
         "Dejar huella en este mundo y darle sentido a nuestro trabajo para influir positivamente en una agricultura sustentable.",
+    },
+  ];
+
+  var revolucionItems = [
+    {
+      img: rev1,
+    },
+    {
+      img: rev2,
+    },
+    {
+      img: rev3,
+    },
+    {
+      img: rev4,
     },
   ];
 
@@ -510,7 +530,7 @@ y su medio ambiente
       title: "REVOLUCIÓN SUSTENTABLE",
       subtitle: "",
       image: background.src,
-      content: <Revolucion />,
+      content: <Revolucion items={revolucionItems} />,
     },
   ];
 
@@ -873,14 +893,19 @@ function Tecnologias() {
   );
 }
 
-function Revolucion() {
+function Revolucion({ items }) {
   return (
-    <section
-      className={revolucionStyles.backgroundWrapper}
-      style={{
-        backgroundImage: `url(${bgImage.src})`,
-      }}
-    >
+    <section className={revolucionStyles.backgroundWrapper}>
+      <video
+        autoPlay
+        muted
+        loop
+        style={{
+          objectFit: "cover",
+        }}
+      >
+        <source src="/videos/revolucionSustentable.mp4" type="video/mp4" />
+      </video>
       <div className={revolucionStyles.floatingText}>
         <p>
           La demanda de alimentos, el impacto del cambio climático y la
@@ -891,8 +916,22 @@ function Revolucion() {
           tierra y RESPETANDO EL MEDIO AMBIENTE en diversos aspectos:
         </p>
       </div>
+      <div
+        style={{
+          maxWidth: "1200px",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          gap: "40px",
+          flexWrap: "wrap",
+          margin: "0 auto",
+          paddingBottom: "80px",
+        }}
+      >
+        {items.map((item, i) => (
+          <Image src={item.img} />
+        ))}
+      </div>
     </section>
   );
 }
-
-// 1920x800 || 600x800
