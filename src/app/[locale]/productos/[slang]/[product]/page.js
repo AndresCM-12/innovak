@@ -591,9 +591,20 @@ export default function Promesol() {
     setFourthSection(FourthSection);
   };
 
-  return <>{isLoading ? <MainLoading /> : <MainBody />}</>;
+  return (
+    <>
+      {isLoading ? (
+        <MainLoading />
+      ) : (
+        <MainBody
+          allProducts={allProducts}
+          selectedIndex={currentProductIndex}
+        />
+      )}
+    </>
+  );
 
-  function MainBody() {
+  function MainBody({ allProducts, selectedIndex }) {
     return (
       <div className={styles.mainWrapper}>
         <style jsx global>{`
@@ -609,7 +620,11 @@ export default function Promesol() {
         <main className={styles.main}>
           <div className={styles.whiteGradient}>
             <section id="raices" className={styles.rootContainer}>
-              <RootBody firstSection={firstSection} />
+              <RootBody
+                firstSection={firstSection}
+                allProducts={allProducts}
+                selectedIndex={selectedIndex}
+              />
             </section>
 
             <section
@@ -645,18 +660,18 @@ export default function Promesol() {
     );
   }
 
-  function RootBody({ firstSection }) {
+  function RootBody({ allProducts, selectedIndex }) {
     return (
       <>
         <div className={styles.rootInfo}>
           <div className={styles.rootText}>
-            <h1>{firstSection.titulo}</h1>
+            <h1>{allProducts[selectedIndex].title}</h1>
             <hr></hr>
-            <p>{firstSection.texto}</p>
+            <p>{allProducts[selectedIndex].description}</p>
           </div>
           <div className={styles.rootTechnology}>
             <h4>Tecnologías</h4>
-            <a href="#network">{firstSection.cta}</a>
+            <a href="#network">Solicita más información</a>
           </div>
 
           <div className={styles.rootLogo}>
