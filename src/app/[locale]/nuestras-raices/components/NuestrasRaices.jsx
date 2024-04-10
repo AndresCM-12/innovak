@@ -839,9 +839,7 @@ function Tecnologias() {
             }}
             key={index}
             className={allStyles.brandItem}
-            onClick={() => {
-              window.location.href = tecnologia.link;
-            }}
+            onClick={() => window.open(tecnologia.link, "_blank")}
           >
             <div
               className={allStyles.brandItemImage}

@@ -34,6 +34,40 @@ export default function Technologyclient({ texts }) {
       text: "Evalúa el desempeño de la raíz y el cultivo.",
     },
   ];
+
+  const callsToAction = [
+    {
+      title: "Mayor actividad metabólica",
+      side: "right",
+      text: "",
+      link: "",
+    },
+    {
+      title: "Mejor calidad de cosechas",
+      side: "left",
+      text: "",
+      link: "",
+    },
+    {
+      title: "Mejor actividad reicular",
+      side: "right",
+      text: "",
+      link: "",
+    },
+    {
+      title: "Mejora de ambiente rizosférico",
+      side: "left",
+      text: "",
+      link: "",
+    },
+    {
+      title: "Disminución de estrés redicular",
+      side: "right",
+      text: "",
+      link: "",
+    },
+  ];
+
   return (
     <section>
       <style jsx global>
@@ -56,6 +90,14 @@ export default function Technologyclient({ texts }) {
             <div key={index} className={styles.feature}>
               <Image src={feature.icon} width={112} height={112} alt="icon" />
               <p>{feature.text}</p>
+            </div>
+          ))}
+        </div>
+        <div className={styles.callsToActionWrapper}>
+          {callsToAction.map((element) => (
+            <div className={styles.callToAction} data-side={element.side}>
+              <h4>{element.title}</h4>
+              <p>Ver más</p>
             </div>
           ))}
         </div>
