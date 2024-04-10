@@ -15,6 +15,7 @@ import image3 from "../../../public/inicio/ciatej.png";
 import image4 from "../../../public/inicio/geneve.png";
 import image5 from "../../../public/inicio/organic.png";
 import image6 from "../../../public/inicio/ciad.png";
+import image7 from "../../../public/inicio/arkansas.png";
 import tecnologiasBackground from "../../../public/inicio/tecnologiaBackground.svg";
 import tecnologia1 from "../../../public/inicio/tecnologia1.png";
 import tecnologia2 from "../../../public/inicio/tecnologia2.png";
@@ -40,7 +41,7 @@ const futura = localFont({
 });
 
 export default function Home() {
-  const images = [image1, image2, image3, image4, image5, image6];
+  const images = [image1, image2, image3, image4, image5, image6, image7];
 
   return (
     <div className={allStyles.mainWrapper}>
