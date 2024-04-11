@@ -36,7 +36,7 @@ export default function SolucionesPorFruto({ texts }) {
     {
       title: "AMARRE DE FRUTO",
       description:
-        "Es una línea de formulaciones dirigida a resolver problemas de compactación o salinidad de suelos, de uso en la mayoría de los cultivos.",
+        "Incrementa productividad de tu cultivo. Nuestra propuesta mejora la proporción de frutos amarrados o cuajados a través de tecnologías sustentables y seguras que ayudan en los procesos de división celular, obteniendo un mayor número de frutos amarrados y un mejor desarrollo de fruto en etapas tempranas. Asimismo, durante estas etapas prevenimos las situaciones de estrés que pueden ocasionar la caída de los frutos, asegurando el desarrollo y la productividad del cultivo.",
       id: "amarre-de-fruto",
       items: [
         {
@@ -127,7 +127,7 @@ export default function SolucionesPorFruto({ texts }) {
     {
       title: "TAMAÑO DE FRUTO",
       description:
-        "Es una línea de formulaciones dirigida a resolver problemas de compactación o salinidad de suelos, de uso en la mayoría de los cultivos.",
+        "Incrementa el tamaño de tu cosecha. Nuestra propuesta promueve un desarrollo adecuado y balanceado de los frutos de forma segura. Bioestimulamos los procesos de división celular y prevenimos las situaciones de estrés en los cultivos garantizando el desarrollo óptimo de los frutos, obteniendo como resultado un mayor tamaño y homogeneidad, mejorando la calidad de la cosecha, la rentabilidad y productividad del cultivo.",
       id: "tamano-de-fruto",
       items: [
         {
@@ -299,7 +299,7 @@ export default function SolucionesPorFruto({ texts }) {
     {
       title: "Actividad radicular",
       description:
-        "Es una línea de formulaciones dirigida a resolver problemas de compactación o salinidad de suelos, de uso en la mayoría de los cultivos.",
+        "Obtén el máximo potencial de tu cultivo bioestimulando desde la raíz. Nuestra propuesta comienza con el mejoramiento del suelo, abordando problemas de compactación, mejorando infiltración de agua y oxigenación. creando un medio óptimo para el desarrollo de las raíces del cultivo, favoreciendo su crecimiento, facilitando el establecimiento del cultivo. Generadas las condiciones idóneas, buscamos aumentar la cantidad de raíces incrementando la superficie de contacto, facilitando la toma de nutrientes y agua. Así mismo para obtener la máxima absorción de nutrientes de la solución del suelo, incrementamos la actividad radicular por periodos prolongados, impactando en el desarrollo y la productividad del cultivo.",
       id: "actividad-radicular",
       items: [
         {
@@ -501,7 +501,7 @@ export default function SolucionesPorFruto({ texts }) {
     {
       title: "Sanidad radicular",
       description:
-        "Es una línea de formulaciones dirigida a resolver problemas de compactación o salinidad de suelos, de uso en la mayoría de los cultivos.",
+        "Protege tu productividad del estrés salino. Proporcionamos una solución vanguardista a una problemática creciente en los últimos años y que afecta fuertemente la productividad. Bioestimulamos las raíces de tu cultivo, incrementando la síntesis de osmolitos compatibles que ayuden a sobre llevar el estrés ocasionado por la salinidad. Esta solución permite que el cultivo se desarrolle y tenga una mejor productividad en estas condiciones de estrés.",
       id: "sanidad-radicular",
       items: [
         {
@@ -641,7 +641,7 @@ export default function SolucionesPorFruto({ texts }) {
     {
       title: "Calidad y vida post cosecha",
       description:
-        "Es una línea de formulaciones dirigida a resolver problemas de compactación o salinidad de suelos, de uso en la mayoría de los cultivos.",
+        "Mejora la calidad y vida de anaquel de tus frutos e incrementa tu rentabilidad. Con nuestra propuesta abordamos problemáticas que afectan la calidad de los frutos. A través de nuestra tecnología bioestimulamos la síntesis de pectinas, mejorando las paredes celulares de los frutos, obteniendo como resultado una mayor vida de anaquel, una menor deformación y mayor calidad. Estos cambios mejoran características como el color, textura y reducen la incidencia de hongos post cosecha. Nuestra tecnología es una herramienta para aquellos frutos o mercados de exportación de gran exigencia garantizando la calidad de los frutos. ",
       id: "calidad-y-vida-post-cosecha",
       items: [
         {
@@ -706,8 +706,7 @@ export default function SolucionesPorFruto({ texts }) {
     },
     {
       title: "Aumento de calibres",
-      description:
-        "Es una línea de formulaciones dirigida a resolver problemas de compactación o salinidad de suelos, de uso en la mayoría de los cultivos.",
+      description: "",
       id: "aumento-de-calibres",
       items: [
         {
@@ -757,7 +756,7 @@ export default function SolucionesPorFruto({ texts }) {
     {
       title: "Control bioracional de Nematodos",
       description:
-        "Es una línea de formulaciones dirigida a resolver problemas de compactación o salinidad de suelos, de uso en la mayoría de los cultivos.",
+        "Protege tu productividad de manera biorracional. Nuestras propuestas proporcionan alternativas sustentablaes e innovadoras para el control de nematodos de manera segura. Estas herramientas son de facil aplicación e integración con otras estrategias de manejo. El uso de estas tecnologías reduce las perdidas por la incidencia de nematados y favorece a un desarrollo sostenible del cultivo.",
       id: "control-bioracional-de-nematodos",
       items: [
         {
@@ -857,7 +856,7 @@ export default function SolucionesPorFruto({ texts }) {
     {
       title: "Fertildiad biologica",
       description:
-        "Es una línea de formulaciones dirigida a resolver problemas de compactación o salinidad de suelos, de uso en la mayoría de los cultivos.",
+        "Incrementa tu productividad de manera sustentable. Nuestra propuesta proporciona una alternativa revolucionaría que incrementa la actividad en la rizosfera aumentando la productividad de los cultivos por medio de la actividad y colonización de microorganismos beneficos. Proponemos una alternativa para una agricultura sostenible que conserve la fertilidad de los suelos por mucho mayor tiempo, logrando mejorar la productividad y conservación de los suelos cultivables.",
       id: "fertilidad-biologica",
       items: [
         {
@@ -1008,8 +1007,7 @@ export default function SolucionesPorFruto({ texts }) {
     },
     {
       title: "Estrés radicular",
-      description:
-        "Es una línea de formulaciones dirigida a resolver problemas de compactación o salinidad de suelos, de uso en la mayoría de los cultivos.",
+      description: "",
       id: "estres-radicular",
       items: [
         {
@@ -1157,7 +1155,7 @@ export default function SolucionesPorFruto({ texts }) {
     {
       title: "Compactación de suelos",
       description:
-        "Es una línea de formulaciones dirigida a resolver problemas de compactación o salinidad de suelos, de uso en la mayoría de los cultivos.",
+        "Acondiciona tu suelo, facilita el desarrollo de tu cultivo. Nuestra propuesta con 50 años proporcionando una solución en cultivos con problemáticas de compactación. Abordamos esta problemática, promoviendo la formación de agregados, mejorando el balance de macro y microporos, obteniendo una mejor estructura del suelo. Esta solución facilita el desarrollo y exploración de las raíces, mejorando el establecimiento del cultivo. Una mejor estructura del suelo facilita la infiltración del agua, logrando un aprovechamiento eficiente del recurso hídrico.",
       id: "compactacion-de-suelos",
       items: [
         {
@@ -1206,7 +1204,7 @@ export default function SolucionesPorFruto({ texts }) {
     {
       title: "Brotación",
       description:
-        "Es una línea de formulaciones dirigida a resolver problemas de compactación o salinidad de suelos, de uso en la mayoría de los cultivos.",
+        "Potencializa el despertar de tu cultivo. Nuestra propuesta ofrece una solución sustentable en frutales de clima templado, incrementando el porcentaje de brotación de manera segura y sin riegos a la salud o residualidad. Su aplicación estimula un desarrollo uniforme y vigoroso, beneficiando la productividad del cultivo, y facilitando las practicas agrícolas.",
       id: "brotacion",
       items: [
         {
@@ -1234,7 +1232,7 @@ export default function SolucionesPorFruto({ texts }) {
     {
       title: "Floración",
       description:
-        "Es una línea de formulaciones dirigida a resolver problemas de compactación o salinidad de suelos, de uso en la mayoría de los cultivos.",
+        "Despierta la productividad de tu cultivo. Nuestra propuesta induce la floración en yemas maduras en cultivos tropicales. Con la aplicación de esta solución logramos un desarrollo más uniforme, una concentración de la floración, que influyen en la rentabilidad y productividad, obteniendo una mejor cosecha, un aprovechamiento de las ventadas de mercado, además de facilitar las labores agrícolas.",
       id: "floracion",
       items: [
         {
@@ -1286,7 +1284,7 @@ export default function SolucionesPorFruto({ texts }) {
     {
       title: "Control bioracional de plagas y enfermedades",
       description:
-        "Es una línea de formulaciones dirigida a resolver problemas de compactación o salinidad de suelos, de uso en la mayoría de los cultivos.",
+        "Protección biorracional para tu cultivo. Nuestra propuesta cuenta con soluciones sustentables e innovadoras para el manejo, control de plagas y enfermedades. Logramos cuidar la productividad y calidad de tu cosecha con un manejo integrado, obteniendo frutos sin residualidad. Proporcionamos una ventaja competitiva minimizando los tiempos de reentrada, facilitando las diferentes practicas agrícolas.",
       id: "control-bioracional-de-plagas-y-enfermedades",
       items: [
         {
@@ -1347,8 +1345,7 @@ export default function SolucionesPorFruto({ texts }) {
     },
     {
       title: "Corrección de deficiencias nutricionales",
-      description:
-        "Es una línea de formulaciones dirigida a resolver problemas de compactación o salinidad de suelos, de uso en la mayoría de los cultivos.",
+      description: "",
       id: "correccion-de-deficiencias-nutricionales",
       items: [
         {
@@ -1374,29 +1371,6 @@ export default function SolucionesPorFruto({ texts }) {
           ],
         },
       ],
-    },
-  ];
-
-  var items = [
-    {
-      title: "FRAMBUESA",
-      bg: itemBg,
-    },
-    {
-      title: "FRAMBUESA",
-      bg: itemBg,
-    },
-    {
-      title: "FRAMBUESA",
-      bg: itemBg,
-    },
-    {
-      title: "FRAMBUESA",
-      bg: itemBg,
-    },
-    {
-      title: "FRAMBUESA",
-      bg: itemBg,
     },
   ];
 
@@ -1440,7 +1414,6 @@ export default function SolucionesPorFruto({ texts }) {
         <SolucionesPorCultivo
           solutions={solutions}
           activeSolutionIndex={activeSolutionIndex}
-          items={items}
         />
       ) : (
         <div></div>
@@ -1451,7 +1424,7 @@ export default function SolucionesPorFruto({ texts }) {
   );
 }
 
-function SolucionesPorCultivo({ solutions, activeSolutionIndex, items }) {
+function SolucionesPorCultivo({ solutions, activeSolutionIndex }) {
   return (
     <section className={styles.revistaInnovak}>
       <article className={styles.title}>

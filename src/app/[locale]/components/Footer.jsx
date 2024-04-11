@@ -58,34 +58,83 @@ export default function FooterBody() {
           <div className={styles.footerLang}>
             <div className={styles.links}>
               <a
-                href="https://www.innovakglobal.com/network-2/"
+                href="https://masorden.com/"
                 target="_blank"
               >
-                <Image alt="Innovak ícono" src={network} width={20} height={20} /> NETWORK
+                <Image
+                  alt="Innovak ícono"
+                  src={network}
+                  width={20}
+                  height={20}
+                />{" "}
+                +ORDEN
+              </a>
+              <a
+                href="http://201.174.71.70/itisv2/index"
+                target="_blank"
+              >
+                <Image
+                  alt="Innovak ícono"
+                  src={network}
+                  width={20}
+                  height={20}
+                />{" "}
+                PLATAFORMA
               </a>
               <a
                 href="https://e10.innovakglobal.us/rastreo/iniciosesion"
                 target="_blank"
               >
-                <Image alt="Innovak ícono" src={rastear} width={20} height={20} /> RASTREO DE
-                EMBARQUES
+                <Image
+                  alt="Innovak ícono"
+                  src={rastear}
+                  width={20}
+                  height={20}
+                />{" "}
+                RASTREO DE EMBARQUES
               </a>
             </div>
             <div className={styles.socialNetworks}>
               <a href="https://www.facebook.com/InnovakGlobal" target="_blank">
-                <Image alt="Innovak ícono" src={facebook} width={16} height={16} />
+                <Image
+                  alt="Innovak ícono"
+                  src={facebook}
+                  width={16}
+                  height={16}
+                />
               </a>
               <a
                 href="https://www.instagram.com/innovakglobal/"
                 target="_blank"
               >
-                <Image alt="Innovak ícono" src={instagram} width={16} height={16} />
+                <Image
+                  alt="Innovak ícono"
+                  src={instagram}
+                  width={16}
+                  height={16}
+                />
               </a>
-              <a href="" target="_blank">
-                <Image alt="Innovak ícono" src={linkedin} width={16} height={16} />
+              <a
+                href="https://www.linkedin.com/company/innovak-global-official/"
+                target="_blank"
+              >
+                <Image
+                  alt="Innovak ícono"
+                  src={linkedin}
+                  width={16}
+                  height={16}
+                />
               </a>
-              <a href="" target="_blank">
-                <Image alt="Innovak ícono" src={youtube} width={16} height={16} />
+              <a
+                href="https://www.youtube.com/@innovakglobal50"
+                target="_blank"
+              >
+                <Image
+                  alt="Innovak ícono"
+                  src={youtube}
+                  width={16}
+                  height={16}
+                />
               </a>
             </div>
           </div>

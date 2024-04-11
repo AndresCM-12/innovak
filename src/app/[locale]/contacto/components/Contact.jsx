@@ -71,7 +71,7 @@ export default function ContactPageClient({ texts }) {
       title: "DENUNCIA ÉTICA",
       subtitle: "",
       image: headerBgQuejas.src,
-      content: <FormBodyQuejas />,
+      content: <FormBodyDenuncia />,
     },
   ];
 
@@ -251,6 +251,14 @@ function FormBodyQuejas() {
           <button type="submit">Enviar</button>
         </form>
       </div>
+    </section>
+  );
+}
+
+function FormBodyDenuncia() {
+  return (
+    <section className={styles.denunciaEtica}>
+      <iframe src="https://innovak.lineaetica.com.mx/contents/denunciar-ahora?l=es#" frameborder="0"></iframe>
     </section>
   );
 }

@@ -72,7 +72,7 @@ export default function Home() {
 function HeroSection() {
   return (
     <section className={styles.heroSection}>
-      <h1>50 AÑOS AGREGANDO VALOR AL SUELO</h1>
+      <h1>Pioneros en bioestimulación desde la raíz</h1>
       <p>
         En Innovak Global desarrollamos y comercializamos productos
         biorracionales y tecnologías diferenciadas en la agricultura para
@@ -185,15 +185,18 @@ function Tecnologias() {
     {
       image: tecnologia1,
       text: `ECCA Carboxy es la Ecotecnología de la obtención de Compuestos Carboxy Aromáticos con efecto bioestimulante.`,
+      link: `/${lang}/nuestras-raices/ecca-carboxy`,
     },
     {
       image: tecnologia2,
       text: `RDR (Regulación de la Dinámica Radicular) es una tecnología enfocada en la raíz y su medio ambiente para maximizar la productividad de los cultivos de manera sustentable.`,
+      link: `/${lang}/nuestras-raices/rdr`,
     },
     {
       image: tecnologia3,
       text: `PFENERGY
       Es una tecnología creada a partir de polifenoles, generando opciones sustentables para mitigar el estrés, incrementar la actividad rizosférica, mejorar la absorción de nutrientes y generar una mayor productividad y calidad.`,
+      link: `/${lang}/nuestras-raices/pfenergy`,
     },
   ];
   return (
@@ -218,7 +221,7 @@ function Tecnologias() {
         }}
       >
         {tecnologias.map((tecnologia, index) => (
-          <div key={index} className={styles.brandItem}>
+          <div key={index} className={styles.brandItem} onClick={() => window.open(tecnologia.link, "_blank")}>
             <div
               className={styles.brandItemImage}
               style={{

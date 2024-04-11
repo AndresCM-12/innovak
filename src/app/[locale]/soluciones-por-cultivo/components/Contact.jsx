@@ -174,7 +174,7 @@ function RevistaInnovak({ items }) {
         <p>
           Es una línea de formulaciones dirigida a resolver problemas de
           compactación o salinidad de suelos, de uso en la mayoría de los
-          cultivos. Son productos de
+          cultivos.
         </p>
       </article>
       <div className={styles.revistasWrapper}>

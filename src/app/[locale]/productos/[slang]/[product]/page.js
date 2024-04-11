@@ -592,21 +592,32 @@ export default function Promesol() {
   };
 
   return (
-    <>
-      {isLoading ? (
-        <MainLoading />
-      ) : (
-        <MainBody
-          allProducts={allProducts}
-          selectedIndex={currentProductIndex}
-        />
-      )}
-    </>
+    <div
+      style={{
+        backgroundColor: "#2255FA",
+        height: "100%",
+      }}
+    >
+      <div
+        style={{
+          backgroundColor: "transparent",
+        }}
+      >
+        {isLoading ? (
+          <MainLoading />
+        ) : (
+          <MainBody
+            allProducts={allProducts}
+            selectedIndex={currentProductIndex}
+          />
+        )}
+      </div>
+    </div>
   );
 
   function MainBody({ allProducts, selectedIndex }) {
     return (
-      <div className={styles.mainWrapper}>
+      <div className={styles.mainWrapper} style={{backgroundColor: "transparent"}}>
         <style jsx global>{`
           h1,
           h2,
@@ -617,7 +628,13 @@ export default function Promesol() {
             font-family: ${futura.style.fontFamily};
           }
         `}</style>
-        <main className={styles.main}>
+        <main
+          className={styles.main}
+          style={{
+            marginTop: "150px",
+            backgroundColor: "white",
+          }}
+        >
           <div className={styles.whiteGradient}>
             <section id="raices" className={styles.rootContainer}>
               <RootBody
@@ -666,6 +683,14 @@ export default function Promesol() {
         <div className={styles.rootInfo}>
           <div className={styles.rootText}>
             <h1>{allProducts[selectedIndex].title}</h1>
+            <span
+              style={{
+                marginBottom: "4px",
+                display: "block",
+              }}
+            >
+              {allProducts[selectedIndex].text}
+            </span>
             <hr></hr>
             <p>{allProducts[selectedIndex].description}</p>
           </div>

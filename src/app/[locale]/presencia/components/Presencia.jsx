@@ -23,7 +23,10 @@ export default function PresenciaClient({ texts }) {
         telefono: "6461513910",
         email: "jlopez@innovakglobal.com",
         productos: ["Hortalizas"],
+        whatsapp: "526149939393",
       },
+      bgColor: "#EC1C22",
+      color: "#fff",
     },
     {
       title: "PACIFICO CENTRO",
@@ -33,6 +36,8 @@ export default function PresenciaClient({ texts }) {
         email: "mmiranda@innovakglobal.com",
         productos: ["Hortalizas", "Papa", "Granos"],
       },
+      bgColor: "#EE5B37",
+      color: "#fff",
     },
     {
       title: "SINALOA SUR",
@@ -42,6 +47,8 @@ export default function PresenciaClient({ texts }) {
         email: "apuga@innovakglobal.com",
         productos: ["Tomate", "Chile"],
       },
+      bgColor: "#FAAA4E",
+      color: "#fff",
     },
     {
       title: "GOLFO",
@@ -51,6 +58,8 @@ export default function PresenciaClient({ texts }) {
         email: "jroman@innovakglobal.com",
         productos: ["Piña"],
       },
+      bgColor: "#005AAB",
+      color: "#fff",
     },
     {
       title: "BAJÍO",
@@ -61,6 +70,8 @@ export default function PresenciaClient({ texts }) {
         productos: ["Cebolla", "Tomate", "Chile", "Papa", "Ajo"],
         contacto_con: ["fresa", "zanahoria", "Esparrago", "aguacate"],
       },
+      bgColor: "#80C342",
+      color: "#fff",
     },
     {
       title: "ALTIPLANO",
@@ -70,6 +81,8 @@ export default function PresenciaClient({ texts }) {
         email: "hassad@innovakglobal.com",
         productos: ["Cebolla", "Papa", "Chile", "Tomate"],
       },
+      bgColor: "#717C84",
+      color: "#fff",
     },
     {
       title: "OCCIDENTE",
@@ -79,6 +92,8 @@ export default function PresenciaClient({ texts }) {
         email: "chernandez@innovakglobal.com",
         productos: ["Aguacate", "Papa", "Sandia", "Papaya"],
       },
+      bgColor: "#00A34D",
+      color: "#fff",
     },
     {
       title: "SURESTE",
@@ -88,6 +103,8 @@ export default function PresenciaClient({ texts }) {
         email: "acastaneda@innovakglobal.com",
         productos: ["Banano", "Papaya", "Sandia", "Soya"],
       },
+      bgColor: "#FFCC00",
+      color: "#fff",
     },
     {
       title: "SURESTE",
@@ -97,6 +114,8 @@ export default function PresenciaClient({ texts }) {
         email: "eavendano@innovakglobal.com",
         productos: ["Soya", "Jitomate", "Mango", "Banano"],
       },
+      bgColor: "#FFCC00",
+      color: "#fff",
     },
   ];
 
@@ -195,7 +214,14 @@ function MapMexico({ map, contactInfo }) {
       </div>
       <div className={styles.infoWrapper}>
         {contactInfo.map((contact, i) => (
-          <div className={styles.contactInfoWrapper}>
+          <div
+            key={i}
+            className={styles.contactInfoWrapper}
+            style={{
+              backgroundColor: contact.bgColor,
+              color: contact.color,
+            }}
+          >
             <h3>{contact.title}</h3>
             {contact.info.nombre && (
               <p>
@@ -206,13 +232,28 @@ function MapMexico({ map, contactInfo }) {
             {contact.info.telefono && (
               <p>
                 <strong>Teléfono: </strong>
-                {contact.info.telefono}
+                <a href={`tel:${contact.info.telefono}`}>
+                  {contact.info.telefono}
+                </a>
               </p>
             )}
             {contact.info.email && (
               <p>
                 <strong>Email: </strong>
-                {contact.info.email}
+                <a href={`mailto:${contact.info.email}`}>
+                  {contact.info.email}
+                </a>
+              </p>
+            )}
+            {contact.info.whatsapp && (
+              <p>
+                <strong>WhatsApp: </strong>
+                <a
+                  href={`https://wa.me/${contact.info.whatsapp}/`}
+                  target="_blank"
+                >
+                  {contact.info.whatsapp}
+                </a>
               </p>
             )}
             {contact.info.productos && (

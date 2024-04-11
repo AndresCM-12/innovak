@@ -50,6 +50,7 @@ export default function DynamicProductsClient({
           className={styles.titleWrapper}
           style={{
             backgroundImage: `url(${pagesInfo[index].image})`,
+            backgroundSize: "cover",
           }}
         >
           <h1>{pagesInfo[index].title}</h1>
@@ -71,7 +72,7 @@ export default function DynamicProductsClient({
                     display: i === index ? "none" : "block",
                   }}
                 >
-                  {page.title}
+                  - {page.title}
                 </h6>
               </a>
             ))}
@@ -79,7 +80,7 @@ export default function DynamicProductsClient({
         </div>
       </article>
       {/* Dynamic Header */}
- 
+
       {/* content */}
       <ProductsList productImages={pagesInfo[index].products} lang={lang} />
       {/* content */}
