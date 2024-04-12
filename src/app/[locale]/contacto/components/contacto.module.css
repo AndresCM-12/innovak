@@ -262,13 +262,23 @@
 }
 @media screen and (max-width: 604px) {
   .selectOptionWrapper {
-    scale: 0.8;
+    width: 100%;
+    border-radius: 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .selectOptionWrapper div {
+    padding-inline: 8px;
+  }
+  .selectOptionWrapper div.active {
+    padding-inline: 8px;
+    padding-block: 28px;
+  }
+  .selectOptionWrapper p {
+    font-size: 10px;
   }
 }
 @media screen and (max-width: 480px) {
-  .selectOptionWrapper {
-    scale: 0.5;
-  }
   .form {
     padding-inline: 20px;
   }

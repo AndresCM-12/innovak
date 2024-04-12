@@ -108,16 +108,13 @@ export default function ContactPageClient({ texts }) {
       {/* Select Option */}
       <div className={styles.selectOptionWrapper}>
         {pagesInfo.map((page, i) => (
-          <>
-            <div
-              className={index === i ? `${styles.active}` : ""}
-              key={i + "div"}
-              onClick={() => handleNextStep(i)}
-            >
-              <p>{page.title}</p>
-            </div>
-            <span key={i + "span"} className={styles.separator}></span>
-          </>
+          <div
+            className={index === i ? `${styles.active}` : ""}
+            key={i + "div"}
+            onClick={() => handleNextStep(i)}
+          >
+            <p>{page.title}</p>
+          </div>
         ))}
       </div>
       {/* Select Option */}
@@ -131,7 +128,9 @@ export default function ContactPageClient({ texts }) {
 
 function FormBody() {
   return (
-    <section className={allStyles.formWrapper}>
+    <section className={allStyles.formWrapper} style={{
+      marginTop: "20px"
+    }}>
       <motion.div
         whileInView={{ opacity: 1 }}
         initial={{ opacity: 0 }}
@@ -258,7 +257,10 @@ function FormBodyQuejas() {
 function FormBodyDenuncia() {
   return (
     <section className={styles.denunciaEtica}>
-      <iframe src="https://innovak.lineaetica.com.mx/contents/denunciar-ahora?l=es#" frameborder="0"></iframe>
+      <iframe
+        src="https://innovak.lineaetica.com.mx/contents/denunciar-ahora?l=es#"
+        frameBorder="0"
+      ></iframe>
     </section>
   );
 }

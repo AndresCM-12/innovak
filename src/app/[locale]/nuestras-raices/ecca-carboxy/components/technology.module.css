@@ -1,6 +1,7 @@
 .bgWrapper {
   width: 100%;
-  height: 2900px;
+  min-height: 2900px;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   place-items: center flex-start;
@@ -8,6 +9,12 @@
   color: #0b2f1b;
   position: relative;
   padding-top: 200px;
+  padding-bottom: 200px;
+}
+.textWrapper {
+  position: relative;
+  z-index: 2;
+  text-align: center;
 }
 .bgWrapper img {
   z-index: 2;
@@ -24,6 +31,7 @@
   z-index: 2;
   max-width: 884px;
   margin-inline: auto;
+  padding-inline: 12px;
 }
 .bgImage {
   width: 100%;
@@ -62,6 +70,9 @@
 .feature p {
   text-align: center;
 }
+.feature h4 {
+  font-size: 18px;
+}
 .feature img {
   margin-bottom: 0px;
   border-radius: 112px;
@@ -77,8 +88,12 @@
 .features {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
   height: 100%;
+  padding-inline: 12px;
+  column-gap: 200px;
+  row-gap: 20px;
 }
 .featuresColumn {
   display: flex;
@@ -96,14 +111,14 @@
   transition: all 0.3s;
 }
 
-.feature p{
+.feature p {
   text-align: left;
-  font-size: 12px;
+  font-size: 14px;
 }
 
-.featuresColumn span{
+.featuresColumn span {
   color: white;
-  background-color: #005DAB;
+  background-color: #005dab;
   font-size: 12px;
   padding: 4px 16px;
   border-radius: 10px;
@@ -112,5 +127,63 @@
   margin-top: 8px;
 }
 
-@media screen and (max-width: 630px) {
+.bgImageMobile {
+  width: 100%;
+  height: 500px;
+  max-width: 1920px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  position: relative;
+  display: none;
+}
+
+@media screen and (max-width: 771px) {
+  .bgWrapper {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    place-items: center flex-start;
+    background-color: #b3dae7;
+    color: #0b2f1b;
+    position: relative;
+    padding-top: 200px;
+    padding-bottom: 200px;
+    justify-content: space-between;
+  }
+  .featureInfo {
+    width: 100%;
+    max-width: 1500px;
+    position: relative;
+    z-index: 2;
+    margin-top: 20px;
+    min-height: 800px;
+  }
+  .bgImage {
+    width: 100%;
+    height: 100%;
+    max-width: 1920px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+  }
+  .bgImageMobile {
+    width: 100%;
+    height: 500px;
+    max-width: 1920px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+    display: block;
+  }
+  .bgImageMobile img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    object-position: center;
+  }
 }

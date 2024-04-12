@@ -60,6 +60,9 @@ import img2017 from "../../../../../public/nuestrasraices/line/2017.jpg";
 import img2019 from "../../../../../public/nuestrasraices/line/2019.jpg";
 import img2021 from "../../../../../public/nuestrasraices/line/2021.jpg";
 
+import leftIcon from "../../../../../public/nuestrasraices/line/left.svg";
+import rightIcon from "../../../../../public/nuestrasraices/line/right.svg";
+
 import rev1 from "../../../../../public/nuestrasraices/revolución/1.png";
 import rev2 from "../../../../../public/nuestrasraices/revolución/2.png";
 import rev3 from "../../../../../public/nuestrasraices/revolución/3.png";
@@ -195,7 +198,7 @@ export default function NuestrasRaicesClient({ texts }) {
       industriales para madera, 
       celulosa y suavizadores de 
       agua`,
-      background: img1950.src,
+      background: img1950,
     },
     {
       date: "1955",
@@ -205,7 +208,7 @@ export default function NuestrasRaicesClient({ texts }) {
       Joseph L. Hearn para ofrecer 
       servicios de análisis de suelo y 
       agua.`,
-      background: img1955.src,
+      background: img1955,
     },
     {
       date: "1957",
@@ -216,7 +219,7 @@ export default function NuestrasRaicesClient({ texts }) {
       de productos de limpieza 
       industrial .
       `,
-      background: img1957.src,
+      background: img1957,
     },
     {
       date: "1961",
@@ -230,7 +233,7 @@ export default function NuestrasRaicesClient({ texts }) {
       provenientes de cascarillas 
       agrícolas
         `,
-      background: img1961.src,
+      background: img1961,
     },
     {
       date: "1962",
@@ -250,7 +253,7 @@ export default function NuestrasRaicesClient({ texts }) {
       suficiente efectivo para poder 
       posicionarlo como una solución.
         `,
-      background: img1962.src,
+      background: img1962,
     },
     {
       date: "1967",
@@ -260,7 +263,7 @@ export default function NuestrasRaicesClient({ texts }) {
       reorientación del ramo de los 
       productos
         `,
-      background: img1967.src,
+      background: img1967,
     },
     {
       date: "1970",
@@ -271,7 +274,7 @@ export default function NuestrasRaicesClient({ texts }) {
       impulsa el ingreso al sector 
       agrícola 
         `,
-      background: img1970.src,
+      background: img1970,
     },
     {
       date: "1973",
@@ -282,7 +285,7 @@ export default function NuestrasRaicesClient({ texts }) {
       productos agrícolas y lanzamiento de PROQUISA como marca en 
       el sector agrícola 
         `,
-      background: img1973.src,
+      background: img1973,
     },
     {
       date: "1974",
@@ -294,14 +297,14 @@ export default function NuestrasRaicesClient({ texts }) {
       químicas de México con permiso 
       de exportación
         `,
-      background: img1974.src,
+      background: img1974,
     },
     {
       date: "1984",
       description: `Inicia la presencia 
       en España e Italia
         `,
-      background: img1984.src,
+      background: img1984,
     },
     {
       date: "1985",
@@ -309,7 +312,7 @@ export default function NuestrasRaicesClient({ texts }) {
       diseña el primer calcio orgánico, 
       llamado Nutrical
         `,
-      background: img1985.src,
+      background: img1985,
     },
     {
       date: "1987",
@@ -323,7 +326,7 @@ export default function NuestrasRaicesClient({ texts }) {
       fisiológicos de las diferentes 
       fracciones del TOG.
         `,
-      background: img1987.src,
+      background: img1987,
     },
     {
       date: "1990",
@@ -336,13 +339,13 @@ export default function NuestrasRaicesClient({ texts }) {
       problemas en la agricultura. 
       Lanzamiento de la línea Carboxy.
         `,
-      background: img1990.src,
+      background: img1990,
     },
     {
       date: "1992",
       description: `Formulación del primer bioestimulante foliar Packhard.
         `,
-      background: img1992.src,
+      background: img1992,
     },
     {
       date: "1993",
@@ -353,7 +356,7 @@ export default function NuestrasRaicesClient({ texts }) {
       consolidan un proceso diferenciado de transferencia de tecnologías; bajo un esquema de 
       demostración en campo.
         `,
-      background: img1993.src,
+      background: img1993,
     },
     {
       date: "1994",
@@ -367,7 +370,7 @@ export default function NuestrasRaicesClient({ texts }) {
       experimentan los efectos fisiológicos de ECCA Carboxy en las plantas 
       al ser aplicados directamente en la
         `,
-      background: img1994.src,
+      background: img1994,
     },
     {
       date: "2002",
@@ -376,14 +379,14 @@ export default function NuestrasRaicesClient({ texts }) {
       raíz para la asimilación de 
       nutrientes.
         `,
-      background: img2002.src,
+      background: img2002,
     },
     {
       date: "2003",
       description: `Nace ExuRoot como un inductor 
       de exudados radiculares.
         `,
-      background: img2002.src,
+      background: img2002,
     },
     {
       date: "2005",
@@ -397,7 +400,7 @@ una línea especializada de productos
 biológicos para acondicionamiento de la raíz 
 y su medio ambiente
         `,
-      background: img2005.src,
+      background: img2005,
     },
     {
       date: "2007",
@@ -410,7 +413,7 @@ y su medio ambiente
       sintéticas (Radigrow y Selecto 
       XL).
         `,
-      background: img2007.src,
+      background: img2007,
     },
     {
       date: "2008",
@@ -418,7 +421,7 @@ y su medio ambiente
       para su aplicación en la agricultura 
       orgánica.
         `,
-      background: img2008.src,
+      background: img2008,
     },
     {
       date: "2009",
@@ -426,7 +429,7 @@ y su medio ambiente
       para su aplicación en la agricultura 
       orgánica.
         `,
-      background: img2008.src,
+      background: img2008,
     },
     {
       date: "2013",
@@ -439,7 +442,7 @@ y su medio ambiente
       formulación, con un método de 
       aplicación simplificada.
         `,
-      background: img2013.src,
+      background: img2013,
     },
     {
       date: "2014",
@@ -457,7 +460,7 @@ y su medio ambiente
       preparándose para el 
       futuro.
         `,
-      background: img2014.src,
+      background: img2014,
     },
     {
       date: "2016",
@@ -465,7 +468,7 @@ y su medio ambiente
       en varios de los productos 
       microbiológicos.
         `,
-      background: img2016.src,
+      background: img2016,
     },
     {
       date: "2017",
@@ -476,7 +479,7 @@ y su medio ambiente
       Relanzamiento de RDR como 
       Tecnología de la Raíz
         `,
-      background: img2017.src,
+      background: img2017,
     },
     {
       date: "2019",
@@ -485,7 +488,7 @@ y su medio ambiente
       Nace Balox como bioestimulante 
       contra el estrés salino.
         `,
-      background: img2019.src,
+      background: img2019,
     },
     {
       date: "2021",
@@ -495,7 +498,7 @@ y su medio ambiente
       Biostimulants World 
       Congress
         `,
-      background: img2021.src,
+      background: img2021,
     },
   ];
 
@@ -574,16 +577,13 @@ y su medio ambiente
       {/* Select Option */}
       <div className={styles.selectOptionWrapper}>
         {pagesInfo.map((page, i) => (
-          <>
-            <div
-              className={index === i ? `${styles.active}` : ""}
-              key={i + "div"}
-              onClick={() => handleNextStep(i)}
-            >
-              <p>{page.title}</p>
-            </div>
-            <span key={i + "span"} className={styles.separator}></span>
-          </>
+          <div
+            className={index === i ? `${styles.active}` : ""}
+            key={i + "div"}
+            onClick={() => handleNextStep(i)}
+          >
+            <p>{page.title}</p>
+          </div>
         ))}
       </div>
       {/* Select Option */}
@@ -705,17 +705,34 @@ function QuienesSomos({ valores, lineaDelTiempo }) {
             <SwiperSlide
               key={i}
               style={{
-                backgroundImage: `url(${item.background})`,
-                backgroundSize: "contain",
+                backgroundImage: `url(${item.background.src})`,
+                backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 position: "relative",
+                overflow: "hidden",
               }}
               className={styles.lineaDelTiempoItemWrapper}
             >
               <div className={styles.item}>
                 <h4>{item.date}</h4>
-                <p>{item.description}</p>
+                <div className={styles.textWrapperIcon}>
+                  <Image
+                    src={leftIcon}
+                    alt="background"
+                    width={24}
+                    height={24}
+                    className={styles.iconLeft}
+                  />
+                  <p>{item.description}</p>
+                  <Image
+                    src={rightIcon}
+                    alt="background"
+                    width={24}
+                    height={24}
+                    className={styles.icon}
+                  />
+                </div>
               </div>
               <div className={styles.filter}></div>
             </SwiperSlide>

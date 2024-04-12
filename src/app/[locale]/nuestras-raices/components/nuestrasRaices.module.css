@@ -38,7 +38,7 @@
   width: fit-content;
   overflow: hidden;
   margin-inline: auto;
-  margin-top: -23px;
+  margin-top: -31px;
   position: relative;
   z-index: 5;
   align-items: center;
@@ -49,7 +49,7 @@
   transition: 0.3s;
 }
 .selectOptionWrapper div.active {
-  padding: 16px 24px;
+  padding: 24px 24px;
   cursor: pointer;
   transition: 0.3s;
   background-color: #8dc63f;
@@ -174,7 +174,7 @@
   max-width: 1320px;
   margin: auto;
 }
-.titleWrapper .controls{
+.titleWrapper .controls {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -254,7 +254,6 @@
 .valoresMainWrapper h3 {
   font-size: 24px;
   font-weight: 500;
-  line-height: 48px;
   text-align: center;
   color: #005dab;
   margin-top: 90px;
@@ -300,14 +299,12 @@
 .lineaDelTiempoWrapper .titleWrapper h3 {
   font-size: 32px;
   font-weight: 500;
-  line-height: 20px;
   text-align: left;
   color: #005dab;
 }
 .lineaDelTiempo {
   width: 100%;
   height: 620px;
-  margin-bottom: 60px;
 }
 
 .lineaDelTiempoItemWrapper {
@@ -325,8 +322,10 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(2, 46, 82, 0.7);
+  background-color: #005dab;
+  backdrop-filter: multiply(rgba(2, 46, 82, 0.7));
   z-index: 1;
+  mix-blend-mode: multiply;
 }
 .lineaDelTiempo .item {
   display: flex;
@@ -335,6 +334,41 @@
   align-items: flex-start;
   width: 400px;
   z-index: 2;
+}
+.lineaDelTiempo .textWrapperIcon {
+  position: relative;
+  width: 100%;
+  position: relative;
+}
+.lineaDelTiempo .textWrapperIcon .iconLeft {
+  position: absolute;
+  top: -11px;
+  left: -45px;
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  z-index: 2;
+}
+.lineaDelTiempo .textWrapperIcon .iconLeft img {
+  width: 40px;
+  height: 40px;
+}
+.lineaDelTiempo .textWrapperIcon .icon {
+  position: absolute;
+  top: 6px;
+  right: -110px;
+  width: 200px;
+  height: 5px;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 50%;
+  z-index: 2;
+}
+.lineaDelTiempo .textWrapperIcon .icon img {
+  width: 200px;
+  height: 5px;
 }
 
 .lineaDelTiempo .item h4 {
@@ -352,6 +386,13 @@
   line-height: 20px;
   text-align: left;
   max-width: 300px;
+}
+.lineaDelTiempo .item img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
 }
 
 @media screen and (max-width: 1380px) {
@@ -388,11 +429,18 @@
 }
 @media screen and (max-width: 604px) {
   .selectOptionWrapper {
-    scale: 0.8;
+    width: 100%;
+    border-radius: 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
-}
-@media screen and (max-width: 480px) {
-  .selectOptionWrapper {
-    scale: 0.5;
+  .selectOptionWrapper div {
+    padding-inline: 8px;
+  }
+  .selectOptionWrapper div.active {
+    padding-inline: 8px;
+  }
+  .selectOptionWrapper p {
+    font-size: 10px;
   }
 }

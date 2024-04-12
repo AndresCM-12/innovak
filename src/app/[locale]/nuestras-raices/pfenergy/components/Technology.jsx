@@ -6,6 +6,12 @@ import imageIcon from "../../../../../../public/nuestrasraices/pfenergyIcon.png"
 import styles from "./technology.module.css";
 import Image from "next/image";
 
+import nutrisorb from "../../../../../../public/nuestrasraices/pfenergy/Nutrisorb.png";
+import haddak from "../../../../../../public/nuestrasraices/pfenergy/Haddak.png";
+import selectoXL from "../../../../../../public/nuestrasraices/pfenergy/SelectoXL.png";
+import exuRoot from "../../../../../../public/nuestrasraices/pfenergy/ExuRoot.png";
+import balox from "../../../../../../public/nuestrasraices/pfenergy/Balox.png";
+
 const futura = localFont({
   src: "../../../../../../public/fonts/futura.ttf",
   variable: "--font-futura",
@@ -14,24 +20,24 @@ const futura = localFont({
 export default function Technologyclient({ texts }) {
   const featureInfo = [
     {
-      icon: "https://plainbackground.com/plain1024/a4a6a3.png",
-      text: "Investiga, GENERA CONOCIMIENTO sobre los nuevos retos de la agricultura.",
+      icon: nutrisorb,
+      text: "Nutrisorb: Bioestimulante para la asimilación de nutrientes.",
     },
     {
-      icon: "https://plainbackground.com/plain1024/a4a6a3.png",
-      text: "Diagnostica CON TECNOLOGIA DE VANGUARDIA la condición de la raíz en su cultivo.",
+      icon: haddak,
+      text: "Haddak: Preventivo y corrector de estrés.",
     },
     {
-      icon: "https://plainbackground.com/plain1024/a4a6a3.png",
-      text: "Implementa herramientas INNOVADORAS para prologar la vida de la raíz",
+      icon: selectoXL,
+      text: "SelectoXL: Bioestimulante para el amarre y tamaño de frutos.",
     },
     {
-      icon: "https://plainbackground.com/plain1024/a4a6a3.png",
-      text: "Modifica prácticas de manejo para maximizar productividad.",
+      icon: exuRoot,
+      text: "ExuRoot: Bioestimulante Inductor de Exudados Radiculares.",
     },
     {
-      icon: "https://plainbackground.com/plain1024/a4a6a3.png",
-      text: "Evalúa el desempeño de la raíz y el cultivo.",
+      icon: balox,
+      text: "Balox: Bioestimulante contra el estrés salino.",
     },
   ];
 
@@ -93,11 +99,14 @@ export default function Technologyclient({ texts }) {
             </div>
           ))}
         </div>
+        <div className={styles.bgImageMobile}>
+          <Image src={imageBg} alt="bg" />
+        </div>
         <div className={styles.callsToActionWrapper}>
           {callsToAction.map((element) => (
             <div className={styles.callToAction} data-side={element.side}>
               <h4>{element.title}</h4>
-              <p>Ver más</p>
+              {/* <p>Ver más</p> */}
             </div>
           ))}
         </div>

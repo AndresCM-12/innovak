@@ -105,6 +105,7 @@ export default function Technologyclient({ texts }) {
             }
           `}
         </style>
+
         <article className={styles.bgWrapperMain}>
           <div className={styles.bgWrapper}>
             <Image src={imageIcon} width={300} alt="pfenergy icon" />
@@ -127,6 +128,11 @@ export default function Technologyclient({ texts }) {
               ))}
             </div>
           </div>
+
+          <div className={styles.bgImageMobile}>
+            <Image src={imageBg} alt="bg" />
+          </div>
+
           <div className={styles.callToActionWrapper}>
             {callsToAction.map((element, index) => (
               <div
@@ -143,6 +149,7 @@ export default function Technologyclient({ texts }) {
               </div>
             ))}
           </div>
+
           <div className={styles.bgImage}>
             <Image src={imageBg} alt="bg" />
           </div>

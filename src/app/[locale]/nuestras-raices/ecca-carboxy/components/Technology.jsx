@@ -59,30 +59,37 @@ export default function Technologyclient({ texts }) {
         `}
       </style>
       <article className={styles.bgWrapper}>
-        <Image src={imageIcon} width={300} alt="pfenergy icon" />
-        <h3>
-          Con certificación orgánica, proveniente de nuestro proceso patentado
-          que da origen a los Ácidos Carboxy, únicos con efecto biológico
-          comprobado.
-        </h3>
-        <h3>
-          La tecnología ECCA Carboxy es el conjunto de conocimientos y destrezas
-          que Innovak Global ha desarrollado para obtención de extractos a
-          partir de cascarillas agrícolas; la identificación, aislamiento,
-          purificación y concentración de compuestos o grupos de compuestos con
-          efectos benéficos específicos en los cultivos, ya sea solos o en
-          combinación con nutrientes, reguladores de crecimiento,
-          microorganismos benéficos o metabolitos provenientes de estos.
-        </h3>
-        <h3>
-          La tecnología también involucra el conocimiento de los mecanismos de
-          acción de los principios activos contenidos en las formulaciones,
-          destacándose el efecto bioestimulante iniciado por la estimulación del
-          ciclo oxidativo de las pentosas fosfato que conduce a la biosíntesis,
-          dentro de la planta, de ciertos compuestos clave que influyen en los
-          procesos de asimilación de nutrientes, tolerancia al estrés abiótico o
-          fortalecimiento de los tejidos vegetales.
-        </h3>
+        <div className={styles.textWrapper}>
+          <Image src={imageIcon} width={300} alt="pfenergy icon" />
+          <h3>
+            Con certificación orgánica, proveniente de nuestro proceso patentado
+            que da origen a los Ácidos Carboxy, únicos con efecto biológico
+            comprobado.
+          </h3>
+          <h3>
+            La tecnología ECCA Carboxy es el conjunto de conocimientos y
+            destrezas que Innovak Global ha desarrollado para obtención de
+            extractos a partir de cascarillas agrícolas; la identificación,
+            aislamiento, purificación y concentración de compuestos o grupos de
+            compuestos con efectos benéficos específicos en los cultivos, ya sea
+            solos o en combinación con nutrientes, reguladores de crecimiento,
+            microorganismos benéficos o metabolitos provenientes de estos.
+          </h3>
+          <h3>
+            La tecnología también involucra el conocimiento de los mecanismos de
+            acción de los principios activos contenidos en las formulaciones,
+            destacándose el efecto bioestimulante iniciado por la estimulación
+            del ciclo oxidativo de las pentosas fosfato que conduce a la
+            biosíntesis, dentro de la planta, de ciertos compuestos clave que
+            influyen en los procesos de asimilación de nutrientes, tolerancia al
+            estrés abiótico o fortalecimiento de los tejidos vegetales.
+          </h3>
+        </div>
+
+        <div className={styles.bgImageMobile}>
+          <Image src={imageBg} alt="bg" />
+        </div>
+
         <div className={styles.featureInfo}>
           <div className={styles.features}>
             <div className={styles.featuresColumn}>
@@ -97,6 +104,7 @@ export default function Technologyclient({ texts }) {
             </div>
           </div>
         </div>
+
         <div className={styles.bgImage}>
           <Image src={imageBg} alt="bg" />
         </div>

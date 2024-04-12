@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import styles from "./presencia.module.css";
 
 import localFont from "next/font/local";
@@ -11,6 +11,7 @@ const futura = localFont({
 import mexicoMap from "../../../../../public/presencia/mexico.svg";
 import background from "../../../../../public/presencia/background.png";
 import Image from "next/image";
+import icon from "../../../../../public/contacto/search.png";
 
 export default function PresenciaClient({ texts }) {
   const [index, setIndex] = React.useState(0);
@@ -207,13 +208,30 @@ function Map() {
 }
 
 function MapMexico({ map, contactInfo }) {
+  const [filtredByProductList, setFiltredByProductList] = useState(contactInfo);
   return (
     <section className={styles.presenciaWrapper}>
       <div className={styles.mapWrapper}>
         <Image width={10} height={10} src={map} alt="Mexico" />
       </div>
+      <div className={styles.searchMenu}>
+        <input
+          placeholder="Buscar por experiencia en frutos"
+          onChange={(event) => {
+            const fruto = event.target.value.toLowerCase();
+            console.log(fruto);
+            const newList = contactInfo.filter((contact) => {
+              return contact.info.productos.some((producto) => {
+                return producto.toLowerCase().includes(fruto);
+              });
+            });
+            setFiltredByProductList(newList);
+          }}
+        />
+        <Image src={icon} alt="icon" width={20} height={20} />
+      </div>
       <div className={styles.infoWrapper}>
-        {contactInfo.map((contact, i) => (
+        {filtredByProductList.map((contact, i) => (
           <div
             key={i}
             className={styles.contactInfoWrapper}
