@@ -160,7 +160,7 @@ function Alianzas({ images }) {
           zIndex: 0,
         }}
       >
-        <source src="/videos/alianzas1.mp4" />
+        <source src="/videos/alianzas1.webm" />
         <source
           src="/videos/alianzas2.mp4"
           media="screen and (max-width: 770px) "
