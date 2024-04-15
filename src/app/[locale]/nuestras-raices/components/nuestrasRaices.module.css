@@ -49,7 +49,6 @@
   transition: 0.3s;
 }
 .selectOptionWrapper div.active {
-  padding: 24px 24px;
   cursor: pointer;
   transition: 0.3s;
   background-color: #8dc63f;
@@ -442,5 +441,11 @@
   }
   .selectOptionWrapper p {
     font-size: 10px;
+  }
+  .selectOptionWrapper div.active {
+    padding: 24px 24px;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: #8dc63f;
   }
 }

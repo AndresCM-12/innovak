@@ -26,7 +26,29 @@ const futura = localFont({
 export default function ContactPageClient({ texts }) {
   const [index, setIndex] = React.useState(0);
 
-  var comunikImages = [comunik1, comunik2, comunik3, comunik4, comunik5];
+  var comunikImages = [
+    {
+      link: "https://www.innovakglobal.com/revistacomunik/#flipbook-df_19699/1/",
+      img: comunik1,
+    },
+    {
+      link: "https://www.innovakglobal.com/revistacomunik/#flipbook-df_10173/1/",
+      img: comunik2,
+    },
+    {
+      link: "https://www.innovakglobal.com/revistacomunik/#flipbook-df_10178/1/",
+      img: comunik3,
+    },
+    {
+      link: "https://www.innovakglobal.com/revistacomunik/#flipbook-df_10181/1/",
+      img: comunik4,
+    },
+    {
+      link: "https://www.innovakglobal.com/revistacomunik/#flipbook-df_16790/1/",
+      img: comunik5,
+    },
+  ];
+
   var content = [
     {
       title: "Sistema radicular de la vid",
@@ -93,13 +115,13 @@ export default function ContactPageClient({ texts }) {
   ];
 
   var pagesInfo = [
-    // {
-    //   header: "INNOVAK NEWS",
-    //   title: "POSTERS E INFOGRAFÍAS",
-    //   subtitle: "",
-    //   image: background.src,
-    //   content: <RevistaInnovak images={comunikImages} />,
-    // },
+    {
+      header: "INNOVAK NEWS",
+      title: "POSTERS E INFOGRAFÍAS",
+      subtitle: "",
+      image: background.src,
+      content: <RevistaInnovak images={comunikImages} />,
+    },
     {
       header: "ARTÍCULOS",
       title: "ARTÍCULOS",
@@ -165,20 +187,17 @@ export default function ContactPageClient({ texts }) {
       {/* Dynamic Header */}
 
       {/* Select Option */}
-      {/* <div className={styles.selectOptionWrapper}>
+      <div className={styles.selectOptionWrapper}>
         {pagesInfo.map((page, i) => (
-          <>
-            <div
-              className={index === i ? `${styles.active}` : ""}
-              key={i + "div"}
-              onClick={() => handleNextStep(i)}
-            >
-              <p>{page.title}</p>
-            </div>
-            <span key={i + "span"} className={styles.separator}></span>
-          </>
+          <div
+            className={index === i ? `${styles.active}` : ""}
+            key={i + "div"}
+            onClick={() => handleNextStep(i)}
+          >
+            <p>{page.title}</p>
+          </div>
         ))}
-      </div> */}
+      </div>
       {/* Select Option */}
 
       {/* Form */}
@@ -202,8 +221,16 @@ function RevistaInnovak({ images }) {
         </p>
       </article>
       <div className={styles.revistasWrapper}>
-        {images.map((image, i) => (
-          <Image key={i} src={image} alt="comunik" width={320} height={480} />
+        {images.map((object, i) => (
+          <Image
+            style={{ cursor: "pointer" }}
+            onClick={() => window.open(object.link, "_blank")}
+            key={i}
+            src={object.img}
+            alt="comunik"
+            width={320}
+            height={480}
+          />
         ))}
       </div>
     </section>

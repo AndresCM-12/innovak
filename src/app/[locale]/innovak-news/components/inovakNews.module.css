@@ -44,7 +44,6 @@
   transition: 0.3s;
 }
 .selectOptionWrapper div.active {
-  padding: 16px 24px;
   cursor: pointer;
   transition: 0.3s;
   background-color: #8dc63f;
@@ -305,7 +304,7 @@
 
 .newsItem {
   max-width: 370px;
-  min-height: 642px;
+  min-height: 500px;
   max-height: 642px;
   width: 100%;
   position: relative;
@@ -381,13 +380,28 @@
 }
 @media screen and (max-width: 604px) {
   .selectOptionWrapper {
-    scale: 0.8;
+    width: 100%;
+    border-radius: 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .selectOptionWrapper div {
+    padding-inline: 8px;
+  }
+  .selectOptionWrapper div.active {
+    padding-inline: 8px;
+  }
+  .selectOptionWrapper p {
+    font-size: 10px;
+  }
+  .selectOptionWrapper div.active {
+    padding: 27px 24px;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: #8dc63f;
   }
 }
 @media screen and (max-width: 480px) {
-  .selectOptionWrapper {
-    scale: 0.5;
-  }
   .form {
     padding-inline: 20px;
   }
