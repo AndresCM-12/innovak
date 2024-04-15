@@ -63,6 +63,9 @@ import tkroot from "../../../../../../public/products/productos/tkroot.png";
 import tseminus from "../../../../../../public/products/productos/tseminus.png";
 import vernum from "../../../../../../public/products/productos/vernum.png";
 
+// import isomateCmFlexProduct from "../../../../../../public/products/productos/isomatecmflex.png";
+// import isomateCmFlexSpecs from "../../../../../../public/products/fichas/ISOMATECMFLEX.pdf";
+
 import localFont from "next/font/local";
 const futura = localFont({
   src: "../../../../../../public/fonts/futura.ttf",
@@ -617,7 +620,10 @@ export default function Promesol() {
 
   function MainBody({ allProducts, selectedIndex }) {
     return (
-      <div className={styles.mainWrapper} style={{backgroundColor: "transparent"}}>
+      <div
+        className={styles.mainWrapper}
+        style={{ backgroundColor: "transparent" }}
+      >
         <style jsx global>{`
           h1,
           h2,

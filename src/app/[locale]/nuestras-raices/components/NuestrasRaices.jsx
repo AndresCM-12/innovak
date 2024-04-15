@@ -175,15 +175,19 @@ export default function NuestrasRaicesClient({ texts }) {
   var revolucionItems = [
     {
       img: rev1,
+      text: "Acondicionamiento del suelo, mayor aprovechamiento del agua.",
     },
     {
       img: rev2,
+      text: "En cada gramo más abosorción, en cada raíz más rendimiento.",
     },
     {
       img: rev3,
+      text: "Un suelo vital y puro, para asegurar nuestro futuro.",
     },
     {
       img: rev4,
+      text: "Previene, protege y repara. La defensa frente a climas adversos.",
     },
   ];
 
@@ -933,20 +937,14 @@ function Revolucion({ items }) {
           tierra y RESPETANDO EL MEDIO AMBIENTE en diversos aspectos:
         </p>
       </div>
-      <div
-        style={{
-          maxWidth: "1200px",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          gap: "40px",
-          flexWrap: "wrap",
-          margin: "0 auto",
-          paddingBottom: "80px",
-        }}
-      >
+      <div className={revolucionStyles.featuresWrapper}>
         {items.map((item, i) => (
-          <Image src={item.img} />
+          <div className={revolucionStyles.item}>
+            <Image src={item.img} />
+            <div className={revolucionStyles.text}>
+              <h6>{item.text}</h6>
+            </div>
+          </div>
         ))}
       </div>
     </section>
