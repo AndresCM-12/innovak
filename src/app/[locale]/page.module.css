@@ -1160,7 +1160,7 @@ footer .links a {
     padding-inline: 20px;
   }
   .rootContainer {
-    align-content: start;
+    align-content: flex-start;
   }
   .specsImagesRow {
     flex-direction: column;
