@@ -24,7 +24,6 @@ const futura = localFont({
 });
 
 export default function ContactPageClient({ texts }) {
-  const [index, setIndex] = React.useState(0);
 
   var comunikImages = [
     {
@@ -121,6 +120,7 @@ export default function ContactPageClient({ texts }) {
       subtitle: "",
       image: background.src,
       content: <RevistaInnovak images={comunikImages} />,
+      hash: "posters-e-infografias",
     },
     {
       header: "ARTÍCULOS",
@@ -128,6 +128,7 @@ export default function ContactPageClient({ texts }) {
       subtitle: "",
       image: background.src,
       content: <Ensayos content={content} />,
+      hash: "articulos",
     },
     // {
     //   header: "ENSAYOS",
@@ -135,6 +136,7 @@ export default function ContactPageClient({ texts }) {
     //   subtitle: "",
     //   image: background.src,
     //   content: <RevistaInnovak images={comunikImages} />,
+    //   hash: "ensayos",
     // },
     // {
     //   header: "REVISTA COMUNIK",
@@ -142,11 +144,37 @@ export default function ContactPageClient({ texts }) {
     //   subtitle: "",
     //   image: background.src,
     //   content: <RevistaInnovak images={comunikImages} />,
+    //   hash: "revista-comunik",
     // },
   ];
 
+  const getCurrentIndex = () => {
+    const hash = window.location.hash;
+    var tempIndex = 0;
+    switch (hash ) {
+      case "posters-e-infografias":
+        tempIndex = 0;
+        break;
+      case "#articulos":
+        tempIndex = 1;
+        break;
+      default:
+        tempIndex = 0;
+        break;
+    }
+    return tempIndex;
+  };
+
+  //Set current index of pageInfo on first load
+  const [index, setIndex] = React.useState(getCurrentIndex());
+
+  //Set current index of pageInfo on hash change to generate history navigation
+  window.addEventListener("hashchange", () => {
+    setIndex(getCurrentIndex());
+  });
+
   const handleNextStep = (i) => {
-    window.scrollTo(0, 0);
+    window.location.hash = pagesInfo[i].hash;
     setIndex(i);
   };
 

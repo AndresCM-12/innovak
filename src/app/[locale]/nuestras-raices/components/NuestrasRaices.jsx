@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./nuestrasRaices.module.css";
 import allStyles from "../../inicio.module.css";
 import revolucionStyles from "./revolucion.module.css";
+import { usePathname } from 'next/navigation'
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -81,8 +82,6 @@ const futura = localFont({
 });
 
 export default function NuestrasRaicesClient({ texts }) {
-  const [index, setIndex] = React.useState(0);
-
   var certifications = [
     {
       img: logoBio,
@@ -514,12 +513,14 @@ y su medio ambiente
       content: (
         <QuienesSomos valores={valores} lineaDelTiempo={lineaDelTiempo} />
       ),
+      hash: "quienes-somos",
     },
     {
       title: "TECNOLOGÍAS",
       subtitle: "",
       image: background.src,
       content: <Tecnologias />,
+      hash: "tecnologias",
     },
     {
       title: "CERTIFICACIONES",
@@ -532,17 +533,50 @@ y su medio ambiente
           reconocimientos={reconocimientos}
         />
       ),
+      hash: "certificaciones",
     },
     {
       title: "REVOLUCIÓN SUSTENTABLE",
       subtitle: "",
       image: background.src,
       content: <Revolucion items={revolucionItems} />,
+      hash: "revolucion",
     },
   ];
 
+  const getCurrentIndex = () => {
+    const hash = window.location.hash;
+    var tempIndex = 0;
+    switch (hash ) {
+      case "#quienes-somos":
+        tempIndex = 0;
+        break;
+      case "#tecnologias":
+        tempIndex = 1;
+        break;
+      case "#certificaciones":
+        tempIndex = 2;
+        break;
+      case "#revolucion":
+        tempIndex = 3;
+        break;
+      default:
+        tempIndex = 0;
+        break;
+    }
+    return tempIndex;
+  };
+
+  //Set current index of pageInfo on first load
+  const [index, setIndex] = React.useState(getCurrentIndex());
+
+  //Set current index of pageInfo on hash change to generate history navigation
+  window.addEventListener("hashchange", () => {
+    setIndex(getCurrentIndex());
+  });
+
   const handleNextStep = (i) => {
-    window.scrollTo(0, 0);
+    window.location.hash = pagesInfo[i].hash;
     setIndex(i);
   };
 

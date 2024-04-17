@@ -18,7 +18,6 @@ const futura = localFont({
 });
 
 export default function ContactPageClient({ texts }) {
-  const [index, setIndex] = React.useState(0);
   var jobs = [
     {
       title: "Ingeniero Desarrollo Sistemas Internos",
@@ -50,6 +49,7 @@ export default function ContactPageClient({ texts }) {
         "Comunícate con nosotros y nos pondremos en contacto contigo tan pronto como nos sea posible. ¡Esperamos tener noticias tuyas!",
       image: headerBgContacto.src,
       content: <FormBody />,
+      hash: "contacto",
     },
     {
       header: "Bolsa de trabajo",
@@ -58,6 +58,7 @@ export default function ContactPageClient({ texts }) {
         "INNOVAK GLOBAL, es la empresa con la más amplia experiencia en bioestimulación desde la raíz, contribuyendo a la producción de cultivos sanos en alianza con la naturaleza; somos reconocidos internacionalmente como líder en el desarrollo de soluciones biorracionales con enfoque a mejorar la calidad de los alimentos frescos y la productividad de las cosechas.",
       image: headerBgBolsaTrabajo.src,
       content: <FormBodyBolsaDeTrabajo jobs={jobs} />,
+      hash: "bolsa-de-trabajo",
     },
     {
       header: "Buzón de quejas y sugerencias",
@@ -65,6 +66,7 @@ export default function ContactPageClient({ texts }) {
       subtitle: "",
       image: headerBgQuejas.src,
       content: <FormBodyQuejas />,
+      hash: "buzon-de-quejas",
     },
     {
       header: "Denuncia ética",
@@ -72,11 +74,43 @@ export default function ContactPageClient({ texts }) {
       subtitle: "",
       image: headerBgQuejas.src,
       content: <FormBodyDenuncia />,
+      hash: "denuncia-etica",
     },
   ];
 
+  const getCurrentIndex = () => {
+    const hash = window.location.hash;
+    var tempIndex = 0;
+    switch (hash) {
+      case "#contacto":
+        tempIndex = 0;
+        break;
+      case "#bolsa-de-trabajo":
+        tempIndex = 1;
+        break;
+      case "#buzon-de-quejas":
+        tempIndex = 2;
+        break;
+      case "#denuncia-etica":
+        tempIndex = 3;
+        break;
+      default:
+        tempIndex = 0;
+        break;
+    }
+    return tempIndex;
+  };
+
+  //Set current index of pageInfo on first load
+  const [index, setIndex] = React.useState(getCurrentIndex());
+
+  //Set current index of pageInfo on hash change to generate history navigation
+  window.addEventListener("hashchange", () => {
+    setIndex(getCurrentIndex());
+  });
+
   const handleNextStep = (i) => {
-    window.scrollTo(0, 0);
+    window.location.hash = pagesInfo[i].hash;
     setIndex(i);
   };
 
@@ -128,9 +162,12 @@ export default function ContactPageClient({ texts }) {
 
 function FormBody() {
   return (
-    <section className={allStyles.formWrapper} style={{
-      marginTop: "20px"
-    }}>
+    <section
+      className={allStyles.formWrapper}
+      style={{
+        marginTop: "20px",
+      }}
+    >
       <motion.div
         whileInView={{ opacity: 1 }}
         initial={{ opacity: 0 }}

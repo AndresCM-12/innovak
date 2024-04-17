@@ -48,7 +48,7 @@ export default function FooterBody() {
             <div className={styles.separator}></div>
             <div className={styles.directions}>
               <p>+52 (614) 436 01 38</p>
-              <p> info@innovakglobal.com</p>
+              <p>info@innovakglobal.com</p>
               <p className={styles.direction}>
                 Blvd. Vicente Lombardo Toledano #6615Col. La <br />
                 Concordia C.P. 31375Chihuahua, Chihuahua, México.
@@ -70,6 +70,18 @@ export default function FooterBody() {
                 +ORDEN
               </a>
               <a
+                href="https://innovakglobal.my.salesforce.com/"
+                target="_blank"
+              >
+                <Image
+                  alt="Innovak ícono"
+                  src={network}
+                  width={20}
+                  height={20}
+                />{" "}
+                SALESFORCE
+              </a>
+              <a
                 href="http://201.174.71.70/itisv2/index"
                 target="_blank"
               >
@@ -79,7 +91,7 @@ export default function FooterBody() {
                   width={20}
                   height={20}
                 />{" "}
-                PLATAFORMA
+                ITIS
               </a>
               <a
                 href="https://e10.innovakglobal.us/rastreo/iniciosesion"

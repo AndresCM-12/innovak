@@ -14,7 +14,6 @@ import Image from "next/image";
 import icon from "../../../../../public/contacto/search.png";
 
 export default function PresenciaClient({ texts }) {
-  const [index, setIndex] = React.useState(0);
 
   var contactInfo = [
     {
@@ -126,29 +125,64 @@ export default function PresenciaClient({ texts }) {
       subtitle: "",
       image: background.src,
       content: <MapMexico map={mexicoMap} contactInfo={contactInfo} />,
+      hash: "mexico",
     },
     // {
     //   title: "ESTADOS UNIDOS",
     //   subtitle: "",
     //   image: background.src,
     //   content: <Map />,
+    //   hash: "usa",
     // },
     // {
     //   title: "BRASIL",
     //   subtitle: "",
     //   image: background.src,
     //   content: <Map />,
+    //   hash: "brasil",
     // },
     // {
     //   title: "TURQUÍA",
     //   subtitle: "",
     //   image: background.src,
     //   content: <Map />,
+    //   hash: "turquia",
     // },
   ];
 
+  const getCurrentIndex = () => {
+    const hash = window.location.hash;
+    var tempIndex = 0;
+    switch (hash) {
+      case "#mexico":
+        tempIndex = 0;
+        break;
+      case "#usa":
+        tempIndex = 1;
+        break;
+      case "#brasil":
+        tempIndex = 2;
+        break;
+      case "#turquia":
+        tempIndex = 3;
+        break;
+      default:
+        tempIndex = 0;
+        break;
+    }
+    return tempIndex;
+  };
+
+  //Set current index of pageInfo on first load
+  const [index, setIndex] = React.useState(getCurrentIndex());
+
+  //Set current index of pageInfo on hash change to generate history navigation
+  window.addEventListener("hashchange", () => {
+    setIndex(getCurrentIndex());
+  });
+
   const handleNextStep = (i) => {
-    window.scrollTo(0, 0);
+    window.location.hash = pagesInfo[i].hash;
     setIndex(i);
   };
 
