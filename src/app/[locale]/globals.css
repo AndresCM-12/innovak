@@ -27,9 +27,12 @@ a {
   text-decoration: none;
 }
 
-#alianzasSwiper .swiper-button-next{
+#alianzasSwiper .swiper-button-next {
   color: white;
 }
-#alianzasSwiper .swiper-button-prev{
+#alianzasSwiper .swiper-button-prev {
   color: white;
+}
+#lineaDelTiempoSwiper .swiper-slide {
+  width: fit-content;
 }

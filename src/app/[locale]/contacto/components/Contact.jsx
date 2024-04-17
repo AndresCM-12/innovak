@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import headerBgQuejas from "../../../../../public/contacto/bgQuejas.png";
 import headerBgContacto from "../../../../../public/contacto/bgContacto.png";
 import headerBgBolsaTrabajo from "../../../../../public/contacto/bgBolsaTrabajo.png";
@@ -11,20 +11,33 @@ import map from "../../../../../public/inicio/map.png";
 import icon from "../../../../../public/contacto/search.png";
 import eyeIcon from "../../../../../public/contacto/eye.svg";
 
+import localFont from "next/font/local";
+const futura = localFont({
+  src: "../../../../../public/fonts/futura.ttf",
+  variable: "--font-futura",
+});
+
 export default function ContactPageClient({ texts }) {
-  const [index, setIndex] = React.useState(0);
   var jobs = [
-    {
-      title: "Operadores de producción",
-      place: "Chihuahua, Chihuahua",
-    },
     {
       title: "Ingeniero Desarrollo Sistemas Internos",
       place: "Chihuahua, Chihuahua",
+      link: "https://factork.buk.mx/seleccions/b79bbc7fe3f6b0856f9afcd078d409d5a5c990633be16df780ec108c2e0e2a76a8664c1ad29db78e9eab04c054598d1f5eb4997d94ba0655e65dfd9f1abbfd17/postular?referrer=portal",
+    },
+    {
+      title: "Almacenista Tool Crib",
+      place: "Chihuahua, Chihuahua",
+      link: "https://factork.buk.mx/seleccions/cb66092f1334316295072e3db82ad31949608c3b26a6e01d1772b98772f925e973f534c0efe019ff34895eb75bcf80b81133487a2830cae661937de06391a7b0/postular?referrer=portal",
     },
     {
       title: "Almacenista",
       place: "Chihuahua, Chihuahua",
+      link: "https://factork.buk.mx/seleccions/5b41ecee187ec43efa2d2ba5cd60a3d27b45f7fccf05f2a2c7705be8f5ba70a5a8a26960f41936012505d22fc47f0b419483d868e3a22900acfd3b76472c554d/postular?referrer=portal",
+    },
+    {
+      title: "Operadores de Producción",
+      place: "Chihuahua, Chihuahua",
+      link: "https://factork.buk.mx/seleccions/bdde41fdab8a674044a9652b9cc35a6adb1521e74a245ca3e01611c782fa72cf4cb4a64441f2a9ff488d600f53c1a69fbd05bd77007518826fd5657edc739cc7/postular?referrer=portal",
     },
   ];
 
@@ -36,6 +49,7 @@ export default function ContactPageClient({ texts }) {
         "Comunícate con nosotros y nos pondremos en contacto contigo tan pronto como nos sea posible. ¡Esperamos tener noticias tuyas!",
       image: headerBgContacto.src,
       content: <FormBody />,
+      hash: "contacto",
     },
     {
       header: "Bolsa de trabajo",
@@ -44,6 +58,7 @@ export default function ContactPageClient({ texts }) {
         "INNOVAK GLOBAL, es la empresa con la más amplia experiencia en bioestimulación desde la raíz, contribuyendo a la producción de cultivos sanos en alianza con la naturaleza; somos reconocidos internacionalmente como líder en el desarrollo de soluciones biorracionales con enfoque a mejorar la calidad de los alimentos frescos y la productividad de las cosechas.",
       image: headerBgBolsaTrabajo.src,
       content: <FormBodyBolsaDeTrabajo jobs={jobs} />,
+      hash: "bolsa-de-trabajo",
     },
     {
       header: "Buzón de quejas y sugerencias",
@@ -51,23 +66,66 @@ export default function ContactPageClient({ texts }) {
       subtitle: "",
       image: headerBgQuejas.src,
       content: <FormBodyQuejas />,
+      hash: "buzon-de-quejas",
     },
     {
       header: "Denuncia ética",
       title: "DENUNCIA ÉTICA",
       subtitle: "",
       image: headerBgQuejas.src,
-      content: <FormBodyQuejas />,
+      content: <FormBodyDenuncia />,
+      hash: "denuncia-etica",
     },
   ];
 
+  const getCurrentIndex = () => {
+    const hash = window.location.hash;
+    var tempIndex = 0;
+    switch (hash) {
+      case "#contacto":
+        tempIndex = 0;
+        break;
+      case "#bolsa-de-trabajo":
+        tempIndex = 1;
+        break;
+      case "#buzon-de-quejas":
+        tempIndex = 2;
+        break;
+      case "#denuncia-etica":
+        tempIndex = 3;
+        break;
+      default:
+        tempIndex = 0;
+        break;
+    }
+    return tempIndex;
+  };
+
+  //Set current index of pageInfo on first load
+  const [index, setIndex] = React.useState(getCurrentIndex());
+
+  //Set current index of pageInfo on hash change to generate history navigation
+  window.addEventListener("hashchange", () => {
+    setIndex(getCurrentIndex());
+  });
+
   const handleNextStep = (i) => {
-    window.scrollTo(0, 0);
+    window.location.hash = pagesInfo[i].hash;
     setIndex(i);
   };
 
   return (
     <>
+      <style jsx global>{`
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          font-family: ${futura.style.fontFamily};
+        }
+      `}</style>
       {/* Dynamic Header */}
       <article
         className={styles.header}
@@ -84,16 +142,13 @@ export default function ContactPageClient({ texts }) {
       {/* Select Option */}
       <div className={styles.selectOptionWrapper}>
         {pagesInfo.map((page, i) => (
-          <>
-            <div
-              className={index === i ? `${styles.active}` : ""}
-              key={i + "div"}
-              onClick={() => handleNextStep(i)}
-            >
-              <p>{page.title}</p>
-            </div>
-            <span key={i + "span"} className={styles.separator}></span>
-          </>
+          <div
+            className={index === i ? `${styles.active}` : ""}
+            key={i + "div"}
+            onClick={() => handleNextStep(i)}
+          >
+            <p>{page.title}</p>
+          </div>
         ))}
       </div>
       {/* Select Option */}
@@ -107,7 +162,12 @@ export default function ContactPageClient({ texts }) {
 
 function FormBody() {
   return (
-    <section className={allStyles.formWrapper}>
+    <section
+      className={allStyles.formWrapper}
+      style={{
+        marginTop: "20px",
+      }}
+    >
       <motion.div
         whileInView={{ opacity: 1 }}
         initial={{ opacity: 0 }}
@@ -231,17 +291,45 @@ function FormBodyQuejas() {
   );
 }
 
-function FormBodyBolsaDeTrabajo({ jobs }) {
+function FormBodyDenuncia() {
   return (
-    <section className={styles.formQuejas}>
+    <section className={styles.denunciaEtica}>
+      <iframe
+        src="https://innovak.lineaetica.com.mx/contents/denunciar-ahora?l=es#"
+        frameBorder="0"
+      ></iframe>
+    </section>
+  );
+}
+
+function FormBodyBolsaDeTrabajo({ jobs }) {
+  const [filtredJobs, setFiltredJobs] = useState(jobs);
+  return (
+    <section
+      className={styles.formQuejas}
+      style={{
+        minHeight: "830px",
+      }}
+    >
       <div className={styles.form}>
         <h1>PROCESOS DE SELECCIÓN</h1>
         <div className={styles.searchMenu}>
-          <input placeholder="Buscar empleo" />
+          <input
+            placeholder="Buscar empleo"
+            onChange={() => {
+              setFiltredJobs(
+                jobs.filter((job) =>
+                  job.title
+                    .toLowerCase()
+                    .includes(event.target.value.toLowerCase())
+                )
+              );
+            }}
+          />
           <Image src={icon} alt="icon" width={20} height={20} />
         </div>
         <div className={styles.jobList}>
-          {jobs.map((job, i) => (
+          {filtredJobs.map((job, i) => (
             <div key={i} className={styles.job}>
               <div>
                 <h6>{job.title}</h6>
@@ -249,7 +337,10 @@ function FormBodyBolsaDeTrabajo({ jobs }) {
               </div>
               <span>
                 <Image src={eyeIcon} alt="icon" width={20} height={20} />
-                Ver empleo</span>
+                <a href={job.link} target="_blank">
+                  Ver empleo
+                </a>
+              </span>
             </div>
           ))}
         </div>

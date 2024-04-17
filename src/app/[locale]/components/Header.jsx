@@ -6,13 +6,14 @@ import whiteLogo from "../../../../public/images/logo_white.png";
 
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useEffect, useState } from "react";
-import { Hind_Vadodara } from "next/font/google";
 import Link from "next/link";
 import LocaleSwitch from "./LocaleSwitch";
 
-const Hind_Vadodaraf = Hind_Vadodara({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+import localFont from "next/font/local";
+
+const futura = localFont({
+  src: "../../../../public/fonts/futura.ttf",
+  variable: "--font-futura",
 });
 
 export default function HeaderBody() {
@@ -46,7 +47,7 @@ export default function HeaderBody() {
         paddingBlock: menuScrolling ? "20px" : "40px",
         backgroundColor: menuScrolling ? "white" : "transparent",
         boxShadow: menuScrolling ? "0px 0px 10px 0px rgba(0,0,0,0.25)" : "",
-        fontFamily: Hind_Vadodaraf,
+        fontFamily: futura.style.fontFamily,
       }}
     >
       <MobileMenu
@@ -77,6 +78,11 @@ export default function HeaderBody() {
         }}
       >
         <svg
+          style={{
+            filter: menuScrolling
+              ? "brightness(0) invert(0)"
+              : "brightness(0) invert(1)",
+          }}
           xmlns="http://www.w3.org/2000/svg"
           className="ionicon"
           viewBox="0 0 512 512"
@@ -91,34 +97,39 @@ export default function HeaderBody() {
           />
         </svg>
       </div>
-      <LocaleSwitch />
+      <LocaleSwitch isMobile={false} />
     </motion.header>
   );
 }
 
 function MobileMenu({ mobileMenu, setMobileMenu, currentLang }) {
   return (
-    <div
-      className={styles.menuMobile}
-      onClick={() => {
-        setMobileMenu(!mobileMenu);
-      }}
-      style={{
-        opacity: mobileMenu ? "100%" : "0%",
-        display: mobileMenu ? "grid" : "none",
-      }}
-    >
+    <>
+      <div
+        className={styles.menuMobile}
+        onClick={() => {
+          setMobileMenu(!mobileMenu);
+        }}
+        style={{
+          opacity: mobileMenu ? "100%" : "0%",
+          display: mobileMenu ? "grid" : "none",
+          position: "fixed",
+          zIndex: 1,
+        }}
+      ></div>
       <div
         className={styles.nav}
-        style={{ right: mobileMenu ? 0 : "-100%" }}
+        style={{
+          right: mobileMenu ? 0 : "-100%",
+          position: "fixed",
+          zIndex: 2,
+        }}
         onClick={() => {}}
       >
         <nav style={{ display: "flex" }}>
           <ul className={styles.navUl}>
             <li>
-              <a href={`/${currentLang}/nuestras-raices`}>
-                NUESTRAS RAÍCES
-              </a>
+              <a href={`/${currentLang}/nuestras-raices`}>NUESTRAS RAÍCES</a>
             </li>
             <li>
               <a href={`/${currentLang}/productos`}>PRODUCTOS</a>
@@ -137,10 +148,17 @@ function MobileMenu({ mobileMenu, setMobileMenu, currentLang }) {
             <li>
               <a href={`/${currentLang}/contacto`}>CONTACTO</a>
             </li>
+            <LocaleSwitch
+              isMobile={true}
+              onClick={() => {
+                //stop the propagation of the event
+                event.stopPropagation();
+              }}
+            />
           </ul>
         </nav>
       </div>
-    </div>
+    </>
   );
 }
 

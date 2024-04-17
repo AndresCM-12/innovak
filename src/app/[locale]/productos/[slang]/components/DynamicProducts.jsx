@@ -1,7 +1,13 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./dynamicProducts.module.css";
 import Image from "next/image";
+
+import localFont from "next/font/local";
+const futura = localFont({
+  src: "../../../../../../public/fonts/futura.ttf",
+  variable: "--font-futura",
+});
 
 export default function DynamicProductsClient({
   texts,
@@ -9,10 +15,29 @@ export default function DynamicProductsClient({
   pagesInfo,
   selectedInfo,
 }) {
-  const [index, setIndex] = React.useState(selectedInfo);
+  const [index, setIndex] = useState(selectedInfo);
+  const [lang, setLang] = useState("mxn");
+
+  useEffect(() => {
+    const locale = document.cookie
+      .split(";")
+      .find((c) => c.trim().startsWith("NEXT_LOCALE="))
+      .split("=")[1];
+    setLang(locale);
+  }, []);
 
   return (
     <section>
+      <style jsx global>{`
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          font-family: ${futura.style.fontFamily};
+        }
+      `}</style>
       {/* Dynamic Header */}
       <article
         className={styles.header}
@@ -25,6 +50,7 @@ export default function DynamicProductsClient({
           className={styles.titleWrapper}
           style={{
             backgroundImage: `url(${pagesInfo[index].image})`,
+            backgroundSize: "cover",
           }}
         >
           <h1>{pagesInfo[index].title}</h1>
@@ -46,7 +72,7 @@ export default function DynamicProductsClient({
                     display: i === index ? "none" : "block",
                   }}
                 >
-                  {page.title}
+                  - {page.title}
                 </h6>
               </a>
             ))}
@@ -56,18 +82,31 @@ export default function DynamicProductsClient({
       {/* Dynamic Header */}
 
       {/* content */}
-      <ProductsList productImages={pagesInfo[index].products} />
+      <ProductsList productImages={pagesInfo[index].products} lang={lang} />
       {/* content */}
     </section>
   );
 }
 
-function ProductsList({ productImages }) {
+function ProductsList({ productImages, lang }) {
   return (
     <section className={styles.products}>
       {productImages.map((product, i) => (
-        <div className={styles.productsImages} key={i + "div"}>
-          <Image src={product} alt="product" width={200} height={200} />
+        <div
+          className={styles.productsImages}
+          key={i + "div"}
+          onClick={() => {
+            //Open link in new tab
+            window.open(`/${lang}${product.link}`, "_blank");
+          }}
+        >
+          <Image src={product.image} alt="product" width={200} height={200} />
+          <div className={styles.separator}></div>
+          <div>
+            <h6>{product.title}</h6>
+            <p>{product.text}</p>
+            <span>Ver más</span>
+          </div>
         </div>
       ))}
     </section>

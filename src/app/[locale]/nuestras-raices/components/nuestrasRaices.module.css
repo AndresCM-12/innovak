@@ -3,13 +3,15 @@
   width: 100%;
   display: flex;
   place-items: center;
-  justify-content: center;
-  flex-direction: column;
+  justify-content: space-around;
+  flex-direction: row;
   background-color: transparent;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
+  gap: 20px;
+  padding-inline: 12px;
 }
 .header h1 {
   font-size: 3rem;
@@ -18,12 +20,15 @@
   font-weight: 400;
 }
 .header p {
-  font-size: 14px;
   color: #fff;
   text-align: center;
   font-weight: 300;
   max-width: 590px;
   margin-top: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 26.56px;
+  text-align: left;
 }
 
 .selectOptionWrapper {
@@ -33,7 +38,7 @@
   width: fit-content;
   overflow: hidden;
   margin-inline: auto;
-  margin-top: -23px;
+  margin-top: -31px;
   position: relative;
   z-index: 5;
   align-items: center;
@@ -44,7 +49,6 @@
   transition: 0.3s;
 }
 .selectOptionWrapper div.active {
-  padding: 16px 24px;
   cursor: pointer;
   transition: 0.3s;
   background-color: #8dc63f;
@@ -165,7 +169,16 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: space-between;
+  max-width: 1320px;
+  margin: auto;
+}
+.titleWrapper .controls {
+  display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
 }
 .titleWrapper .title {
   background-color: #f5f5f5;
@@ -192,6 +205,7 @@
   width: 60%;
   height: 516px;
   border-radius: 20px;
+  object-fit: cover;
 }
 
 .misionWrapper {
@@ -202,6 +216,14 @@
   padding-inline: 12px;
   margin-top: 113px;
   gap: 50px;
+  position: relative;
+}
+.misionWrapper img {
+  position: absolute;
+  right: -400px;
+  top: -250px;
+  z-index: -1;
+  user-select: none;
 }
 .misionWrapper div {
   display: flex;
@@ -231,7 +253,6 @@
 .valoresMainWrapper h3 {
   font-size: 24px;
   font-weight: 500;
-  line-height: 48px;
   text-align: center;
   color: #005dab;
   margin-top: 90px;
@@ -269,8 +290,108 @@
   line-height: 20px;
   text-align: left;
 }
-.lineaDelTiempoWrapper{
+.lineaDelTiempoWrapper .titleWrapper {
   padding-inline: 12px;
+  margin-top: 186px;
+  margin-bottom: 32px;
+}
+.lineaDelTiempoWrapper .titleWrapper h3 {
+  font-size: 32px;
+  font-weight: 500;
+  text-align: left;
+  color: #005dab;
+}
+.lineaDelTiempo {
+  width: 100%;
+  height: 620px;
+}
+
+.lineaDelTiempoItemWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  width: 100%;
+  padding-top: 200px;
+  padding-left: 40px;
+}
+.lineaDelTiempo .filter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #005dab;
+  backdrop-filter: multiply(rgba(2, 46, 82, 0.7));
+  z-index: 1;
+  mix-blend-mode: multiply;
+}
+.lineaDelTiempo .item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 400px;
+  z-index: 2;
+}
+.lineaDelTiempo .textWrapperIcon {
+  position: relative;
+  width: 100%;
+  position: relative;
+}
+.lineaDelTiempo .textWrapperIcon .iconLeft {
+  position: absolute;
+  top: -11px;
+  left: -45px;
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  z-index: 2;
+}
+.lineaDelTiempo .textWrapperIcon .iconLeft img {
+  width: 40px;
+  height: 40px;
+}
+.lineaDelTiempo .textWrapperIcon .icon {
+  position: absolute;
+  top: 6px;
+  right: -110px;
+  width: 200px;
+  height: 5px;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 50%;
+  z-index: 2;
+}
+.lineaDelTiempo .textWrapperIcon .icon img {
+  width: 200px;
+  height: 5px;
+}
+
+.lineaDelTiempo .item h4 {
+  color: white;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 48px;
+  text-align: left;
+  margin-bottom: 10px;
+}
+.lineaDelTiempo .item p {
+  color: white;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 20px;
+  text-align: left;
+  max-width: 300px;
+}
+.lineaDelTiempo .item img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
 }
 
 @media screen and (max-width: 1380px) {
@@ -298,14 +419,33 @@
     height: 516px;
     border-radius: 20px;
   }
+  .header {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+  }
 }
 @media screen and (max-width: 604px) {
   .selectOptionWrapper {
-    scale: 0.8;
+    width: 100%;
+    border-radius: 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
-}
-@media screen and (max-width: 480px) {
-  .selectOptionWrapper {
-    scale: 0.5;
+  .selectOptionWrapper div {
+    padding-inline: 8px;
+  }
+  .selectOptionWrapper div.active {
+    padding-inline: 8px;
+  }
+  .selectOptionWrapper p {
+    font-size: 10px;
+  }
+  .selectOptionWrapper div.active {
+    padding: 24px 24px;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: #8dc63f;
   }
 }

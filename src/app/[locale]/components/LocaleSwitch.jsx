@@ -3,8 +3,9 @@
 import { useLocale } from "next-intl";
 import { useRouter } from "next/navigation";
 import { useTransition } from "react";
+import styles from "../page.module.css";
 
-export default function LocaleSwitch() {
+export default function LocaleSwitch({ isMobile = false }) {
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
   const localActive = useLocale();
@@ -25,7 +26,9 @@ export default function LocaleSwitch() {
   };
 
   return (
-    <label>
+    <label
+      className={isMobile ? styles.mobileLocaleSwitch : styles.mainLocaleSwitch}
+    >
       <select
         style={{
           padding: "0.5rem",
