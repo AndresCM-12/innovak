@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./nuestrasRaices.module.css";
 import allStyles from "../../inicio.module.css";
 import revolucionStyles from "./revolucion.module.css";
-import { usePathname } from 'next/navigation'
+import { usePathname } from "next/navigation";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -109,7 +109,6 @@ export default function NuestrasRaicesClient({ texts }) {
       img: logoEsr,
       title: "ESR",
       description: `
-
         Orgullosamente Innovak Global es una empresa socialmente responsable, generando compromiso en políticas, programas, toma de decisiones y acciones que benefician no solo al propio negocio, sino que, incidimos positivamente en la gente, el medio ambiente y las comunidades en que operamos, más allá de nuestras obligaciones, atendiendo sus expectativas.
         Distintivo`,
     },
@@ -547,7 +546,7 @@ y su medio ambiente
   const getCurrentIndex = () => {
     const hash = window.location.hash;
     var tempIndex = 0;
-    switch (hash ) {
+    switch (hash) {
       case "#quienes-somos":
         tempIndex = 0;
         break;

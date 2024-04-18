@@ -72,7 +72,7 @@ export default function Home() {
 function HeroSection() {
   return (
     <section className={styles.heroSection}>
-      <h1>Pioneros en bioestimulación desde la raíz</h1>
+      <h1>PIONEROS EN BIOESTIMULACIÓN DESDE LA RAÍZ</h1>
       <p>
         En Innovak Global desarrollamos y comercializamos productos
         biorracionales y tecnologías diferenciadas en la agricultura para

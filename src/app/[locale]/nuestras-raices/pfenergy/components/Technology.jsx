@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import localFont from "next/font/local";
 import imageBg from "../../../../../../public/nuestrasraices/pfenergyBg.png";
 import imageIcon from "../../../../../../public/nuestrasraices/pfenergyIcon.png";
@@ -18,26 +18,41 @@ const futura = localFont({
 });
 
 export default function Technologyclient({ texts }) {
+  const [lang, setLang] = useState("mxn");
+
+  useEffect(() => {
+    const locale = document.cookie
+      .split(";")
+      .find((c) => c.trim().startsWith("NEXT_LOCALE="))
+      .split("=")[1];
+    setLang(locale);
+  }, []);
+
   const featureInfo = [
     {
       icon: nutrisorb,
       text: "Nutrisorb: Bioestimulante para la asimilación de nutrientes.",
+      link: "/productos/proteccion-de-cultivos/Nutrisorb-L",
     },
     {
       icon: haddak,
       text: "Haddak: Preventivo y corrector de estrés.",
+      link: "/productos/proteccion-de-cultivos/Haddak",
     },
     {
       icon: selectoXL,
       text: "SelectoXL: Bioestimulante para el amarre y tamaño de frutos.",
+      link: "/productos/proteccion-de-cultivos/Selecto-XL",
     },
     {
       icon: exuRoot,
       text: "ExuRoot: Bioestimulante Inductor de Exudados Radiculares.",
+      link: "/productos/proteccion-de-cultivos/Exu-Root",
     },
     {
       icon: balox,
       text: "Balox: Bioestimulante contra el estrés salino.",
+      link: "/productos/proteccion-de-cultivos/Balox",
     },
   ];
 
@@ -93,7 +108,17 @@ export default function Technologyclient({ texts }) {
         <h3>La evolución en bioestiumulantes</h3>
         <div className={styles.featureWrapper}>
           {featureInfo.map((feature, index) => (
-            <div key={index} className={styles.feature}>
+            <div
+              key={index}
+              className={styles.feature}
+              onClick={() => {
+                //Open link in new tab
+                window.open(`/${lang}${feature.link}`, "_blank");
+              }}
+              style={{
+                cursor: "pointer",
+              }}
+            >
               <Image src={feature.icon} width={112} height={112} alt="icon" />
               <p>{feature.text}</p>
             </div>
