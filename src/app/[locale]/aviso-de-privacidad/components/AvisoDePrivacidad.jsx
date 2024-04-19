@@ -101,58 +101,65 @@ export default function AvisoDePrivacidadPageClient({ texts }) {
           personales que se obtienen a través de estas tecnologías NO serán
           compartidos con terceros.
         </p>
-        Estas tecnologías podrán desactivarse siguiendo los siguientes pasos: 1.
-        Acceder en su navegador a la opción de Menú 2. Dar clic en Opciones /
-        Privacidad 3. Buscar la opción de Historial y seleccionar Usar
-        configuraciones personalizadas para el historial 4. Deshabilitas la
-        opción de Aceptar cookies
+        <p>
+          Estas tecnologías podrán desactivarse siguiendo los siguientes pasos:
+          1. Acceder en su navegador a la opción de Menú 2. Dar clic en Opciones
+          / Privacidad 3. Buscar la opción de Historial y seleccionar Usar
+          configuraciones personalizadas para el historial 4. Deshabilitas la
+          opción de Aceptar cookies
+        </p>
         <h6>Medidas de Seguridad</h6>
-        Innovak Global ha implementado y mantiene las medidas de seguridad,
-        técnicas, administrativas y físicas, necesarias para proteger sus datos
-        personales y evitar su daño, pérdida, alteración, destrucción o el uso,
-        acceso o tratamiento no autorizado.Transferencias de datos personales
-        Innovak Global NO transferirá sus datos personales a terceros,
-        nacionales o extranjeros, salvo los casos previstos y autorizados por la
-        Ley.En caso de que Innovak Global sea adquirido o fusionado con un ente
-        comercial diverso, sus datos personales serán resguardados por la nueva
-        entidad a fin de que esta última pueda utilizarlos de la misma manera en
-        que Innovak Global los utilizaba.
+        <p>
+          Innovak Global ha implementado y mantiene las medidas de seguridad,
+          técnicas, administrativas y físicas, necesarias para proteger sus
+          datos personales y evitar su daño, pérdida, alteración, destrucción o
+          el uso, acceso o tratamiento no autorizado.Transferencias de datos
+          personales Innovak Global NO transferirá sus datos personales a
+          terceros, nacionales o extranjeros, salvo los casos previstos y
+          autorizados por la Ley.En caso de que Innovak Global sea adquirido o
+          fusionado con un ente comercial diverso, sus datos personales serán
+          resguardados por la nueva entidad a fin de que esta última pueda
+          utilizarlos de la misma manera en que Innovak Global los utilizaba.
+        </p>
         <h6>Derechos del titular de los datos personales (ARCO) </h6>
-        Usted tiene el derecho a conocer que datos personales tenemos de usted,
-        para que los utilizamos y las condiciones del uso que les damos
-        (Acceso). Asimismo, es su derecho solicitar la corrección de su
-        información personal en caso de que esté desactualizada, sea inexacta o
-        incompleta (Rectificación); que la eliminemos de nuestros registros o
-        bases de datos cuando considere que la misma no está siendo utilizada
-        conforme a los principios, deberes y obligaciones previstas en la
-        normativa (Cancelación); así como a oponerse al uso de sus datos
-        personales para fines específicos (Oposición); Estos derechos se conocen
-        como derechos ARCO. Usted podrá ejercer cualquiera de los derechos
-        descritos en el párrafo que antecede a través del envío de su solicitud,
-        en los términos establecidos por La Ley y su Reglamento, al departamento
-        de Protección de Datos de Innovak Global ubicado en Blvd. Vicente
-        Lombardo Toledano 6615, Col. La Concordia, Chihuahua, Chihuahua C.P.
-        31372 o al correo electrónico departamento.privacidad@innovakglobal.com.
-        También puede revocar el consentimiento que, en su caso, nos haya
-        otorgado para el tratamiento de sus datos personales. Sin embargo es
-        importante que tenga en cuenta que no en todos los casos podremos
-        atender su solicitud o concluir de forma inmediata, ya que es posible
-        que por alguna obligación legal requiramos seguir tratando sus datos
-        personales. Asimismo deberá considerar que para ciertos fines, la
-        revocación de su consentimiento implicará que no le podamos prestar o
-        seguir prestando el servicio solicitado o bien puede significar la
-        conclusión de la relación con nosotros. Para presentar su revocación
-        puede hacerlo de la misma forma que para ejercer sus derechos ARCO
-        descritos líneas atrás. Modificaciones al Aviso de Privacidad El
-        presente aviso de privacidad puede sufrir modificaciones, cambios o
-        actualizaciones derivadas de nuevos requerimientos legales; de nuestras
-        propias necesidades por los productos o servicios que ofrecemos; de
-        nuestras políticas de selección de personal; de nuestras prácticas de
-        privacidad; de cambios en nuestro modelo de negocio o por otras
-        causas.Nos comprometemos a mantenerlo informado sobre los cambios que
-        pueda sufrir el presente aviso de privacidad a traves de nuestro sitio
-        web www.innovakglobal.com o del comunicado respectivo al correo
-        electrónico que nos haya proporcionado.
+        <p>
+          Usted tiene el derecho a conocer que datos personales tenemos de
+          usted, para que los utilizamos y las condiciones del uso que les damos
+          (Acceso). Asimismo, es su derecho solicitar la corrección de su
+          información personal en caso de que esté desactualizada, sea inexacta
+          o incompleta (Rectificación); que la eliminemos de nuestros registros
+          o bases de datos cuando considere que la misma no está siendo
+          utilizada conforme a los principios, deberes y obligaciones previstas
+          en la normativa (Cancelación); así como a oponerse al uso de sus datos
+          personales para fines específicos (Oposición); Estos derechos se
+          conocen como derechos ARCO. Usted podrá ejercer cualquiera de los
+          derechos descritos en el párrafo que antecede a través del envío de su
+          solicitud, en los términos establecidos por La Ley y su Reglamento, al
+          departamento de Protección de Datos de Innovak Global ubicado en Blvd.
+          Vicente Lombardo Toledano 6615, Col. La Concordia, Chihuahua,
+          Chihuahua C.P. 31372 o al correo electrónico
+          departamento.privacidad@innovakglobal.com. También puede revocar el
+          consentimiento que, en su caso, nos haya otorgado para el tratamiento
+          de sus datos personales. Sin embargo es importante que tenga en cuenta
+          que no en todos los casos podremos atender su solicitud o concluir de
+          forma inmediata, ya que es posible que por alguna obligación legal
+          requiramos seguir tratando sus datos personales. Asimismo deberá
+          considerar que para ciertos fines, la revocación de su consentimiento
+          implicará que no le podamos prestar o seguir prestando el servicio
+          solicitado o bien puede significar la conclusión de la relación con
+          nosotros. Para presentar su revocación puede hacerlo de la misma forma
+          que para ejercer sus derechos ARCO descritos líneas atrás.
+          Modificaciones al Aviso de Privacidad El presente aviso de privacidad
+          puede sufrir modificaciones, cambios o actualizaciones derivadas de
+          nuevos requerimientos legales; de nuestras propias necesidades por los
+          productos o servicios que ofrecemos; de nuestras políticas de
+          selección de personal; de nuestras prácticas de privacidad; de cambios
+          en nuestro modelo de negocio o por otras causas.Nos comprometemos a
+          mantenerlo informado sobre los cambios que pueda sufrir el presente
+          aviso de privacidad a traves de nuestro sitio web
+          www.innovakglobal.com o del comunicado respectivo al correo
+          electrónico que nos haya proporcionado.
+        </p>
         <h6>Contacto</h6>
         <p>
           Para dudas, aclaraciones o comentarios respecto a este Aviso de

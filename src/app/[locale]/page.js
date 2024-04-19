@@ -78,7 +78,6 @@ function HeroSection() {
         biorracionales y tecnologías diferenciadas en la agricultura para
         contribuir a una naturaleza sustentable.
       </p>
-      <span>Desde 1973/2023</span>
       <video
         autoPlay
         muted

@@ -187,7 +187,7 @@ function RevistaInnovak({ items }) {
             }}
           >
             <div className={styles.floating}>
-              <Image src={item.icon} alt="Icono" width={130} height={130} />
+              {/* <Image src={item.icon} alt="Icono" width={130} height={130} /> */}
               <h6>{item.title}</h6>
             </div>
             <Image

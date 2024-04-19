@@ -23,7 +23,8 @@ export default function PresenciaClient({ texts }) {
         telefono: "6461513910",
         email: "jlopez@innovakglobal.com",
         productos: ["Hortalizas"],
-        whatsapp: "526149939393",
+        // whatsapp: "526149939393",
+        estados: ["Baja California"],
       },
       bgColor: "#EC1C22",
       color: "#fff",
@@ -35,6 +36,7 @@ export default function PresenciaClient({ texts }) {
         telefono: "6474820634",
         email: "mmiranda@innovakglobal.com",
         productos: ["Hortalizas", "Papa", "Granos"],
+        estados: ["Sonora"],
       },
       bgColor: "#EE5B37",
       color: "#fff",
@@ -46,6 +48,7 @@ export default function PresenciaClient({ texts }) {
         telefono: "6671870291",
         email: "apuga@innovakglobal.com",
         productos: ["Tomate", "Chile"],
+        estados: ["Sinaloa"],
       },
       bgColor: "#FAAA4E",
       color: "#fff",
@@ -57,6 +60,7 @@ export default function PresenciaClient({ texts }) {
         telefono: "2831049879",
         email: "jroman@innovakglobal.com",
         productos: ["Piña"],
+        estados: ["Tamaulipas"],
       },
       bgColor: "#005AAB",
       color: "#fff",
@@ -69,6 +73,7 @@ export default function PresenciaClient({ texts }) {
         email: "fgallaga@innovakglobal.com",
         productos: ["Cebolla", "Tomate", "Chile", "Papa", "Ajo"],
         contacto_con: ["fresa", "zanahoria", "Esparrago", "aguacate"],
+        estados: ["León"],
       },
       bgColor: "#80C342",
       color: "#fff",
@@ -80,6 +85,7 @@ export default function PresenciaClient({ texts }) {
         telefono: "7352069271",
         email: "hassad@innovakglobal.com",
         productos: ["Cebolla", "Papa", "Chile", "Tomate"],
+        estados: ["Morelos"],
       },
       bgColor: "#717C84",
       color: "#fff",
@@ -91,6 +97,7 @@ export default function PresenciaClient({ texts }) {
         telefono: "4433960753",
         email: "chernandez@innovakglobal.com",
         productos: ["Aguacate", "Papa", "Sandia", "Papaya"],
+        estados: ["Michoacán"],
       },
       bgColor: "#00A34D",
       color: "#fff",
@@ -102,6 +109,7 @@ export default function PresenciaClient({ texts }) {
         telefono: "9991377255",
         email: "acastaneda@innovakglobal.com",
         productos: ["Banano", "Papaya", "Sandia", "Soya"],
+        estados: ["Yucatán"],
       },
       bgColor: "#FFCC00",
       color: "#fff",
@@ -113,6 +121,7 @@ export default function PresenciaClient({ texts }) {
         telefono: "9631370984",
         email: "eavendano@innovakglobal.com",
         productos: ["Soya", "Jitomate", "Mango", "Banano"],
+        estados: ["Chiapas"],
       },
       bgColor: "#FFCC00",
       color: "#fff",
@@ -250,13 +259,13 @@ function MapMexico({ map, contactInfo }) {
       </div>
       <div className={styles.searchMenu}>
         <input
-          placeholder="Buscar por experiencia en frutos"
+          placeholder="Buscar por estado"
           onChange={(event) => {
-            const fruto = event.target.value.toLowerCase();
-            console.log(fruto);
+            const estados = event.target.value.toLowerCase();
+            console.log(estados);
             const newList = contactInfo.filter((contact) => {
-              return contact.info.productos.some((producto) => {
-                return producto.toLowerCase().includes(fruto);
+              return contact.info.estados.some((estado) => {
+                return estado.toLowerCase().includes(estados);
               });
             });
             setFiltredByProductList(newList);
@@ -306,6 +315,12 @@ function MapMexico({ map, contactInfo }) {
                 >
                   {contact.info.whatsapp}
                 </a>
+              </p>
+            )}
+            {contact.info.estados && (
+              <p>
+                <strong>Estados: </strong>
+                {contact.info.estados.join(", ")}
               </p>
             )}
             {contact.info.productos && (

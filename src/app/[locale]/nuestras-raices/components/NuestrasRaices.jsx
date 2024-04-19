@@ -536,11 +536,11 @@ y su medio ambiente
       hash: "certificaciones",
     },
     {
-      title: "REVOLUCIÓN SUSTENTABLE",
+      title: "EVOLUCIÓN SUSTENTABLE",
       subtitle: "",
       image: background.src,
       content: <Revolucion items={revolucionItems} />,
-      hash: "revolucion",
+      hash: "evolucion-sustentable",
     },
   ];
 
@@ -557,7 +557,7 @@ y su medio ambiente
       case "#certificaciones":
         tempIndex = 2;
         break;
-      case "#revolucion":
+      case "#evolucion-sustentable":
         tempIndex = 3;
         break;
       default:
@@ -973,8 +973,8 @@ function Revolucion({ items }) {
       </div>
       <div className={revolucionStyles.featuresWrapper}>
         {items.map((item, i) => (
-          <div className={revolucionStyles.item}>
-            <Image src={item.img} />
+          <div className={revolucionStyles.item} key={i}>
+            <Image src={item.img} alt="Ámbito" />
             <div className={revolucionStyles.text}>
               <h6>{item.text}</h6>
             </div>

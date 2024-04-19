@@ -24,7 +24,6 @@ const futura = localFont({
 });
 
 export default function ContactPageClient({ texts }) {
-
   var comunikImages = [
     {
       link: "https://www.innovakglobal.com/revistacomunik/#flipbook-df_19699/1/",
@@ -114,14 +113,14 @@ export default function ContactPageClient({ texts }) {
   ];
 
   var pagesInfo = [
-    {
-      header: "INNOVAK NEWS",
-      title: "POSTERS E INFOGRAFÍAS",
-      subtitle: "",
-      image: background.src,
-      content: <RevistaInnovak images={comunikImages} />,
-      hash: "posters-e-infografias",
-    },
+    // {
+    //  header: "INNOVAK NEWS",
+    // title: "POSTERS E INFOGRAFÍAS",
+    //   subtitle: "",
+    //   image: background.src,
+    //   content: <RevistaInnovak images={comunikImages} />,
+    //   hash: "posters-e-infografias",
+    // },
     {
       header: "ARTÍCULOS",
       title: "ARTÍCULOS",
@@ -138,24 +137,24 @@ export default function ContactPageClient({ texts }) {
     //   content: <RevistaInnovak images={comunikImages} />,
     //   hash: "ensayos",
     // },
-    // {
-    //   header: "REVISTA COMUNIK",
-    //   title: "REVISTA COMUNIK",
-    //   subtitle: "",
-    //   image: background.src,
-    //   content: <RevistaInnovak images={comunikImages} />,
-    //   hash: "revista-comunik",
-    // },
+    {
+      header: "REVISTA COMUNIK",
+      title: "REVISTA COMUNIK",
+      subtitle: "",
+      image: background.src,
+      content: <RevistaInnovak images={comunikImages} />,
+      hash: "revista-comunik",
+    },
   ];
 
   const getCurrentIndex = () => {
     const hash = window.location.hash;
     var tempIndex = 0;
-    switch (hash ) {
-      case "posters-e-infografias":
+    switch (hash) {
+      case "#articulos":
         tempIndex = 0;
         break;
-      case "#articulos":
+      case "#revista-comunik":
         tempIndex = 1;
         break;
       default:
