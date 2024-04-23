@@ -31,18 +31,13 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import localFont from "next/font/local";
 
-const avenir = localFont({
-  src: "../../../public/fonts/Avenir-normal.otf",
-  variable: "--font-avenir",
-});
 const futura = localFont({
   src: "../../../public/fonts/futura.ttf",
   variable: "--font-futura",
 });
 
-export default function Home() {
+export default function Home({ news }) {
   const images = [image1, image2, image3, image4, image5, image6, image7];
-
   return (
     <div className={allStyles.mainWrapper}>
       <style jsx global>
@@ -62,7 +57,7 @@ export default function Home() {
         <Alianzas images={images} />
         <Tecnologias />
         <Testimonials />
-        <News />
+        <News news={news} />
         <FormBody />
       </main>
     </div>
@@ -220,7 +215,11 @@ function Tecnologias() {
         }}
       >
         {tecnologias.map((tecnologia, index) => (
-          <div key={index} className={styles.brandItem} onClick={() => window.open(tecnologia.link, "_blank")}>
+          <div
+            key={index}
+            className={styles.brandItem}
+            onClick={() => window.open(tecnologia.link, "_blank")}
+          >
             <div
               className={styles.brandItemImage}
               style={{
@@ -442,7 +441,7 @@ function Testimonials() {
   );
 }
 
-function News() {
+function News({ news }) {
   const [lang, setLang] = useState("mxn");
 
   useEffect(() => {
@@ -453,33 +452,29 @@ function News() {
     setLang(locale);
   }, []);
 
-  const news = [
-    {
-      title: "Sistema radicular de la vid",
-      text: `El optimo de desarrollo del sistema radicular de la vid es primordial para el logro del potencial de producción, tanto en rendimiento como en calidad. Desde la formación de la parra, después de ser plantada en el suelo, la actividad radicular determina, en gran medida, la capacidad para su formación.
+  // const news = [
+  //   {
+  //     title: "Sistema radicular de la vid",
+  //     text: "El optimo de desarrollo del sistema radicular de la vid es primordial para el logro del potencial de producción, tanto en rendimiento como en calidad. Desde la formación de la parra, después de ser plantada en el suelo, la actividad radicular determina, en gran medida, la capacidad para su formación. Una vez que el viñedo entra en producción la raíz influye en la calidad y rendimiento por tres razones (Ruiz, 2005): La primera es que la raíces son el principal factor en el balance de carbohidratos en la vid. La segunda que proveen de agua y nutrientes para el crecimiento aéreo y producción de frutos. Y la tercera que recogen señales positivas o negativas provenientes de suelo que se trasmiten bioquímicamente a la parte aérea, con repercusión en la fruta.",
+  //     link: "http://209.38.138.95/sistema-radicular-de-la-vid_mxn/",
+  //     image: "http://209.38.138.95/wp-content/uploads/2024/04/vid-1.jpg",
+  //   },
+  //   {
+  //     title: "Resistencia Sistémica",
+  //     text: "El ataque de insectos y patógenos en plantas ha sido causante de preocupación en las últimas décadas. Es por esto, que se han realizado diversos estudios con el fin de conocer el mecanismo de las plantas que le permiten defenderse de éstos mediante un complejo sistema que incluye múltiples niveles de protección. Los mecanismos de protección que han desarrollado para defenderse de factores bióticos y abióticos son físicos o químicos y constitutiva o inducida. Las barreras físicas consisten en la composición y estructura de la cutícula, tricomas, estomas, pared celular entre otras.  Las barreras químicas constan en producción de taninos, terpenos, resinas alcaloides (antes del ataque de un patógeno). La desventaja de esta forma de defenderse radica en el tiempo de respuesta, es decir, requiere de años de modificaciones evolutivas, generación de genes estructurales para que se dé el cambio en una barrera física o química (5).",
+  //     link: "http://209.38.138.95/resistencia-sistemica_mxn/",
+  //     image:
+  //       "http://209.38.138.95/wp-content/uploads/2024/04/food-healthy-vegetables-village-1-1.png",
+  //   },
+  //   {
+  //     title: "Costo de un amarre deficiente y tamaños pequeños de fruto.",
+  //     text: "Dentro de los principales problemas que se presentan en los cultivares de manzana se encuentran la caída de los frutos y el calibre reducido de los mismos al inicio de su desarrollo. Estos problemas son en parte asociados a las variaciones en las condiciones climáticas de las regiones de producción y en parte a problemas que derivan de los diferentes sistemas de manejo de la producción. El estado de Chihuahua aporta el 55% de la producción de manzana mexicana, as pérdidas en rendimiento por caída de frutos, ocasionadas por condiciones ambientales adversas, en dicha entidad van de 14% a un 32%. Tomando en cuenta que en 2014 el estado tenía en producción 26,666 hectáreas (SAGARPA).",
+  //     link: "http://209.38.138.95/costo-de-un-amarre-deficiente-y-tamanos-pequenos-de-fruto_mxn/",
+  //     image:
+  //       "http://209.38.138.95/wp-content/uploads/2024/04/plantas-frutales.jpg",
+  //   },
+  // ];
 
-      Una vez que el viñedo entra en producción la raíz influye en la calidad y rendimiento por tres razones (Ruiz, 2005): La primera es que la raíces son el principal factor en el balance de carbohidratos en la vid. La segunda que proveen de agua y nutrientes para el crecimiento aéreo y producción de frutos. Y la tercera que recogen señales positivas o negativas provenientes de suelo que se trasmiten bioquímicamente a la parte aérea, con repercusión en la fruta.`,
-      link: "https://www.innovakglobal.com/sistema-radicular-de-la-vid/#tab-9cfd2d5e3b53d325c13",
-      image:
-        "https://www.innovakglobal.com/wp-content/uploads/2020/02/WhatsApp-Image-2018-10-01-at-2.22.21-PM-1.jpg",
-    },
-    {
-      title: "Resistencia Sistémica",
-      text: "El ataque de insectos y patógenos en plantas ha sido causante de preocupación en las últimas décadas. Es por esto, que se han realizado diversos estudios con el fin de conocer el mecanismo de las plantas que le permiten defenderse de éstos mediante un complejo sistema que incluye múltiples niveles de protección. Los mecanismos de protección que han desarrollado para defenderse de factores bióticos y abióticos son físicos o químicos y constitutiva o inducida. Las barreras físicas consisten en la composición y estructura de la cutícula, tricomas, estomas, pared celular entre otras.  Las barreras químicas constan en producción de taninos, terpenos, resinas alcaloides (antes del ataque de un patógeno). La desventaja de esta forma de defenderse radica en el tiempo de respuesta, es decir, requiere de años de modificaciones evolutivas, generación de genes estructurales para que se dé el cambio en una barrera física o química (5).",
-      link: "https://www.innovakglobal.com/resistencia-sistemica/",
-      image:
-        "https://www.innovakglobal.com/wp-content/uploads/2020/02/2DO-LUGAR-PLAGAS-Y-ENFERMEDADES.jpg",
-    },
-    {
-      title: "Costo de un amarre deficiente y tamaños pequeños de fruto.",
-      text: `Dentro de los principales problemas que se presentan en los cultivares de manzana se encuentran la caída de los frutos y el calibre reducido de los mismos al inicio de su desarrollo. Estos problemas son en parte asociados a las variaciones en las condiciones climáticas de las regiones de producción y en parte a problemas que derivan de los diferentes sistemas de manejo de la producción.
-
-      El estado de Chihuahua aporta el 55% de la producción de manzana mexicana, as pérdidas en rendimiento por caída de frutos, ocasionadas por condiciones ambientales adversas, en dicha entidad van de 14% a un 32%. Tomando en cuenta que en 2014 el estado tenía en producción 26,666 hectáreas (SAGARPA).`,
-      link: "https://www.innovakglobal.com/costo-de-un-amarre-deficiente-y-tamanos-pequenos-de-fruto/",
-      image:
-        "https://www.innovakglobal.com/wp-content/uploads/2020/03/Arte-Incas1.jpg",
-    },
-  ];
   return (
     <section>
       {/* Image */}
@@ -518,7 +513,7 @@ function News() {
             <div className={styles.newsItemFloating}>
               <h3>{item.title}</h3>
               <p>{item.text}</p>
-              <Link href={item.link}>
+              <Link href={item.link} target="_blank">
                 <div className={styles.newsButtonOutlined}>Ver más</div>
               </Link>
             </div>

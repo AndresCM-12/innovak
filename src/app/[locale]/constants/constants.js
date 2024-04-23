@@ -1,0 +1,1 @@
+export const WORDPRESS_API_URL = "http://209.38.138.95/graphql"

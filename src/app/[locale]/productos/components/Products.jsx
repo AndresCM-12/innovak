@@ -2,19 +2,13 @@
 import React, { useEffect, useState } from "react";
 import styles from "./products.module.css";
 
-import acondicionadoresDeSueloImg from "../../../../../public/products/acondicionadoresDeSuelo.png";
-import bioestimulantesImg from "../../../../../public/products/bioestimulantes.png";
-import nutrientesImg from "../../../../../public/products/nutrientes.png";
-import proteccionDeCultivosImg from "../../../../../public/products/proteccionDeCultivos.png";
-
 import localFont from "next/font/local";
 const futura = localFont({
   src: "../../../../../public/fonts/futura.ttf",
   variable: "--font-futura",
 });
 
-export default function ProductsClient({ texts }) {
-  const [index, setIndex] = React.useState(0);
+export default function ProductsClient({ categorias }) {
   const [lang, setLang] = useState("mxn");
 
   useEffect(() => {
@@ -24,37 +18,6 @@ export default function ProductsClient({ texts }) {
       .split("=")[1];
     setLang(locale);
   }, []);
-
-  var pagesInfo = [
-    {
-      title: "PROTECCIÓN A CULTIVOS",
-      subtitle: "Ver más",
-      image: proteccionDeCultivosImg.src,
-      link: `/${lang}/productos/proteccion-de-cultivos`,
-    },
-    {
-      title: "BIOESTIMULANTES",
-      subtitle: "Ver más",
-      image: bioestimulantesImg.src,
-      link: `/${lang}/productos/bioestimulantes`,
-    },
-    {
-      title: "NUTRIENTES",
-      subtitle: "ver más",
-      image: nutrientesImg.src,
-      link: `/${lang}/productos/nutrientes`,
-    },
-    {
-      title: "ACONDICIONAMIENTO DE SUELOS",
-      subtitle: "ver más",
-      image: acondicionadoresDeSueloImg.src,
-      link: `/${lang}/productos/acondicionadores-de-suelos`,
-    },
-  ];
-
-  const handleNavigateTo = (i) => {
-    console.log("navigating to", pagesInfo[i].link);
-  };
 
   return (
     <section>
@@ -88,7 +51,7 @@ export default function ProductsClient({ texts }) {
 
       {/* Select Option */}
       <div className={styles.selectOptionWrapper}>
-        {pagesInfo.map((page, i) => (
+        {categorias.map((page, i) => (
           <a href={page.link} key={i + "div"}>
             <div
               className={styles.productOption}
@@ -97,7 +60,6 @@ export default function ProductsClient({ texts }) {
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
-              onClick={() => handleNavigateTo(i)}
             >
               <h6>{page.title}</h6>
               <p>{page.subtitle}</p>
@@ -106,18 +68,6 @@ export default function ProductsClient({ texts }) {
         ))}
       </div>
       {/* Select Option */}
-
-      {/* Form */}
-      {pagesInfo[index].content}
-      {/* Form */}
-    </section>
-  );
-}
-
-function Map() {
-  return (
-    <section className={styles.revistaInnovak} style={{ height: "800px" }}>
-      <div className={styles.revistasWrapper}></div>
     </section>
   );
 }

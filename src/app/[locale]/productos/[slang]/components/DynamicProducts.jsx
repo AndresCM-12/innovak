@@ -8,23 +8,13 @@ const futura = localFont({
   src: "../../../../../../public/fonts/futura.ttf",
   variable: "--font-futura",
 });
-
 export default function DynamicProductsClient({
-  texts,
   params,
   pagesInfo,
   selectedInfo,
 }) {
+  console.log("Client component" + pagesInfo);
   const [index, setIndex] = useState(selectedInfo);
-  const [lang, setLang] = useState("mxn");
-
-  useEffect(() => {
-    const locale = document.cookie
-      .split(";")
-      .find((c) => c.trim().startsWith("NEXT_LOCALE="))
-      .split("=")[1];
-    setLang(locale);
-  }, []);
 
   return (
     <section>
@@ -60,7 +50,7 @@ export default function DynamicProductsClient({
           <div>
             {pagesInfo.map((page, i) => (
               <a
-                href={"/" + params["locale"] + pagesInfo[i].link}
+                href={pagesInfo[i].link}
                 key={i + "a"}
               >
                 <h6
@@ -82,13 +72,13 @@ export default function DynamicProductsClient({
       {/* Dynamic Header */}
 
       {/* content */}
-      <ProductsList productImages={pagesInfo[index].products} lang={lang} />
+      <ProductsList productImages={pagesInfo[index].products} />
       {/* content */}
     </section>
   );
 }
 
-function ProductsList({ productImages, lang }) {
+function ProductsList({ productImages }) {
   return (
     <section className={styles.products}>
       {productImages.map((product, i) => (
@@ -97,7 +87,7 @@ function ProductsList({ productImages, lang }) {
           key={i + "div"}
           onClick={() => {
             //Open link in new tab
-            window.open(`/${lang}${product.link}`, "_blank");
+            window.open(`${product.link}`, "_blank");
           }}
         >
           <Image src={product.image} alt="product" width={200} height={200} />
