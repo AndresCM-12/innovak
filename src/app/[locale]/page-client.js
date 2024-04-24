@@ -504,6 +504,9 @@ function News({ news }) {
               alt="Innovak News"
               width={150}
               height={150}
+              style={{
+                backgroundColor: "#0d0e49",
+              }}
             />
             <div
               style={{

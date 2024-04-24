@@ -59,6 +59,7 @@ export default function ProductsClient({ categorias }) {
                 backgroundImage: `url(${page.image})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
+                backgroundColor: "#0d0e49",
               }}
             >
               <h6>{page.title}</h6>

@@ -308,6 +308,8 @@
   max-height: 642px;
   width: 100%;
   position: relative;
+  background-color: #0d0e49;
+  border-radius: 14px;
 }
 .newsItem img {
   width: 100%;
