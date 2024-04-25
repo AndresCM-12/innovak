@@ -1,1 +1,1 @@
-export const WORDPRESS_API_URL = "http://209.38.138.95/graphql"
+export const WORDPRESS_API_URL = "http://wp.innovakglobal.com/graphql"
