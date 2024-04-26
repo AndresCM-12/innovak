@@ -9,6 +9,7 @@ export default async function home({ params }) {
 async function getNews(locale) {
   try {
     const response = await fetch(WORDPRESS_API_URL, {
+      cache: "no-cache",
       method: "POST",
       headers: {
         "Content-Type": "application/json",

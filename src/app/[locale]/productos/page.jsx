@@ -15,6 +15,7 @@ export default async function ContactoPage({ params }) {
 async function getProductsCategories(locale) {
   try {
     const response = await fetch(WORDPRESS_API_URL, {
+      cache: "no-cache",
       method: "POST",
       headers: {
         "Content-Type": "application/json",

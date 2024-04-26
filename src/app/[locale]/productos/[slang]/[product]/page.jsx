@@ -12,6 +12,7 @@ export default async function HomeProduct({ params }) {
 async function getProducts(locale) {
   try {
     const response = await fetch(WORDPRESS_API_URL, {
+      cache: "no-cache",
       method: "POST",
       headers: {
         "Content-Type": "application/json",
