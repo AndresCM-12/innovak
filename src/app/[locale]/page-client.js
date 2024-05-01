@@ -7,25 +7,10 @@ import styles from "./inicio.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import Image from "next/image";
-import { motion } from "framer-motion";
 
-import image1 from "../../../public/inicio/costarica.png";
-import image2 from "../../../public/inicio/politecnica.png";
-import image3 from "../../../public/inicio/ciatej.png";
-import image4 from "../../../public/inicio/geneve.png";
-import image5 from "../../../public/inicio/organic.png";
-import image6 from "../../../public/inicio/ciad.png";
-import image7 from "../../../public/inicio/arkansas.png";
 import tecnologiasBackground from "../../../public/inicio/tecnologiaBackground.svg";
-import tecnologia1 from "../../../public/inicio/tecnologia1.png";
-import tecnologia2 from "../../../public/inicio/tecnologia2.png";
-import tecnologia3 from "../../../public/inicio/tecnologia3.png";
 import tecnologiasCircleBackground from "../../../public/inicio/tecnologiasCircleBackground.svg";
-import imgReviewIvanQuiñonez from "../../../public/images/reviews/ivanQuiñonez.png";
-import imgReviewJorgeAdrian from "../../../public/images/reviews/jorgeAdrian.png";
-import imgReviewReynaldoCabrera from "../../../public/images/reviews/reynaldoCabrera.png";
 import imgInnovakNews from "../../../public/inicio/innovakNews.png";
-import map from "../../../public/inicio/map.png";
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
@@ -36,8 +21,8 @@ const futura = localFont({
   variable: "--font-futura",
 });
 
-export default function Home({ news }) {
-  const images = [image1, image2, image3, image4, image5, image6, image7];
+export default function Home({ news, info }) {
+  console.log(info);
   return (
     <div className={allStyles.mainWrapper}>
       <style jsx global>
@@ -53,26 +38,22 @@ export default function Home({ news }) {
         `}
       </style>
       <main className={allStyles.main}>
-        <HeroSection />
-        <Alianzas images={images} />
-        <Tecnologias />
-        <Testimonials />
-        <News news={news} />
-        <FormBody />
+        <HeroSection info={info.hero} />
+        <Alianzas info={info.alianzas} images={info.imagenesAlianzas} />
+        <Tecnologias info={info.tecnologias} />
+        <Testimonials info={info.testimonios} />
+        <News news={news} info={info.noticias} />
+        <FormBody info={info.contacto} />
       </main>
     </div>
   );
 }
 
-function HeroSection() {
+function HeroSection({ info }) {
   return (
     <section className={styles.heroSection}>
-      <h1>PIONEROS EN BIOESTIMULACIÓN DESDE LA RAÍZ</h1>
-      <p>
-        En Innovak Global desarrollamos y comercializamos productos
-        biorracionales y tecnologías diferenciadas en la agricultura para
-        contribuir a una naturaleza sustentable.
-      </p>
+      <h1>{info.titulo}</h1>
+      <p>{info.subTitulo}</p>
       <video
         autoPlay
         muted
@@ -93,13 +74,8 @@ function HeroSection() {
   );
 }
 
-function Alianzas({ images }) {
-  const alianzas = [
-    { number: "+30", title: "PAÍSES" },
-    { number: "+48", title: "PRODUCTOS" },
-    { number: "67", title: "AÑOS" },
-    { number: "6", title: "FILIALES" },
-  ];
+function Alianzas({ info, images }) {
+  const alianzas = info;
 
   return (
     <section style={{ position: "relative" }}>
@@ -116,7 +92,7 @@ function Alianzas({ images }) {
 
       {/* Alianzas */}
       <article className={styles.alianzasWrapper}>
-        <h2>ALIANZAS ESTRATÉGICAS</h2>
+        <h2> </h2>
         <Swiper
           id="alianzasSwiper"
           className={styles.swiperWrapper}
@@ -164,7 +140,7 @@ function Alianzas({ images }) {
   );
 }
 
-function Tecnologias() {
+function Tecnologias({ info }) {
   const [lang, setLang] = useState("mxn");
 
   useEffect(() => {
@@ -175,32 +151,12 @@ function Tecnologias() {
     setLang(locale);
   }, []);
 
-  const tecnologias = [
-    {
-      image: tecnologia1,
-      text: `ECCA Carboxy es la Ecotecnología de la obtención de Compuestos Carboxy Aromáticos con efecto bioestimulante.`,
-      link: `/${lang}/nuestras-raices/ecca-carboxy`,
-    },
-    {
-      image: tecnologia2,
-      text: `RDR (Regulación de la Dinámica Radicular) es una tecnología enfocada en la raíz y su medio ambiente para maximizar la productividad de los cultivos de manera sustentable.`,
-      link: `/${lang}/nuestras-raices/rdr`,
-    },
-    {
-      image: tecnologia3,
-      text: `PFENERGY
-      Es una tecnología creada a partir de polifenoles, generando opciones sustentables para mitigar el estrés, incrementar la actividad rizosférica, mejorar la absorción de nutrientes y generar una mayor productividad y calidad.`,
-      link: `/${lang}/nuestras-raices/pfenergy`,
-    },
-  ];
+  const tecnologias = info.tecnologias;
   return (
     <section className={styles.tecnologiasWrapper}>
       <article>
-        <h2>TECNOLOGÍAS</h2>
-        <p>
-          En Innovak Global integramos tres tecnologías innovadoras
-          desarrolladas internamente a favor de una agricultura sustentable:
-        </p>
+        <h2>{info.titulo}</h2>
+        <p>{info.subTitulo}</p>
       </article>
 
       {/* Tecnologias */}
@@ -227,7 +183,7 @@ function Tecnologias() {
               }}
             >
               <Image
-                src={tecnologia.image}
+                src={tecnologia.imagen}
                 alt="Tecnologías"
                 width={150}
                 height={150}
@@ -236,7 +192,7 @@ function Tecnologias() {
                 }}
               />
             </div>
-            <p>{tecnologia.text}</p>
+            <p>{tecnologia.descripcion}</p>
           </div>
         ))}
       </article>
@@ -248,24 +204,19 @@ function Tecnologias() {
           marginTop: "-4px",
         }}
       >
-        <a href={`${lang}/nuestras-raices`}>
-          <div className={styles.seeMoreButton}>ver más</div>
+        <a href={`${lang}/nuestras-raices#tecnologias`}>
+          <div className={styles.seeMoreButton}>{info.cta}</div>
         </a>
       </div>
     </section>
   );
 }
 
-function Testimonials() {
+function Testimonials({ info }) {
   const [showVideos, setShowVideos] = useState(false);
   const [videoIndex, setVideoIndex] = useState(0);
 
-  const videos = [
-    `https://www.youtube.com/embed/DHsCqyxqwZM`,
-    `https://www.youtube.com/embed/ni78a3IFzwY`,
-    `https://www.youtube.com/embed/ZkRGuKr0acM`,
-    `https://www.youtube.com/embed/M3vX4dqk_L4`,
-  ];
+  const videos = [...info.map((item) => item.video)];
 
   const handleLinkClick = (index) => {
     setVideoIndex(index);
@@ -273,9 +224,7 @@ function Testimonials() {
   };
 
   return (
-    <motion.div
-      whileInView={{ opacity: 1 }}
-      initial={{ opacity: 0 }}
+    <div
       style={{
         display: "flex",
         justifyContent: "center",
@@ -332,93 +281,31 @@ function Testimonials() {
         slidesPerView={1}
         navigation={{ nextEl: "#arrowRight", prevEl: "#arrowLeft" }}
       >
-        <SwiperSlide
-          className={allStyles.reviewContainer}
-          style={{
-            alignContent: "center",
-            justifyContent: "center",
-            alignItems: "center",
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
-          <Image
-            src={imgReviewIvanQuiñonez}
-            width={150}
-            height={150}
-            alt="review"
-          />
-          <p>Navolato, Sinaloa</p>
-          <p>
-            El Ing. Iván Quiñonez, nos habla de las dificultades de trabajar con
-            suelos compactados y comparte su experiencia utilizando el Promesol
-            5X. Comenta como lo ha ayudado a mantener su cultivo en óptimo
-            desarrollo y la importancia de tener un suelo manejable.
-          </p>
-          <h6>Ing. Iván Quiñónez Medrano</h6>
-          <a
-            onClick={() => {
-              handleLinkClick(1);
+        {info.map((item, index) => (
+          <SwiperSlide
+            key={index}
+            className={allStyles.reviewContainer}
+            style={{
+              alignContent: "center",
+              justifyContent: "center",
+              alignItems: "center",
+              display: "flex",
+              flexDirection: "column",
             }}
           >
-            Conoce su testimonio
-          </a>
-        </SwiperSlide>
-        <SwiperSlide
-          className={allStyles.reviewContainer}
-          style={{
-            alignContent: "center",
-            justifyContent: "center",
-            alignItems: "center",
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
-          <Image src={imgReviewJorgeAdrian} alt="review" />
-          <p>Culiacán, Sinaloa</p>
-          <p>
-            El Ing. Jorge Adrian, nos platica cómo ha afrontado diferentes
-            problemáticas y cómo es que ha conocido a innovak global y la
-            aplicación promesol que le ayuda en el mejoramiento de la estructura
-            del suelo además de las condiciones de aireación beneficiando en su
-            cultivo y productividad.
-          </p>
-          <h6>Ing. Jorge Adrian Ibarra Avila</h6>
-          <a
-            onClick={() => {
-              handleLinkClick(2);
-            }}
-          >
-            Conoce su testimonio
-          </a>
-        </SwiperSlide>
-        <SwiperSlide
-          className={allStyles.reviewContainer}
-          style={{
-            alignContent: "center",
-            justifyContent: "center",
-            alignItems: "center",
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
-          <Image src={imgReviewReynaldoCabrera} alt="review" />
-          <p>Michoacán México</p>
-          <p>
-            Conoce la historia de éxito de promesol en el campo al cual de
-            llamaban “las piedras” en michoacán México. El Agricultor Reynaldo
-            Cabrera nos platica cómo fue que utilizó Promesol, observó su efecto
-            y continuar utilizándolo hasta la fecha.
-          </p>
-          <h6>Agricultor. Reynaldo Cabrera Oropreza </h6>
-          <a
-            onClick={() => {
-              handleLinkClick(3);
-            }}
-          >
-            Conoce su testimonio
-          </a>
-        </SwiperSlide>
+            <Image src={item.imagen} width={150} height={150} alt="review" />
+            <p>{item.ubicacion}</p>
+            <p>{item.descripcion}</p>
+            <h6>{item.nombre}</h6>
+            <a
+              onClick={() => {
+                handleLinkClick(1);
+              }}
+            >
+              {item.cta}
+            </a>
+          </SwiperSlide>
+        ))}
       </Swiper>
       <div
         className={allStyles.arrows}
@@ -437,11 +324,11 @@ function Testimonials() {
           <path d="M1 35L15 18L1 1" stroke="#00318D" />
         </svg>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
-function News({ news }) {
+function News({ news, info }) {
   const [lang, setLang] = useState("mxn");
 
   useEffect(() => {
@@ -490,7 +377,7 @@ function News({ news }) {
         />
         <div className={styles.newsSeparator}></div>
         <Link href={`${lang}/innovak-news`}>
-          <div className={styles.newsButton}>Ver todo</div>
+          <div className={styles.newsButton}>{info.cta}</div>
         </Link>
       </article>
       {/* Image */}
@@ -517,7 +404,7 @@ function News({ news }) {
               <h3>{item.title}</h3>
               <p>{item.text}</p>
               <Link href={item.link} target="_blank">
-                <div className={styles.newsButtonOutlined}>Ver más</div>
+                <div className={styles.newsButtonOutlined}>{item.cta}</div>
               </Link>
             </div>
           </div>
@@ -528,30 +415,24 @@ function News({ news }) {
   );
 }
 
-function FormBody() {
+function FormBody({ info }) {
+  const infoFormulario = info.formulario;
   return (
     <section className={allStyles.formWrapper}>
-      <motion.div
-        whileInView={{ opacity: 1 }}
-        initial={{ opacity: 0 }}
-        className={allStyles.ficha}
-      >
+      <div className={allStyles.ficha}>
         <h1
           style={{
             marginBottom: "20px",
           }}
         >
-          ¡Contáctanos!
+          {info.titulo}
         </h1>
-        <p className={allStyles.text}>+52 (614) 436 01 38</p>
-        <p className={allStyles.text}>info@innovakglobal.com</p>
-        <p className={allStyles.text}>
-          Blvd. Vicente Lombardo Toledano #6615Col. La Concordia C.P.
-          31375Chihuahua, Chihuahua, México.
-        </p>
+        <p className={allStyles.text}>{info.telefono}</p>
+        <p className={allStyles.text}>{info.correo}</p>
+        <p className={allStyles.text}>{info.direccion}</p>
         <div>
           <Image
-            src={map}
+            src={info.imagen}
             alt="Innovak News"
             width={300}
             height={400}
@@ -561,10 +442,10 @@ function FormBody() {
             }}
           />
         </div>
-      </motion.div>
+      </div>
 
       <div className={allStyles.form}>
-        <p>Los campos marcados con * son obligatorios</p>
+        <p>{infoFormulario.requerido}</p>
         <form
           action="https://formsubmit.co/redes@innovakglobal.com"
           method="POST"
@@ -573,19 +454,19 @@ function FormBody() {
           <input
             type="text"
             name="Teléfono de contacto"
-            placeholder="Teléfono de contacto*"
+            placeholder={infoFormulario.telefono}
             required
           />
           <input
             type="text"
             name="Correo electrónico"
-            placeholder="Correo electrónico*"
+            placeholder={infoFormulario.correo}
             required
           />
           <input
             type="text"
             name="Nombre de la agrícola o institución"
-            placeholder="Nombre de la agrícola o institución"
+            placeholder={infoFormulario.agricola}
           />
           <div
             style={{
@@ -600,7 +481,7 @@ function FormBody() {
           <input
             type="text"
             name="Tipo_consulta"
-            placeholder="Tipo de consulta*"
+            placeholder={infoFormulario.consulta}
             required
           />
           <div className={allStyles.checkboxWrapper}>
@@ -610,9 +491,9 @@ function FormBody() {
               name="privacidad"
               value="Información de distribuidores"
             />
-            <label htmlFor="uno">Acepto datos de privacidad</label>
+            <label htmlFor="uno">{infoFormulario.aviso}</label>
           </div>
-          <button type="submit">Enviar</button>
+          <button type="submit">{infoFormulario.boton}</button>
         </form>
       </div>
     </section>
