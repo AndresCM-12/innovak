@@ -1,13 +1,11 @@
 import { WORDPRESS_API_URL } from "../constants/constants";
-import ContactoPageClient from "./components/Contact";
+import NuestrasRaicesClient from "./components/NuestrasRaices";
 
 export default async function ContactoPage({ params }) {
-  const locale = params.locale;
-  const info = await getInfo(locale);
-
+  const content = await getInfo(params.locale);
   return (
     <section>
-      <ContactoPageClient info={info} />
+      <NuestrasRaicesClient fetchedContent={content} />
     </section>
   );
 }
@@ -23,7 +21,7 @@ async function getInfo(locale) {
       body: JSON.stringify({
         query: `
               query NewQuery {
-                categories(where: {name: "soluciones-por-cultivo"}) {
+                categories(where: {name: "nuestras-raices"}) {
                   edges {
                     node {
                       id
@@ -51,7 +49,6 @@ async function getInfo(locale) {
     const firstIdx = rawContent.indexOf("[");
     const lastIdx = rawContent.lastIndexOf("]");
     rawContent = rawContent.substring(firstIdx, lastIdx + 1);
-    console.log(rawContent);
     var content = JSON.parse(rawContent);
     return content[0];
   } catch (error) {

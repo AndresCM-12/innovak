@@ -50,7 +50,6 @@ async function getNews(locale) {
     var content = JSON.parse(rawContent);
     return content;
   } catch (error) {
-    console.error("Error:", error);
     return [];
   }
 }
@@ -98,7 +97,6 @@ async function getInfo(locale) {
     var content = JSON.parse(rawContent);
     return content[0];
   } catch (error) {
-    console.error("Error:", error);
     return [];
   }
 }

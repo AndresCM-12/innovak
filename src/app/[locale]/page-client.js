@@ -22,7 +22,6 @@ const futura = localFont({
 });
 
 export default function Home({ news, info }) {
-  console.log(info);
   return (
     <div className={allStyles.mainWrapper}>
       <style jsx global>
@@ -37,14 +36,16 @@ export default function Home({ news, info }) {
           }
         `}
       </style>
-      <main className={allStyles.main}>
-        <HeroSection info={info.hero} />
-        <Alianzas info={info.alianzas} images={info.imagenesAlianzas} />
-        <Tecnologias info={info.tecnologias} />
-        <Testimonials info={info.testimonios} />
-        <News news={news} info={info.noticias} />
-        <FormBody info={info.contacto} />
-      </main>
+      {info.hero && (
+        <main className={allStyles.main}>
+          <HeroSection info={info.hero} />
+          <Alianzas info={info.alianzas} images={info.imagenesAlianzas} />
+          <Tecnologias info={info.tecnologias} />
+          <Testimonials info={info.testimonios} />
+          <News news={news} info={info.noticias} />
+          <FormBody info={info.contacto} />
+        </main>
+      )}
     </div>
   );
 }

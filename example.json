@@ -1,189 +1,96 @@
 [
   {
-    "image": "http://209.38.138.95/wp-content/uploads/2024/04/isomatecmflex.png",
-    "title": "Feromonas ISOMATE CM Flex",
-    "text": "Feromona de confusión sexual para control de palomilla de manzana",
-    "description": "El dispensador de ISOMATE CM® Flex libera feromona sexual en el área a tratar para afectar la conducta normal del insecto, alterando sus receptores lo que ocasiona el fracaso de los machos en la localización de la hembra. Esto tiene como consecuencia que se evite la reproducción.",
-    "id": "Feromonas-ISOMATE-CM-Flex",
-    "tecnologias": [
-      "http://209.38.138.95/wp-content/uploads/2024/04/ecca-carboxyIcon.png",
-      "http://209.38.138.95/wp-content/uploads/2024/04/pfenergyIcon.png",
-      "http://209.38.138.95/wp-content/uploads/2024/04/rdrIcon.png"
-    ],
-    "portada": "http://209.38.138.95/wp-content/uploads/2024/04/Carboxy-K-A.png",
-    "beneficios": {
-      "title": "Beneficios del ISOMATE CM Flex",
-      "description": "ISOMATE CM Flex mejora el suelo al disminuir su compactación, lo que permite un mejor desarrollo radicular, un aprovechamiento eficiente del agua de riego o lluvia, y facilita su laboreo. Además de favorecer el desarrollo adecuado de bulbos y tubérculos para una mejor calidad en la cosecha.",
-      "items": [
-        {
-          "image": "http://209.38.138.95/wp-content/uploads/2024/04/desarrollo-radicular.png",
-          "text": "Facilita el desarrollo redicular"
-        },
-        {
-          "image": "http://209.38.138.95/wp-content/uploads/2024/04/desarrollo-radicular.png",
-          "text": "Mejor la infiltración del agua"
-        },
-        {
-          "image": "http://209.38.138.95/wp-content/uploads/2024/04/desarrollo-radicular.png",
-          "text": "Evita la malformación de bulbos/tuberculos"
-        },
-        {
-          "image": "http://209.38.138.95/wp-content/uploads/2024/04/desarrollo-radicular.png",
-          "text": "Facilita las labores de cosecha"
-        }
-      ]
+    "info": {
+      "titulo": "SOLUCIONES POR CULTIVO",
+      "pregunta": "¿CUÁL ES TU PROBLEMÁTICA?",
+      "subtitulo": "Es una línea de formulaciones dirigida a resolver problemas de compactación o salinidad de suelos, de uso en la mayoría de los cultivos.",
+      "bg": "http://wp.innovakglobal.com/wp-content/uploads/2024/05/background-1.png"
     },
-    "especificaciones": {
-      "title": "Especificaciones de producto",
-      "description": "ISOMATE CM Flex se puede aplicar en todos los cultivos a través de sistemas de riego por goteo, aspersión, drench o por gravedad dirigido a la zona radicular. Se recomienda agitar el envase, medir la cantidad a aplicar en un recipiente graduado, verter en el tanque y agitar antes de inyectar en el segundo tercio del tiempo de riego. También se puede aplicar por gravedad, directamente en la toma de agua o diluido para una distribución uniforme en el terreno.",
-      "items": [
-        {
-          "image": "http://209.38.138.95/wp-content/uploads/2024/04/goteo.png",
-          "text": "Riego por goteo"
-        },
-        {
-          "image": "http://209.38.138.95/wp-content/uploads/2024/04/Group-2.png",
-          "text": "Drench"
-        },
-        {
-          "image": "http://209.38.138.95/wp-content/uploads/2024/04/Group-1.png",
-          "text": "Riego Rodado"
-        }
-      ]
-    },
-    "ficha": "http://209.38.138.95/wp-content/uploads/2024/04/ISOMATE-HSW-Flex-V2.pdf"
-  },
-  {
-    "image": "http://209.38.138.95/wp-content/uploads/2024/04/isomatehswflex.png",
-    "title": "Feromonas ISOMATE HSW Flex",
-    "text": "Feromona de confusión sexual para control de gusano barrenador del ruezno en nogal",
-    "description": "El dispensador de  ISOMATE HSW® Flex   libera feromona sexual en el área a tratar para afectar la conducta normal del insecto, alterando sus receptores lo que ocasiona el fracaso de los machos en la localización de la hembra. Esto tiene como consecuencia que se evite la reproducción.",
-    "id": "Feromonas-ISOMATE-HSW-Flex",
-    "tecnologias": [
-      "http://209.38.138.95/wp-content/uploads/2024/04/ecca-carboxyIcon.png",
-      "http://209.38.138.95/wp-content/uploads/2024/04/pfenergyIcon.png",
-      "http://209.38.138.95/wp-content/uploads/2024/04/rdrIcon.png"
-    ]
-  },
-  {
-    "image": "http://209.38.138.95/wp-content/uploads/2024/04/biocinnafol.png",
-    "title": "Biocinnafol",
-    "text": "Acaricida y fungicida biorracional",
-    "description": "Biocinnafol® es una formulación para el control de plagas y enfermedades. Es activo frente a un amplio numero de especies de hongos y ácaros. Presenta un excelente efecto de choque y una fuerte actividad erradicante. Su múltiple modo de acción permite el control eficaz de las plagas por el reblandecimiento del exoesqueleto,  deshidratación e interferencia bioquímica; al tiempo frena la propagación de las enfermedades, provocando la disrupción de la membrana celular de los hongos.",
-    "id": "Biocinnafol",
-    "tecnologias": [
-      "http://209.38.138.95/wp-content/uploads/2024/04/ecca-carboxyIcon.png",
-      "http://209.38.138.95/wp-content/uploads/2024/04/pfenergyIcon.png",
-      "http://209.38.138.95/wp-content/uploads/2024/04/rdrIcon.png"
-    ]
-  },
-  {
-    "image": "http://209.38.138.95/wp-content/uploads/2024/04/biocrifol.png",
-    "title": "Biocrifol",
-    "text": "Insecticida biorracional",
-    "description": "Biocrifol® contiene un efecto de choque: El efecto knock down presenta grandes ventajas a la hora de disminuir ataques fuertes de insectos plaga. Se bloquean los canales de sodio y potasio con los que se producen alteraciones en la trasmisión del impulso nervioso y las especies tratadas muestran reacciones de hiperactividad y movimientos anormales.",
-    "id": "Biocrifol",
-    "tecnologias": [
-      "http://209.38.138.95/wp-content/uploads/2024/04/ecca-carboxyIcon.png",
-      "http://209.38.138.95/wp-content/uploads/2024/04/pfenergyIcon.png",
-      "http://209.38.138.95/wp-content/uploads/2024/04/rdrIcon.png"
-    ]
-  },
-  {
-    "image": "http://209.38.138.95/wp-content/uploads/2024/04/preventup.png",
-    "title": "Prevent Up",
-    "text": "Fungicida biorracional preventivo",
-    "description": "Prevent UP® contiene ácidos orgánicos del tipo aromático que inducen la actividad de proteínas relacionadas a la resistencia de ataque por agentes patógenos; aumentando la capacidad de defensa de los cultivos.",
-    "id": "Prevent-Up",
-    "tecnologias": [
-      "http://209.38.138.95/wp-content/uploads/2024/04/ecca-carboxyIcon.png",
-      "http://209.38.138.95/wp-content/uploads/2024/04/pfenergyIcon.png",
-      "http://209.38.138.95/wp-content/uploads/2024/04/rdrIcon.png"
-    ]
-  },
-  {
-    "image": "http://209.38.138.95/wp-content/uploads/2024/04/rhizotx.png",
-    "title": "Rhizo TX",
-    "text": "Consorcio microbiano y biofungicida preventivo de enfermedades radiculares",
-    "description": "Rhizo TX® es un consorcio microbiano que coloniza eficientemente la rizosfera, protegiéndo la raíz del ataque de hongos fitopatógenos persistentes no fácilmente manejables con agroquímicos. Su formulación contiene ExuRoot®, potencializando la colonización rápida de los microorganismos benéficos, beneficiando en la protección y sanidad radicular.",
-    "id": "Rhizo-TX",
-    "tecnologias": [
-      "http://209.38.138.95/wp-content/uploads/2024/04/ecca-carboxyIcon.png",
-      "http://209.38.138.95/wp-content/uploads/2024/04/pfenergyIcon.png",
-      "http://209.38.138.95/wp-content/uploads/2024/04/rdrIcon.png"
-    ]
-  },
-  {
-    "image": "http://209.38.138.95/wp-content/uploads/2024/04/undefined.png",
-    "title": "Best Cure",
-    "text": "Fungicida - Bactericida Orgánico y Activador de las Defensas Naturales de la Planta",
-    "description": "Bestcure® es un fungicida-bactericida orgánico y actividador de las defensas naturales de la planta con una formulación basada en extractos de rutáceas (citrus reticulata y citrus aurantium), rico en ácidos orgánicos y bioflavonoides. Es una herramienta sostenible para el medio ambiente, mantiene la actividad de la dauna auxiliar, libre de residualidad  y sin plazo de seguridad.",
-    "id": "Best-Cure",
-    "tecnologias": [
-      "http://209.38.138.95/wp-content/uploads/2024/04/ecca-carboxyIcon.png",
-      "http://209.38.138.95/wp-content/uploads/2024/04/pfenergyIcon.png",
-      "http://209.38.138.95/wp-content/uploads/2024/04/rdrIcon.png"
-    ]
-  },
-  {
-    "image": "http://209.38.138.95/wp-content/uploads/2024/04/cuvrekdp.png",
-    "title": "Cuvrek DP",
-    "text": "Fungicida y bactericida biorracional de amplio espectro",
-    "description": "Los iones de cobre en el hidróxido de cobre detienen la germinación de esporas de hongos y matan bacterias, protegiendo a las plantas de infecciones. Estos iones, disueltos en la película del agua son transportados al sitio de infección de la espora o bacterias, donde pueden ser absorbidos a través de la membrana celular. Una vez dentro de la célula, los iones de cobre destruyen la capacidad de funcionamiento de muchas enzimas. Este efecto de multisitio dificulta a los hongos el desarrollo de resistencia a fungicidas cúpricos. Sin estas enzimas, las esporas no germinan y las bacterias mueren.",
-    "id": "Cuvrek-DP",
-    "tecnologias": [
-      "http://209.38.138.95/wp-content/uploads/2024/04/ecca-carboxyIcon.png",
-      "http://209.38.138.95/wp-content/uploads/2024/04/pfenergyIcon.png",
-      "http://209.38.138.95/wp-content/uploads/2024/04/rdrIcon.png"
-    ]
-  },
-  {
-    "image": "http://209.38.138.95/wp-content/uploads/2024/04/tkroot.png",
-    "title": "TkRoot",
-    "text": "Fungicida y bactericida biorracional de amplio espectro",
-    "description": "TK Root® es una formulación que contiene ExuRoot® como ingrediente activo que favorece a la exudación radicular y al establecimiento de los hongos benéficos del género Trichoderma. en la rizosfera. Los hongos contenidos en TK Root® compiten por espacio y alimento, generan una antibiosis contra los hongos fitopatógenos evitando la infección de la raíz; así mismo, ayudan a la generación de raíces sanas que fortalecen al cultivo para tolerar el ataque de hongos fitopatógenos.",
-    "id": "TkRoot",
-    "tecnologias": [
-      "http://209.38.138.95/wp-content/uploads/2024/04/ecca-carboxyIcon.png",
-      "http://209.38.138.95/wp-content/uploads/2024/04/pfenergyIcon.png",
-      "http://209.38.138.95/wp-content/uploads/2024/04/rdrIcon.png"
-    ],
-    "portada": "http://209.38.138.95/wp-content/uploads/2024/04/Carboxy-K-A.png"
-  },
-  {
-    "image": "http://209.38.138.95/wp-content/uploads/2024/04/rhizobaccombi.png",
-    "title": "Rhizobac Combi",
-    "text": "Fungicida biorracional preventivo contra enfermedades radiculares",
-    "description": "Esta formulación contiene ExuRoot® como ingrediente activo que favorece a la exudación radicular y al establecimiento de las bacterias benéficas de Rhizobac Combi en la rizosfera. Las bacterias del género Bacillus (B.cereus var.mycoides, B.megaterium y B. Subtilis) compiten por espacio y alimento, generan una antibiosis contra los hongos fitopatógenos evitando la infección de la raíz; así mismo, generan raíces sanas que fortalecen al cultivo para tolerar el ataque de hongos fitopatógenos.",
-    "id": "Rhizobac-Combi",
-    "tecnologias": [
-      "http://209.38.138.95/wp-content/uploads/2024/04/ecca-carboxyIcon.png",
-      "http://209.38.138.95/wp-content/uploads/2024/04/pfenergyIcon.png",
-      "http://209.38.138.95/wp-content/uploads/2024/04/rdrIcon.png"
-    ]
-  },
-  {
-    "image": "http://209.38.138.95/wp-content/uploads/2024/04/nemaroot.png",
-    "title": "NemaRoot",
-    "text": "Nematicida biorracional",
-    "description": "NemaRoot®  es un Nematicida Biorracional formulado a base de conidios del hongo  Paecilomyces lilacinus,  que actua parasitando huevecillos, juveniles, adultos y quistes de nematodos. Nemaroot® contiene Exuroot® que  induce la exudacion de compuestos que favorecen la colonización del hongo paecilomyces lilacinus y de otros microorganismos beneficos nativos que estimulan el desarrollo, actividad y sanidad radicular.",
-    "id": "NemaRoot",
-    "tecnologias": [
-      "http://209.38.138.95/wp-content/uploads/2024/04/ecca-carboxyIcon.png",
-      "http://209.38.138.95/wp-content/uploads/2024/04/pfenergyIcon.png",
-      "http://209.38.138.95/wp-content/uploads/2024/04/rdrIcon.png"
-    ]
-  },
-  {
-    "image": "http://209.38.138.95/wp-content/uploads/2024/04/medalk.png",
-    "title": "Medal",
-    "text": "Traslocador y surfactante",
-    "description": "Medal® es una formulación a base de ácidos ECCA Carboxy® que, debido a su acción tensoactiva, humecta una mayor área superficial del tejido de la planta o plaga y la acción traslocadora de los ácidos ECCA Carboxy® de su formulación, favorece el movimiento de los ingredientes activos en los tejidos de conducción. Para mejores resultados, se recomienda incluir en las soluciones de aspersión otros aditivos de diferente acción, como buferizante o adherente según se necesite.",
-    "id": "Medal",
-    "tecnologias": [
-      "http://209.38.138.95/wp-content/uploads/2024/04/ecca-carboxyIcon.png",
-      "http://209.38.138.95/wp-content/uploads/2024/04/pfenergyIcon.png",
-      "http://209.38.138.95/wp-content/uploads/2024/04/rdrIcon.png"
+    "soluciones": [
+      {
+        "title": "AMARRE DE FRUTO",
+        "icon": "amarreTamañoDeFrutoIcon",
+        "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/amarreBg.jpg",
+        "link": "/mxn/soluciones-por-cultivo/amarre-de-fruto"
+      },
+      {
+        "title": "TAMAÑO DE FRUTO",
+        "icon": "amarreTamañoDeFrutoIcon",
+        "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/tamanoBg.jpg",
+        "link": "/mxn/soluciones-por-cultivo/tamano-de-fruto"
+      },
+      {
+        "title": "Actividad radicular",
+        "icon": "actividadRadicularIcon",
+        "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/actividadRadicularBg.jpg",
+        "link": "/mxn/soluciones-por-cultivo/actividad-radicular"
+      },
+      {
+        "title": "Sanidad radicular",
+        "icon": "sanidadRadicularIcon",
+        "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/salinidadBg.jpg",
+        "link": "/mxn/soluciones-por-cultivo/sanidad-radicular"
+      },
+      {
+        "title": "Calidad y vida post cosecha",
+        "icon": "vidaAnaquelPostcosechaIcon",
+        "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/calidadBg.jpg",
+        "link": "/mxn/soluciones-por-cultivo/calidad-y-vida-post-cosecha"
+      },
+      {
+        "title": "Aumento de calibres",
+        "icon": "vidaAnaquelPostcosechaIcon",
+        "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/tamanoBg.jpg",
+        "link": "/mxn/soluciones-por-cultivo/aumento-de-calibres"
+      },
+      {
+        "title": "Control bioracional de Nematodos",
+        "icon": "protecciónContraNematodosIcon",
+        "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/nematodosBg.jpg",
+        "link": "/mxn/soluciones-por-cultivo/control-bioracional-de-nematodos"
+      },
+      {
+        "title": "Fertildiad biologica",
+        "icon": "fertilidadBiologicaIcon",
+        "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/fertilidadBg.jpg",
+        "link": "/mxn/soluciones-por-cultivo/fertilidad-biologica"
+      },
+      {
+        "title": "Estrés radicular",
+        "icon": "estresSalinoIcon",
+        "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/salinidadBg.jpg",
+        "link": "/mxn/soluciones-por-cultivo/estres-radicular"
+      },
+      {
+        "title": "Compactación de suelos",
+        "icon": "acondicionadorDeSuelosIcon",
+        "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/compactacionBg.jpg",
+        "link": "/mxn/soluciones-por-cultivo/compactacion-de-suelos"
+      },
+      {
+        "title": "Brotación",
+        "icon": "floraciónYBrotaciónIcon",
+        "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/brotacionBg.jpg",
+        "link": "/mxn/soluciones-por-cultivo/brotacion"
+      },
+      {
+        "title": "Floración",
+        "icon": "floraciónYBrotaciónIcon",
+        "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/floracionBg.jpg",
+        "link": "/mxn/soluciones-por-cultivo/floracion"
+      },
+      {
+        "title": "Control bioracional de plagas y enfermedades",
+        "icon": "protecciónContraNematodosIcon",
+        "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/plagaEnfermedadesBg.jpg",
+        "link": "/mxn/soluciones-por-cultivo/control-bioracional-de-plagas-y-enfermedades"
+      },
+      {
+        "title": "Corrección de deficiencias nutricionales",
+        "icon": "correcciónDeDeficienciasNutricionalesIcon",
+        "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/nutricionBg.jpg",
+        "link": "/mxn/soluciones-por-cultivo/correccion-de-deficiencias-nutricionales"
+      }
     ]
   }
 ]

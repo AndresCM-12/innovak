@@ -30,7 +30,8 @@ const futura = localFont({
   variable: "--font-futura",
 });
 
-export default function SolucionesPorFruto({ texts }) {
+export default function SolucionesPorFruto({ info }) {
+  console.log(info);
   const [activeSolutionIndex, setActiveSolutionIndex] = useState();
   var solutions = [
     {
