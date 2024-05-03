@@ -1,96 +1,85 @@
 [
   {
     "info": {
-      "titulo": "SOLUCIONES POR CULTIVO",
-      "pregunta": "¿CUÁL ES TU PROBLEMÁTICA?",
-      "subtitulo": "Es una línea de formulaciones dirigida a resolver problemas de compactación o salinidad de suelos, de uso en la mayoría de los cultivos.",
-      "bg": "http://wp.innovakglobal.com/wp-content/uploads/2024/05/background-1.png"
+      "contactoTitulo": "CONTACTO",
+      "bolsaTrabajoTitulo": "BOLSA DE TRABAJO",
+      "buzonDeQuejasTitulo": "BUZÓN DE QUEJAS",
+      "denuncaEticaTitulo": "DENUNCIA ÉTICA"
     },
-    "soluciones": [
-      {
-        "title": "AMARRE DE FRUTO",
-        "icon": "amarreTamañoDeFrutoIcon",
-        "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/amarreBg.jpg",
-        "link": "/mxn/soluciones-por-cultivo/amarre-de-fruto"
-      },
-      {
-        "title": "TAMAÑO DE FRUTO",
-        "icon": "amarreTamañoDeFrutoIcon",
-        "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/tamanoBg.jpg",
-        "link": "/mxn/soluciones-por-cultivo/tamano-de-fruto"
-      },
-      {
-        "title": "Actividad radicular",
-        "icon": "actividadRadicularIcon",
-        "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/actividadRadicularBg.jpg",
-        "link": "/mxn/soluciones-por-cultivo/actividad-radicular"
-      },
-      {
-        "title": "Sanidad radicular",
-        "icon": "sanidadRadicularIcon",
-        "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/salinidadBg.jpg",
-        "link": "/mxn/soluciones-por-cultivo/sanidad-radicular"
-      },
-      {
-        "title": "Calidad y vida post cosecha",
-        "icon": "vidaAnaquelPostcosechaIcon",
-        "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/calidadBg.jpg",
-        "link": "/mxn/soluciones-por-cultivo/calidad-y-vida-post-cosecha"
-      },
-      {
-        "title": "Aumento de calibres",
-        "icon": "vidaAnaquelPostcosechaIcon",
-        "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/tamanoBg.jpg",
-        "link": "/mxn/soluciones-por-cultivo/aumento-de-calibres"
-      },
-      {
-        "title": "Control bioracional de Nematodos",
-        "icon": "protecciónContraNematodosIcon",
-        "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/nematodosBg.jpg",
-        "link": "/mxn/soluciones-por-cultivo/control-bioracional-de-nematodos"
-      },
-      {
-        "title": "Fertildiad biologica",
-        "icon": "fertilidadBiologicaIcon",
-        "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/fertilidadBg.jpg",
-        "link": "/mxn/soluciones-por-cultivo/fertilidad-biologica"
-      },
-      {
-        "title": "Estrés radicular",
-        "icon": "estresSalinoIcon",
-        "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/salinidadBg.jpg",
-        "link": "/mxn/soluciones-por-cultivo/estres-radicular"
-      },
-      {
-        "title": "Compactación de suelos",
-        "icon": "acondicionadorDeSuelosIcon",
-        "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/compactacionBg.jpg",
-        "link": "/mxn/soluciones-por-cultivo/compactacion-de-suelos"
-      },
-      {
-        "title": "Brotación",
-        "icon": "floraciónYBrotaciónIcon",
-        "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/brotacionBg.jpg",
-        "link": "/mxn/soluciones-por-cultivo/brotacion"
-      },
-      {
-        "title": "Floración",
-        "icon": "floraciónYBrotaciónIcon",
-        "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/floracionBg.jpg",
-        "link": "/mxn/soluciones-por-cultivo/floracion"
-      },
-      {
-        "title": "Control bioracional de plagas y enfermedades",
-        "icon": "protecciónContraNematodosIcon",
-        "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/plagaEnfermedadesBg.jpg",
-        "link": "/mxn/soluciones-por-cultivo/control-bioracional-de-plagas-y-enfermedades"
-      },
-      {
-        "title": "Corrección de deficiencias nutricionales",
-        "icon": "correcciónDeDeficienciasNutricionalesIcon",
-        "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/nutricionBg.jpg",
-        "link": "/mxn/soluciones-por-cultivo/correccion-de-deficiencias-nutricionales"
+    "contacto": {
+      "titulo": "Formulario de contacto",
+      "subTitulo": "Comunícate con nosotros y nos pondremos en contacto contigo tan pronto como nos sea posible. ¡Esperamos tener noticias tuyas!",
+      "imagenFondo": "http://wp.innovakglobal.com/wp-content/uploads/2024/05/bgContacto.4b4a8173.png",
+      "contacto": {
+        "titulo": "¡Contáctanos!",
+        "telefono": "+52 (614) 436 01 38",
+        "correo": "info@innovakglobal.com",
+        "direccion": "Blvd. Vicente Lombardo Toledano #6615 Col. La Concordia C.P. 31375 Chihuahua, Chihuahua, México.",
+        "imagen": "http://wp.innovakglobal.com/wp-content/uploads/2024/05/mapaMexico.png",
+        "formulario": {
+          "requerido": "Los campos marcados con * son obligatorios",
+          "nombre": "Nombre*",
+          "telefono": "Teléfono de contacto*",
+          "correo": "Correo electrónico*",
+          "agricola": "Nombre de la agrícola o institución",
+          "pais": "País*",
+          "estado": "Estado*",
+          "consulta": "Tipo de consulta*",
+          "aviso": "Acepto aviso de privacidad",
+          "boton": "Enviar"
+        }
       }
-    ]
+    },
+    "bolsaTrabajo": {
+      "titulo": "Bolsa de trabajo",
+      "subTitulo": "INNOVAK GLOBAL, es la empresa con la más amplia experiencia en bioestimulación desde la raíz, contribuyendo a la producción de cultivos sanos en alianza con la naturaleza; somos reconocidos internacionalmente como líder en el desarrollo de soluciones biorracionales con enfoque a mejorar la calidad de los alimentos frescos y la productividad de las cosechas.",
+      "proceso": "PROCESOS DE SELECCIÓN",
+      "buscar": "Buscar empleo",
+      "imagenFondo": "http://wp.innovakglobal.com/wp-content/uploads/2024/05/bgContacto.4b4a8173.png",
+      "trabajos": [
+        {
+          "title": "Ingeniero Desarrollo Sistemas Internos",
+          "place": "Chihuahua, Chihuahua",
+          "link": "https://factork.buk.mx/seleccions/b79bbc7fe3f6b0856f9afcd078d409d5a5c990633be16df780ec108c2e0e2a76a8664c1ad29db78e9eab04c054598d1f5eb4997d94ba0655e65dfd9f1abbfd17/postular?referrer=portal",
+          "cta": "Ver empleo"
+        },
+        {
+          "title": "Almacenista Tool Crib",
+          "place": "Chihuahua, Chihuahua",
+          "link": "https://factork.buk.mx/seleccions/cb66092f1334316295072e3db82ad31949608c3b26a6e01d1772b98772f925e973f534c0efe019ff34895eb75bcf80b81133487a2830cae661937de06391a7b0/postular?referrer=portal",
+          "cta": "Ver empleo"
+        },
+        {
+          "title": "Almacenista",
+          "place": "Chihuahua, Chihuahua",
+          "link": "https://factork.buk.mx/seleccions/5b41ecee187ec43efa2d2ba5cd60a3d27b45f7fccf05f2a2c7705be8f5ba70a5a8a26960f41936012505d22fc47f0b419483d868e3a22900acfd3b76472c554d/postular?referrer=portal",
+          "cta": "Ver empleo"
+        },
+        {
+          "title": "Operadores de Producción",
+          "place": "Chihuahua, Chihuahua",
+          "link": "https://factork.buk.mx/seleccions/bdde41fdab8a674044a9652b9cc35a6adb1521e74a245ca3e01611c782fa72cf4cb4a64441f2a9ff488d600f53c1a69fbd05bd77007518826fd5657edc739cc7/postular?referrer=portal",
+          "cta": "Ver empleo"
+        }
+      ]
+    },
+    "buzonQuejas": {
+      "titulo": "Buzón de quejas",
+      "subTitulo": "",
+      "imagenFondo": "http://wp.innovakglobal.com/wp-content/uploads/2024/05/bgContacto.4b4a8173.png",
+      "fomrulario": {
+        "nombre": "Tu nombre y/o empresa*",
+        "correo": "Tu correo electrónico*",
+        "producto": "Producto*",
+        "telefono": "Teléfono de contacto*",
+        "mensaje": "¿Cuál fue tu experiencia?*",
+        "boton": "Enviar"
+      }
+    },
+    "denunciaEtica": {
+      "titulo": "Denuncia ética",
+      "subTitulo": "",
+      "imagenFondo": "http://wp.innovakglobal.com/wp-content/uploads/2024/05/bgContacto.4b4a8173.png"
+    }
   }
 ]

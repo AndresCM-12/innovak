@@ -1,6 +1,7 @@
 /* Hero section */
 .heroSection {
   height: 100svh;
+  min-height: 700px;
   width: 100%;
   background: transparent;
   color: white;

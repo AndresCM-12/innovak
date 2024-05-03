@@ -39,6 +39,7 @@ export default function SolucionesPorFruto({ info }) {
       description:
         "Incrementa productividad de tu cultivo. Nuestra propuesta mejora la proporción de frutos amarrados o cuajados a través de tecnologías sustentables y seguras que ayudan en los procesos de división celular, obteniendo un mayor número de frutos amarrados y un mejor desarrollo de fruto en etapas tempranas. Asimismo, durante estas etapas prevenimos las situaciones de estrés que pueden ocasionar la caída de los frutos, asegurando el desarrollo y la productividad del cultivo.",
       id: "amarre-de-fruto",
+      bg: background,
       items: [
         {
           title: "AGUACATE",

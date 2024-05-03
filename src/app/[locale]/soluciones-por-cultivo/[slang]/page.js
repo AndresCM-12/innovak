@@ -1,5 +1,19 @@
 import SolucionesPorFruto from "./components/SolucionesPorFruto";
 import { WORDPRESS_API_URL } from "../../constants/constants";
+import { headers } from "next/headers";
+
+export async function generateMetadata({ params }) {
+  const headersList = headers();
+  const domain = headersList.get("host") || "";
+  const fullUrl = headersList.get("referer") || "";
+  const solution = fullUrl.split("/").pop();
+  console.log(solution);
+
+  return {
+    title: "Soluciones por fruto",
+    description: "Soluciones por fruto - description",
+  };
+}
 
 export default async function ContactoPage({ params }) {
   const locale = params.locale;

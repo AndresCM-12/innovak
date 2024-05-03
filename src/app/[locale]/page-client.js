@@ -300,7 +300,7 @@ function Testimonials({ info }) {
             <h6>{item.nombre}</h6>
             <a
               onClick={() => {
-                handleLinkClick(1);
+                handleLinkClick(index);
               }}
             >
               {item.cta}

@@ -4,12 +4,6 @@ import styles from "./inovakNews.module.css";
 import Image from "next/image";
 import background from "../../../../../public/innovak-news/background.png";
 
-import comunik1 from "../../../../../public/innovak-news/comunik1.png";
-import comunik2 from "../../../../../public/innovak-news/comunik2.png";
-import comunik3 from "../../../../../public/innovak-news/comunik3.png";
-import comunik4 from "../../../../../public/innovak-news/comunik4.png";
-import comunik5 from "../../../../../public/innovak-news/comunik5.png";
-
 import headerImg from "../../../../../public/innovak-news/header.svg";
 import Link from "next/link";
 
@@ -19,29 +13,8 @@ const futura = localFont({
   variable: "--font-futura",
 });
 
-export default function ContactPageClient({ news }) {
-  var comunikImages = [
-    {
-      link: "https://www.innovakglobal.com/revistacomunik/#flipbook-df_19699/1/",
-      img: comunik1,
-    },
-    {
-      link: "https://www.innovakglobal.com/revistacomunik/#flipbook-df_10173/1/",
-      img: comunik2,
-    },
-    {
-      link: "https://www.innovakglobal.com/revistacomunik/#flipbook-df_10178/1/",
-      img: comunik3,
-    },
-    {
-      link: "https://www.innovakglobal.com/revistacomunik/#flipbook-df_10181/1/",
-      img: comunik4,
-    },
-    {
-      link: "https://www.innovakglobal.com/revistacomunik/#flipbook-df_16790/1/",
-      img: comunik5,
-    },
-  ];
+export default function ContactPageClient({ news, info }) {
+  var comunikImages = info.revistas;
 
   var pagesInfo = [
     // {
@@ -53,8 +26,8 @@ export default function ContactPageClient({ news }) {
     //   hash: "posters-e-infografias",
     // },
     {
-      header: "ARTÍCULOS",
-      title: "ARTÍCULOS",
+      header: info.info.articulosTitulo,
+      title: info.info.articulosTitulo,
       subtitle: "",
       image: background.src,
       content: <Ensayos content={news} />,
@@ -69,11 +42,11 @@ export default function ContactPageClient({ news }) {
     //   hash: "ensayos",
     // },
     {
-      header: "REVISTA COMUNIK",
-      title: "REVISTA COMUNIK",
+      header: info.info.revistaTitulo,
+      title: info.info.revistaTitulo,
       subtitle: "",
       image: background.src,
-      content: <RevistaInnovak images={comunikImages} />,
+      content: <RevistaInnovak info={comunikImages} />,
       hash: "revista-comunik",
     },
   ];
@@ -124,7 +97,7 @@ export default function ContactPageClient({ news }) {
       <article
         className={styles.header}
         style={{
-          backgroundImage: `url(${pagesInfo[index].image})`,
+          backgroundImage: `url(${info.info.imagenFondo})`,
           zIndex: 0,
         }}
       >
@@ -165,26 +138,20 @@ export default function ContactPageClient({ news }) {
   );
 }
 
-function RevistaInnovak({ images }) {
+function RevistaInnovak({ info }) {
   return (
     <section className={styles.revistaInnovak}>
       <article className={styles.title}>
-        <h5>INNOVAK COMUNIK</h5>
-        <p>
-          Esta revista bimestral es un lugar para compartir muchos de los éxitos
-          del equipo de Innovak Global y nace con el objetivo de brindar a los
-          lectores una noción y entendimiento de lo que cada área realiza y como
-          contribuyen a cumplir nuestro compromiso de alimentar sanamente al
-          planeta a través de las propuestas de valor con las que contamos
-        </p>
+        <h5>{info.titulo}</h5>
+        <p>{info.subTitulo}</p>
       </article>
       <div className={styles.revistasWrapper}>
-        {images.map((object, i) => (
+        {info.revistas.map((object, i) => (
           <Image
             style={{ cursor: "pointer" }}
-            onClick={() => window.open(object.link, "_blank")}
+            onClick={() => window.open(object.documento, "_blank")}
             key={i}
-            src={object.img}
+            src={object.preview}
             alt="comunik"
             width={320}
             height={480}
@@ -205,7 +172,7 @@ function Ensayos({ content }) {
             <h3>{item.title}</h3>
             <p>{item.text}</p>
             <Link href={item.link} style={{ width: "100%" }} target="_blank">
-              <div className={styles.newsButtonOutlined}>Ver más</div>
+              <div className={styles.newsButtonOutlined}>{item.cta}</div>
             </Link>
           </div>
         </div>

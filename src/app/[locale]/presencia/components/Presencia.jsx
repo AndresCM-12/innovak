@@ -13,127 +13,15 @@ import background from "../../../../../public/presencia/background.png";
 import Image from "next/image";
 import icon from "../../../../../public/contacto/search.png";
 
-export default function PresenciaClient({ texts }) {
-
-  var contactInfo = [
-    {
-      title: "CUENTAS CLAVE Y BAJA",
-      info: {
-        nombre: "Lopez Perez, Javier",
-        telefono: "6461513910",
-        email: "jlopez@innovakglobal.com",
-        productos: ["Hortalizas"],
-        // whatsapp: "526149939393",
-        estados: ["Baja California"],
-      },
-      bgColor: "#EC1C22",
-      color: "#fff",
-    },
-    {
-      title: "PACIFICO CENTRO",
-      info: {
-        nombre: "Miranda Lopez, Maria Irene",
-        telefono: "6474820634",
-        email: "mmiranda@innovakglobal.com",
-        productos: ["Hortalizas", "Papa", "Granos"],
-        estados: ["Sonora"],
-      },
-      bgColor: "#EE5B37",
-      color: "#fff",
-    },
-    {
-      title: "SINALOA SUR",
-      info: {
-        nombre: "Puga Lopez, Arnoldo",
-        telefono: "6671870291",
-        email: "apuga@innovakglobal.com",
-        productos: ["Tomate", "Chile"],
-        estados: ["Sinaloa"],
-      },
-      bgColor: "#FAAA4E",
-      color: "#fff",
-    },
-    {
-      title: "GOLFO",
-      info: {
-        nombre: "Roman Reyes, Javier",
-        telefono: "2831049879",
-        email: "jroman@innovakglobal.com",
-        productos: ["Piña"],
-        estados: ["Tamaulipas"],
-      },
-      bgColor: "#005AAB",
-      color: "#fff",
-    },
-    {
-      title: "BAJÍO",
-      info: {
-        nombre: "Gallaga Espinoza, Francisco Javier",
-        telefono: "4771337460",
-        email: "fgallaga@innovakglobal.com",
-        productos: ["Cebolla", "Tomate", "Chile", "Papa", "Ajo"],
-        contacto_con: ["fresa", "zanahoria", "Esparrago", "aguacate"],
-        estados: ["León"],
-      },
-      bgColor: "#80C342",
-      color: "#fff",
-    },
-    {
-      title: "ALTIPLANO",
-      info: {
-        nombre: "Assad Ruiz, Alonso Hiram",
-        telefono: "7352069271",
-        email: "hassad@innovakglobal.com",
-        productos: ["Cebolla", "Papa", "Chile", "Tomate"],
-        estados: ["Morelos"],
-      },
-      bgColor: "#717C84",
-      color: "#fff",
-    },
-    {
-      title: "OCCIDENTE",
-      info: {
-        nombre: "Hernandez Ponce, Carlos Ignacio",
-        telefono: "4433960753",
-        email: "chernandez@innovakglobal.com",
-        productos: ["Aguacate", "Papa", "Sandia", "Papaya"],
-        estados: ["Michoacán"],
-      },
-      bgColor: "#00A34D",
-      color: "#fff",
-    },
-    {
-      title: "SURESTE",
-      info: {
-        nombre: "Castañeda Varela, Jesus Alexis",
-        telefono: "9991377255",
-        email: "acastaneda@innovakglobal.com",
-        productos: ["Banano", "Papaya", "Sandia", "Soya"],
-        estados: ["Yucatán"],
-      },
-      bgColor: "#FFCC00",
-      color: "#fff",
-    },
-    {
-      title: "SURESTE",
-      info: {
-        nombre: "Avendaño Abadia, Jesus Enrique",
-        telefono: "9631370984",
-        email: "eavendano@innovakglobal.com",
-        productos: ["Soya", "Jitomate", "Mango", "Banano"],
-        estados: ["Chiapas"],
-      },
-      bgColor: "#FFCC00",
-      color: "#fff",
-    },
-  ];
+export default function PresenciaClient({ info }) {
+  var contactInfo = info.mapa.comerciantes;
 
   var pagesInfo = [
     {
-      title: "MÉXICO",
+      title: info.mapa.region,
       subtitle: "",
-      image: background.src,
-      content: <MapMexico map={mexicoMap} contactInfo={contactInfo} />,
+      image: info.info.imagenFondo,
+      content: <MapMexico map={info.mapa.imagen} contactInfo={contactInfo} />,
       hash: "mexico",
     },
     // {
@@ -222,15 +110,13 @@ export default function PresenciaClient({ texts }) {
       {/* Select Option */}
       {/* <div className={styles.selectOptionWrapper}>
         {pagesInfo.map((page, i) => (
-          <>
-            <div
-              className={index === i ? `${styles.active}` : ""}
-              onClick={() => handleNextStep(i)}
-            >
-              <p>{page.title}</p>
-            </div>
-            <span key={i + "span"} className={styles.separator}></span>
-          </>
+          <div
+            className={index === i ? `${styles.active}` : ""}
+            key={i + "div"}
+            onClick={() => handleNextStep(i)}
+          >
+            <p>{page.title}</p>
+          </div>
         ))}
       </div> */}
       {/* Select Option */}

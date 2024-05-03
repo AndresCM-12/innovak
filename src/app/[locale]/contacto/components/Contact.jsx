@@ -1,13 +1,10 @@
 "use client";
 import React, { useState } from "react";
-import headerBgQuejas from "../../../../../public/contacto/bgQuejas.png";
-import headerBgContacto from "../../../../../public/contacto/bgContacto.png";
-import headerBgBolsaTrabajo from "../../../../../public/contacto/bgBolsaTrabajo.png";
+
 import styles from "./contacto.module.css";
 import allStyles from "../../page.module.css";
-import { motion } from "framer-motion";
 import Image from "next/image";
-import map from "../../../../../public/inicio/map.png";
+
 import icon from "../../../../../public/contacto/search.png";
 import eyeIcon from "../../../../../public/contacto/eye.svg";
 
@@ -17,62 +14,40 @@ const futura = localFont({
   variable: "--font-futura",
 });
 
-export default function ContactPageClient({ texts }) {
-  var jobs = [
-    {
-      title: "Ingeniero Desarrollo Sistemas Internos",
-      place: "Chihuahua, Chihuahua",
-      link: "https://factork.buk.mx/seleccions/b79bbc7fe3f6b0856f9afcd078d409d5a5c990633be16df780ec108c2e0e2a76a8664c1ad29db78e9eab04c054598d1f5eb4997d94ba0655e65dfd9f1abbfd17/postular?referrer=portal",
-    },
-    {
-      title: "Almacenista Tool Crib",
-      place: "Chihuahua, Chihuahua",
-      link: "https://factork.buk.mx/seleccions/cb66092f1334316295072e3db82ad31949608c3b26a6e01d1772b98772f925e973f534c0efe019ff34895eb75bcf80b81133487a2830cae661937de06391a7b0/postular?referrer=portal",
-    },
-    {
-      title: "Almacenista",
-      place: "Chihuahua, Chihuahua",
-      link: "https://factork.buk.mx/seleccions/5b41ecee187ec43efa2d2ba5cd60a3d27b45f7fccf05f2a2c7705be8f5ba70a5a8a26960f41936012505d22fc47f0b419483d868e3a22900acfd3b76472c554d/postular?referrer=portal",
-    },
-    {
-      title: "Operadores de Producción",
-      place: "Chihuahua, Chihuahua",
-      link: "https://factork.buk.mx/seleccions/bdde41fdab8a674044a9652b9cc35a6adb1521e74a245ca3e01611c782fa72cf4cb4a64441f2a9ff488d600f53c1a69fbd05bd77007518826fd5657edc739cc7/postular?referrer=portal",
-    },
-  ];
+export default function ContactPageClient({ info }) {
+  console.log(info);
+  var jobs = info.bolsaTrabajo.trabajos;
 
   var pagesInfo = [
     {
-      header: "Formulario de contacto",
-      title: "CONTACTO",
-      subtitle:
-        "Comunícate con nosotros y nos pondremos en contacto contigo tan pronto como nos sea posible. ¡Esperamos tener noticias tuyas!",
-      image: headerBgContacto.src,
-      content: <FormBody />,
+      header: info.contacto.titulo,
+      title: info.info.contactoTitulo,
+      subtitle: info.contacto.subTitulo,
+      image: info.contacto.imagenFondo,
+      content: <FormBody info={info.contacto.contacto} />,
       hash: "contacto",
     },
     {
-      header: "Bolsa de trabajo",
-      title: "BOLSA DE TRABAJO",
-      subtitle:
-        "INNOVAK GLOBAL, es la empresa con la más amplia experiencia en bioestimulación desde la raíz, contribuyendo a la producción de cultivos sanos en alianza con la naturaleza; somos reconocidos internacionalmente como líder en el desarrollo de soluciones biorracionales con enfoque a mejorar la calidad de los alimentos frescos y la productividad de las cosechas.",
-      image: headerBgBolsaTrabajo.src,
-      content: <FormBodyBolsaDeTrabajo jobs={jobs} />,
+      header: info.bolsaTrabajo.titulo,
+      title: info.info.bolsaTrabajoTitulo,
+      subtitle: info.bolsaTrabajo.subTitulo,
+      image: info.bolsaTrabajo.imagenFondo,
+      content: <FormBodyBolsaDeTrabajo jobs={jobs} info={info.bolsaTrabajo} />,
       hash: "bolsa-de-trabajo",
     },
     {
-      header: "Buzón de quejas y sugerencias",
-      title: "BUZÓN DE QUEJAS",
+      header: info.buzonQuejas.titulo,
+      title: info.info.buzonDeQuejasTitulo,
       subtitle: "",
-      image: headerBgQuejas.src,
-      content: <FormBodyQuejas />,
+      image: info.buzonQuejas.imagenFondo,
+      content: <FormBodyQuejas info={info.buzonQuejas.fomrulario} />,
       hash: "buzon-de-quejas",
     },
     {
-      header: "Denuncia ética",
-      title: "DENUNCIA ÉTICA",
+      header: info.denunciaEtica.titulo,
+      title: info.info.denuncaEticaTitulo,
       subtitle: "",
-      image: headerBgQuejas.src,
+      image: info.denunciaEtica.imagenFondo,
       content: <FormBodyDenuncia />,
       hash: "denuncia-etica",
     },
@@ -160,7 +135,7 @@ export default function ContactPageClient({ texts }) {
   );
 }
 
-function FormBody() {
+function FormBody({ info }) {
   return (
     <section
       className={allStyles.formWrapper}
@@ -168,7 +143,7 @@ function FormBody() {
         marginTop: "20px",
       }}
     >
-      <motion.div
+      <div
         whileInView={{ opacity: 1 }}
         initial={{ opacity: 0 }}
         className={allStyles.ficha}
@@ -178,17 +153,14 @@ function FormBody() {
             marginBottom: "20px",
           }}
         >
-          ¡Contáctanos!
+          {info.titulo}
         </h1>
-        <p className={allStyles.text}>+52 (614) 436 01 38</p>
-        <p className={allStyles.text}>info@innovakglobal.com</p>
-        <p className={allStyles.text}>
-          Blvd. Vicente Lombardo Toledano #6615Col. La Concordia C.P.
-          31375Chihuahua, Chihuahua, México.
-        </p>
+        <p className={allStyles.text}>{info.telefono}</p>
+        <p className={allStyles.text}>{info.correo}</p>
+        <p className={allStyles.text}>{info.direccion}</p>
         <div>
           <Image
-            src={map}
+            src={info.imagen}
             alt="Innovak News"
             width={300}
             height={400}
@@ -198,31 +170,36 @@ function FormBody() {
             }}
           />
         </div>
-      </motion.div>
+      </div>
 
       <div className={allStyles.form}>
-        <p>Los campos marcados con * son obligatorios</p>
+        <p>{info.formulario.requerido}</p>
         <form
           action="https://formsubmit.co/redes@innovakglobal.com"
           method="POST"
         >
-          <input type="text" name="Nombre" placeholder="Nombre*" required />
+          <input
+            type="text"
+            name="Nombre"
+            placeholder={info.formulario.nombre}
+            required
+          />
           <input
             type="text"
             name="Teléfono de contacto"
-            placeholder="Teléfono de contacto*"
+            placeholder={info.formulario.telefono}
             required
           />
           <input
             type="text"
             name="Correo electrónico"
-            placeholder="Correo electrónico*"
+            placeholder={info.formulario.correo}
             required
           />
           <input
             type="text"
             name="Nombre de la agrícola o institución"
-            placeholder="Nombre de la agrícola o institución"
+            placeholder={info.formulario.agricola}
           />
           <div
             style={{
@@ -231,13 +208,23 @@ function FormBody() {
               gap: "10px",
             }}
           >
-            <input type="text" name="País" placeholder="País*" required />
-            <input type="text" name="Estado" placeholder="Estado*" required />
+            <input
+              type="text"
+              name="País"
+              placeholder={info.formulario.pais}
+              required
+            />
+            <input
+              type="text"
+              name="Estado"
+              placeholder={info.formulario.estado}
+              required
+            />
           </div>
           <input
             type="text"
             name="Tipo_consulta"
-            placeholder="Tipo de consulta*"
+            placeholder={info.formulario.consulta}
             required
           />
           <div className={allStyles.checkboxWrapper}>
@@ -247,16 +234,16 @@ function FormBody() {
               name="privacidad"
               value="Información de distribuidores"
             />
-            <label htmlFor="uno">Acepto datos de privacidad</label>
+            <label htmlFor="uno">{info.formulario.aviso}</label>
           </div>
-          <button type="submit">Enviar</button>
+          <button type="submit">{info.formulario.boton}</button>
         </form>
       </div>
     </section>
   );
 }
 
-function FormBodyQuejas() {
+function FormBodyQuejas({ info }) {
   return (
     <section className={styles.formQuejas}>
       <div className={styles.form}>
@@ -267,24 +254,29 @@ function FormBodyQuejas() {
           <input
             type="text"
             name="Tu nombre y/o empresa"
-            placeholder="Tu nombre y/o empresa*"
+            placeholder={info.nombre}
             required
           />
           <input
             type="text"
             name="Correo electronico"
-            placeholder="Correo electronico*"
+            placeholder={info.correo}
             required
           />
-          <input type="text" name="Producto" placeholder="Producto*" required />
-          <input type="text" name="Teléfono" placeholder="Teléfono" />
+          <input
+            type="text"
+            name="Producto"
+            placeholder={info.producto}
+            required
+          />
+          <input type="text" name="Teléfono" placeholder={info.telefono} />
           <input
             type="text"
             name="¿Cuál fue tu experiencia?"
-            placeholder="¿Cuál fue tu experiencia?*"
+            placeholder={info.mensaje}
             required
           />
-          <button type="submit">Enviar</button>
+          <button type="submit">{info.boton}</button>
         </form>
       </div>
     </section>
@@ -302,7 +294,7 @@ function FormBodyDenuncia() {
   );
 }
 
-function FormBodyBolsaDeTrabajo({ jobs }) {
+function FormBodyBolsaDeTrabajo({ jobs, info }) {
   const [filtredJobs, setFiltredJobs] = useState(jobs);
   return (
     <section
@@ -312,10 +304,10 @@ function FormBodyBolsaDeTrabajo({ jobs }) {
       }}
     >
       <div className={styles.form}>
-        <h1>PROCESOS DE SELECCIÓN</h1>
+        <h1>{info.proceso}</h1>
         <div className={styles.searchMenu}>
           <input
-            placeholder="Buscar empleo"
+            placeholder={info.buscar}
             onChange={() => {
               setFiltredJobs(
                 jobs.filter((job) =>
@@ -338,7 +330,7 @@ function FormBodyBolsaDeTrabajo({ jobs }) {
               <span>
                 <Image src={eyeIcon} alt="icon" width={20} height={20} />
                 <a href={job.link} target="_blank">
-                  Ver empleo
+                  {job.cta}
                 </a>
               </span>
             </div>

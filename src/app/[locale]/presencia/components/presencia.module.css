@@ -29,7 +29,7 @@
 .selectOptionWrapper {
   display: flex;
   border-radius: 20px;
-  background-color: #d9d9d9;
+  background-color: #bdbcbc;
   width: fit-content;
   overflow: hidden;
   margin-inline: auto;
@@ -145,6 +145,9 @@
 @media screen and (max-width: 604px) {
   .selectOptionWrapper {
     scale: 0.8;
+  }
+  .searchMenu {
+    margin-inline: 12px;
   }
 }
 @media screen and (max-width: 480px) {
