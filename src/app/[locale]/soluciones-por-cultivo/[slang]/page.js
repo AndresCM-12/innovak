@@ -1,23 +1,16 @@
 import SolucionesPorFruto from "./components/SolucionesPorFruto";
 import { WORDPRESS_API_URL } from "../../constants/constants";
-import { headers } from "next/headers";
 
 export async function generateMetadata({ params }) {
-  const headersList = headers();
-  const domain = headersList.get("host") || "";
-  const fullUrl = headersList.get("referer") || "";
-  const solution = fullUrl.split("/").pop();
-  console.log(solution);
-
+  const info = await getInfo(params.locale);
   return {
-    title: "Soluciones por fruto",
-    description: "Soluciones por fruto - description",
+    title: info.title,
+    description: info.metaDescription,
   };
 }
 
 export default async function ContactoPage({ params }) {
-  const locale = params.locale;
-  const info = await getInfo(locale);
+  const info = await getInfo(params.locale);
 
   return (
     <section>
@@ -65,7 +58,6 @@ async function getInfo(locale) {
     const firstIdx = rawContent.indexOf("[");
     const lastIdx = rawContent.lastIndexOf("]");
     rawContent = rawContent.substring(firstIdx, lastIdx + 1);
-    console.log(rawContent);
     var content = JSON.parse(rawContent);
     return content[0];
   } catch (error) {

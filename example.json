@@ -1,85 +1,241 @@
 [
   {
-    "info": {
-      "contactoTitulo": "CONTACTO",
-      "bolsaTrabajoTitulo": "BOLSA DE TRABAJO",
-      "buzonDeQuejasTitulo": "BUZÓN DE QUEJAS",
-      "denuncaEticaTitulo": "DENUNCIA ÉTICA"
-    },
-    "contacto": {
-      "titulo": "Formulario de contacto",
-      "subTitulo": "Comunícate con nosotros y nos pondremos en contacto contigo tan pronto como nos sea posible. ¡Esperamos tener noticias tuyas!",
-      "imagenFondo": "http://wp.innovakglobal.com/wp-content/uploads/2024/05/bgContacto.4b4a8173.png",
-      "contacto": {
-        "titulo": "¡Contáctanos!",
-        "telefono": "+52 (614) 436 01 38",
-        "correo": "info@innovakglobal.com",
-        "direccion": "Blvd. Vicente Lombardo Toledano #6615 Col. La Concordia C.P. 31375 Chihuahua, Chihuahua, México.",
-        "imagen": "http://wp.innovakglobal.com/wp-content/uploads/2024/05/mapaMexico.png",
-        "formulario": {
-          "requerido": "Los campos marcados con * son obligatorios",
-          "nombre": "Nombre*",
-          "telefono": "Teléfono de contacto*",
-          "correo": "Correo electrónico*",
-          "agricola": "Nombre de la agrícola o institución",
-          "pais": "País*",
-          "estado": "Estado*",
-          "consulta": "Tipo de consulta*",
-          "aviso": "Acepto aviso de privacidad",
-          "boton": "Enviar"
-        }
+    "title": "Solución por fruto",
+    "metaDescription": "Descripción de la pagina para SEO",
+    "soluciones": [
+      {
+        "title": "AMARRE DE FRUTO",
+        "description": "Incrementa productividad de tu cultivo. Nuestra propuesta mejora la proporción de frutos amarrados o cuajados a través de tecnologías sustentables y seguras que ayudan en los procesos de división celular, obteniendo un mayor número de frutos amarrados y un mejor desarrollo de fruto en etapas tempranas. Asimismo, durante estas etapas prevenimos las situaciones de estrés que pueden ocasionar la caída de los frutos, asegurando el desarrollo y la productividad del cultivo.",
+        "id": "amarre-de-fruto",
+        "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/amarreBg.jpg",
+        "items": [
+          {
+            "title": "AGUACATE",
+            "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/AGUACATE.jpg",
+            "popup": {
+              "titulo": "Acondicionador de suelo AGUACATE",
+              "tecnologias": "Tecnologías",
+              "descripcion": "Incrementa productividad de tu cultivo. Nuestra propuesta mejora la proporción de frutos amarrados o cuajados a través de tecnologías sustentables y seguras que ayudan en los procesos de división celular, obteniendo un mayor número de frutos amarrados y un mejor desarrollo de fruto en etapas tempranas. Asimismo, durante estas etapas prevenimos las situaciones de estrés que pueden ocasionar la caída de los frutos, asegurando el desarrollo y la productividad del cultivo.",
+              "videoOimagen": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/amarreBg.jpg",
+              "cta": "Contacto"
+            },
+            "products": [
+              {
+                "title": "SelectoXL",
+                "img": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/selectoxl.png"
+              },
+              {
+                "title": "Exu Root",
+                "img": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/exuroot.png"
+              },
+              {
+                "title": "Atp up",
+                "img": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/atpup.png"
+              }
+            ]
+          },
+          {
+            "title": "CHILE",
+            "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/CHILE.jpg",
+            "popup": {
+              "titulo": "Acondicionador de suelo CHILE",
+              "tecnologias": "Tecnologías",
+              "descripcion": "Incrementa productividad de tu cultivo. Nuestra propuesta mejora la proporción de frutos amarrados o cuajados a través de tecnologías sustentables y seguras que ayudan en los procesos de división celular, obteniendo un mayor número de frutos amarrados y un mejor desarrollo de fruto en etapas tempranas. Asimismo, durante estas etapas prevenimos las situaciones de estrés que pueden ocasionar la caída de los frutos, asegurando el desarrollo y la productividad del cultivo.",
+              "videoOimagen": "http://wp.innovakglobal.com/wp-content/uploads/2024/05/alianzas1.webm",
+              "cta": "Contacto"
+            },
+            "products": [
+              {
+                "title": "SelectoXL",
+                "img": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/selectoxl.png"
+              },
+              {
+                "title": "Atp up",
+                "img": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/atpup.png"
+              }
+            ]
+          },
+          {
+            "title": "NOGAL",
+            "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/NOGAL.jpg",
+            " products": [
+              {
+                "title": "SelectoXL",
+                "img": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/selectoxl.png"
+              }
+            ]
+          },
+          {
+            "title": "MANZANA",
+            "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/MANZANA.jpg",
+            " products": [
+              {
+                "title": "SelectoXL",
+                "img": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/selectoxl.png"
+              }
+            ]
+          },
+          {
+            "title": "MANGO",
+            "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/MANGO.jpg",
+            " products": [
+              {
+                "title": "SelectoXL",
+                "img": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/selectoxl.png"
+              }
+            ]
+          },
+
+          {
+            "title": "UVA",
+            "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/UVA.jpg",
+            " products": [
+              {
+                "title": "SelectoXL",
+                "img": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/selectoxl.png"
+              }
+            ]
+          },
+          {
+            "title": "ALGODÓN",
+            "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/ALGODON.jpg",
+            " products": [
+              {
+                "title": "SelectoXL",
+                "img": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/selectoxl.png"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "TAMAÑO DE FRUTO",
+        "description": "Incrementa el tamaño de tu cosecha. Nuestra propuesta promueve un desarrollo adecuado y balanceado de los frutos de forma segura. Bioestimulamos los procesos de división celular y prevenimos las situaciones de estrés en los cultivos garantizando el desarrollo óptimo de los frutos, obteniendo como resultado un mayor tamaño y homogeneidad, mejorando la calidad de la cosecha, la rentabilidad y productividad del cultivo.",
+        "id": "tamano-de-fruto",
+        "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/tamanoBg.jpg",
+        "items": [
+          {
+            "title": "AGUACATE",
+            "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/AGUACATE.jpg",
+            "products": [
+              {
+                "title": "SelectoXL",
+                "img": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/selectoxl.png"
+              }
+            ]
+          },
+          {
+            "title": "BERRIES",
+            "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/BERRIES.jpg",
+            "products": [
+              {
+                "title": "SelectoXL",
+                "img": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/selectoxl.png"
+              }
+            ]
+          },
+          {
+            "title": "CHILE",
+            "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/CHILE.jpg",
+            "products": [
+              {
+                "title": "SelectoXL",
+                "img": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/selectoxl.png"
+              }
+            ]
+          },
+          {
+            "title": "NOGAL",
+            "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/NOGAL.jpg",
+            "products": [
+              {
+                "title": "SelectoXL",
+                "img": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/selectoxl.png"
+              }
+            ]
+          },
+          {
+            "title": "MANZANA",
+            "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/MANZANA.jpg",
+            "products": [
+              {
+                "title": "SelectoXL",
+                "img": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/selectoxl.png"
+              }
+            ]
+          },
+          {
+            "title": "MANGO",
+            "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/MANGO.jpg",
+            "products": [
+              {
+                "title": "SelectoXL",
+                "img": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/selectoxl.png"
+              }
+            ]
+          },
+          {
+            "title": "MAÍZ",
+            "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/MAIZ.jpg",
+            "products": [
+              {
+                "title": "Selecto",
+                "img": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/selectoxl.png"
+              }
+            ]
+          },
+          {
+            "title": "TRIGO",
+            "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/TRIGO.jpg",
+            "products": [
+              {
+                "title": "Selecto",
+                "img": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/selectoxl.png"
+              }
+            ]
+          },
+          {
+            "title": "UVA",
+            "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/UVA.jpg",
+            "products": [
+              {
+                "title": "SelectoXL",
+                "img": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/selectoxl.png"
+              }
+            ]
+          },
+          {
+            "title": "PIÑA",
+            "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/PINA.jpg",
+            "products": [
+              {
+                "title": "Selecto",
+                "img": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/selectoxl.png"
+              }
+            ]
+          },
+          {
+            "title": "ALGODÓN",
+            "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/ALGODON.jpg",
+            "products": [
+              {
+                "title": "SelectoXL",
+                "img": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/selectoxl.png"
+              }
+            ]
+          },
+          {
+            "title": "PAPAYA",
+            "bg": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/PAPAYA.jpg",
+            "products": [
+              {
+                "title": "Selecto",
+                "img": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/selectoxl.png"
+              }
+            ]
+          }
+        ]
       }
-    },
-    "bolsaTrabajo": {
-      "titulo": "Bolsa de trabajo",
-      "subTitulo": "INNOVAK GLOBAL, es la empresa con la más amplia experiencia en bioestimulación desde la raíz, contribuyendo a la producción de cultivos sanos en alianza con la naturaleza; somos reconocidos internacionalmente como líder en el desarrollo de soluciones biorracionales con enfoque a mejorar la calidad de los alimentos frescos y la productividad de las cosechas.",
-      "proceso": "PROCESOS DE SELECCIÓN",
-      "buscar": "Buscar empleo",
-      "imagenFondo": "http://wp.innovakglobal.com/wp-content/uploads/2024/05/bgContacto.4b4a8173.png",
-      "trabajos": [
-        {
-          "title": "Ingeniero Desarrollo Sistemas Internos",
-          "place": "Chihuahua, Chihuahua",
-          "link": "https://factork.buk.mx/seleccions/b79bbc7fe3f6b0856f9afcd078d409d5a5c990633be16df780ec108c2e0e2a76a8664c1ad29db78e9eab04c054598d1f5eb4997d94ba0655e65dfd9f1abbfd17/postular?referrer=portal",
-          "cta": "Ver empleo"
-        },
-        {
-          "title": "Almacenista Tool Crib",
-          "place": "Chihuahua, Chihuahua",
-          "link": "https://factork.buk.mx/seleccions/cb66092f1334316295072e3db82ad31949608c3b26a6e01d1772b98772f925e973f534c0efe019ff34895eb75bcf80b81133487a2830cae661937de06391a7b0/postular?referrer=portal",
-          "cta": "Ver empleo"
-        },
-        {
-          "title": "Almacenista",
-          "place": "Chihuahua, Chihuahua",
-          "link": "https://factork.buk.mx/seleccions/5b41ecee187ec43efa2d2ba5cd60a3d27b45f7fccf05f2a2c7705be8f5ba70a5a8a26960f41936012505d22fc47f0b419483d868e3a22900acfd3b76472c554d/postular?referrer=portal",
-          "cta": "Ver empleo"
-        },
-        {
-          "title": "Operadores de Producción",
-          "place": "Chihuahua, Chihuahua",
-          "link": "https://factork.buk.mx/seleccions/bdde41fdab8a674044a9652b9cc35a6adb1521e74a245ca3e01611c782fa72cf4cb4a64441f2a9ff488d600f53c1a69fbd05bd77007518826fd5657edc739cc7/postular?referrer=portal",
-          "cta": "Ver empleo"
-        }
-      ]
-    },
-    "buzonQuejas": {
-      "titulo": "Buzón de quejas",
-      "subTitulo": "",
-      "imagenFondo": "http://wp.innovakglobal.com/wp-content/uploads/2024/05/bgContacto.4b4a8173.png",
-      "fomrulario": {
-        "nombre": "Tu nombre y/o empresa*",
-        "correo": "Tu correo electrónico*",
-        "producto": "Producto*",
-        "telefono": "Teléfono de contacto*",
-        "mensaje": "¿Cuál fue tu experiencia?*",
-        "boton": "Enviar"
-      }
-    },
-    "denunciaEtica": {
-      "titulo": "Denuncia ética",
-      "subTitulo": "",
-      "imagenFondo": "http://wp.innovakglobal.com/wp-content/uploads/2024/05/bgContacto.4b4a8173.png"
-    }
+    ]
   }
 ]
