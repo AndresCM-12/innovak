@@ -1,5 +1,6 @@
 import FooterBody from "./components/Footer";
 import HeaderBody from "./components/Header";
+import { WORDPRESS_API_URL } from "./constants/constants";
 import "./globals.css";
 import localFont from "next/font/local";
 
@@ -8,14 +9,61 @@ const avenir = localFont({
   variable: "--font-avenir",
 });
 
-export default function RootLayout({ children, params: { locale } }) {
+export default async function RootLayout({ children, params }) {
+  const info = await getInfo(params.locale);
+
   return (
-    <html lang={locale}>
+    <html lang={params.locale}>
       <body className={avenir.className}>
-        <HeaderBody />
+        <HeaderBody info={info.header} />
         {children}
-        <FooterBody />
+        <FooterBody info={info.footer} />
       </body>
     </html>
   );
+}
+
+async function getInfo(locale) {
+  try {
+    const response = await fetch(WORDPRESS_API_URL, {
+      cache: "no-cache",
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        query: `
+              query NewQuery {
+                categories(where: {name: "header-footer"}) {
+                  edges {
+                    node {
+                      id
+                      posts(where: {tag: "${locale}"}) {
+                        nodes {
+                          id
+                          content
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+      }),
+    });
+
+    const rawData = await response.json();
+    var rawContent =
+      rawData.data.categories.edges[0].node.posts.nodes[0].content;
+    if (rawContent.includes("&#91;")) {
+      rawContent = rawContent.replaceAll("&#91;", "[");
+    }
+    const firstIdx = rawContent.indexOf("[");
+    const lastIdx = rawContent.lastIndexOf("]");
+    rawContent = rawContent.substring(firstIdx, lastIdx + 1);
+    var content = JSON.parse(rawContent);
+    return content[0];
+  } catch (error) {
+    return [];
+  }
 }

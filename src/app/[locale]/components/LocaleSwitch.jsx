@@ -5,12 +5,12 @@ import { useRouter } from "next/navigation";
 import { useTransition } from "react";
 import styles from "../page.module.css";
 
-export default function LocaleSwitch({ isMobile = false }) {
+export default function LocaleSwitch({ info, isMobile = false }) {
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
   const localActive = useLocale();
 
-  const locales = ["mxn", "bra", "col", "chl", "pe", "usa", "tur", "intl"];
+  const locales = info?.paises.map((pais) => pais.code);
 
   const onSelectChange = (event) => {
     const nextLocale = event.target.value;
@@ -40,7 +40,7 @@ export default function LocaleSwitch({ isMobile = false }) {
         onChange={onSelectChange}
         disabled={isPending}
       >
-        {locales.map((locale) => (
+        {locales?.map((locale) => (
           <option key={locale} value={locale}>
             {[locale]}
           </option>

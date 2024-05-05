@@ -16,7 +16,7 @@ const futura = localFont({
   variable: "--font-futura",
 });
 
-export default function HeaderBody() {
+export default function HeaderBody({ info }) {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [menuScrolling, setMenuScrolling] = useState(false);
   const { scrollY } = useScroll();
@@ -39,70 +39,77 @@ export default function HeaderBody() {
   }, []);
 
   return (
-    <motion.header
-      initial={{ top: -50, opacity: 0 }}
-      whileInView={{ top: 0, opacity: 1 }}
-      className={styles.header}
-      style={{
-        paddingBlock: menuScrolling ? "20px" : "40px",
-        backgroundColor: menuScrolling ? "white" : "transparent",
-        boxShadow: menuScrolling ? "0px 0px 10px 0px rgba(0,0,0,0.25)" : "",
-        fontFamily: futura.style.fontFamily,
-      }}
-    >
-      <MobileMenu
-        mobileMenu={mobileMenu}
-        setMobileMenu={setMobileMenu}
-        currentLang={lang}
-      />
+    info?.nuestrasRaices && (
+      <motion.header
+        initial={{ top: -50, opacity: 0 }}
+        whileInView={{ top: 0, opacity: 1 }}
+        className={styles.header}
+        style={{
+          paddingBlock: menuScrolling ? "20px" : "40px",
+          backgroundColor: menuScrolling ? "white" : "transparent",
+          boxShadow: menuScrolling ? "0px 0px 10px 0px rgba(0,0,0,0.25)" : "",
+          fontFamily: futura.style.fontFamily,
+        }}
+      >
+        <MobileMenu
+          info={info}
+          mobileMenu={mobileMenu}
+          setMobileMenu={setMobileMenu}
+          currentLang={lang}
+        />
 
-      <div className={styles.logoImageContainer}>
-        <Link href="/">
-          <Image
-            className={styles.logoImage}
-            alt="logo"
-            src={whiteLogo}
+        <div className={styles.logoImageContainer}>
+          <Link href="/">
+            <Image
+              className={styles.logoImage}
+              alt="logo"
+              src={whiteLogo}
+              style={{
+                filter: menuScrolling
+                  ? "brightness(0) invert(0)"
+                  : "brightness(0) invert(1)",
+              }}
+            />
+          </Link>
+        </div>
+        <NavsLink
+          info={info}
+          menuScrolling={menuScrolling}
+          currentLang={lang}
+        />
+        <div
+          className={styles.mobileNav}
+          onClick={() => {
+            setMobileMenu(!mobileMenu);
+          }}
+        >
+          <svg
             style={{
               filter: menuScrolling
                 ? "brightness(0) invert(0)"
                 : "brightness(0) invert(1)",
             }}
-          />
-        </Link>
-      </div>
-      <NavsLink menuScrolling={menuScrolling} currentLang={lang} />
-      <div
-        className={styles.mobileNav}
-        onClick={() => {
-          setMobileMenu(!mobileMenu);
-        }}
-      >
-        <svg
-          style={{
-            filter: menuScrolling
-              ? "brightness(0) invert(0)"
-              : "brightness(0) invert(1)",
-          }}
-          xmlns="http://www.w3.org/2000/svg"
-          className="ionicon"
-          viewBox="0 0 512 512"
-        >
-          <path
-            fill="black"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeMiterlimit="10"
-            strokeWidth="32"
-            d="M80 160h352M80 256h352M80 352h352"
-          />
-        </svg>
-      </div>
-      <LocaleSwitch isMobile={false} />
-    </motion.header>
+            xmlns="http://www.w3.org/2000/svg"
+            className="ionicon"
+            viewBox="0 0 512 512"
+          >
+            <path
+              fill="black"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeMiterlimit="10"
+              strokeWidth="32"
+              d="M80 160h352M80 256h352M80 352h352"
+            />
+          </svg>
+        </div>
+        <LocaleSwitch info={info} isMobile={false} />
+      </motion.header>
+    )
   );
 }
 
-function MobileMenu({ mobileMenu, setMobileMenu, currentLang }) {
+function MobileMenu({ info, mobileMenu, setMobileMenu, currentLang }) {
   return (
     <>
       <div
@@ -129,24 +136,26 @@ function MobileMenu({ mobileMenu, setMobileMenu, currentLang }) {
         <nav style={{ display: "flex" }}>
           <ul className={styles.navUl}>
             <li>
-              <a href={`/${currentLang}/nuestras-raices`}>NUESTRAS RAÍCES</a>
-            </li>
-            <li>
-              <a href={`/${currentLang}/productos`}>PRODUCTOS</a>
-            </li>
-            <li>
-              <a href={`/${currentLang}/soluciones-por-cultivo`}>
-                SOLUCIONES POR CULTIVOS
+              <a href={`/${currentLang}/nuestras-raices`}>
+                {info.nuestrasRaices}
               </a>
             </li>
             <li>
-              <a href={`/${currentLang}/innovak-news`}>INNOVAK NEWS</a>
+              <a href={`/${currentLang}/productos`}>{info.productos}</a>
             </li>
             <li>
-              <a href={`/${currentLang}/presencia`}>PRESENCIA</a>
+              <a href={`/${currentLang}/soluciones-por-cultivo`}>
+                {info.solucionesPorCultivo}
+              </a>
             </li>
             <li>
-              <a href={`/${currentLang}/contacto`}>CONTACTO</a>
+              <a href={`/${currentLang}/innovak-news`}>{info.news}</a>
+            </li>
+            <li>
+              <a href={`/${currentLang}/presencia`}>{info.presencia}</a>
+            </li>
+            <li>
+              <a href={`/${currentLang}/contacto`}>{info.contacto}</a>
             </li>
             <LocaleSwitch
               isMobile={true}
@@ -162,7 +171,7 @@ function MobileMenu({ mobileMenu, setMobileMenu, currentLang }) {
   );
 }
 
-function NavsLink({ menuScrolling, currentLang }) {
+function NavsLink({ info, menuScrolling, currentLang }) {
   return (
     <nav>
       <ul className={styles.navUl}>
@@ -173,7 +182,7 @@ function NavsLink({ menuScrolling, currentLang }) {
             }}
             href={`/${currentLang}/nuestras-raices`}
           >
-            NUESTRAS RAÍCES
+            {info.nuestrasRaices}
           </a>
         </li>
         <li>
@@ -183,7 +192,7 @@ function NavsLink({ menuScrolling, currentLang }) {
             }}
             href={`/${currentLang}/productos`}
           >
-            PRODUCTOS
+            {info.productos}
           </a>
         </li>
         <li>
@@ -193,7 +202,7 @@ function NavsLink({ menuScrolling, currentLang }) {
             }}
             href={`/${currentLang}/soluciones-por-cultivo`}
           >
-            SOLUCIONES POR CULTIVOS
+            {info.solucionesPorCultivo}
           </a>
         </li>
         <li>
@@ -203,7 +212,7 @@ function NavsLink({ menuScrolling, currentLang }) {
             }}
             href={`/${currentLang}/innovak-news`}
           >
-            INNOVAK NEWS
+            {info.news}
           </a>
         </li>
         <li>
@@ -213,7 +222,7 @@ function NavsLink({ menuScrolling, currentLang }) {
             }}
             href={`/${currentLang}/presencia`}
           >
-            PRESENCIA
+            {info.presencia}
           </a>
         </li>
         <li>
@@ -223,7 +232,7 @@ function NavsLink({ menuScrolling, currentLang }) {
             }}
             href={`/${currentLang}/contacto`}
           >
-            CONTACTO
+            {info.contacto}
           </a>
         </li>
       </ul>
