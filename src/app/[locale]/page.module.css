@@ -254,9 +254,9 @@
   color: #000;
 }
 
-.presenceContainer h1 {
+.presenceContainer h2 {
   color: #005dab;
-  font-size: 48px;
+  font-size: 40px;
   font-weight: 700;
   line-height: 48px; /* 100% */
 }
@@ -1003,7 +1003,10 @@ footer .links a {
     padding-inline: 20px;
   }
 }
-
+.presenceContainer video {
+  width: 50%;
+  border-radius: 20px;
+}
 @media screen and (max-width: 1235px) {
   .rootContainer {
     display: flex;
@@ -1014,6 +1017,9 @@ footer .links a {
     flex-direction: column-reverse;
     align-items: center;
     row-gap: 80px;
+  }
+  .presenceContainer video {
+    width: 100%;
   }
   .divider {
     display: none;

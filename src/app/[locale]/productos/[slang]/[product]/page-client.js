@@ -79,10 +79,23 @@ export default function Promesol({ products }) {
               />
             </section>
 
-            <section
-              className={styles.presenceContainer}
-              id="presencia"
-            ></section>
+            <section className={styles.presenceContainer} id="presencia">
+              {allProducts[selectedIndex].comoFunciona?.titulo && (
+                <>
+                  <div>
+                    <h2>{allProducts[selectedIndex].comoFunciona.titulo}</h2>
+                    <p>{allProducts[selectedIndex].comoFunciona.descripcion}</p>
+                  </div>
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    controls
+                    src={allProducts[selectedIndex].comoFunciona.video}
+                  ></video>
+                </>
+              )}
+            </section>
           </div>
 
           <div className={styles.blueGradient}>
