@@ -8,8 +8,6 @@ const futura = localFont({
   variable: "--font-futura",
 });
 
-import mexicoMap from "../../../../../public/presencia/mexico.svg";
-import background from "../../../../../public/presencia/background.png";
 import Image from "next/image";
 import icon from "../../../../../public/contacto/search.png";
 

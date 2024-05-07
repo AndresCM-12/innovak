@@ -39,7 +39,11 @@ export default function Home({ news, info }) {
       {info.hero && (
         <main className={allStyles.main}>
           <HeroSection info={info.hero} />
-          <Alianzas info={info.alianzas} images={info.imagenesAlianzas} />
+          <Alianzas
+            info={info.alianzas}
+            images={info.imagenesAlianzas}
+            video={info.hero.alianzasVideo}
+          />
           <Tecnologias info={info.tecnologias} />
           <Testimonials info={info.testimonios} />
           <News news={news} info={info.noticias} />
@@ -69,13 +73,13 @@ function HeroSection({ info }) {
           zIndex: 0,
         }}
       >
-        <source src="/videos/main.mp4" />
+        <source src={info.video} />
       </video>
     </section>
   );
 }
 
-function Alianzas({ info, images }) {
+function Alianzas({ info, images, video }) {
   const alianzas = info;
 
   return (
@@ -131,7 +135,7 @@ function Alianzas({ info, images }) {
           zIndex: 0,
         }}
       >
-        <source src="/videos/alianzas1.webm" />
+        <source src={video} />
         <source
           src="/videos/alianzas2.mp4"
           media="screen and (max-width: 770px) "

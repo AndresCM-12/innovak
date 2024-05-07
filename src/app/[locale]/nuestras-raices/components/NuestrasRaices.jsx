@@ -57,6 +57,7 @@ export default function NuestrasRaicesClient({ fetchedContent }) {
           valores={valores}
           lineaDelTiempo={lineaDelTiempo}
           info={fetchedContent.info.inicio}
+          video={fetchedContent.info.cabecera.video}
         />
       ),
       hash: "quienes-somos",
@@ -90,6 +91,7 @@ export default function NuestrasRaicesClient({ fetchedContent }) {
         <Revolucion
           items={revolucionItems}
           info={fetchedContent.info.evolucionSustentable}
+          video={fetchedContent.info.evolucionSustentable.video}
         />
       ),
       hash: "evolucion-sustentable",
@@ -178,7 +180,7 @@ export default function NuestrasRaicesClient({ fetchedContent }) {
   );
 }
 
-function QuienesSomos({ valores, lineaDelTiempo, info }) {
+function QuienesSomos({ valores, lineaDelTiempo, info, video }) {
   return (
     <>
       <section className={styles.quienesSomosWrapper}>
@@ -188,7 +190,7 @@ function QuienesSomos({ valores, lineaDelTiempo, info }) {
             <p>{info.quienesTexto}</p>
           </div>
           <video autoPlay muted loop controls>
-            <source src="/videos/quienesSomos.mp4" type="video/mp4" />
+            <source src={video} type="video/mp4" />
           </video>
         </article>
 
@@ -444,7 +446,7 @@ function Tecnologias({ info }) {
   );
 }
 
-function Revolucion({ items, info }) {
+function Revolucion({ items, info, video }) {
   return (
     <section className={revolucionStyles.backgroundWrapper}>
       <video
@@ -455,7 +457,7 @@ function Revolucion({ items, info }) {
           objectFit: "cover",
         }}
       >
-        <source src="/videos/revolucionSustentable.mp4" type="video/mp4" />
+        <source src={video} type="video/mp4" />
       </video>
       <div className={revolucionStyles.floatingText}>
         <p>{info.texto}</p>

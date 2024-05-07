@@ -1,618 +1,83 @@
 [
   {
-    "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/isomatecmflex.png",
-    "title": "Feromonas ISOMATE CM Flex",
-    "text": "Feromona de confusión sexual para control de palomilla de manzana",
-    "description": "El dispensador de ISOMATE CM® Flex libera feromona sexual en el área a tratar para afectar la conducta normal del insecto, alterando sus receptores lo que ocasiona el fracaso de los machos en la localización de la hembra. Esto tiene como consecuencia que se evite la reproducción.",
-    "id": "Feromonas-ISOMATE-CM-Flex",
-    "tecnologias": [
-      "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ecca-carboxyIcon.png"
-    ],
-    "portada": "",
-    "comoFunciona": {
-      "titulo": "¿Cómo funciona?",
-      "descripcion": "La formulación de ácidos ECCA Carboxy® de este producto es capaz de aglutinar partículas del suelo, lo que disminuye la compactación y genera espacios para el agua y aire, permitiendo una buena estructura física del suelo. Estos cambios benefician el crecimiento de la raíz al generar condiciones de humedad y aireación, gracias al balance de macro y microporos producido por los agregados estables del suelo.",
-      "video": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/alianzas1.webm"
-    },
-    "beneficios": {
-      "title": "Beneficios del ISOMATE CM Flex",
-      "description": "ISOMATE CM Flex mejora el suelo al disminuir su compactación, lo que permite un mejor desarrollo radicular, un aprovechamiento eficiente del agua de riego o lluvia, y facilita su laboreo. Además de favorecer el desarrollo adecuado de bulbos y tubérculos para una mejor calidad en la cosecha.",
-      "items": [
-        {
-          "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/desarrollo-radicular.png",
-          "text": "Facilita el desarrollo redicular"
-        },
-        {
-          "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/desarrollo-radicular.png",
-          "text": "Mejor la infiltración del agua"
-        },
-        {
-          "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/desarrollo-radicular.png",
-          "text": "Evita la malformación de bulbos/tuberculos"
-        },
-        {
-          "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/desarrollo-radicular.png",
-          "text": "Facilita las labores de cosecha"
-        }
+    "header": {
+      "nuestrasRaices": "NUESTRAS RAÍCES",
+      "productos": "PRODUCTOS",
+      "solucionesPorCultivo": "SOLUCIONES POR CULTIVO",
+      "news": "INNOVAK NEWS",
+      "presencia": "PRESENCIA",
+      "contacto": "CONTACTO",
+      "paises": [
+        { "pais": "México", "code": "mxn" },
+        { "pais": "Brasil", "code": "bra" },
+        { "pais": "Colombia", "code": "col" },
+        { "pais": "Chile", "code": "chl" },
+        { "pais": "Perú", "code": "pe" },
+        { "pais": "Estados unidos", "code": "usa" },
+        { "pais": "Turquía", "code": "tur" },
+        { "pais": "Internacional", "code": "intl" }
       ]
     },
-    "especificaciones": {
-      "title": "Especificaciones de producto",
-      "description": "ISOMATE CM Flex se puede aplicar en todos los cultivos a través de sistemas de riego por goteo, aspersión, drench o por gravedad dirigido a la zona radicular. Se recomienda agitar el envase, medir la cantidad a aplicar en un recipiente graduado, verter en el tanque y agitar antes de inyectar en el segundo tercio del tiempo de riego. También se puede aplicar por gravedad, directamente en la toma de agua o diluido para una distribución uniforme en el terreno.",
-      "items": [
+    "footer": {
+      "imagen": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/logo_dark-1.png",
+      "avisoDePrivacidad": "© Copyright 2020 - 2023 Diseño hecho por Deadline | Todos los derechos Reservados",
+      "aviso": "Aviso de Privacidad",
+      "info": [
+        "+52 (614) 436 01 38",
+        "info@innovakglobal.com",
+        "Blvd. Vicente Lombardo Toledano #6615 Col. La Concordia C.P. 31375 Chihuahua, Chihuahua, México"
+      ],
+      "redes": [
         {
-          "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/goteo.png",
-          "text": "Riego por goteo"
+          "imagen": "http://wp.innovakglobal.com/wp-content/uploads/2024/05/facebook.091505b1-1.png",
+          "link": "https://www.facebook.com/InnovakGlobal"
         },
         {
-          "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/Group-2.png",
-          "text": "Drench"
+          "imagen": "http://wp.innovakglobal.com/wp-content/uploads/2024/05/instagram.bba31815-1.png",
+          "link": "https://www.instagram.com/innovakglobal/"
         },
         {
-          "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/Group-1.png",
-          "text": "Riego Rodado"
+          "imagen": "http://wp.innovakglobal.com/wp-content/uploads/2024/05/linkedin.fb786174-1.png",
+          "link": "https://www.linkedin.com/company/innovak-global-official/"
+        },
+        {
+          "imagen": "http://wp.innovakglobal.com/wp-content/uploads/2024/05/youtube.350f6458-1.png",
+          "link": "https://www.youtube.com/@innovakglobal50"
         }
+      ],
+      "links": [
+        {
+          "imagen": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/network.c9cf3de8-1.png",
+          "nombre": "+ORDEN",
+          "link": "https://masorden.com/"
+        },
+        {
+          "imagen": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/network.c9cf3de8-1.png",
+          "nombre": "SALESFORCE",
+          "link": "https://innovakglobal.my.salesforce.com/"
+        },
+        {
+          "imagen": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/network.c9cf3de8-1.png",
+          "nombre": "ITIS",
+          "link": "http://201.174.71.70/itisv2/index"
+        },
+        {
+          "imagen": "http://wp.innovakglobal.com/wp-content/uploads/2024/05/rastreo.56209dcd-1.png",
+          "nombre": "RASTREO DE EMBARQUES",
+          "link": "https://e10.innovakglobal.us/rastreo/iniciosesion"
+        }
+      ],
+      "pais": "PAIS",
+      "paises": [
+        { "pais": "México", "code": "mxn" },
+        { "pais": "Brasil", "code": "bra" },
+        { "pais": "Colombia", "code": "col" },
+        { "pais": "Chile", "code": "chl" },
+        { "pais": "Perú", "code": "pe" },
+        { "pais": "Estados unidos", "code": "usa" },
+        { "pais": "Turquía", "code": "tur" },
+        { "pais": "Internacional", "code": "intl" }
       ]
-    },
-    "ficha": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ISOMATE-CM-FLEX-V2.pdf"
-  },
-  {
-    "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/isomatehswflex.png",
-    "title": "Feromonas ISOMATE HSW Flex",
-    "text": "Feromona de confusión sexual para control de gusano barrenador del ruezno en nogal",
-    "description": "El dispensador de  ISOMATE HSW® Flex   libera feromona sexual en el área a tratar para afectar la conducta normal del insecto, alterando sus receptores lo que ocasiona el fracaso de los machos en la localización de la hembra. Esto tiene como consecuencia que se evite la reproducción.",
-    "id": "Feromonas-ISOMATE-HSW-Flex",
-    "tecnologias": [
-      "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ecca-carboxyIcon.png"
-    ]
-  },
-  {
-    "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/biocinnafol.png",
-    "title": "Biocinnafol",
-    "text": "Acaricida y fungicida biorracional",
-    "description": "Biocinnafol® es una formulación para el control de plagas y enfermedades. Es activo frente a un amplio numero de especies de hongos y ácaros. Presenta un excelente efecto de choque y una fuerte actividad erradicante. Su múltiple modo de acción permite el control eficaz de las plagas por el reblandecimiento del exoesqueleto,  deshidratación e interferencia bioquímica; al tiempo frena la propagación de las enfermedades, provocando la disrupción de la membrana celular de los hongos.",
-    "id": "Biocinnafol",
-    "portada": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/Biocinnafol-A.png",
-    "tecnologias": [
-      "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ecca-carboxyIcon.png"
-    ],
-    "ficha": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/BIOCINNAFOL-MX-V2.pdf"
-  },
-  {
-    "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/biocrifol.png",
-    "title": "Biocrifol",
-    "text": "Insecticida biorracional",
-    "description": "Biocrifol® contiene un efecto de choque: El efecto knock down presenta grandes ventajas a la hora de disminuir ataques fuertes de insectos plaga. Se bloquean los canales de sodio y potasio con los que se producen alteraciones en la trasmisión del impulso nervioso y las especies tratadas muestran reacciones de hiperactividad y movimientos anormales.",
-    "id": "Biocrifol",
-    "tecnologias": [
-      "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ecca-carboxyIcon.png"
-    ],
-    "portada": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/Biocrifol-A.png"
-  },
-  {
-    "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/preventup.png",
-    "title": "Prevent Up",
-    "text": "Fungicida biorracional preventivo",
-    "description": "Prevent UP® contiene ácidos orgánicos del tipo aromático que inducen la actividad de proteínas relacionadas a la resistencia de ataque por agentes patógenos; aumentando la capacidad de defensa de los cultivos.",
-    "id": "Prevent-Up",
-    "tecnologias": [
-      "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ecca-carboxyIcon.png"
-    ]
-  },
-  {
-    "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/rhizotx.png",
-    "title": "Rhizo TX",
-    "text": "Consorcio microbiano y biofungicida preventivo de enfermedades radiculares",
-    "description": "Rhizo TX® es un consorcio microbiano que coloniza eficientemente la rizosfera, protegiéndo la raíz del ataque de hongos fitopatógenos persistentes no fácilmente manejables con agroquímicos. Su formulación contiene ExuRoot®, potencializando la colonización rápida de los microorganismos benéficos, beneficiando en la protección y sanidad radicular.",
-    "id": "Rhizo-TX",
-    "tecnologias": [
-      "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ecca-carboxyIcon.png"
-    ],
-    "portada": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/Rhizo-TX-A.png"
-  },
-  {
-    "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/Bestcure-A.png",
-    "title": "Best Cure",
-    "text": "Fungicida - Bactericida Orgánico y Activador de las Defensas Naturales de la Planta",
-    "description": "Bestcure® es un fungicida-bactericida orgánico y actividador de las defensas naturales de la planta con una formulación basada en extractos de rutáceas (citrus reticulata y citrus aurantium), rico en ácidos orgánicos y bioflavonoides. Es una herramienta sostenible para el medio ambiente, mantiene la actividad de la dauna auxiliar, libre de residualidad  y sin plazo de seguridad.",
-    "id": "Best-Cure",
-    "portada": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/Bestcure-A.png",
-    "tecnologias": [
-      "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ecca-carboxyIcon.png"
-    ],
-    "ficha": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/BESTCURE-MX-V2.pdf"
-  },
-  {
-    "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/cuvrekdp.png",
-    "title": "Cuvrek DP",
-    "text": "Fungicida y bactericida biorracional de amplio espectro",
-    "description": "Los iones de cobre en el hidróxido de cobre detienen la germinación de esporas de hongos y matan bacterias, protegiendo a las plantas de infecciones. Estos iones, disueltos en la película del agua son transportados al sitio de infección de la espora o bacterias, donde pueden ser absorbidos a través de la membrana celular. Una vez dentro de la célula, los iones de cobre destruyen la capacidad de funcionamiento de muchas enzimas. Este efecto de multisitio dificulta a los hongos el desarrollo de resistencia a fungicidas cúpricos. Sin estas enzimas, las esporas no germinan y las bacterias mueren.",
-    "id": "Cuvrek-DP",
-    "tecnologias": [
-      "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ecca-carboxyIcon.png"
-    ]
-  },
-  {
-    "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/tkroot.png",
-    "title": "TkRoot",
-    "text": "Fungicida y bactericida biorracional de amplio espectro",
-    "description": "TK Root® es una formulación que contiene ExuRoot® como ingrediente activo que favorece a la exudación radicular y al establecimiento de los hongos benéficos del género Trichoderma. en la rizosfera. Los hongos contenidos en TK Root® compiten por espacio y alimento, generan una antibiosis contra los hongos fitopatógenos evitando la infección de la raíz; así mismo, ayudan a la generación de raíces sanas que fortalecen al cultivo para tolerar el ataque de hongos fitopatógenos.",
-    "id": "TkRoot",
-    "tecnologias": [
-      "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ecca-carboxyIcon.png"
-    ],
-    "portada": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/TKroot-A.png"
-  },
-  {
-    "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/rhizobaccombi.png",
-    "title": "Rhizobac Combi",
-    "text": "Fungicida biorracional preventivo contra enfermedades radiculares",
-    "description": "Esta formulación contiene ExuRoot® como ingrediente activo que favorece a la exudación radicular y al establecimiento de las bacterias benéficas de Rhizobac Combi en la rizosfera. Las bacterias del género Bacillus (B.cereus var.mycoides, B.megaterium y B. Subtilis) compiten por espacio y alimento, generan una antibiosis contra los hongos fitopatógenos evitando la infección de la raíz; así mismo, generan raíces sanas que fortalecen al cultivo para tolerar el ataque de hongos fitopatógenos.",
-    "id": "Rhizobac-Combi",
-    "tecnologias": [],
-    "portada": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/Rhizobac-Combi-A.png"
-  },
-  {
-    "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/nemaroot.png",
-    "title": "NemaRoot",
-    "text": "Nematicida biorracional",
-    "description": "NemaRoot®  es un Nematicida Biorracional formulado a base de conidios del hongo  Paecilomyces lilacinus,  que actua parasitando huevecillos, juveniles, adultos y quistes de nematodos. Nemaroot® contiene Exuroot® que  induce la exudacion de compuestos que favorecen la colonización del hongo paecilomyces lilacinus y de otros microorganismos beneficos nativos que estimulan el desarrollo, actividad y sanidad radicular.",
-    "id": "NemaRoot",
-    "tecnologias": [
-      "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ecca-carboxyIcon.png"
-    ],
-    "portada": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/Nemaroot-A.png"
-  },
-  {
-    "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/medalk.png",
-    "title": "Medal",
-    "text": "Traslocador y surfactante",
-    "description": "Medal® es una formulación a base de ácidos ECCA Carboxy® que, debido a su acción tensoactiva, humecta una mayor área superficial del tejido de la planta o plaga y la acción traslocadora de los ácidos ECCA Carboxy® de su formulación, favorece el movimiento de los ingredientes activos en los tejidos de conducción. Para mejores resultados, se recomienda incluir en las soluciones de aspersión otros aditivos de diferente acción, como buferizante o adherente según se necesite.",
-    "id": "Medal",
-    "tecnologias": [
-      "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ecca-carboxyIcon.png"
-    ],
-    "portada": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/Medal-A.png",
-    "ficha": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/MEDAL-MX-V2.pdf"
-  },
-  {
-    "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/atpup.png",
-    "title": "ATP Up",
-    "text": "Antiestresante",
-    "description": "ATP UP® es una formulación a base de ácidos ECCA Carboxy® nitrógeno y fósforo que promueve la recuperación y el restablecimiento del metabolismo en los cultivos sometidos a estrés (calor, sequía, toxicidad, baja luminosidad o baja temperatura) de manera rápida y prolongada.",
-    "id": "ATP-Up",
-    "tecnologias": [
-      "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ecca-carboxyIcon.png"
-    ],
-    "portada": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ATP-UP-A.png",
-    "ficha": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ATP-UP-MX-V2.pdf"
-  },
-  {
-    "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/balox.png",
-    "title": "Balox",
-    "text": "Bioestimulante contra el estrés salino",
-    "description": "Contiene ingredientes activos que influyen en el metabolismo de la planta, provocando un incremento en la biosíntesis de ciclitoles específicos que actúan como solutos compatibles para regular los potenciales osmóticos dentro de las células de la raíz y de la planta, que confieren tolerancia al estrés salino.",
-    "id": "Balox",
-    "tecnologias": [
-      "http://wp.innovakglobal.com/wp-content/uploads/2024/04/pfenergyIcon.png"
-    ],
-    "portada": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/Balox-A.png",
-    "ficha": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/BALOX-MX-V3.pdf"
-  },
-  {
-    "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/biofitrtu.png",
-    "title": "Biofit Rtu",
-    "text": "Bioestimulante de la Actividad Rizosférica",
-    "description": "Biofit® RTU es un bioestimulante que potencializa la Actividad Rizosférica, ayudando a la recuperación y preservación de la fertilidad biológica en suelos agotados de manera integral. Dentro de su formulación contiene gran diversidad de microorganismos benéficos  que permiten optimizar la nutrición y desarrollo, favoreciendo la salud de las plantas desde la raíz.",
-    "id": "Biofit-Rtu",
-    "tecnologias": [
-      "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ecca-carboxyIcon.png"
-    ],
-    "portada": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/Biofit-RTU-A.png",
-    "ficha": ""
-  },
-  {
-    "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/brotstart.png",
-    "title": "Brot Start",
-    "text": "Bioestimulante inductor de brotación",
-    "description": "Biofit® RTU es un bioestimulante que potencializa la Actividad Rizosférica, ayudando a la recuperación y preservación de la fertilidad biológica en suelos agotados de manera integral. Dentro de su formulación contiene gran diversidad de microorganismos benéficos  que permiten optimizar la nutrición y desarrollo, favoreciendo la salud de las plantas desde la raíz.",
-    "id": "Brot-Start",
-    "tecnologias": [
-      "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ecca-carboxyIcon.png"
-    ],
-    "portada": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/Brotstart-A.png",
-    "ficha": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/BROT-START-MX-V2.pdf"
-  },
-  {
-    "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/carboxyl.png",
-    "title": "Carboxy L",
-    "text": "Bioestimulante para traslocar azúcares",
-    "description": "Carboxy® L es una formulación a base ácido ECCA Carboxy®, que provoca una mayor eficiencia en la translocación de fotosintatos hacia los frutos y órganos de almacenamiento, logrando incrementar la concentración de grados brix, acumulación de reservas. Además, puede utilizarse como madurante de caña de azúcar.",
-    "id": "Carboxy-L",
-    "tecnologias": [
-      "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ecca-carboxyIcon.png"
-    ],
-    "portada": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/Carboxy-L-A.png",
-    "ficha": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/CARBOXY-L-MX-V2.pdf"
-  },
-  {
-    "image": "N/D",
-    "title": "Haddak Plus",
-    "text": "Preventivo y corrector de estrés",
-    "description": "HADDAK® contiene e induce la síntesis de polifenoles que protegen contra el estrés oxidativo. Así mismo, contiene glicina betaína que protege contra el estrés osmótico. Esto permite evitar o restablecer el metabolismo afectado por factores estresantes.",
-    "id": "Haddak-Plus",
-    "tecnologias": [
-      "http://wp.innovakglobal.com/wp-content/uploads/2024/04/pfenergyIcon.png"
-    ],
-    "portada": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/Haddak-A.png",
-    "ficha": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/HADDAK-MX-V3.pdf"
-  },
-  {
-    "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/radigrow.png",
-    "title": "Radigrow",
-    "text": "Enraizador",
-    "description": "Es una formulación a base de ácidos ECCA Carboxy® que estimulan el crecimiento de raíces por periodos prolongados sin restricciones para su desempeño, de manera segura en cualquier etapa fenológica del cultivo.",
-    "id": "Radigrow",
-    "tecnologias": [
-      "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ecca-carboxyIcon.png"
-    ],
-    "portada": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/Radigrow-A.png",
-    "ficha": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/RADIGROW-MX-V3.pdf"
-  },
-  {
-    "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/radigrowg.png",
-    "title": "Radigrow G",
-    "text": "Enraizador",
-    "description": "Es una formulación a base de ácidos ECCA Carboxy® que estimulan el crecimiento de raíces por periodos prolongados sin restricciones para su desempeño, de manera segura en cualquier etapa fenológica del cultivo.",
-    "id": "Radigrow-G",
-    "tecnologias": [
-      "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ecca-carboxyIcon.png"
-    ],
-    "portada": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/Radigrow-G.png",
-    "ficha": ""
-  },
-  {
-    "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/mycoroot.png",
-    "title": "Mycoroot",
-    "text": "Bioestimulante inductor de Micorrizas",
-    "description": "Es una formulación a base de ácidos ECCA Carboxy® que estimulan el crecimiento de raíces por periodos prolongados sin restricciones para su desempeño, de manera segura en cualquier etapa fenológica del cultivo.",
-    "id": "Mycoroot",
-    "tecnologias": [
-      "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ecca-carboxyIcon.png"
-    ],
-    "portada": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/Mycoroot-A.png",
-    "ficha": ""
-  },
-  {
-    "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/nutrisorbg.png",
-    "title": "Nutrisorb G",
-    "text": "Bioestimulante granulado para la asimilación de nutrientes",
-    "description": "",
-    "id": "Nutrisorb-G",
-    "tecnologias": [
-      "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ecca-carboxyIcon.png"
-    ],
-    "portada": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/Nutrisorb-G.png",
-    "ficha": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/NUTRISORB-G-MX-V2.pdf"
-  },
-  {
-    "image": "N/D",
-    "title": "Nutrisorb XL",
-    "text": "",
-    "description": "",
-    "id": "Nutrisorb-XL",
-    "tecnologias": [
-      "http://wp.innovakglobal.com/wp-content/uploads/2024/04/pfenergyIcon.png"
-    ],
-    "portada": "",
-    "ficha": ""
-  },
-  {
-    "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/nutrisorbl.png",
-    "title": "Nutrisorb L",
-    "text": "Bioestimulante para la asimilación de nutrientes",
-    "description": "Es una formulación a base de ácidos ECCA Carboxy® que actúa sobre la actividad y longevidad de la raíz, potencializando el proceso de absorción de nutrientes, obteniendo como resultado la mayor extracción de nutrientes de la solución del suelo y como consecuencia un mejor desarrollo y rendimiento del cultivo.",
-    "id": "Nutrisorb-L",
-    "tecnologias": [
-      "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ecca-carboxyIcon.png"
-    ],
-    "portada": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/Nutrisorb-L-A.png",
-    "ficha": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/NUTRISORB-L-MX-V2.pdf"
-  },
-  {
-    "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/packhard.png",
-    "title": "Packhard",
-    "text": "Bioestimulante para calidad y vida en postcosecha",
-    "description": "Packhard® es una formulación a base de ácidos ECCA Carboxy®, que colabora a la producción de frutos de alto valor económico por sus características organolépticas (firmeza, color, sabor, brillo), larga vida de anaquel y baja incidencia de enfermedades de poscosecha.",
-    "id": "Packhard",
-    "tecnologias": [
-      "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ecca-carboxyIcon.png"
-    ],
-    "portada": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/PackHard-A.png",
-    "ficha": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/PACKHARD-MX-V2.pdf"
-  },
-  {
-    "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/selectoxl.png",
-    "title": "Selecto XL",
-    "text": "Bioestimulante para el amarre y tamaño de frutos",
-    "description": "Selecto XL® Actúa en el metabolismo de la planta estimulando los procesos de desarrollo y tamaño de frutos, incrementando su valor económico y proporción de fruta cosechable. Además, retrasa la senescencia del cultivo.",
-    "id": "Selecto-XL",
-    "tecnologias": [
-      "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ecca-carboxyIcon.png"
-    ],
-    "portada": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/Selecto-XL-A.png",
-    "ficha": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/SELECTO-XL-MX-V3.pdf"
-  },
-  {
-    "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/vernum.png",
-    "title": "Vernum",
-    "text": "Bioestimulante inductor de floración",
-    "description": "Vernum® Induce la floración, lo que permite un desarrollo del frutal mas uniforme facilitando su manejo; así mismo, favorece a un desarrollo vegetativo y fructífero mas equilibrado. Esta formulación aporta los nutrientes clave para el proceso de reactivación de las yemas, así como coadyuvantes que facilitan el ingreso y aumenta la biodisponibilidad de los mismo en los sitios especificos de acción que inducen la floración y fortalecen el desarrollo inicial de los brotes.",
-    "id": "Vernum",
-    "tecnologias": [
-      "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ecca-carboxyIcon.png"
-    ],
-    "portada": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/Vernum-A.png",
-    "ficha": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/VERNUM-MX-2022.pdf"
-  },
-  {
-    "image": "N/D",
-    "title": "Algak",
-    "text": "Extracto de Algas Marinas (Ascophyllum nodosum)",
-    "description": "Algak® es un bioestimulante formulado 100% en base a extractos de algas marinas de aguas frías (Ascophyllum nodosum), que promueve la síntesis natural de hormonas (citoquininas y auxina), osmoprotectores, elicitores y agentes complejantes/quelatantes.",
-    "id": "Algak",
-    "tecnologias": [],
-    "portada": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/Algak-A.png",
-    "ficha": ""
-  },
-  {
-    "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/tseminus.png",
-    "title": "Tseminus",
-    "text": "Bioestimulante para tratamiento a semilla",
-    "description": "Favorece el establecimiento y vigor en las etapas tempranas de desarrollo de la planta, para lograr un mejor desempeño de la raíz e incrementar la actividad microbiológica y mejorar el ambiente rizosférico.",
-    "id": "Tseminus",
-    "tecnologias": [
-      "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ecca-carboxyIcon.png"
-    ],
-    "portada": "",
-    "ficha": ""
-  },
-  {
-    "image": "N/D",
-    "title": "Enerboost",
-    "text": "Bioestimulante a base de aminoácidos de origen vegetal",
-    "description": "ENERBoost® beneficia el desarrollo de los cultivos, a través del aporte de aminoácidos, macro y micro elementos.",
-    "id": "Enerboost",
-    "tecnologias": [],
-    "portada": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/Enerboost-A.png",
-    "ficha": ""
-  },
-  {
-    "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/exuroot.png",
-    "title": "Exu-Root",
-    "text": "Bioestimulante Inductor de Exudados Radiculares",
-    "description": "Asegura la buena respuesta de las formulaciones de microorganismos benéficos, debido a que optimiza el funcionamiento de la raíz, induciendo la exudación de compuestos que actúan como señalizadores en la rizosfera.",
-    "id": "Exu-Root",
-    "tecnologias": [
-      "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ecca-carboxyIcon.png"
-    ],
-    "portada": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ExuRoot-A.png",
-    "ficha": ""
-  },
-  {
-    "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/brixup.png",
-    "title": "Brix Up",
-    "text": "Bioestimulante para aumentar grados brix",
-    "description": "Asegura la buena respuesta de las formulaciones de microorganismos benéficos, debido a que optimiza el funcionamiento de la raíz, induciendo la exudación de compuestos que actúan como señalizadores en la rizosfera.",
-    "id": "Brix-Up",
-    "tecnologias": [
-      "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ecca-carboxyIcon.png"
-    ],
-    "portada": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/BrixUp-A.png",
-    "ficha": ""
-  },
-  {
-    "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/carboxyk.png",
-    "title": "Carboxy K",
-    "text": "Aportador de K de alta asimilación",
-    "description": "Carboxy K® Cuenta con ácidos ECCA Carboxy® tipo alifáticos en su formulación, los cuales favorecen un eficaz flujo de potasio, a nivel translaminar y por tejidos de conducción hacia los sitios de demanda, provocando una respuesta rápida en calibre, color y maduración de los frutos.",
-    "id": "Carboxy-K",
-    "tecnologias": [
-      "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ecca-carboxyIcon.png"
-    ],
-    "portada": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/Carboxy-K-A.png",
-    "ficha": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/CARBOXY-K-MX-V2.pdf"
-  },
-  {
-    "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/carboxyca.png",
-    "title": "Carboxy Ca",
-    "text": "Aportador de Ca de alta asimilación",
-    "description": "Carboxy Ca® Cuenta con ácidos ECCA Carboxy® tipo alifáticos en su formulación, los cuales forman quelatos de estabilidad media con el Calcio; es decir, lo protegen de las barreras de la cutícula y epidermis de la hoja o fruto, permitiendo su fácil flujo a través de los tejidos de conducción y eficaz ingreso a las células demandantes.",
-    "id": "Carboxy-Ca",
-    "tecnologias": [
-      "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ecca-carboxyIcon.png"
-    ],
-    "portada": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/Carboxy-Ca-A.png",
-    "ficha": ""
-  },
-  {
-    "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/carboxyminl.png",
-    "title": "Carboxy Min L",
-    "text": "Aportador de micronutrientes de alta asimilación",
-    "description": "Carboxy MIN-L® Los ácidos ECCA Carboxy® de tipo alifáticos contenidos en la 1formulación forman quelatos de estabilidad intermedia con micronutrientes, es decir, los protege de las barreras de la cutícula y epidermis de la hoja o fruto, permitiendo su fácil flujo a través de los tejidos de conducción y eficaz ingreso a las células demandantes.",
-    "id": "Carboxy-Min-L",
-    "tecnologias": [
-      "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ecca-carboxyIcon.png"
-    ],
-    "portada": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/Carboxy-Min-L-A.png",
-    "ficha": ""
-  },
-  {
-    "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/proquelatemn.png",
-    "title": "Proquelate Mn",
-    "text": "Aportador de Mn de alta de asimilación",
-    "description": "Proquelate Mn® previene y corrige desórdenes nutricionales ocasionados por deficiencias de manganeso. Su formulación protege el Mn de las barreras de la cutícula y epidermis de la hoja o fruto permitiendo su fácil flujo a través de los tejidos de conducción y eficaz ingreso a las células demandantes.",
-    "id": "Proquelate-Mn",
-    "tecnologias": [
-      "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ecca-carboxyIcon.png"
-    ],
-    "portada": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/Proquelate-Mn-A.png",
-    "ficha": ""
-  },
-  {
-    "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/proquelatezn.png",
-    "title": "Proquelate Zn",
-    "text": "Aportador de Zn de alta de asimilación",
-    "description": "Proquelate Zn® cuenta con ácidos ECCA Carboxy® tipo alifáticos en su formulación, los cuales forman quelatos de estabilidad media con el Zn, es decir, lo protege de las barreras de la cutícula y epidermis de la hoja o fruto permitiendo su fácil flujo a través de los tejidos de conducción y eficaz ingreso a las células demandantes.",
-    "id": "Proquelate-Zn",
-    "tecnologias": [
-      "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ecca-carboxyIcon.png"
-    ],
-    "portada": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/proquelate-Zn-A.png",
-    "ficha": ""
-  },
-  {
-    "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/proquelatemg.png",
-    "title": "Proquelate Mg",
-    "text": "Aportador de Mg de alta de asimilación",
-    "description": "Proquelate Mg® Los ácidos ECCA Carboxy® de tipo alifáticos contenidos en la formulación, forman quelatos con el Magnesio de estabilidad intermedia, es decir, lo protegen de las barreras de la cutícula y epidermis de la hoja o fruto permitiendo su fácil flujo a través de los tejidos de conducción y eficaz ingreso a las células demandantes.",
-    "id": "Proquelate-Mg",
-    "tecnologias": [
-      "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ecca-carboxyIcon.png"
-    ],
-    "portada": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/proquelate-Mg-A.png",
-    "ficha": ""
-  },
-  {
-    "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/proquelatefe.png",
-    "title": "Proquelate Fe",
-    "text": "Aportador de Fe de alta de asimilación",
-    "description": "Proquelate Fe® Los ácidos ECCA Carboxy® de tipo alifáticos contenidos en la formulación, forman quelatos con el Fierro de estabilidad intermedia, es decir, lo protegen de las barreras de la cutícula y epidermis de la hoja o fruto permitiendo su fácil flujo a través de los tejidos de conducción y eficaz ingreso a las células demandantes.",
-    "id": "Proquelate-Fe",
-    "tecnologias": [
-      "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ecca-carboxyIcon.png"
-    ],
-    "portada": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/Proquelate-Fe-A.png",
-    "ficha": ""
-  },
-  {
-    "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/carboxyfe.png",
-    "title": "Carboxy Fe",
-    "text": "Fierro quelatado para uso de fertirrigación",
-    "description": "Carboxy® Fe contiene extractos ECCA Carboxy® y Fierro quelatado, que le permite permanecer en solución bajo condiciones extremas de pH. Además, pueden ser translocados en forma quelatada por los tejidos de conducción de la planta, aportando eficazmente la máxima cantidad de nutrientes en el tejido que lo demanda.",
-    "id": "Carboxy-Fe",
-    "tecnologias": [
-      "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ecca-carboxyIcon.png"
-    ],
-    "portada": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/Carboxy-Fe-A.png",
-    "ficha": ""
-  },
-  {
-    "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/carboxymicro.png",
-    "title": "Carboxy Micro",
-    "text": "Micronutrientes quelatados para uso en fertigación",
-    "description": "Carboxy® Micro contiene extractos ECCA Carboxy® y micronutrientes quelatados, que le permite permanecer en solución bajo condiciones extremas de pH. Además pueden ser translocados en forma quelatada por los tejidos de conducción de la planta, aportando eficazmente la máxima cantidad de nutrientes en el tejido que lo demanda.",
-    "id": "Carboxy-Micro",
-    "tecnologias": [
-      "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ecca-carboxyIcon.png"
-    ],
-    "portada": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/Carboxy-Micro-A.png",
-    "ficha": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/CARBOXY-MICRO-MX-V2.pdf"
-  },
-  {
-    "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/carboxyzn.png",
-    "title": "Carboxy Zn",
-    "text": "Zinc quelatado para uso en fertirrigación",
-    "description": "Carboxy® Zn contiene extractos ECCA Carboxy® y Zinc quelatado, que le permiten permanecer en solución bajo condiciones extremas de pH. Además pueden ser translocados en forma quelatada por los tejidos de conducción de la planta, aportando eficazmente la máxima cantidad de nutrientes en el tejido que lo demanda.",
-    "id": "Carboxy-Zn",
-    "tecnologias": [
-      "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ecca-carboxyIcon.png"
-    ],
-    "portada": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/Carboxy-Zn-A.png",
-    "ficha": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/CARBOXY-Zn-MX-V2.pdf"
-  },
-  {
-    "image": "N/D",
-    "title": "Nutrimak+ Antisenescencia",
-    "text": "Retarda la maduración de frutos",
-    "description": "Es una formulación que previene y corrige desordenes nutricionales ocasionados por deficiencia de Cobalto y Molibdeno y retarda la maduración de los frutos.",
-    "id": "Nutrimak+-Antisenescencia",
-    "tecnologias": [
-      "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ecca-carboxyIcon.png"
-    ],
-    "portada": "",
-    "ficha": ""
-  },
-  {
-    "image": "N/D",
-    "title": "Nutrimak+ Corrector",
-    "text": "Mejora la capacidad fotosintética",
-    "description": "Es una formulación que previene y corrige desordenes nutricionales ocasionados por deficiencia de Magnesio, Hierro y Zinc favoreciendo la fusión fotosintética.",
-    "id": "Nutrimak+-Corrector",
-    "tecnologias": [
-      "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ecca-carboxyIcon.png"
-    ],
-    "portada": "",
-    "ficha": ""
-  },
-  {
-    "image": "N/D",
-    "title": "Nutrimak+ Desarrollo",
-    "text": "Mejora el metabolismo del nitrógeno y desarrollo vegetativo",
-    "description": "Es una formulación que previene y corrige desordenes nutricionales ocasionados por deficiencia de Boro, Zinc y Molibdeno, favoreciendo un desarrollo vegetativo equilibrado.",
-    "id": "Nutrimak+-Desarrollo",
-    "tecnologias": [
-      "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ecca-carboxyIcon.png"
-    ],
-    "portada": "",
-    "ficha": ""
-  },
-  {
-    "image": "N/D",
-    "title": "Nutrimak+ Vigor",
-    "text": "Traslocador de Azucares",
-    "description": "Es una formulación que previene y corrige desordenes nutricionales ocasionados por deficiencia de Boro y Molibdeno. Auxilia en la traslocación de azucares a frutos y órganos de reserva.",
-    "id": "Nutrimak+-Vigor",
-    "tecnologias": [
-      "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ecca-carboxyIcon.png"
-    ],
-    "portada": "",
-    "ficha": ""
-  },
-  {
-    "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/promesol5x.png",
-    "title": "Promesol 5X",
-    "text": "Acondicionador de suelos",
-    "description": "Promesol® 5X es una formulación a base de ácidos ECCA Carboxy® que genera una buena estructura fisica del suelo, mejora las condiciones de humedad y aireacion favoreciendo el crecimiento de la raiz.",
-    "id": "Promesol-5X",
-    "tecnologias": [
-      "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ecca-carboxyIcon.png"
-    ],
-    "portada": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/Promesol-5X-A.png",
-    "ficha": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/PROMESOL-5X-MX-V3.pdf"
-  },
-  {
-    "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/promesolca.png",
-    "title": "Promesol CA+",
-    "text": "Acondicionador de suelos",
-    "description": "Promesol® Ca+ es una formulación a base de extractos concentrados en cascarillas agrícolas ECCA Carboxy ® que auxilia en la protección del cultivo contra el estrés salino, genera una buena estructura física de suelo para favorecer el crecimiento de la raíz y las condiciones de humedad y aireación.",
-    "id": "Promesol-CA+",
-    "tecnologias": [
-      "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ecca-carboxyIcon.png"
-    ],
-    "portada": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/promesol-Ca-A.png",
-    "ficha": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/PROMESOL-CA-MX-V2.pdf"
-  },
-  {
-    "image": "http://wp.innovakglobal.com/wp-content/uploads/2024/04/promesolg.png",
-    "title": "Promesol G",
-    "text": "",
-    "description": "",
-    "id": "Promesol-CA+",
-    "tecnologias": [
-      "http://wp.innovakglobal.com/wp-content/uploads/2024/04/ecca-carboxyIcon.png"
-    ],
-    "portada": "",
-    "ficha": ""
+    }
   }
 ]

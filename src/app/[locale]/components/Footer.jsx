@@ -40,7 +40,7 @@ export default function FooterBody({ info }) {
             <Image src={darkLogo} alt="logo" />
             <div className={styles.separator}></div>
             <div className={styles.directions}>
-              {info.info.map((item, index) =>
+              {info?.info.map((item, index) =>
                 index === info.info.length - 1 ? (
                   <p
                     key={index}
@@ -59,7 +59,7 @@ export default function FooterBody({ info }) {
           </div>
           <div className={styles.footerLang}>
             <div className={styles.links}>
-              {info.links.map((item, index) => (
+              {info?.links.map((item, index) => (
                 <a href={item.link} target="_blank" key={index}>
                   <Image
                     alt="Innovak ícono"
@@ -72,7 +72,7 @@ export default function FooterBody({ info }) {
               ))}
             </div>
             <div className={styles.socialNetworks}>
-              {info.redes.map((item, index) => (
+              {info?.redes.map((item, index) => (
                 <a href={item.link} target="_blank" key={index}>
                   <Image
                     alt="Innovak ícono"
@@ -85,24 +85,24 @@ export default function FooterBody({ info }) {
             </div>
           </div>
           <div className={styles.footerLang}>
-            <h6>{info.pais}</h6>
-            {info.paises.map((item, index) => (
+            <h6>{info?.pais}</h6>
+            {info?.paises.map((item, index) => (
               <p key={index}>{item.pais}</p>
             ))}
           </div>
         </div>
         <div className={styles.footerBottomContainer}>
           <p>
-            {info.avisoDePrivacidad + " "}
+            {info?.avisoDePrivacidad + " "}
 
             <Link
               style={{
                 color: "white",
                 textDecoration: "underline",
               }}
-              href={`/${lang}/aviso-de-privacidad`}
+              href={`/${lang}/avisos-de-privacidad`}
             >
-              {info.aviso}
+              {info?.aviso}
             </Link>
           </p>
         </div>
