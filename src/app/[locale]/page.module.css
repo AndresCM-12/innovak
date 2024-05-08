@@ -49,6 +49,70 @@
   height: 100%;
 }
 
+.navUl li {
+  position: relative;
+}
+.navUl li:hover .menuWrapper {
+  display: flex;
+}
+.navUl li:hover .menuWrapper div {
+  display: flex;
+}
+.navUl li .menuWrapper {
+  display: none;
+  position: absolute;
+  top: 100%;
+  height: fit-content;
+  width: 200px;
+}
+/* Then we create a small triangule in the top left side of the container */
+.navUl li .menuWrapper::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 4px;
+  width: 0;
+  height: 0;
+  filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
+  border-left: 0px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 12px solid white;
+  z-index: -1;
+}
+
+.navUl li .menuWrapper div {
+  display: flex;
+  margin-top: 12px;
+  margin-left: 4px;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  row-gap: 10px;
+  padding: 16px;
+  padding-block: 16px;
+  text-align: left;
+  font-weight: bold;
+  filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
+}
+.navUl li .menuWrapper div span {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #89898982;
+  margin-top: 8px;
+}
+.navUl li .menuWrapper a {
+  font-size: 16px;
+  color: #00318d;
+}
+.navUl li .menuWrapper p {
+  display: block;
+  width: 100%;
+}
+
 .navUl li a {
   color: #000;
   text-decoration: none;

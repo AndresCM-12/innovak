@@ -139,9 +139,31 @@ function MobileMenu({ info, mobileMenu, setMobileMenu, currentLang }) {
               <a href={`/${currentLang}/nuestras-raices`}>
                 {info.nuestrasRaices}
               </a>
+              <div
+                style={{
+                  marginTop: "12px",
+                }}
+              >
+                {info.nuestrasRaicesOpciones?.map((opcion, index) => (
+                  <a key={index} href={`/${currentLang}${opcion.link}`}>
+                    - {opcion.opcion}
+                  </a>
+                ))}
+              </div>
             </li>
             <li>
               <a href={`/${currentLang}/productos`}>{info.productos}</a>
+              <div
+                style={{
+                  marginTop: "12px",
+                }}
+              >
+                {info.productosOpciones?.map((opcion, index) => (
+                  <a key={index} href={`/${currentLang}${opcion.link}`}>
+                    - {opcion.opcion}
+                  </a>
+                ))}
+              </div>
             </li>
             <li>
               <a href={`/${currentLang}/soluciones-por-cultivo`}>
@@ -150,15 +172,38 @@ function MobileMenu({ info, mobileMenu, setMobileMenu, currentLang }) {
             </li>
             <li>
               <a href={`/${currentLang}/innovak-news`}>{info.news}</a>
+              <div
+                style={{
+                  marginTop: "12px",
+                }}
+              >
+                {info.newsOpciones?.map((opcion, index) => (
+                  <a key={index} href={`/${currentLang}${opcion.link}`}>
+                    - {opcion.opcion}
+                  </a>
+                ))}
+              </div>
             </li>
             <li>
               <a href={`/${currentLang}/presencia`}>{info.presencia}</a>
             </li>
             <li>
               <a href={`/${currentLang}/contacto`}>{info.contacto}</a>
+              <div
+                style={{
+                  marginTop: "12px",
+                }}
+              >
+                {info.contactoOpciones?.map((opcion, index) => (
+                  <a key={index} href={`/${currentLang}${opcion.link}`}>
+                    - {opcion.opcion}
+                  </a>
+                ))}
+              </div>
             </li>
             <LocaleSwitch
               isMobile={true}
+              info={info}
               onClick={() => {
                 //stop the propagation of the event
                 event.stopPropagation();
@@ -184,6 +229,18 @@ function NavsLink({ info, menuScrolling, currentLang }) {
           >
             {info.nuestrasRaices}
           </a>
+          <div className={styles.menuWrapper}>
+            <div>
+              {info.nuestrasRaicesOpciones?.map((opcion, index) => (
+                <p key={index}>
+                  <a href={`/${currentLang}${opcion.link}`}>{opcion.opcion}</a>
+                  {index != info.nuestrasRaicesOpciones.length - 1 && (
+                    <span></span>
+                  )}
+                </p>
+              ))}
+            </div>
+          </div>
         </li>
         <li>
           <a
@@ -194,6 +251,16 @@ function NavsLink({ info, menuScrolling, currentLang }) {
           >
             {info.productos}
           </a>
+          <div className={styles.menuWrapper}>
+            <div>
+              {info.productosOpciones?.map((opcion, index) => (
+                <p key={index}>
+                  <a href={`/${currentLang}${opcion.link}`}>{opcion.opcion}</a>
+                  {index != info.productosOpciones.length - 1 && <span></span>}
+                </p>
+              ))}
+            </div>
+          </div>
         </li>
         <li>
           <a
@@ -214,6 +281,16 @@ function NavsLink({ info, menuScrolling, currentLang }) {
           >
             {info.news}
           </a>
+          <div className={styles.menuWrapper}>
+            <div>
+              {info.newsOpciones?.map((opcion, index) => (
+                <p key={index}>
+                  <a href={`/${currentLang}${opcion.link}`}>{opcion.opcion}</a>
+                  {index != info.newsOpciones.length - 1 && <span></span>}
+                </p>
+              ))}
+            </div>
+          </div>
         </li>
         <li>
           <a
@@ -234,6 +311,16 @@ function NavsLink({ info, menuScrolling, currentLang }) {
           >
             {info.contacto}
           </a>
+          <div className={styles.menuWrapper}>
+            <div>
+              {info.contactoOpciones?.map((opcion, index) => (
+                <p key={index}>
+                  <a href={`/${currentLang}${opcion.link}`}>{opcion.opcion}</a>
+                  {index != info.contactoOpciones.length - 1 && <span></span>}
+                </p>
+              ))}
+            </div>
+          </div>
         </li>
       </ul>
     </nav>
