@@ -180,6 +180,16 @@ function NavsLink({ info, menuScrolling, currentLang }) {
             style={{
               color: !menuScrolling ? "#FFFFFF" : "#000000",
             }}
+            href={`/${currentLang}/nuestras-raices`}
+          >
+            {info.nuestrasRaices}
+          </a>
+        </li>
+        <li>
+          <a
+            style={{
+              color: !menuScrolling ? "#FFFFFF" : "#000000",
+            }}
             href={`/${currentLang}/productos`}
           >
             {info.productos}

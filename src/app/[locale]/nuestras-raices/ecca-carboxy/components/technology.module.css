@@ -42,6 +42,13 @@
   left: 50%;
   transform: translateX(-50%);
 }
+.bgImage .floating {
+  position: absolute;
+  bottom: 46%;
+  left: 50%;
+  transform: translate(-50%, 46%);
+  z-index: 1;
+}
 .bgImage img {
   width: 100%;
   height: 100%;
@@ -138,7 +145,7 @@
   display: none;
 }
 
-@media screen and (max-width: 771px) {
+@media screen and (max-width: 971px) {
   .bgWrapper {
     width: 100%;
     height: fit-content;
@@ -179,6 +186,13 @@
     transform: translateX(-50%);
     position: relative;
     display: block;
+  }
+  .bgImageMobile .floating {
+    position: absolute;
+    bottom: 90%;
+    left: 50%;
+    transform: translate(-50%, 90%);
+    z-index: 1;
   }
   .bgImageMobile img {
     width: 100%;

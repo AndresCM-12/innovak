@@ -17,9 +17,9 @@ const futura = localFont({
   variable: "--font-futura",
 });
 
-export default function Technologyclient({ texts }) {
+export default function Technologyclient({ info }) {
   const [lang, setLang] = useState("mxn");
-
+  console.log(info);
   useEffect(() => {
     const locale = document.cookie
       .split(";")
@@ -104,10 +104,15 @@ export default function Technologyclient({ texts }) {
         `}
       </style>
       <article className={styles.bgWrapper}>
-        <Image src={imageIcon} width={300} alt="pfenergy icon" />
-        <h3>La evolución en bioestiumulantes</h3>
+        <Image
+          src={info.header.imagen}
+          width={300}
+          height={180}
+          alt="pfenergy icon"
+        />
+        <h3>{info.header.texto}</h3>
         <div className={styles.featureWrapper}>
-          {featureInfo.map((feature, index) => (
+          {info.featureInfo.map((feature, index) => (
             <div
               key={index}
               className={styles.feature}
@@ -125,10 +130,10 @@ export default function Technologyclient({ texts }) {
           ))}
         </div>
         <div className={styles.bgImageMobile}>
-          <Image src={imageBg} alt="bg" />
+          <img src={info.header.bg} alt="bg" />
         </div>
         <div className={styles.callsToActionWrapper}>
-          {callsToAction.map((element) => (
+          {info.callsToAction.map((element) => (
             <div className={styles.callToAction} data-side={element.side}>
               <h4>{element.title}</h4>
               {/* <p>Ver más</p> */}
@@ -136,7 +141,7 @@ export default function Technologyclient({ texts }) {
           ))}
         </div>
         <div className={styles.bgImage}>
-          <Image src={imageBg} alt="bg" />
+          <img src={info.header.bg} alt="bg" />
         </div>
       </article>
       {/* Dynamic Header */}
