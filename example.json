@@ -60,14 +60,46 @@
         }
       ],
       "paises": [
-        { "pais": "México", "code": "mxn" },
-        { "pais": "Brasil", "code": "bra" },
-        { "pais": "Colombia", "code": "col" },
-        { "pais": "Chile", "code": "chl" },
-        { "pais": "Perú", "code": "pe" },
-        { "pais": "Estados unidos", "code": "usa" },
-        { "pais": "Turquía", "code": "tur" },
-        { "pais": "Internacional", "code": "intl" }
+        {
+          "pais": "México",
+          "code": "mxn",
+          "flag": "http://wp.innovakglobal.com/wp-content/uploads/2024/05/Frame-27.png"
+        },
+        {
+          "pais": "Brasil",
+          "code": "bra",
+          "flag": "http://wp.innovakglobal.com/wp-content/uploads/2024/05/Frame-26.png"
+        },
+        {
+          "pais": "Colombia",
+          "code": "col",
+          "flag": "http://wp.innovakglobal.com/wp-content/uploads/2024/05/Frame-25.png"
+        },
+        {
+          "pais": "Chile",
+          "code": "chl",
+          "flag": "http://wp.innovakglobal.com/wp-content/uploads/2024/05/Frame-24.png"
+        },
+        {
+          "pais": "Perú",
+          "code": "pe",
+          "flag": "http://wp.innovakglobal.com/wp-content/uploads/2024/05/Frame-23.png"
+        },
+        {
+          "pais": "Estados unidos",
+          "code": "usa",
+          "flag": "http://wp.innovakglobal.com/wp-content/uploads/2024/05/Frame-22.png"
+        },
+        {
+          "pais": "Turquía",
+          "code": "tur",
+          "flag": "http://wp.innovakglobal.com/wp-content/uploads/2024/05/Frame-21.png"
+        },
+        {
+          "pais": "Internacional",
+          "code": "intl",
+          "flag": "http://wp.innovakglobal.com/wp-content/uploads/2024/05/Frame-28.png"
+        }
       ]
     },
     "footer": {

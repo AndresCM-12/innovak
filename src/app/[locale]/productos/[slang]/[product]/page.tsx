@@ -1,9 +1,27 @@
+import { Metadata } from "next";
 import { WORDPRESS_API_URL } from "../../../constants/constants";
 import Promesol from "./page-client";
 
+export async function generateMetadata({ params }) {
+  const metaData: Metadata = {
+    title: "Innovak Global - Detalles de Productos",
+    description:
+      "En Innovak Global desarrollamos y comercializamos productos biorracionales y tecnologías diferenciadas en la agricultura para contribuir a una naturaleza sustentable.",
+    robots: "index, follow",
+    openGraph: {
+      type: "website",
+      url: "https://innovakglobal.com/productos/",
+      siteName: "Innovak Global",
+      title: "Innovak Global",
+      description:
+        "En Innovak Global desarrollamos y comercializamos productos biorracionales y tecnologías diferenciadas en la agricultura para contribuir a una naturaleza sustentable.",
+    },
+  };
+  return metaData;
+}
+
 export default async function HomeProduct({ params }) {
   const locale = params.locale;
-  console.log("locale: ", locale);
   const products = await getProducts(locale);
 
   return <section>{<Promesol products={products} />}</section>;

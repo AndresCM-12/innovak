@@ -93,8 +93,8 @@ export default function FooterBody({ info }) {
         </div>
         <div className={styles.footerBottomContainer}>
           <p>
-            {info?.avisoDePrivacidad + " "}
-
+            © Copyright {new Date().getFullYear()} Diseño y desarrollo por
+            Deadline | Todos los derechos Reservados{" "}
             <Link
               style={{
                 color: "white",

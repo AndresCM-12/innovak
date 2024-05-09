@@ -1,12 +1,31 @@
-import ContactoPageClient from "./components/Contact";
+import { Metadata } from "next";
 import { WORDPRESS_API_URL } from "../constants/constants";
+import PresenciaClient from "./components/Presencia";
+
+export async function generateMetadata({ params }) {
+  const metaData: Metadata = {
+    title: "Innovak Global - Presencia",
+    description:
+      "En Innovak Global desarrollamos y comercializamos productos biorracionales y tecnologías diferenciadas en la agricultura para contribuir a una naturaleza sustentable.",
+    robots: "index, follow",
+    openGraph: {
+      type: "website",
+      url: "https://innovakglobal.com/presencia",
+      siteName: "Innovak Global",
+      title: "Innovak Global",
+      description:
+        "En Innovak Global desarrollamos y comercializamos productos biorracionales y tecnologías diferenciadas en la agricultura para contribuir a una naturaleza sustentable.",
+    },
+  };
+  return metaData;
+}
 
 export default async function ContactoPage({ params }) {
   const info = await getInfo(params.locale);
 
   return (
     <section>
-      <ContactoPageClient info={info} />
+      <PresenciaClient info={info} />
     </section>
   );
 }
@@ -22,7 +41,7 @@ async function getInfo(locale) {
       body: JSON.stringify({
         query: `
               query NewQuery {
-                categories(where: {name: "nuestro-contacto"}) {
+                categories(where: {name: "nuestra-presencia"}) {
                   edges {
                     node {
                       id

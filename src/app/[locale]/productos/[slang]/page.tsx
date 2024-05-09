@@ -1,25 +1,53 @@
-import SolucionesPorFruto from "./components/SolucionesPorFruto";
+import DynamicProductsClient from "./components/DynamicProducts";
 import { WORDPRESS_API_URL } from "../../constants/constants";
+import { Metadata } from "next";
 
 export async function generateMetadata({ params }) {
-  const info = await getInfo(params.locale);
-  return {
-    title: info.title,
-    description: info.metaDescription,
+  const metaData: Metadata = {
+    title: "Innovak Global - Catálogo de Productos",
+    description:
+      "En Innovak Global desarrollamos y comercializamos productos biorracionales y tecnologías diferenciadas en la agricultura para contribuir a una naturaleza sustentable.",
+    robots: "index, follow",
+    openGraph: {
+      type: "website",
+      url: "https://innovakglobal.com/productos/",
+      siteName: "Innovak Global",
+      title: "Innovak Global",
+      description:
+        "En Innovak Global desarrollamos y comercializamos productos biorracionales y tecnologías diferenciadas en la agricultura para contribuir a una naturaleza sustentable.",
+    },
   };
+  return metaData;
 }
 
+
 export default async function ContactoPage({ params }) {
-  const info = await getInfo(params.locale);
+  const locale = params.locale;
+  console.log("locale: ", locale);
+  const products = await getProducts(locale);
+
+  var index = getIndex(products, params["slang"]);
 
   return (
     <section>
-      <SolucionesPorFruto info={info} />
+      <DynamicProductsClient
+        params={params}
+        pagesInfo={products}
+        selectedInfo={index}
+      />
     </section>
   );
 }
 
-async function getInfo(locale) {
+function getIndex(pageInfo, routerPath) {
+  var newIndex = pageInfo.findIndex((page) => {
+    return page.link.includes(routerPath);
+  });
+
+  return newIndex;
+}
+
+async function getProducts(locale) {
   try {
     const response = await fetch(WORDPRESS_API_URL, {
       cache: "no-cache",
@@ -30,7 +58,7 @@ async function getInfo(locale) {
       body: JSON.stringify({
         query: `
               query NewQuery {
-                categories(where: {name: "soluciones-por-fruto"}) {
+                categories(where: {name: "productos"}) {
                   edges {
                     node {
                       id
@@ -59,7 +87,7 @@ async function getInfo(locale) {
     const lastIdx = rawContent.lastIndexOf("]");
     rawContent = rawContent.substring(firstIdx, lastIdx + 1);
     var content = JSON.parse(rawContent);
-    return content[0];
+    return content;
   } catch (error) {
     return [];
   }

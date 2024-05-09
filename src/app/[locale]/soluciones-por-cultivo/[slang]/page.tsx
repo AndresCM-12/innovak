@@ -1,11 +1,31 @@
-import { WORDPRESS_API_URL } from "../constants/constants";
-import NuestrasRaicesClient from "./components/NuestrasRaices";
+import SolucionesPorFruto from "./components/SolucionesPorFruto";
+import { WORDPRESS_API_URL } from "../../constants/constants";
+import { Metadata } from "next";
+
+export async function generateMetadata({ params }) {
+  const metaData: Metadata = {
+    title: "Innovak Global - Soluciones por Fruto",
+    description:
+      "En Innovak Global desarrollamos y comercializamos productos biorracionales y tecnologías diferenciadas en la agricultura para contribuir a una naturaleza sustentable.",
+    robots: "index, follow",
+    openGraph: {
+      type: "website",
+      url: "https://innovakglobal.com/soluciones-por-cultivo/",
+      siteName: "Innovak Global",
+      title: "Innovak Global",
+      description:
+        "En Innovak Global desarrollamos y comercializamos productos biorracionales y tecnologías diferenciadas en la agricultura para contribuir a una naturaleza sustentable.",
+    },
+  };
+  return metaData;
+}
 
 export default async function ContactoPage({ params }) {
-  const content = await getInfo(params.locale);
+  const info = await getInfo(params.locale);
+
   return (
     <section>
-      <NuestrasRaicesClient fetchedContent={content} />
+      <SolucionesPorFruto info={info} />
     </section>
   );
 }
@@ -21,7 +41,7 @@ async function getInfo(locale) {
       body: JSON.stringify({
         query: `
               query NewQuery {
-                categories(where: {name: "nuestras-raices"}) {
+                categories(where: {name: "soluciones-por-fruto"}) {
                   edges {
                     node {
                       id

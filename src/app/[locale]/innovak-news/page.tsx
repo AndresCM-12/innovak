@@ -1,10 +1,34 @@
-import Home from "./page-client";
-import { WORDPRESS_API_URL } from "../[locale]/constants/constants";
-export default async function home({ params }) {
+import ContactoPageClient from "./components/Contact";
+import { WORDPRESS_API_URL } from "../constants/constants";
+import { Metadata } from "next";
+
+export async function generateMetadata({ params }) {
+  const metaData: Metadata = {
+    title: "Innovak Global - Innovak News",
+    description:
+      "En Innovak Global desarrollamos y comercializamos productos biorracionales y tecnologías diferenciadas en la agricultura para contribuir a una naturaleza sustentable.",
+    robots: "index, follow",
+    openGraph: {
+      type: "website",
+      url: "https://innovakglobal.com/innovak-news",
+      siteName: "Innovak Global",
+      title: "Innovak Global",
+      description:
+        "En Innovak Global desarrollamos y comercializamos productos biorracionales y tecnologías diferenciadas en la agricultura para contribuir a una naturaleza sustentable.",
+    },
+  };
+  return metaData;
+}
+
+export default async function ContactoPage({ params }) {
   const news = await getNews(params.locale);
   const info = await getInfo(params.locale);
 
-  return <Home news={news} info={info} />;
+  return (
+    <section>
+      <ContactoPageClient news={news} info={info} />
+    </section>
+  );
 }
 
 async function getNews(locale) {
@@ -18,7 +42,7 @@ async function getNews(locale) {
       body: JSON.stringify({
         query: `
               query NewQuery {
-                categories(where: {name: "noticias-destacadas"}) {
+                categories(where: {name: "noticias"}) {
                   edges {
                     node {
                       id
@@ -40,7 +64,7 @@ async function getNews(locale) {
     var rawContent =
       rawData.data.categories.edges[0].node.posts.nodes[0].content;
     if (rawContent.includes("&#91;")) {
-      rawContent = rawContent.replaceAll("&#91;", "[");
+      rawContent = rawContent.replace("&#91;", "[");
     }
 
     const firstIdx = rawContent.indexOf("[");
@@ -65,7 +89,7 @@ async function getInfo(locale) {
       body: JSON.stringify({
         query: `
               query NewQuery {
-                categories(where: {name: "inicio"}) {
+                categories(where: {name: "nuestras-noticias"}) {
                   edges {
                     node {
                       id
@@ -93,6 +117,7 @@ async function getInfo(locale) {
     const firstIdx = rawContent.indexOf("[");
     const lastIdx = rawContent.lastIndexOf("]");
     rawContent = rawContent.substring(firstIdx, lastIdx + 1);
+
     var content = JSON.parse(rawContent);
     return content[0];
   } catch (error) {

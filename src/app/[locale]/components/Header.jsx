@@ -56,6 +56,7 @@ export default function HeaderBody({ info }) {
           mobileMenu={mobileMenu}
           setMobileMenu={setMobileMenu}
           currentLang={lang}
+          menuScrolling={menuScrolling}
         />
 
         <div className={styles.logoImageContainer}>
@@ -76,6 +77,7 @@ export default function HeaderBody({ info }) {
           info={info}
           menuScrolling={menuScrolling}
           currentLang={lang}
+          isScrolling={menuScrolling}
         />
         <div
           className={styles.mobileNav}
@@ -109,7 +111,13 @@ export default function HeaderBody({ info }) {
   );
 }
 
-function MobileMenu({ info, mobileMenu, setMobileMenu, currentLang }) {
+function MobileMenu({
+  info,
+  mobileMenu,
+  setMobileMenu,
+  currentLang,
+  menuScrolling,
+}) {
   return (
     <>
       <div
@@ -204,6 +212,7 @@ function MobileMenu({ info, mobileMenu, setMobileMenu, currentLang }) {
             <LocaleSwitch
               isMobile={true}
               info={info}
+              isScrolling={menuScrolling}
               onClick={() => {
                 //stop the propagation of the event
                 event.stopPropagation();

@@ -1,13 +1,32 @@
-import { WORDPRESS_API_URL } from "../../constants/constants";
-import Technologyclient from "./components/Technology";
+import { Metadata } from "next";
+import { WORDPRESS_API_URL } from "../constants/constants";
+import NuestrasRaicesClient from "./components/NuestrasRaices";
 
-export default async function TechnologyPage({ params }) {
-  const locale = params.locale;
-  const info = await getInfo(locale);
 
+export async function generateMetadata({ params }) {
+  const metaData: Metadata = {
+    title: "Innovak Global - Nuestras Raíces",
+    description:
+      "En Innovak Global desarrollamos y comercializamos productos biorracionales y tecnologías diferenciadas en la agricultura para contribuir a una naturaleza sustentable.",
+    robots: "index, follow",
+    openGraph: {
+      type: "website",
+      url: "https://innovakglobal.com/nuestras-raices",
+      siteName: "Innovak Global",
+      title: "Innovak Global",
+      description:
+        "En Innovak Global desarrollamos y comercializamos productos biorracionales y tecnologías diferenciadas en la agricultura para contribuir a una naturaleza sustentable.",
+    },
+  };
+  return metaData;
+}
+
+
+export default async function ContactoPage({ params }) {
+  const content = await getInfo(params.locale);
   return (
     <section>
-      <Technologyclient info={info} />
+      <NuestrasRaicesClient fetchedContent={content} />
     </section>
   );
 }
@@ -23,7 +42,7 @@ async function getInfo(locale) {
       body: JSON.stringify({
         query: `
               query NewQuery {
-                categories(where: {name: "pfenergy"}) {
+                categories(where: {name: "nuestras-raices"}) {
                   edges {
                     node {
                       id
@@ -54,7 +73,6 @@ async function getInfo(locale) {
     var content = JSON.parse(rawContent);
     return content[0];
   } catch (error) {
-    console.log("Error fetching data: ", error);
     return [];
   }
 }

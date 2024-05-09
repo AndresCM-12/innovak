@@ -1,5 +1,24 @@
+import { Metadata } from "next";
 import { WORDPRESS_API_URL } from "../../constants/constants";
 import Technologyclient from "./components/Technology";
+
+export async function generateMetadata({ params }) {
+  const metaData: Metadata = {
+    title: "Innovak Global - RDR",
+    description:
+      "En Innovak Global desarrollamos y comercializamos productos biorracionales y tecnologías diferenciadas en la agricultura para contribuir a una naturaleza sustentable.",
+    robots: "index, follow",
+    openGraph: {
+      type: "website",
+      url: "https://innovakglobal.com/nuestras-raices/rdr",
+      siteName: "Innovak Global",
+      title: "Innovak Global",
+      description:
+        "En Innovak Global desarrollamos y comercializamos productos biorracionales y tecnologías diferenciadas en la agricultura para contribuir a una naturaleza sustentable.",
+    },
+  };
+  return metaData;
+}
 
 export default async function TechnologyPage({ params }) {
   const locale = params.locale;
@@ -23,7 +42,7 @@ async function getInfo(locale) {
       body: JSON.stringify({
         query: `
               query NewQuery {
-                categories(where: {name: "ecca-carboxy"}) {
+                categories(where: {name: "rdr"}) {
                   edges {
                     node {
                       id
