@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./inovakNews.module.css";
 import Image from "next/image";
 import background from "../../../../../public/innovak-news/background.png";
@@ -163,6 +163,15 @@ function RevistaInnovak({ info }) {
 }
 
 function Ensayos({ content }) {
+  var [lang, setLang] = useState("mx");
+  useEffect(() => {
+    const locale = document.cookie
+      .split(";")
+      .find((c) => c.trim().startsWith("NEXT_LOCALE="))
+      .split("=")[1];
+    setLang(locale);
+  }, []);
+
   return (
     <section className={styles.ensayosWrapper}>
       {content.map((item, index) => (
@@ -171,7 +180,10 @@ function Ensayos({ content }) {
           <div className={styles.newsItemFloating}>
             <h3>{item.title}</h3>
             <p>{item.text}</p>
-            <Link href={item.link} style={{ width: "100%" }} target="_blank">
+            <Link
+              href={"/" + lang + "/innovak-news/" + item.link.split("/")[3]}
+              style={{ width: "100%" }}
+            >
               <div className={styles.newsButtonOutlined}>{item.cta}</div>
             </Link>
           </div>
