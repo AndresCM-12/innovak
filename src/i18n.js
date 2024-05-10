@@ -2,7 +2,7 @@ import { getRequestConfig } from "next-intl/server";
 import NotFound from "./not-found";
 
 // Can be imported from a shared config
-const locales = ["mxn", "bra", "col", "chl", "pe", "usa", "tur", "intl"];
+const locales = ["mx", "br", "co", "cl", "pe", "eu", "tr", "intl"];
 
 export default getRequestConfig(async ({ locale }) => {
   // Validate that the incoming `locale` parameter is valid

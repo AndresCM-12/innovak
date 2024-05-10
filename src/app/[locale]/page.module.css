@@ -1027,6 +1027,7 @@ footer .links a {
 }
 .mainLocaleSwitch span p {
   font-size: 16px;
+  text-transform: uppercase;
   color: #00318d;
 }
 .menuFloating .header {
