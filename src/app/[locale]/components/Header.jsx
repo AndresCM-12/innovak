@@ -20,7 +20,7 @@ export default function HeaderBody({ info }) {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [menuScrolling, setMenuScrolling] = useState(false);
   const { scrollY } = useScroll();
-  const [lang, setLang] = useState("mxn");
+  const [lang, setLang] = useState("mx");
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest > 10) {

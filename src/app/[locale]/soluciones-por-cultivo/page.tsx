@@ -70,7 +70,6 @@ async function getInfo(locale) {
     const firstIdx = rawContent.indexOf("[");
     const lastIdx = rawContent.lastIndexOf("]");
     rawContent = rawContent.substring(firstIdx, lastIdx + 1);
-    console.log(rawContent);
     var content = JSON.parse(rawContent);
     return content[0];
   } catch (error) {

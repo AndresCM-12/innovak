@@ -146,7 +146,6 @@ function MapMexico({ map, contactInfo }) {
           placeholder="Buscar por estado"
           onChange={(event) => {
             const estados = event.target.value.toLowerCase();
-            console.log(estados);
             const newList = contactInfo.filter((contact) => {
               return contact.info.estados.some((estado) => {
                 return estado.toLowerCase().includes(estados);

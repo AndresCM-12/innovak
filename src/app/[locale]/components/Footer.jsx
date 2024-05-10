@@ -16,7 +16,7 @@ const Hind_Vadodaraf = Hind_Vadodara({
 });
 
 export default function FooterBody({ info }) {
-  const [lang, setLang] = useState("mxn");
+  const [lang, setLang] = useState("mx");
 
   useEffect(() => {
     const locale = document.cookie
@@ -94,7 +94,16 @@ export default function FooterBody({ info }) {
         <div className={styles.footerBottomContainer}>
           <p>
             © Copyright {new Date().getFullYear()} Diseño y desarrollo por
-            Deadline | Todos los derechos Reservados{" "}
+            {" "}<Link
+              style={{
+                color: "white",
+                textDecoration: "underline",
+              }}
+              href={"https://deadline.com.mx"}
+            >
+              Deadline
+            </Link>{" "}
+            | Todos los derechos Reservados{" "}
             <Link
               style={{
                 color: "white",

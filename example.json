@@ -17,6 +17,8 @@
           "link": "/nuestras-raices#evolucion-sustentable"
         }
       ],
+      "numeroContacto": "6141545971",
+      "whatsappIcon": "https://wp.innovakglobal.com/wp-content/uploads/2024/05/logo-whatsapp.png",
       "productos": "PRODUCTOS",
       "productosOpciones": [
         {
@@ -62,22 +64,22 @@
       "paises": [
         {
           "pais": "México",
-          "code": "mxn",
+          "code": "mx",
           "flag": "http://wp.innovakglobal.com/wp-content/uploads/2024/05/Frame-27.png"
         },
         {
           "pais": "Brasil",
-          "code": "bra",
+          "code": "br",
           "flag": "http://wp.innovakglobal.com/wp-content/uploads/2024/05/Frame-26.png"
         },
         {
           "pais": "Colombia",
-          "code": "col",
+          "code": "co",
           "flag": "http://wp.innovakglobal.com/wp-content/uploads/2024/05/Frame-25.png"
         },
         {
           "pais": "Chile",
-          "code": "chl",
+          "code": "cl",
           "flag": "http://wp.innovakglobal.com/wp-content/uploads/2024/05/Frame-24.png"
         },
         {
@@ -87,12 +89,12 @@
         },
         {
           "pais": "Estados unidos",
-          "code": "usa",
+          "code": "eu",
           "flag": "http://wp.innovakglobal.com/wp-content/uploads/2024/05/Frame-22.png"
         },
         {
           "pais": "Turquía",
-          "code": "tur",
+          "code": "tr",
           "flag": "http://wp.innovakglobal.com/wp-content/uploads/2024/05/Frame-21.png"
         },
         {
@@ -153,13 +155,13 @@
       ],
       "pais": "PAIS",
       "paises": [
-        { "pais": "México", "code": "mxn" },
-        { "pais": "Brasil", "code": "bra" },
-        { "pais": "Colombia", "code": "col" },
-        { "pais": "Chile", "code": "chl" },
+        { "pais": "México", "code": "mx" },
+        { "pais": "Brasil", "code": "br" },
+        { "pais": "Colombia", "code": "co" },
+        { "pais": "Chile", "code": "cl" },
         { "pais": "Perú", "code": "pe" },
-        { "pais": "Estados unidos", "code": "usa" },
-        { "pais": "Turquía", "code": "tur" },
+        { "pais": "Estados unidos", "code": "eu" },
+        { "pais": "Turquía", "code": "tr" },
         { "pais": "Internacional", "code": "intl" }
       ]
     }

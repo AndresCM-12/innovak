@@ -15,7 +15,6 @@ const futura = localFont({
 });
 
 export default function ContactPageClient({ info }) {
-  console.log(info);
   var jobs = info.bolsaTrabajo.trabajos;
 
   var pagesInfo = [
@@ -143,11 +142,7 @@ function FormBody({ info }) {
         marginTop: "20px",
       }}
     >
-      <div
-        whileInView={{ opacity: 1 }}
-        initial={{ opacity: 0 }}
-        className={allStyles.ficha}
-      >
+      <div className={allStyles.ficha}>
         <h1
           style={{
             marginBottom: "20px",

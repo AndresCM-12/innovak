@@ -68,6 +68,15 @@ export default function SolucionesPorFruto({ info }) {
 }
 
 function SolucionesPorCultivo({ solutions, activeSolutionIndex }) {
+  var [lang, setLang] = useState("mx");
+  useEffect(() => {
+    const locale = document.cookie
+      .split(";")
+      .find((c) => c.trim().startsWith("NEXT_LOCALE="))
+      .split("=")[1];
+    setLang(locale);
+  }, []);
+
   const [frutoSelected, setFrutoSelected] = useState(
     solutions[activeSolutionIndex].items[0]
   );
@@ -97,7 +106,7 @@ function SolucionesPorCultivo({ solutions, activeSolutionIndex }) {
                   />
                 ))}
               </div>
-              {/* <a>{frutoSelected.popup.cta}</a> */}
+              <a href={"/" + lang + "/contacto"}>{frutoSelected.popup?.cta}</a>
             </div>
             <div className={styles.right}>
               {frutoSelected.popup.videoOimagen.includes("mp4") ||

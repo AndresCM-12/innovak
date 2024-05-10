@@ -9,7 +9,7 @@ const futura = localFont({
 });
 
 export default function ProductsClient({ categorias, info }) {
-  const [lang, setLang] = useState("mxn");
+  const [lang, setLang] = useState("mx");
 
   useEffect(() => {
     const locale = document.cookie

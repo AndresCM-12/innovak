@@ -799,6 +799,14 @@
   row-gap: 20px;
   width: 100%;
 }
+.form .swiperSlide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  row-gap: 20px;
+  width: 100%;
+}
 .form form input[type="text"] {
   width: 100%;
   border: none;
@@ -813,7 +821,38 @@
   font-weight: 700;
   line-height: normal;
 }
+.form .swiperSlide input[type="text"] {
+  width: 100%;
+  border: none;
+  padding-inline: 20px;
+  padding-block: 16px;
+  outline: none;
+  border-radius: 16px;
+  background: #f5f5f5;
+  color: #898989;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
 .form form textarea {
+  width: 448px;
+  height: 137px;
+  border: none;
+  padding-inline: 20px;
+  padding-block: 16px;
+  outline: none;
+  border-radius: 16px;
+  background: #f5f5f5;
+  color: #898989;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-family: var(--font-mono);
+}
+
+.form .swiperSlide textarea {
   width: 448px;
   height: 137px;
   border: none;
@@ -1049,7 +1088,7 @@ footer .links a {
   z-index: 10000;
 }
 .menuFloating .body {
-  background-color: #005DAB;
+  background-color: #005dab;
   color: white;
   height: 100%;
   display: flex;

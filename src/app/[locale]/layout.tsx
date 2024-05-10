@@ -18,6 +18,19 @@ export default async function RootLayout({ children, params }) {
         <HeaderBody info={info.header} />
         {children}
         <FooterBody info={info.footer} />
+          <a
+            href={"https://wa.me/"+info.header.numeroContacto}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+        <div id="floatingWhatsAppButton">
+            <img
+              src={info.header.whatsappIcon}
+              alt="WhatsApp"
+              className="whatsapp-icon"
+            />
+        </div>
+          </a>
       </body>
     </html>
   );

@@ -146,7 +146,7 @@ function Alianzas({ info, images, video }) {
 }
 
 function Tecnologias({ info }) {
-  const [lang, setLang] = useState("mxn");
+  const [lang, setLang] = useState("mx");
 
   useEffect(() => {
     const locale = document.cookie
@@ -334,7 +334,7 @@ function Testimonials({ info }) {
 }
 
 function News({ news, info }) {
-  const [lang, setLang] = useState("mxn");
+  const [lang, setLang] = useState("mx");
 
   useEffect(() => {
     const locale = document.cookie

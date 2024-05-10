@@ -13,7 +13,6 @@ export default function DynamicProductsClient({
   pagesInfo,
   selectedInfo,
 }) {
-  console.log("Client component" + pagesInfo);
   const [index, setIndex] = useState(selectedInfo);
 
   return (

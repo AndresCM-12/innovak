@@ -1,10 +1,15 @@
 "use client";
+// Import Swiper styles
 import "swiper/css";
-import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+
 import styles from "../../../page.module.css";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import ClipLoader from "react-spinners/ClipLoader";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Scrollbar } from "swiper/modules";
 
 import darkLogo from "../../../../../../public/images/logo_dark.png";
 
@@ -14,7 +19,7 @@ const futura = localFont({
   variable: "--font-futura",
 });
 
-export default function Promesol({ products }) {
+export default function Promesol({ products, info }) {
   const [currentProductIndex, setCurrentProductIndex] = useState();
 
   const [isLoading, setLoading] = useState(true);
@@ -45,13 +50,14 @@ export default function Promesol({ products }) {
           <MainBody
             allProducts={products}
             selectedIndex={currentProductIndex}
+            info={info}
           />
         )}
       </div>
     </div>
   );
 
-  function MainBody({ allProducts, selectedIndex }) {
+  function MainBody({ allProducts, selectedIndex, info }) {
     return (
       <div className={styles.mainWrapper}>
         <style jsx global>{`
@@ -113,7 +119,11 @@ export default function Promesol({ products }) {
             </section>
           </div>
           <section id="network" className={styles.formWrapper}>
-            <FormBody allProducts={allProducts} selectedIndex={selectedIndex} />
+            <FormBody
+              allProducts={allProducts}
+              selectedIndex={selectedIndex}
+              info={info}
+            />
           </section>
         </main>
       </div>
@@ -262,11 +272,7 @@ export default function Promesol({ products }) {
     const product = allProducts[selectedIndex];
 
     return (
-      <div
-        whileInView={{ opacity: 1 }}
-        initial={{ opacity: 0 }}
-        className={styles.mainContainer}
-      >
+      <div className={styles.mainContainer}>
         <h1>
           {product.especificaciones && product.especificaciones.title
             ? product.especificaciones.title
@@ -298,27 +304,16 @@ export default function Promesol({ products }) {
     );
   }
 
-  function FormBody({ allProducts, selectedIndex }) {
+  function FormBody({ allProducts, selectedIndex, info }) {
     const product = allProducts[selectedIndex];
     const handleDownloadClick = (selectedProduct) => {
-      // Shows the same document
-      // console.log(selectedProduct.ficha);
-      // const doc = `/fichaTecnica.pdf`;
-      // const link = document.createElement("a");
-      // link.href = doc;
-      // link.download = selectedProduct.ficha;
-      // console.log(link.download);
-      // link.click();
       window.open(selectedProduct.ficha, "_blank");
     };
+
     return (
       <>
-        <div
-          whileInView={{ opacity: 1 }}
-          initial={{ opacity: 0 }}
-          className={styles.ficha}
-        >
-          <h1>Obtén la ficha técnica</h1>
+        <div className={styles.ficha}>
+          <h1>{info.titulo}</h1>
           <div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -340,80 +335,186 @@ export default function Promesol({ products }) {
                   handleDownloadClick(product);
                 }}
               >
-                Descargar ficha técnica
+                {info.descargar}
               </button>
             ) : null}
           </div>
         </div>
         <div className={styles.form}>
-          <p>Los campos marcados con * son obligatorios</p>
+          <p>{info.formulario.requerido}</p>
           <form
+            id="formContactoProductoDetalles"
             action="https://formsubmit.co/redes@innovakglobal.com"
             method="POST"
           >
-            <input type="text" name="Nombre" placeholder="Nombre*" required />
-            <input
-              type="text"
-              name="Teléfono de contacto"
-              placeholder="Teléfono de contacto*"
-              required
-            />
-            <input
-              type="text"
-              name="Correo electrónico"
-              placeholder="Correo electrónico*"
-              required
-            />
-            <input
-              type="text"
-              name="Nombre de la agrícola o institución"
-              placeholder="Nombre de la agrícola o institución"
-            />
-            <input type="text" name="Cultivo" placeholder="Cultivo" />
-            <input type="text" name="País" placeholder="País*" required />
-            <input type="text" name="Estado" placeholder="Estado*" required />
-            <input
-              type="text"
-              name="Localidad"
-              placeholder="Localidad*"
-              required
-            />
-            <h5>¿Cómo podemos ayudarte?</h5>
-            <div className={styles.checkboxWrapper}>
-              <input
-                type="radio"
-                id="uno"
-                name="Servicio"
-                value="Información de distribuidores"
-              />
-              <label htmlFor="uno">Información de distribuidores</label>
-            </div>
-            <div className={styles.checkboxWrapper}>
-              <input
-                type="radio"
-                id="dos"
-                name="Servicio"
-                value="Asesoría técnica"
-              />
-              <label htmlFor="dos">Asesoría técnica</label>
-            </div>
-            <div className={styles.checkboxWrapper}>
-              <input
-                type="radio"
-                id="tres"
-                name="Servicio"
-                value="Información de producto"
-              />
-              <label htmlFor="tres">Información de producto</label>
-            </div>
-            <input
-              type="text"
-              name="Producto/Problemática"
-              placeholder="Producto/Problemática*"
-              required
-            />
-            <textarea name="Mensaje" placeholder="Tu mensaje"></textarea>
-            <button type="submit">Enviar</button>
+            <Swiper
+              id="detallesProductos"
+              pagination={{
+                type: "progressbar",
+                position: "bottom",
+                number: true,
+                type: "fraction",
+              }}
+              scrollbar={{
+                hide: false,
+              }}
+              modules={[Pagination, Scrollbar]}
+              draggable={false}
+              allowTouchMove={false}
+              slidesPerView={1}
+              spaceBetween={12}
+              style={{
+                maxWidth: "448px",
+                width: "100%",
+                minWidth: "320px",
+                margin: "0px",
+              }}
+            >
+              <SwiperSlide className={styles.swiperSlide}>
+                <input
+                  type="text"
+                  name="Nombre"
+                  placeholder={info.formulario.nombre}
+                  required
+                />
+                <input
+                  type="text"
+                  name="Teléfono de contacto"
+                  placeholder={info.formulario.telefono}
+                  required
+                />
+                <input
+                  type="text"
+                  name="Correo electrónico"
+                  placeholder={info.formulario.correo}
+                  required
+                />
+                <input
+                  type="text"
+                  name="Nombre de la agrícola o institución"
+                  placeholder={info.formulario.agricola}
+                />
+                <button
+                  onClick={() => {
+                    //First we validate the first 4 inputs of the form
+                    const form = document.getElementById(
+                      "formContactoProductoDetalles"
+                    );
+                    const inputs = form.getElementsByTagName("input");
+                    let isValid = true;
+                    for (let i = 0; i < 4; i++) {
+                      if (!inputs[i].checkValidity()) {
+                        isValid = false;
+                        inputs[i].reportValidity();
+                        break;
+                      }
+                    }
+                    if (!isValid) return;
+                    document
+                      .getElementById("detallesProductos")
+                      .swiper.slideNext();
+                  }}
+                >
+                  {info.formulario.botonContinuar}
+                </button>
+              </SwiperSlide>
+              <SwiperSlide className={styles.swiperSlide}>
+                <input
+                  type="text"
+                  name="Cultivo"
+                  placeholder={info.formulario.cultivo}
+                />
+                <input
+                  type="text"
+                  name="País"
+                  placeholder={info.formulario.pais}
+                  required
+                />
+                <input
+                  type="text"
+                  name="Estado"
+                  placeholder={info.formulario.estado}
+                  required
+                />
+                <input
+                  type="text"
+                  name="Localidad"
+                  placeholder={info.formulario.localidad}
+                  required
+                />
+                <button
+                  onClick={() => {
+                    //First we validate the next 4 inputs of the form
+                    const form = document.getElementById(
+                      "formContactoProductoDetalles"
+                    );
+                    const inputs = form.getElementsByTagName("input");
+                    let isValid = true;
+                    for (let i = 4; i < 8; i++) {
+                      if (!inputs[i].checkValidity()) {
+                        isValid = false;
+                        inputs[i].reportValidity();
+                        break;
+                      }
+                    }
+                    if (!isValid) return;
+                    document
+                      .getElementById("detallesProductos")
+                      .swiper.slideNext();
+                  }}
+                >
+                  {info.formulario.botonContinuar}
+                </button>
+              </SwiperSlide>
+              <SwiperSlide
+                className={styles.swiperSlide}
+                style={{ paddingBottom: "48px" }}
+              >
+                <h5>{info.formulario.comoPodemosAyudarte}</h5>
+                <div className={styles.checkboxWrapper}>
+                  <input
+                    type="radio"
+                    id="uno"
+                    name="Servicio"
+                    value="Información de distribuidores"
+                  />
+                  <label htmlFor="uno">
+                    {info.formulario.informacionDistribuidores}
+                  </label>
+                </div>
+                <div className={styles.checkboxWrapper}>
+                  <input
+                    type="radio"
+                    id="dos"
+                    name="Servicio"
+                    value="Asesoría técnica"
+                  />
+                  <label htmlFor="dos">{info.formulario.asesoriaTecnica}</label>
+                </div>
+                <div className={styles.checkboxWrapper}>
+                  <input
+                    type="radio"
+                    id="tres"
+                    name="Servicio"
+                    value="Información de producto"
+                  />
+                  <label htmlFor="tres">
+                    {info.formulario.informacionProductos}
+                  </label>
+                </div>
+                <input
+                  type="text"
+                  name="Producto/Problemática"
+                  placeholder={info.formulario.productoProblematica}
+                  required
+                />
+                <textarea
+                  name="Mensaje"
+                  placeholder={info.formulario.mensaje}
+                ></textarea>
+                <button type="submit">{info.formulario.boton}</button>
+              </SwiperSlide>
+            </Swiper>
           </form>
         </div>
       </>

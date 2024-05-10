@@ -23,8 +23,9 @@ export async function generateMetadata({ params }) {
 export default async function HomeProduct({ params }) {
   const locale = params.locale;
   const products = await getProducts(locale);
+  const info = await getInfo(locale);
 
-  return <section>{<Promesol products={products} />}</section>;
+  return <section>{<Promesol products={products} info={info.contacto} />}</section>;
 }
 
 async function getProducts(locale) {
@@ -68,6 +69,52 @@ async function getProducts(locale) {
     rawContent = rawContent.substring(firstIdx, lastIdx + 1);
     var content = JSON.parse(rawContent);
     return content;
+  } catch (error) {
+    return [];
+  }
+}
+
+async function getInfo(locale) {
+  try {
+    const response = await fetch(WORDPRESS_API_URL, {
+      cache: "no-cache",
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        query: `
+              query NewQuery {
+                categories(where: {name: "detalles-productos-info"}) {
+                  edges {
+                    node {
+                      id
+                      posts(where: {tag: "${locale}"}) {
+                        nodes {
+                          id
+                          content
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+      }),
+    });
+
+    const rawData = await response.json();
+    var rawContent =
+      rawData.data.categories.edges[0].node.posts.nodes[0].content;
+    if (rawContent.includes("&#91;")) {
+      rawContent = rawContent.replaceAll("&#91;", "[");
+    }
+
+    const firstIdx = rawContent.indexOf("[");
+    const lastIdx = rawContent.lastIndexOf("]");
+    rawContent = rawContent.substring(firstIdx, lastIdx + 1);
+    var content = JSON.parse(rawContent);
+    return content[0];
   } catch (error) {
     return [];
   }

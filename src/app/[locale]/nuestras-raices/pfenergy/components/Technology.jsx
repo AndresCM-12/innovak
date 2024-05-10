@@ -18,8 +18,7 @@ const futura = localFont({
 });
 
 export default function Technologyclient({ info }) {
-  const [lang, setLang] = useState("mxn");
-  console.log(info);
+  const [lang, setLang] = useState("mx");
   useEffect(() => {
     const locale = document.cookie
       .split(";")

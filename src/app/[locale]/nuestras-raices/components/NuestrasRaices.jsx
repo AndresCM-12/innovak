@@ -34,7 +34,6 @@ const futura = localFont({
 });
 
 export default function NuestrasRaicesClient({ fetchedContent }) {
-  console.log(fetchedContent);
   var certifications = fetchedContent.certificaciones;
 
   var distintivos = fetchedContent.distintivos;

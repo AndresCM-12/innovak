@@ -23,7 +23,6 @@ export async function generateMetadata({ params }) {
 
 export default async function ContactoPage({ params }) {
   const locale = params.locale;
-  console.log("locale: ", locale);
   const products = await getProducts(locale);
 
   var index = getIndex(products, params["slang"]);

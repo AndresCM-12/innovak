@@ -36,3 +36,36 @@ a {
 #lineaDelTiempoSwiper .swiper-slide {
   width: fit-content;
 }
+.swiper-scrollbar-drag {
+  background-color: #005dab !important;
+}
+.swiper-pagination-horizontal {
+  color: black !important;
+  width: fit-content !important;
+  margin-bottom: 8px !important;
+  font-weight: bold !important;
+}
+#floatingWhatsAppButton {
+  background-color: #25d366;
+  color: white;
+  border-radius: 50%;
+  padding: 10px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  width: 70px;
+  height: 70px;
+  display: grid;
+  place-items: center;
+}
+#floatingWhatsAppButton img {
+  width: 90%;
+  height: 90%;
+}
+#floatingWhatsAppButton:hover {
+  width: 68px;
+  height: 68px;
+}
