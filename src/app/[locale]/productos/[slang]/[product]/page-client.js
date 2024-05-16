@@ -159,8 +159,8 @@ export default function Promesol({ products, info }) {
             <p>{allProducts[selectedIndex].description}</p>
           </div>
           <div className={styles.rootTechnology}>
-            <h4>Tecnologías</h4>
-            <a href="#network">Solicita más información</a>
+            <h4>{allProducts[selectedIndex].tecnologia}</h4>
+            <a href="#network">{allProducts[selectedIndex].askInfo}</a>
           </div>
 
           <div className={styles.rootLogo} style={{ width: "320px" }}>
@@ -180,25 +180,6 @@ export default function Promesol({ products, info }) {
                 />
               );
             })}
-            {/* <Image
-              src={imgRoot}
-              alt="Logo root"
-              style={{
-                width: "52%",
-                height: "100%",
-                objectFit: "cover",
-              }}
-            />
-
-            <Image
-              src={imgEcca}
-              alt="Logo ecca"
-              style={{
-                width: "40%",
-                height: "100%",
-                objectFit: "cover",
-              }}
-            /> */}
           </div>
         </div>
 

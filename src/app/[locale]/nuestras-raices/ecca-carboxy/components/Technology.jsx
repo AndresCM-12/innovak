@@ -57,6 +57,7 @@ export default function Technologyclient({ info }) {
                   index={index}
                   selectedIndex={selectedIndex}
                   onSelectedIndex={setSelectedIndex}
+                  info={info.header}
                 />
               ))}
             </div>
@@ -68,6 +69,7 @@ export default function Technologyclient({ info }) {
                   index={index}
                   selectedIndex={selectedIndex}
                   onSelectedIndex={setSelectedIndex}
+                  info={info.header}
                 />
               ))}
             </div>
@@ -85,7 +87,13 @@ export default function Technologyclient({ info }) {
     </section>
   );
 
-  function FeatureLeft({ feature, index, selectedIndex, onSelectedIndex }) {
+  function FeatureLeft({
+    feature,
+    index,
+    selectedIndex,
+    onSelectedIndex,
+    info,
+  }) {
     return index < 3 ? (
       <div onClick={() => onSelectedIndex(index)}>
         <div key={index} className={styles.feature}>
@@ -94,11 +102,17 @@ export default function Technologyclient({ info }) {
             {feature.text}
           </p>
         </div>
-        <span>{selectedIndex == index ? "Ver menos" : "Ver más"}</span>
+        <span>{selectedIndex == index ? info?.verMenos : info?.verMas}</span>
       </div>
     ) : null;
   }
-  function FeatureRight({ feature, index, selectedIndex, onSelectedIndex }) {
+  function FeatureRight({
+    feature,
+    index,
+    selectedIndex,
+    onSelectedIndex,
+    info,
+  }) {
     return index > 2 ? (
       <div onClick={() => onSelectedIndex(index)}>
         <div key={index} className={styles.feature}>
@@ -107,7 +121,7 @@ export default function Technologyclient({ info }) {
             {feature.text}
           </p>
         </div>
-        <span>{selectedIndex == index ? "Ver menos" : "Ver más"}</span>
+        <span>{selectedIndex == index ? info?.verMenos : info?.verMas}</span>
       </div>
     ) : null;
   }

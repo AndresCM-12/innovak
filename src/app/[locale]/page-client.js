@@ -434,7 +434,12 @@ function FormBody({ info }) {
           action="https://formsubmit.co/redes@innovakglobal.com"
           method="POST"
         >
-          <input type="text" name="Nombre" placeholder="Nombre*" required />
+          <input
+            type="text"
+            name="Nombre"
+            placeholder={infoFormulario.nombre}
+            required
+          />
           <input
             type="text"
             name="Teléfono de contacto"
@@ -459,8 +464,18 @@ function FormBody({ info }) {
               gap: "10px",
             }}
           >
-            <input type="text" name="País" placeholder="País*" required />
-            <input type="text" name="Estado" placeholder="Estado*" required />
+            <input
+              type="text"
+              name="País"
+              placeholder={infoFormulario.pais}
+              required
+            />
+            <input
+              type="text"
+              name="Estado"
+              placeholder={infoFormulario.estado}
+              required
+            />
           </div>
           <input
             type="text"

@@ -19,30 +19,15 @@ export default function PresenciaClient({ info }) {
       title: info.mapa.region,
       subtitle: "",
       image: info.info.imagenFondo,
-      content: <MapMexico map={info.mapa.imagen} contactInfo={contactInfo} />,
+      content: (
+        <MapMexico
+          map={info.mapa.imagen}
+          contactInfo={contactInfo}
+          info={info.info}
+        />
+      ),
       hash: "mexico",
     },
-    // {
-    //   title: "ESTADOS UNIDOS",
-    //   subtitle: "",
-    //   image: background.src,
-    //   content: <Map />,
-    //   hash: "usa",
-    // },
-    // {
-    //   title: "BRASIL",
-    //   subtitle: "",
-    //   image: background.src,
-    //   content: <Map />,
-    //   hash: "brasil",
-    // },
-    // {
-    //   title: "TURQUÍA",
-    //   subtitle: "",
-    //   image: background.src,
-    //   content: <Map />,
-    //   hash: "turquia",
-    // },
   ];
 
   const getCurrentIndex = () => {
@@ -101,23 +86,9 @@ export default function PresenciaClient({ info }) {
           zIndex: 0,
         }}
       >
-        <h1>LOCALIZADOR DE COMERCIALES</h1>
+        <h1>{info.info.titulo}</h1>
       </article>
       {/* Dynamic Header */}
-
-      {/* Select Option */}
-      {/* <div className={styles.selectOptionWrapper}>
-        {pagesInfo.map((page, i) => (
-          <div
-            className={index === i ? `${styles.active}` : ""}
-            key={i + "div"}
-            onClick={() => handleNextStep(i)}
-          >
-            <p>{page.title}</p>
-          </div>
-        ))}
-      </div> */}
-      {/* Select Option */}
 
       {/* Form */}
       {pagesInfo[index].content}
@@ -134,7 +105,7 @@ function Map() {
   );
 }
 
-function MapMexico({ map, contactInfo }) {
+function MapMexico({ map, contactInfo, info }) {
   const [filtredByProductList, setFiltredByProductList] = useState(contactInfo);
   return (
     <section className={styles.presenciaWrapper}>
@@ -143,7 +114,7 @@ function MapMexico({ map, contactInfo }) {
       </div>
       <div className={styles.searchMenu}>
         <input
-          placeholder="Buscar por estado"
+          placeholder={info.placeHolder}
           onChange={(event) => {
             const estados = event.target.value.toLowerCase();
             const newList = contactInfo.filter((contact) => {
@@ -169,13 +140,13 @@ function MapMexico({ map, contactInfo }) {
             <h3>{contact.title}</h3>
             {contact.info.nombre && (
               <p>
-                <strong>Nombre: </strong>
+                <strong>{info.fields?.nombre}</strong>
                 {contact.info.nombre}
               </p>
             )}
             {contact.info.telefono && (
               <p>
-                <strong>Teléfono: </strong>
+                <strong>{info.fields?.telefono}</strong>
                 <a href={`tel:${contact.info.telefono}`}>
                   {contact.info.telefono}
                 </a>
@@ -183,7 +154,7 @@ function MapMexico({ map, contactInfo }) {
             )}
             {contact.info.email && (
               <p>
-                <strong>Email: </strong>
+                <strong>{info.fields?.email}</strong>
                 <a href={`mailto:${contact.info.email}`}>
                   {contact.info.email}
                 </a>
@@ -191,7 +162,7 @@ function MapMexico({ map, contactInfo }) {
             )}
             {contact.info.whatsapp && (
               <p>
-                <strong>WhatsApp: </strong>
+                <strong>{info.fields?.whatsapp}</strong>
                 <a
                   href={`https://wa.me/${contact.info.whatsapp}/`}
                   target="_blank"
@@ -202,13 +173,13 @@ function MapMexico({ map, contactInfo }) {
             )}
             {contact.info.estados && (
               <p>
-                <strong>Estados: </strong>
+                <strong>{info.fields?.estados}</strong>
                 {contact.info.estados.join(", ")}
               </p>
             )}
             {contact.info.productos && (
               <p>
-                <strong>Experiencia en: </strong>
+                <strong>{info.fields?.experiencia}</strong>
                 {contact.info.productos.join(", ")}
               </p>
             )}

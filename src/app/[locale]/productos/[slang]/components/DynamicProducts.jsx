@@ -71,16 +71,18 @@ export default function DynamicProductsClient({
       {/* Dynamic Header */}
 
       {/* content */}
-      <ProductsList productImages={pagesInfo[index].products} />
+      <ProductsList productImages={pagesInfo[index]} />
       {/* content */}
     </section>
   );
 }
 
 function ProductsList({ productImages }) {
+  var products = productImages.products;
+  var info = productImages;
   return (
     <section className={styles.products}>
-      {productImages.map((product, i) => (
+      {products.map((product, i) => (
         <div
           className={styles.productsImages}
           key={i + "div"}
@@ -94,7 +96,7 @@ function ProductsList({ productImages }) {
           <div>
             <h6>{product.title}</h6>
             <p>{product.text}</p>
-            <span>Ver más</span>
+            <span>{info.more}</span>
           </div>
         </div>
       ))}
