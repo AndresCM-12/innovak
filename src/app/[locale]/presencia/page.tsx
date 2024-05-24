@@ -71,7 +71,7 @@ async function getInfo(locale) {
     rawContent = rawContent.substring(firstIdx, lastIdx + 1);
 
     var content = JSON.parse(rawContent);
-    return content[0];
+    return content;
   } catch (error) {
     return [];
   }

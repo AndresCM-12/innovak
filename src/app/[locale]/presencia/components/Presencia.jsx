@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./presencia.module.css";
 
 import localFont from "next/font/local";
@@ -12,42 +12,53 @@ import Image from "next/image";
 import icon from "../../../../../public/contacto/search.png";
 
 export default function PresenciaClient({ info }) {
-  var contactInfo = info.mapa.comerciantes;
-
-  var pagesInfo = [
-    {
-      title: info.mapa.region,
+  var pagesInfo = info.map((item) => {
+    return {
+      title: item.mapa.region,
       subtitle: "",
-      image: info.info.imagenFondo,
+      image: item.info.imagenFondo,
       content: (
-        <MapMexico
-          map={info.mapa.imagen}
-          contactInfo={contactInfo}
-          info={info.info}
+        <Map
+          map={item.mapa.imagen}
+          contactInfo={item.mapa.comerciantes}
+          info={item.info}
         />
       ),
-      hash: "mexico",
-    },
-  ];
+      hash: item.info.hash,
+    };
+  });
 
   const getCurrentIndex = () => {
-    const hash = window.location.hash;
+    var hash = window.location.hash;
     var tempIndex = 0;
+    if (hash === "") {
+      hash = "#" + window.location.pathname.split("/")[1];
+    }
     switch (hash) {
-      case "#mexico":
+      case "#mx":
         tempIndex = 0;
         break;
-      case "#usa":
+      case "#eu":
         tempIndex = 1;
         break;
-      case "#brasil":
+      case "#br":
         tempIndex = 2;
         break;
-      case "#turquia":
+      case "#tr":
         tempIndex = 3;
         break;
+      case "#co":
       default:
-        tempIndex = 0;
+        tempIndex = 4;
+        break;
+      case "#pe":
+        tempIndex = 5;
+        break;
+      case "#cl":
+        tempIndex = 6;
+        break;
+      case "#intl":
+        tempIndex = 7;
         break;
     }
     return tempIndex;
@@ -86,9 +97,23 @@ export default function PresenciaClient({ info }) {
           zIndex: 0,
         }}
       >
-        <h1>{info.info.titulo}</h1>
+        <h1>{pagesInfo[index].title}</h1>
       </article>
       {/* Dynamic Header */}
+
+      {/* Select Option */}
+      <div className={styles.selectOptionWrapper}>
+        {pagesInfo.map((page, i) => (
+          <div
+            className={index === i ? `${styles.active}` : ""}
+            key={i + "div"}
+            onClick={() => handleNextStep(i)}
+          >
+            <p>{page.title}</p>
+          </div>
+        ))}
+      </div>
+      {/* Select Option */}
 
       {/* Form */}
       {pagesInfo[index].content}
@@ -97,16 +122,12 @@ export default function PresenciaClient({ info }) {
   );
 }
 
-function Map() {
-  return (
-    <section className={styles.presenciaWrapper} style={{ height: "800px" }}>
-      <div className={styles.mapWrapper}></div>
-    </section>
-  );
-}
-
-function MapMexico({ map, contactInfo, info }) {
+function Map({ map, contactInfo, info }) {
   const [filtredByProductList, setFiltredByProductList] = useState(contactInfo);
+
+  useEffect(() => {
+    setFiltredByProductList(contactInfo);
+  }, [contactInfo]);
   return (
     <section className={styles.presenciaWrapper}>
       <div className={styles.mapWrapper}>

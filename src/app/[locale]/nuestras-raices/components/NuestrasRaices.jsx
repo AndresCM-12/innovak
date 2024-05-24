@@ -186,7 +186,13 @@ function QuienesSomos({ valores, lineaDelTiempo, info, video }) {
         <article className={styles.titleWrapper}>
           <div className={styles.title}>
             <h1>{info.quienesTitulo}</h1>
-            <p>{info.quienesTexto}</p>
+            <p
+              style={{
+                textAlign: "justify",
+              }}
+            >
+              {info.quienesTexto}
+            </p>
           </div>
           <video autoPlay muted loop controls>
             <source src={video} type="video/mp4" />
@@ -339,7 +345,13 @@ function Certificaciones({
                   alt="background"
                 />
                 <h3>{cert.title}</h3>
-                <p>{cert.description}</p>
+                <p
+                  style={{
+                    textAlign: "justify",
+                  }}
+                >
+                  {cert.description}
+                </p>
               </div>
             ))}
           </div>
@@ -359,7 +371,13 @@ function Certificaciones({
                   alt="background"
                 />
                 <h3>{cert.title}</h3>
-                <p>{cert.description}</p>
+                <p
+                  style={{
+                    textAlign: "justify",
+                  }}
+                >
+                  {cert.description}
+                </p>
               </div>
             ))}
           </div>
@@ -369,7 +387,13 @@ function Certificaciones({
             {reconocimientos.map((cert, i) => (
               <div key={i} className={styles.cert}>
                 <h4>{cert.title}</h4>
-                <p>{cert.description}</p>
+                <p
+                  style={{
+                    textAlign: "justify",
+                  }}
+                >
+                  {cert.description}
+                </p>
               </div>
             ))}
           </div>

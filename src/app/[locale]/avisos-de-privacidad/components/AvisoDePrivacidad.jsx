@@ -5,11 +5,6 @@ import styles from "./AvisoDePrivacidad.module.css";
 export default function AvisoDePrivacidadPageClient({ info, html }) {
   var pagesInfo = [
     {
-      title: info.avisoPrivacidad,
-      content: <AvisoDePrivacidad html={html[0]} />,
-      hash: "aviso-de-privacidad",
-    },
-    {
       title: info.clientesYusuarios,
       content: <AvisoDePrivacidad html={html[1]} />,
       hash: "clientes-y-usuarios",
@@ -35,20 +30,17 @@ export default function AvisoDePrivacidadPageClient({ info, html }) {
     const hash = window.location.hash;
     var tempIndex = 0;
     switch (hash) {
-      case "#general":
+      case "#clientes-y-usuarios":
         tempIndex = 0;
         break;
-      case "#clientes-y-usuarios":
+      case "#empleados-y-reclutantes":
         tempIndex = 1;
         break;
-      case "#empleados-y-reclutantes":
+      case "#camaras-de-seguridad":
         tempIndex = 2;
         break;
-      case "#camaras-de-seguridad":
-        tempIndex = 3;
-        break;
       case "#eventos-talleres-conferencias":
-        tempIndex = 4;
+        tempIndex = 3;
         break;
       default:
         tempIndex = 0;
