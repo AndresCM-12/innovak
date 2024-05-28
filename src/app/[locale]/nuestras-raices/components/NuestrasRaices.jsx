@@ -154,7 +154,13 @@ export default function NuestrasRaicesClient({ fetchedContent }) {
         }}
       >
         <h1>{fetchedContent.info.cabecera.titulo}</h1>
-        <p>{fetchedContent.info.cabecera.texto}</p>
+        <p
+          style={{
+            textAlign: "justify",
+          }}
+        >
+          {fetchedContent.info.cabecera.texto}
+        </p>
       </article>
       {/* Dynamic Header */}
 
@@ -202,11 +208,23 @@ function QuienesSomos({ valores, lineaDelTiempo, info, video }) {
         <article className={styles.misionWrapper}>
           <div>
             <h2>{info.misionTitulo}</h2>
-            <p>{info.misionText}</p>
+            <p
+              style={{
+                textAlign: "justify",
+              }}
+            >
+              {info.misionText}
+            </p>
           </div>
           <div>
             <h2>{info.visionTitulo}</h2>
-            <p>{info.visionText}</p>
+            <p
+              style={{
+                textAlign: "justify",
+              }}
+            >
+              {info.visionText}
+            </p>
           </div>
           <Image src={raices} alt="background" />
         </article>
@@ -226,7 +244,13 @@ function QuienesSomos({ valores, lineaDelTiempo, info, video }) {
                 <div>
                   <h4>{valor.title}</h4>
                   <div className={styles.divider}></div>
-                  <p>{valor.description}</p>
+                  <p
+                    style={{
+                      textAlign: "justify",
+                    }}
+                  >
+                    {valor.description}
+                  </p>
                 </div>
               </div>
             ))}
