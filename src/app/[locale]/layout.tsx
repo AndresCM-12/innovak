@@ -1,3 +1,4 @@
+import Script from "next/script";
 import FooterBody from "./components/Footer";
 import HeaderBody from "./components/Header";
 import { WORDPRESS_API_URL } from "./constants/constants";
@@ -14,6 +15,11 @@ export default async function RootLayout({ children, params }) {
 
   return (
     <html lang={params.locale}>
+      <head>
+      <Script id="show-banner">
+        {`function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"dcc0b515f21b1789786792d888833c75"})});`}
+      </Script>
+      </head>
       <body className={avenir.className}>
         <HeaderBody info={info.header} />
         {children}
